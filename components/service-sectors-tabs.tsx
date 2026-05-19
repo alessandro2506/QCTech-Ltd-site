@@ -3,8 +3,11 @@
 import { useRef, useState } from "react";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import {
+  Briefcase,
   Building2,
   Check,
+  Compass,
+  Package,
   Stethoscope,
   Truck,
   UtensilsCrossed,
@@ -14,6 +17,9 @@ const icons = {
   hotel: Building2,
   ristorazione: UtensilsCrossed,
   logistica: Truck,
+  traslochi: Package,
+  consulenza: Briefcase,
+  turismo: Compass,
   veterinario: Stethoscope,
 } as const;
 

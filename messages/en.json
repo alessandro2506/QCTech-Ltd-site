@@ -258,7 +258,7 @@
     "sectors": [
       {
         "id": "hotel",
-        "label": "Hotels",
+        "label": "Hospitality & Hotels",
         "title": "Hospitality & direct booking",
         "description": "Projects for hotels and B&Bs: booking engines, multilingual sites, upsells and integrations with channel managers / PMS.",
         "bullets": [
@@ -290,14 +290,47 @@
         ]
       },
       {
-        "id": "veterinario",
-        "label": "Professionals",
-        "title": "Professional practices (e.g. veterinary)",
-        "description": "Experience with clinics and practices: institutional sites, appointment flows, patient education and privacy-aware design.",
+        "id": "traslochi",
+        "label": "Removals & Logistics",
+        "title": "Removals, fleets & operational coordination",
+        "description": "Projects for removals and relocation companies: online quotes, job management, fleet tracking and communication with B2B and residential clients.",
         "bullets": [
-          "Clear sites for services, hours and emergencies",
+          "Sites and portals for quote requests and move planning",
+          "Operational dashboards for crews, vehicles and job status",
+          "Integrations with CRM, invoicing and automated notifications"
+        ]
+      },
+      {
+        "id": "consulenza",
+        "label": "Business Consulting",
+        "title": "Digital presence for firms & advisory",
+        "description": "Sites and tools for consultants, accountants and professional boutiques: credibility, lead generation and content that supports conversion.",
+        "bullets": [
+          "Corporate sites with case studies, team and practice areas",
+          "Landing pages for services, webinars and qualified lead capture",
+          "Blog, resources and SEO for B2B niche positioning"
+        ]
+      },
+      {
+        "id": "turismo",
+        "label": "Tourism & Real Estate",
+        "title": "Destinations, agencies & property",
+        "description": "Experience with tour operators and estate agencies: catalogues, advanced search, multilingual sites and CRM / portal integrations.",
+        "bullets": [
+          "Showcase sites for destinations, tours and local experiences",
+          "Property listings, search filters and viewing / enquiry requests",
+          "Local and international SEO, mobile performance and analytics"
+        ]
+      },
+      {
+        "id": "veterinario",
+        "label": "Healthcare & Veterinary",
+        "title": "Clinics, medical & veterinary practices",
+        "description": "Experience with healthcare facilities and veterinary clinics: institutional sites, bookings, patient education and privacy-aware design.",
+        "bullets": [
+          "Clear sites for services, hours, emergencies and departments",
           "Appointment request forms and reminders where applicable",
-          "Trust content: team, specialisations, FAQs"
+          "Trust content: team, specialisations, FAQs and reviews"
         ]
       }
     ],

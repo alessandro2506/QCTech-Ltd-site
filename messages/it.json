@@ -258,7 +258,7 @@
     "sectors": [
       {
         "id": "hotel",
-        "label": "Hotel",
+        "label": "Hospitality & Hotel",
         "title": "Ospitalità e direct booking",
         "description": "Progetti per strutture ricettive: motori di prenotazione, multilingua, upsell servizi e integrazioni con channel manager / PMS.",
         "bullets": [
@@ -290,14 +290,47 @@
         ]
       },
       {
-        "id": "veterinario",
-        "label": "Professionisti",
-        "title": "Studi professionali (es. veterinaria)",
-        "description": "Esperienza con studi e cliniche: siti istituzionali, area prenotazioni, educazione al cliente e conformità privacy.",
+        "id": "traslochi",
+        "label": "Traslochi & Logistica",
+        "title": "Traslochi, flotte e coordinamento operativo",
+        "description": "Progetti per imprese di traslochi e relocation: preventivi online, gestione incarichi, tracking mezzi e comunicazione con clienti B2B e privati.",
         "bullets": [
-          "Siti chiari per servizi, orari e urgenze",
+          "Siti e portali per richieste preventivo e pianificazione traslochi",
+          "Dashboard operative per squadre, mezzi e stati incarico",
+          "Integrazioni con CRM, fatturazione e notifiche automatiche"
+        ]
+      },
+      {
+        "id": "consulenza",
+        "label": "Consulenza Aziendale",
+        "title": "Presenza digitale per studi e advisory",
+        "description": "Siti e strumenti per consulenti, commercialisti e boutique professionali: credibilità, lead generation e contenuti che supportano la conversione.",
+        "bullets": [
+          "Siti corporate con casi studio, team e aree di competenza",
+          "Landing per servizi, webinar e acquisizione contatti qualificati",
+          "Blog, risorse e SEO per posizionamento su nicchie B2B"
+        ]
+      },
+      {
+        "id": "turismo",
+        "label": "Turismo & Immobiliare",
+        "title": "Destinazioni, agenzie e property",
+        "description": "Esperienza con operatori turistici e agenzie immobiliari: cataloghi, ricerca avanzata, multilingua e integrazioni con CRM e portali.",
+        "bullets": [
+          "Siti vetrina per destinazioni, tour ed esperienze locali",
+          "Schede immobili, filtri ricerca e richieste visita / info",
+          "SEO locale e internazionale, performance mobile e analytics"
+        ]
+      },
+      {
+        "id": "veterinario",
+        "label": "Sanità & Veterinaria",
+        "title": "Cliniche, studi medici e veterinari",
+        "description": "Esperienza con strutture sanitarie e cliniche veterinarie: siti istituzionali, prenotazioni, educazione al paziente e conformità privacy.",
+        "bullets": [
+          "Siti chiari per servizi, orari, urgenze e reparti",
           "Moduli richiesta appuntamento e reminder (dove applicabile)",
-          "Contenuti di fiducia: team, specializzazioni, FAQ"
+          "Contenuti di fiducia: team, specializzazioni, FAQ e recensioni"
         ]
       }
     ],
