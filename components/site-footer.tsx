@@ -33,8 +33,9 @@ export function SiteFooter() {
           </ul>
         </nav>
       </div>
-      <div className="border-t border-slate-200/80 py-6 text-center text-xs text-slate-500">
-        {tf("legal")}
+      <div className="border-t border-slate-200/80 px-4 py-6 text-center text-xs text-slate-500 sm:px-6">
+        <p>{tf("legal")}</p>
+        <p className="mt-1">{siteConfig.address.full}</p>
       </div>
     </footer>
   );

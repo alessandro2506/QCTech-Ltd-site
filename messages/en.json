@@ -231,6 +231,7 @@
     "eyebrow": "Contact",
     "title": "Let’s talk about your next release",
     "intro": "We respond from the UK and Italy. Share your stack, target market and urgency — we’ll prepare a clear proposal.",
+    "addressLabel": "Registered office",
     "formTitle": "Request form",
     "formHint": "Submissions are sent securely to our team by email."
   },
@@ -427,7 +428,7 @@
   },
   "Metadata": {
     "title": "Web & App Studio — Websites, E-commerce & Mobile Apps | Alvenco Ltd",
-    "description": "Alvenco Ltd builds websites, e-commerce and mobile apps for businesses expanding between UK and Italy. Based in Bishop's Stortford, Hertfordshire. Free site audit.",
+    "description": "Alvenco Ltd builds websites, e-commerce and mobile apps for businesses expanding between UK and Italy. Registered office: Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX. Free site audit.",
     "keywords": "web agency UK, web development Hertfordshire, app development UK, e-commerce UK Italy, web agency Bishop's Stortford, React Native app UK, Next.js development UK, Italian web agency UK"
   },
   "Hero": {
@@ -467,7 +468,7 @@
   },
   "About": {
     "headline": "We don't build sites. We build systems that bring you clients.",
-    "body": "Alvenco Ltd is a web and app studio based in Bishop's Stortford, Hertfordshire. Our team operates across UK and Italy — building digital products for businesses that want to grow in both markets.",
+    "body": "Alvenco Ltd is a web and app studio with registered office at Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX. Our team operates across UK and Italy — building digital products for businesses that want to grow in both markets.",
     "proof": "Our track record includes CivicAlert, a civic AI reporting platform deployed across UK local authorities — proof that we build things that scale.",
     "cta": "Book a free 15-minute call. No commitment."
   },
@@ -522,7 +523,7 @@
     },
     "team": {
       "title": "Who we are",
-      "body": "We are a small, senior team. Alessandro Fiscella leads development and technical architecture from Italy. Our commercial operations are based in Bishop's Stortford, Hertfordshire and is led by Vincenzo Sedita. We work remotely with clients across the UK, Europe and beyond — time zones are not a barrier."
+      "body": "We are a small, senior team. Alessandro Fiscella leads development and technical architecture from Italy. Our commercial operations are based at Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX and are led by Vincenzo Sedita. We work remotely with clients across the UK, Europe and beyond — time zones are not a barrier."
     },
     "values": {
       "title": "How we work",

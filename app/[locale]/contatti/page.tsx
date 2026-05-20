@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import { Mail } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
 import { siteConfig } from "@/app.config";
@@ -70,6 +70,19 @@ export default async function ContattiPage({
               >
                 {siteConfig.links.phone}
               </a>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-600/10 text-blue-700">
+                <MapPin className="h-5 w-5" aria-hidden />
+              </span>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                  {t("addressLabel")}
+                </p>
+                <p className="mt-0.5 font-medium text-slate-900">
+                  {siteConfig.address.full}
+                </p>
+              </div>
             </li>
           </ul>
 

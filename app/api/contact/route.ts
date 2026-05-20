@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { siteConfig } from "@/app.config";
 import {
   apiContactStrings,
   apiErrors,
@@ -106,7 +107,7 @@ export async function POST(request: Request) {
   <p style="background:#f5f5f5;padding:12px;border-radius:6px;white-space:pre-wrap">${escapeHtml(message)}</p>
   <hr style="border:none;border-top:1px solid #eee;margin:24px 0" />
   <p style="color:#666;font-size:14px">For urgent questions contact us at <a href="mailto:hello@alvencoltd.co.uk">hello@alvencoltd.co.uk</a> or WhatsApp us at <a href="tel:+447754812247">+44 7754 812247</a>.</p>
-  <p style="color:#666;font-size:14px">— The Alvenco Team<br/>Bishop's Stortford, Hertfordshire, UK</p>
+  <p style="color:#666;font-size:14px">— The Alvenco Team<br/>${siteConfig.address.full}, UK</p>
 </div>
 `
       : `
@@ -119,7 +120,7 @@ export async function POST(request: Request) {
   <p style="background:#f5f5f5;padding:12px;border-radius:6px;white-space:pre-wrap">${escapeHtml(message)}</p>
   <hr style="border:none;border-top:1px solid #eee;margin:24px 0" />
   <p style="color:#666;font-size:14px">Per domande urgenti scrivici a <a href="mailto:hello@alvencoltd.co.uk">hello@alvencoltd.co.uk</a> o su WhatsApp al <a href="tel:+447754812247">+44 7754 812247</a>.</p>
-  <p style="color:#666;font-size:14px">— Il team Alvenco<br/>Bishop's Stortford, Hertfordshire, UK</p>
+  <p style="color:#666;font-size:14px">— Il team Alvenco<br/>${siteConfig.address.full}, UK</p>
 </div>
 `;
 

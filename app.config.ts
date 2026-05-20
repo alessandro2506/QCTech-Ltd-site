@@ -12,6 +12,14 @@ export const siteConfig = {
     email: "hello@alvenco.co.uk",
     phone: "+44 7754 812247",
   },
+  address: {
+    streetAddress: "Flat 3, Jackson Wharf, Adderley Road",
+    addressLocality: "Bishop's Stortford",
+    addressRegion: "Hertfordshire",
+    postalCode: "CM23 3AX",
+    addressCountry: "GB",
+    full: "Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX",
+  },
 } as const;
 
 /** Path senza prefisso locale (next-intl aggiunge /en se serve). */

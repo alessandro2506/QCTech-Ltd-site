@@ -231,6 +231,7 @@
     "eyebrow": "Contatti",
     "title": "Parliamo del vostro prossimo rilascio",
     "intro": "Rispondiamo dal Regno Unito e dall'Italia. Indicate stack, mercato di riferimento e urgenza: prepareremo una proposta chiara.",
+    "addressLabel": "Sede legale",
     "formTitle": "Modulo richiesta",
     "formHint": "Le richieste sono inviate in modo sicuro al nostro team via email."
   },
@@ -427,7 +428,7 @@
   },
   "Metadata": {
     "title": "Studio Web & App — Siti, E-commerce e App Mobile | Alvenco Ltd",
-    "description": "Alvenco Ltd realizza siti web, e-commerce e app mobile per aziende che operano tra UK e Italia. Sede a Bishop's Stortford, Hertfordshire. Audit gratuito del sito.",
+    "description": "Alvenco Ltd realizza siti web, e-commerce e app mobile per aziende che operano tra UK e Italia. Sede legale: Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX. Audit gratuito del sito.",
     "keywords": "agenzia web UK, sviluppo web Hertfordshire, sviluppo app mobile UK, e-commerce UK Italia, agenzia web italiana UK, React Native UK, Next.js UK, agenzia digitale italiani in UK"
   },
   "Hero": {
@@ -467,7 +468,7 @@
   },
   "About": {
     "headline": "Non costruiamo siti. Costruiamo sistemi che portano clienti.",
-    "body": "Alvenco Ltd è uno studio web e app con sede a Bishop's Stortford, Hertfordshire. Il nostro team opera tra UK e Italia, costruendo prodotti digitali per aziende che vogliono crescere in entrambi i mercati.",
+    "body": "Alvenco Ltd è uno studio web e app con sede legale a Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX. Il nostro team opera tra UK e Italia, costruendo prodotti digitali per aziende che vogliono crescere in entrambi i mercati.",
     "proof": "Il nostro portfolio include CivicAlert, una piattaforma AI civica distribuita presso enti locali del Regno Unito — la prova che costruiamo cose che scalano.",
     "cta": "Prenota una chiamata gratuita di 15 minuti. Senza impegno."
   },
@@ -522,7 +523,7 @@
     },
     "team": {
       "title": "Chi siamo",
-      "body": "Siamo uno small team composto da senior. Alessandro Fiscella guida lo sviluppo e l'architettura tecnica dall'Italia. Le operazioni commerciali hanno base a Bishop's Stortford, Hertfordshire e sono seguite da Vincenzo Sedita. Lavoriamo da remoto con clienti in UK, Europa e oltre — i fusi orari non sono un ostacolo."
+      "body": "Siamo uno small team composto da senior. Alessandro Fiscella guida lo sviluppo e l'architettura tecnica dall'Italia. Le operazioni commerciali hanno sede legale a Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX e sono seguite da Vincenzo Sedita. Lavoriamo da remoto con clienti in UK, Europa e oltre — i fusi orari non sono un ostacolo."
     },
     "values": {
       "title": "Come lavoriamo",

@@ -1,3 +1,5 @@
+import { siteConfig } from "@/app.config";
+
 export function SchemaOrg({ locale }: { locale: string }) {
   const schema = {
     "@context": "https://schema.org",
@@ -16,9 +18,11 @@ export function SchemaOrg({ locale }: { locale: string }) {
         email: "hello@alvenco.co.uk",
         address: {
           "@type": "PostalAddress",
-          addressLocality: "Bishop's Stortford",
-          addressRegion: "Hertfordshire",
-          addressCountry: "GB",
+          streetAddress: siteConfig.address.streetAddress,
+          addressLocality: siteConfig.address.addressLocality,
+          addressRegion: siteConfig.address.addressRegion,
+          postalCode: siteConfig.address.postalCode,
+          addressCountry: siteConfig.address.addressCountry,
         },
         areaServed: ["GB", "IT"],
         serviceType: [
