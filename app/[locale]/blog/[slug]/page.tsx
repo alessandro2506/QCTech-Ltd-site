@@ -24,6 +24,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.title,
     description: post.excerpt,
+    ...(post.tags.length > 0 ? { keywords: post.tags.join(", ") } : {}),
+    alternates: {
+      canonical: `https://www.alvencoltd.co.uk/${locale}/blog/${slug}`,
+      languages: {
+        it: `https://www.alvencoltd.co.uk/it/blog/${slug}`,
+        en: `https://www.alvencoltd.co.uk/en/blog/${slug}`,
+        "x-default": `https://www.alvencoltd.co.uk/en/blog/${slug}`,
+      },
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
@@ -44,8 +53,28 @@ export default async function BlogPostPage({ params }: Props) {
     .map((p) => p.trim())
     .filter(Boolean);
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    author: { "@type": "Person", name: post.author },
+    publisher: {
+      "@type": "Organization",
+      name: "Alvenco Ltd",
+      url: "https://www.alvencoltd.co.uk",
+    },
+    url: `https://www.alvencoltd.co.uk/${locale}/blog/${slug}`,
+    inLanguage: locale === "it" ? "it-IT" : "en-GB",
+  };
+
   return (
     <article className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       {/* Back */}
       <Link
         href="/blog"

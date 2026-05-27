@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/api/", "/_next/"],
+      disallow: ["/api/", "/_next/", "/*?topic=*", "/*?plan=*", "/*?section=*"],
     },
     sitemap: "https://www.alvencoltd.co.uk/sitemap.xml",
     host: "https://www.alvencoltd.co.uk",
