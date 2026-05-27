@@ -1,5 +1,13 @@
 import type { MetadataRoute } from "next";
 
+const blogSlugs = [
+  "digital-marketing-for-bb-and-guesthouses-uk",
+  "how-logistics-companies-can-use-web-portals-to-serve-clients",
+  "how-much-does-a-website-cost-uk-2026",
+  "how-to-attract-international-tourists-to-uk-experiences",
+  "react-native-vs-flutter-for-mobile-apps-2026",
+] as const;
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.alvencoltd.co.uk";
 
@@ -26,6 +34,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const page of [...itPages, ...enPages]) {
     const barePath = page.path.replace(/^\/(it|en)/, "");
     const normalizedPath = barePath === "" ? "/" : barePath;
+    const itPath =
+      normalizedPath === "/services"
+        ? "/servizi"
+        : normalizedPath === "/about"
+          ? "/vision"
+          : normalizedPath === "/contacts"
+            ? "/contatti"
+            : normalizedPath;
     const enPath =
       normalizedPath === "/servizi"
         ? "/services"
@@ -42,12 +58,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: page.priority,
       alternates: {
         languages: {
-          it: `${baseUrl}/it${normalizedPath === "/" ? "" : normalizedPath}`,
+          it: `${baseUrl}/it${itPath === "/" ? "" : itPath}`,
           en: `${baseUrl}/en${enPath === "/" ? "" : enPath}`,
           "x-default": `${baseUrl}/en${enPath === "/" ? "" : enPath}`,
         },
       },
     });
+  }
+
+  for (const slug of blogSlugs) {
+    for (const locale of ["it", "en"] as const) {
+      entries.push({
+        url: `${baseUrl}/${locale}/blog/${slug}`,
+        lastModified: new Date(),
+        changeFrequency: "monthly",
+        priority: 0.7,
+        alternates: {
+          languages: {
+            it: `${baseUrl}/it/blog/${slug}`,
+            en: `${baseUrl}/en/blog/${slug}`,
+            "x-default": `${baseUrl}/en/blog/${slug}`,
+          },
+        },
+      });
+    }
   }
 
   return entries;
