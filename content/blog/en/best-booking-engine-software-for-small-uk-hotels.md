@@ -1,7 +1,7 @@
 ---
 title: "Best Booking Engine Software for Small UK Hotels in 2026"
 date: "2026-06-01"
-author: "Alvenco Ltd"
+author: "QC Tech"
 authorRole: "Digital Studio — Bishop's Stortford, UK"
 excerpt: "Choosing the right booking engine can transform direct revenue for small UK hotels. Here are the top platforms worth your investment in 2026."
 tags: ["hotel booking software", "UK hotels", "direct bookings", "hospitality technology"]
@@ -157,7 +157,7 @@ Your booking engine does not exist in isolation. For it to work reliably, it nee
 
 When evaluating any platform, map out your existing tech stack first. A booking engine that integrates cleanly with your current PMS is worth more than one with a marginally better interface but awkward workarounds.
 
-Teams at studios like Alvenco Ltd regularly see small hospitality businesses invest in excellent booking engine software and then undermine it with a slow, poorly designed website that kills conversion before the booking engine even loads — a reminder that the technology and the digital presence must work together.
+Teams at studios like QC Tech regularly see small hospitality businesses invest in excellent booking engine software and then undermine it with a slow, poorly designed website that kills conversion before the booking engine even loads — a reminder that the technology and the digital presence must work together.
 
 ---
 
@@ -184,4 +184,4 @@ Audit your current direct booking rate. If it is below 25% of total bookings, yo
 
 ---
 
-*For independent hotels and hospitality businesses looking to strengthen their digital presence alongside their booking technology, Alvenco Ltd works with clients across the UK on web design and conversion-focused digital strategy. [alvenco.co.uk](https://alvenco.co.uk)*
+*For independent hotels and hospitality businesses looking to strengthen their digital presence alongside their booking technology, QC Tech works with clients across the UK on web design and conversion-focused digital strategy. [qc-tech.co.uk](https://qc-tech.co.uk)*

@@ -1,7 +1,7 @@
 ---
 title: "React Native vs Flutter per App Mobile nel 2026: Quale Scegliere per la Tua Azienda?"
 date: "2026-05-11"
-author: "Quantum Code Technologies Ltd"
+author: "QC Tech"
 authorRole: "Digital Studio — Bishop's Stortford, UK"
 excerpt: "React Native e Flutter dominano lo sviluppo mobile cross-platform nel 2026. Ecco tutto ciò che le aziende italiane e UK devono sapere prima di investire il budget."
 tags: ["React Native", "Flutter", "Sviluppo App Mobile", "App Cross-Platform"]

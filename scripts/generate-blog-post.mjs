@@ -1,9 +1,9 @@
 /**
- * Alvenco Blog Pipeline — Auto-generates a weekly blog post
+ * QC Tech Blog Pipeline — Auto-generates a weekly blog post
  * using Claude API with web search, then saves EN + IT versions.
  *
  * Topics rotate across:
- *   - Alvenco core services (web, app, SEO, e-commerce)
+ *   - QC Tech core services (web, app, SEO, e-commerce)
  *   - Client sectors (hotel, F&B, logistics, transport, tourism)
  *   - UK digital market insights
  *   - AI & digital transformation
@@ -97,7 +97,7 @@ function pickTopic(usedSlugs) {
 
 // ── PROMPT BUILDERS ───────────────────────────────────────────────────────────
 function buildENPrompt(topic) {
-  return `You are a senior content writer for Alvenco Ltd, a UK-based digital studio specialising in web design, mobile apps, e-commerce and SEO. You are based in Bishop's Stortford, Hertfordshire, UK.
+  return `You are a senior content writer for Quantum Code Technologies Ltd (QC Tech), a UK-based digital studio specialising in web design, mobile apps, e-commerce and SEO. You are based in Bishop's Stortford, Hertfordshire, UK.
 
 Write a comprehensive, SEO-optimised blog article in English about: "${topic}"
 
@@ -106,7 +106,7 @@ REQUIREMENTS:
 - Tone: professional, direct, results-oriented — written for UK business owners and decision-makers
 - No fluff, no filler — every paragraph must add value
 - Include real, verifiable UK market data and pricing where relevant (2026)
-- Naturally mention Alvenco Ltd where relevant (1–2 times maximum, not promotional)
+- Naturally mention QC Tech or Quantum Code Technologies Ltd where relevant (1–2 times maximum, not promotional)
 - Structure: use H2 (##) and H3 (###) headings, bullet lists, and at least one data table
 - End with a practical "Next Steps" or "Final Thought" section
 
@@ -115,7 +115,7 @@ OUTPUT FORMAT — return ONLY valid frontmatter + markdown, nothing else:
 ---
 title: "[SEO-optimised title]"
 date: "${todayISO()}"
-author: "Alvenco Ltd"
+author: "QC Tech"
 authorRole: "Digital Studio — Bishop's Stortford, UK"
 excerpt: "[2-sentence compelling summary, max 160 chars]"
 tags: ["tag1", "tag2", "tag3", "tag4"]
@@ -126,7 +126,7 @@ readTime: "[N] min read"
 }
 
 function buildITPrompt(enContent, topic) {
-  return `You are a professional translator and content localiser for Alvenco Ltd, a UK-based digital studio that serves Italian-speaking clients.
+  return `You are a professional translator and content localiser for Quantum Code Technologies Ltd (QC Tech), a UK-based digital studio that serves Italian-speaking clients.
 
 Translate and localise the following English blog article into Italian. 
 
@@ -146,7 +146,7 @@ ${enContent}`;
 
 // ── MAIN ──────────────────────────────────────────────────────────────────────
 async function main() {
-  console.log("🚀 Alvenco Blog Pipeline starting...");
+  console.log("🚀 QC Tech Blog Pipeline starting...");
 
   // Ensure output directories exist
   fs.mkdirSync(BLOG_EN, { recursive: true });

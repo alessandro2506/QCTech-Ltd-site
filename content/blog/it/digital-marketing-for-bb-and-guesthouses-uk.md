@@ -1,7 +1,7 @@
 ---
 title: "Digital Marketing per B&B e Case Vacanza: Una Guida Pratica alla Crescita"
 date: "2026-05-18"
-author: "Quantum Code Technologies Ltd"
+author: "QC Tech"
 authorRole: "Digital Studio — Bishop's Stortford, UK"
 excerpt: "Smetti di affidarti solo alle OTA e riempi le tue camere tutto l'anno. Una guida concreta al digital marketing pensata per chi gestisce un B&B o una struttura ricettiva."
 tags: ["digital marketing", "marketing per B&B", "case vacanza", "SEO per hospitality"]

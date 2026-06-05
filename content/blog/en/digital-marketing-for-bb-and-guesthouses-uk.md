@@ -1,7 +1,7 @@
 ---
 title: "Digital Marketing for B&Bs and Guesthouses in the UK: A Practical Growth Guide"
 date: "2026-05-18"
-author: "Quantum Code Technologies Ltd"
+author: "QC Tech"
 authorRole: "Digital Studio — Bishop's Stortford, UK"
 excerpt: "Cut through the noise and fill your rooms year-round. A no-nonsense digital marketing guide built for UK B&B and guesthouse owners."
 tags: ["digital marketing", "B&B marketing", "guesthouse UK", "hospitality SEO"]

@@ -1,7 +1,7 @@
 ---
 title: "How Logistics Companies Can Use Web Portals to Serve Clients Better"
 date: "2026-05-04"
-author: "Quantum Code Technologies Ltd"
+author: "QC Tech"
 authorRole: "Digital Studio — Bishop's Stortford, UK"
 excerpt: "Web portals are transforming how UK logistics firms serve clients. Here's how to build one that drives retention, cuts costs, and wins contracts."
 tags: ["web portals", "logistics technology", "client self-service", "UK business"]

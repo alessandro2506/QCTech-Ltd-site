@@ -1,7 +1,7 @@
 ---
 title: "Booking Software for UK Tour Operators: How to Choose the Right System in 2026"
 date: "2026-05-25"
-author: "Quantum Code Technologies Ltd"
+author: "QC Tech"
 authorRole: "Digital Studio — Bishop's Stortford, UK"
 excerpt: "Choosing the right booking software can make or break a UK tour operator's revenue. Here's what to look for, what to avoid, and which platforms lead the market in 2026."
 tags: ["booking software", "tour operators", "UK travel tech", "e-commerce"]

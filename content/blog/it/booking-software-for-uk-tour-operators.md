@@ -1,7 +1,7 @@
 ---
 title: "Software di Prenotazione per Tour Operator: Come Scegliere il Sistema Giusto nel 2026"
 date: "2026-05-25"
-author: "Quantum Code Technologies Ltd"
+author: "QC Tech"
 authorRole: "Digital Studio — Bishop's Stortford, UK"
 excerpt: "Scegliere il software di prenotazione giusto può determinare il successo o il fallimento di un tour operator. Ecco cosa valutare, cosa evitare e quali piattaforme dominano il mercato nel 2026."
 tags: ["software di prenotazione", "tour operator", "travel tech", "e-commerce"]

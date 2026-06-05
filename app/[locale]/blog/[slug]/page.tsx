@@ -102,7 +102,7 @@ export default async function BlogPostPage({ params }: Props) {
 
       {/* Meta */}
       <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-slate-400 border-b border-slate-100 pb-6">
-        <span>{post.author}</span>
+        <span>{post.author || "QC Tech"}</span>
         {post.authorRole && (
           <>
             <span>·</span>

@@ -1,7 +1,7 @@
 ---
 title: "How to Attract International Tourists to UK Experiences: A Practical Guide for Business Owners"
 date: "2026-05-03"
-author: "Quantum Code Technologies Ltd"
+author: "QC Tech"
 authorRole: "Digital Studio — Bishop's Stortford, UK"
 excerpt: "International visitors spent £31.9bn in the UK in 2024. Here's how your experience business can capture a greater share of that market."
 tags: ["international tourism", "UK travel marketing", "experience business", "digital marketing UK"]

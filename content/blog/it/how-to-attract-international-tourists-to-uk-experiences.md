@@ -1,7 +1,7 @@
 ---
 title: "Come Attrarre Turisti Internazionali verso la Tua Esperienza: Una Guida Pratica per Imprenditori"
 date: "2026-05-03"
-author: "Quantum Code Technologies Ltd"
+author: "QC Tech"
 authorRole: "Digital Studio — Bishop's Stortford, UK"
 excerpt: "I visitatori internazionali hanno speso 31,9 miliardi di sterline nel Regno Unito nel 2024. Ecco come la tua attività esperienziale può conquistare una fetta più grande di questo mercato."
 tags: ["turismo internazionale", "marketing turistico UK", "attività esperienziale", "digital marketing UK"]

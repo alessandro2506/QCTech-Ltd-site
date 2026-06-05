@@ -1,8 +1,7 @@
-```
 ---
 title: "I Migliori Software di Prenotazione per Piccoli Hotel nel 2026"
 date: "2026-06-01"
-author: "Alvenco Ltd"
+author: "QC Tech"
 authorRole: "Digital Studio — Bishop's Stortford, UK"
 excerpt: "Scegliere il giusto booking engine può trasformare i ricavi diretti per i piccoli hotel italiani e UK. Ecco le migliori piattaforme su cui vale la pena investire nel 2026."
 tags: ["software prenotazione hotel", "hotel italiani e UK", "prenotazioni dirette", "tecnologia hospitality"]
@@ -158,7 +157,7 @@ Il tuo booking engine non opera in isolamento. Per funzionare in modo affidabile
 
 Prima di valutare qualsiasi piattaforma, mappa il tuo stack tecnologico attuale. Un booking engine che si integra perfettamente con il tuo PMS attuale vale più di uno con un'interfaccia marginalmente migliore ma con integrazioni problematiche.
 
-I team di studio come Alvenco Ltd vedono regolarmente piccole strutture hospitality investire in ottimi software di prenotazione per poi vanificare il lavoro con un sito lento e mal progettato che compromette la conversione prima ancora che il booking engine si carichi — un promemoria che la tecnologia e la presenza digitale devono lavorare insieme.
+I team di studio come QC Tech vedono regolarmente piccole strutture hospitality investire in ottimi software di prenotazione per poi vanificare il lavoro con un sito lento e mal progettato che compromette la conversione prima ancora che il booking engine si carichi — un promemoria che la tecnologia e la presenza digitale devono lavorare insieme.
 
 ---
 

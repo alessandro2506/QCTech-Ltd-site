@@ -51,7 +51,7 @@ export default async function BlogPage({ params }: Props) {
                 <span>·</span>
                 <span>{post.readTime}</span>
                 <span>·</span>
-                <span>{post.author}</span>
+                <span>{post.author || "QC Tech"}</span>
               </div>
               <Link
                 href={`/${locale}/blog/${post.slug}`}

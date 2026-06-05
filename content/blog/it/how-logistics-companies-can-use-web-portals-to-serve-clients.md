@@ -1,7 +1,7 @@
 ---
 title: "Come le Aziende di Logistica Possono Usare i Portali Web per Servire Meglio i Clienti"
 date: "2026-05-04"
-author: "Quantum Code Technologies Ltd"
+author: "QC Tech"
 authorRole: "Digital Studio — Bishop's Stortford, UK"
 excerpt: "I portali web stanno trasformando il modo in cui le aziende di logistica italiane e UK gestiscono i clienti. Ecco come costruirne uno che aumenta la fidelizzazione, riduce i costi e fa vincere contratti."
 tags: ["portali web", "tecnologia logistica", "self-service clienti", "business UK e Italia"]
