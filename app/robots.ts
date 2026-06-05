@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/", "/_next/", "/*?topic=*", "/*?plan=*", "/*?section=*"],
     },
-    sitemap: "https://www.alvencoltd.co.uk/sitemap.xml",
-    host: "https://www.alvencoltd.co.uk",
+    sitemap: "https://www.qc-tech.co.uk/sitemap.xml",
+    host: "https://www.qc-tech.co.uk",
   };
 }

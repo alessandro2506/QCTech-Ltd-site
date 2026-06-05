@@ -1,7 +1,7 @@
 ---
 title: "Come le Aziende di Logistica Possono Usare i Portali Web per Servire Meglio i Clienti"
 date: "2026-05-04"
-author: "Alvenco Ltd"
+author: "Quantum Code Technologies Ltd"
 authorRole: "Digital Studio — Bishop's Stortford, UK"
 excerpt: "I portali web stanno trasformando il modo in cui le aziende di logistica italiane e UK gestiscono i clienti. Ecco come costruirne uno che aumenta la fidelizzazione, riduce i costi e fa vincere contratti."
 tags: ["portali web", "tecnologia logistica", "self-service clienti", "business UK e Italia"]
@@ -104,7 +104,7 @@ Offrire questo livello di visibilità trasforma il tuo portale da semplice strum
 | Accesso multi-utente | ❌ Login singolo | ✅ Permessi basati sui ruoli |
 | Costo stimato (UK/Europa, 2026) | £8.000–£18.000 | £25.000–£60.000+ |
 
-I costi variano in modo significativo a seconda che si scelga uno sviluppo su misura, una piattaforma SaaS logistica white-label, o la personalizzazione di un sistema esistente. Uno studio digitale come Alvenco Ltd stima tipicamente un portale logistico di fascia media — con integrazione TMS e branding personalizzato — in un range tra £20.000 e £40.000, in base alla complessità del progetto.
+I costi variano in modo significativo a seconda che si scelga uno sviluppo su misura, una piattaforma SaaS logistica white-label, o la personalizzazione di un sistema esistente. Uno studio digitale come Quantum Code Technologies Ltd stima tipicamente un portale logistico di fascia media — con integrazione TMS e branding personalizzato — in un range tra £20.000 e £40.000, in base alla complessità del progetto.
 
 ---
 

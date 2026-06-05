@@ -10,8 +10,8 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   await params;
   return {
-    metadataBase: new URL("https://www.alvencoltd.co.uk"),
-    title: "FAQ — Alvenco Ltd",
+    metadataBase: new URL("https://www.qc-tech.co.uk"),
+    title: "FAQ | QC Tech",
   };
 }
 

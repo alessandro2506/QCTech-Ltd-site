@@ -1,13 +1,13 @@
 {
   "meta": {
-    "defaultTitle": "Alvenco — Web, E-commerce & Mobile",
+    "defaultTitle": "QC Tech — Web, E-commerce & Mobile",
     "defaultDescription": "The digital studio based in the UK, built to work globally.",
-    "servicesTitle": "Services",
+    "servicesTitle": "Services | QC Tech",
     "servicesDescription": "Websites, mobile apps, cloud and SEO focused on ROI for UK and Italian clients.",
-    "visionTitle": "Vision",
-    "visionDescription": "Technical scalability, evolving architectures and product roadmap for Alvenco.",
-    "contactsTitle": "Contact",
-    "contactsDescription": "Request a quote or an intro call with Alvenco Ltd."
+    "visionTitle": "Vision | QC Tech",
+    "visionDescription": "Technical scalability, evolving architectures and product roadmap for QC Tech.",
+    "contactsTitle": "Contact | QC Tech",
+    "contactsDescription": "Request a quote or an intro call with Quantum Code Technologies Ltd."
   },
   "nav": {
     "home": "Home",
@@ -27,7 +27,7 @@
   },
   "footer": {
     "navLabel": "Footer",
-    "legal": "© 2026 Alvenco Ltd."
+    "legal": "© 2026 Quantum Code Technologies Ltd."
   },
   "common": {
     "scrollToTop": "Back to top"
@@ -402,7 +402,7 @@
     ]
   },
   "apiContact": {
-    "emailSubjectPrefix": "[Alvenco]",
+    "emailSubjectPrefix": "[QC Tech]",
     "emailHeading": "New request from the website",
     "emailTopic": "Topic",
     "emailPlan": "Selected plan / tab",
@@ -427,8 +427,8 @@
     "sendFailed": "Could not send. Please try again later."
   },
   "Metadata": {
-    "title": "Web & App Studio — Websites, E-commerce & Mobile Apps | Alvenco Ltd",
-    "description": "Alvenco Ltd builds websites, e-commerce and mobile apps for businesses expanding between UK and Italy. Registered office: Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX. Free site audit.",
+    "title": "Web & App Studio — Websites, E-commerce & Mobile Apps | QC Tech",
+    "description": "Quantum Code Technologies Ltd builds websites, e-commerce and mobile apps for businesses expanding between UK and Italy. Registered office: Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX. Free site audit.",
     "keywords": "web agency UK, web development Hertfordshire, app development UK, e-commerce UK Italy, web agency Bishop's Stortford, React Native app UK, Next.js development UK, Italian web agency UK"
   },
   "Hero": {
@@ -468,7 +468,7 @@
   },
   "About": {
     "headline": "We don't build sites. We build systems that bring you clients.",
-    "body": "Alvenco Ltd is a web and app studio with registered office at Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX. Our team operates across UK and Italy — building digital products for businesses that want to grow in both markets.",
+    "body": "Quantum Code Technologies Ltd is a web and app studio with registered office at Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX. Our team operates across UK and Italy — building digital products for businesses that want to grow in both markets.",
     "proof": "Our track record includes CivicAlert, a civic AI reporting platform deployed across UK local authorities — proof that we build things that scale.",
     "cta": "Book a free 15-minute call. No commitment."
   },
@@ -485,7 +485,7 @@
     "q5": "What technologies do you use?",
     "a5": "Next.js, React Native, Tailwind CSS, TypeScript, Supabase, and AI integrations (OpenAI, Google Vision). We choose the right tool for each project, not the trendy one.",
     "q6": "How do I get started with a website for my business?",
-    "a6": "The first step is a free 15-minute call with our team. We listen to your goals, current situation and budget — then we prepare a clear proposal within 48 hours. No commitment required at this stage. Simply use the contact form or email us at hello@alvenco.co.uk.",
+    "a6": "The first step is a free 15-minute call with our team. We listen to your goals, current situation and budget — then we prepare a clear proposal within 48 hours. No commitment required at this stage. Simply use the contact form or email us at hello@qc-tech.co.uk.",
     "q7": "I want to start a business — do I need a website from day one?",
     "a7": "Not necessarily, but having a professional digital presence from the start significantly increases credibility with potential clients, investors and partners. Even a well-built landing page with your offer, contact details and a clear call to action can generate enquiries immediately. We can have you online within 1–2 weeks.",
     "q8": "What is the difference between a website and a web application?",
@@ -502,7 +502,7 @@
     "a13": "An MVP (Minimum Viable Product) is the smallest version of your app that delivers real value to users and allows you to test market demand before investing in the full product. For most new app ideas, starting with an MVP is the right approach — it reduces risk, speeds up time to market, and generates real user feedback. We specialise in building focused, well-engineered MVPs that are designed to scale.",
     "q14": "How do you handle data privacy and GDPR compliance?",
     "a14": "All our projects are built with privacy by design. We implement cookie consent management, privacy policies, data minimisation principles, and secure data handling from day one. For UK clients we follow UK GDPR; for EU clients we follow EU GDPR; for global clients we apply the stricter of the two as a baseline. We also advise on which data processors and third-party services are compliant.",
-    "q15": "What makes Alvenco different from other web agencies?",
+    "q15": "What makes QC Tech different from other web agencies?",
     "a15": "Three things: we operate across UK and Italy with a distributed senior team, which means no single point of failure and broad market knowledge. We build with modern, production-grade technology — not WordPress templates or drag-and-drop builders. And we measure success by business outcomes — leads generated, conversion rates, revenue — not just by delivering a file. We don't disappear after launch."
   },
   "FinalCTA": {
@@ -515,11 +515,11 @@
     "hero": {
       "label": "About us",
       "title": "A studio built between two countries, for the whole world",
-      "subtitle": "Alvenco Ltd is registered in the UK and operates with a distributed team across England and Italy. We build digital products for businesses that want to grow — regardless of where they are."
+      "subtitle": "Quantum Code Technologies Ltd is registered in the UK and operates with a distributed team across England and Italy. We build digital products for businesses that want to grow — regardless of where they are."
     },
     "story": {
-      "title": "Why Alvenco exists",
-      "body": "We started from a simple observation: too many businesses have a digital presence that doesn't work. Sites that don't rank, apps that don't convert, e-commerce that loses customers at checkout. Alvenco was born to fix this — with a pragmatic approach, clear pricing and measurable results."
+      "title": "Why QC Tech exists",
+      "body": "We started from a simple observation: too many businesses have a digital presence that doesn't work. Sites that don't rank, apps that don't convert, e-commerce that loses customers at checkout. QC Tech was born to fix this — with a pragmatic approach, clear pricing and measurable results."
     },
     "team": {
       "title": "Who we are",

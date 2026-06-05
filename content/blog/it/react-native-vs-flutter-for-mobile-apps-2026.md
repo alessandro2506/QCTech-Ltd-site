@@ -1,7 +1,7 @@
 ---
 title: "React Native vs Flutter per App Mobile nel 2026: Quale Scegliere per la Tua Azienda?"
 date: "2026-05-11"
-author: "Alvenco Ltd"
+author: "Quantum Code Technologies Ltd"
 authorRole: "Digital Studio — Bishop's Stortford, UK"
 excerpt: "React Native e Flutter dominano lo sviluppo mobile cross-platform nel 2026. Ecco tutto ciò che le aziende italiane e UK devono sapere prima di investire il budget."
 tags: ["React Native", "Flutter", "Sviluppo App Mobile", "App Cross-Platform"]
@@ -165,7 +165,7 @@ Entrambi i framework godono di un solido supporto corporate. L'investimento di M
 
 Nessuno dei due framework è destinato a scomparire. Il rischio di puntare su un framework destinato all'abbandono, che era una preoccupazione legittima nel 2018, non è credibile né per React Native né per Flutter nel 2026.
 
-In Alvenco Ltd, consigliamo regolarmente i nostri clienti nella scelta del framework come parte della fase iniziale di definizione del progetto — la risposta giusta nasce quasi sempre dalle specifiche competenze del team e dai requisiti di integrazione, non dal tifo per un framework piuttosto che per un altro.
+In Quantum Code Technologies Ltd, consigliamo regolarmente i nostri clienti nella scelta del framework come parte della fase iniziale di definizione del progetto — la risposta giusta nasce quasi sempre dalle specifiche competenze del team e dai requisiti di integrazione, non dal tifo per un framework piuttosto che per un altro.
 
 ---
 

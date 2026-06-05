@@ -1,7 +1,7 @@
 ---
 title: "How Logistics Companies Can Use Web Portals to Serve Clients Better"
 date: "2026-05-04"
-author: "Alvenco Ltd"
+author: "Quantum Code Technologies Ltd"
 authorRole: "Digital Studio — Bishop's Stortford, UK"
 excerpt: "Web portals are transforming how UK logistics firms serve clients. Here's how to build one that drives retention, cuts costs, and wins contracts."
 tags: ["web portals", "logistics technology", "client self-service", "UK business"]
@@ -104,7 +104,7 @@ Offering this level of visibility turns your portal from a convenience into a st
 | Multi-user access | ❌ Single login | ✅ Role-based permissions |
 | Estimated build cost (UK, 2026) | £8,000–£18,000 | £25,000–£60,000+ |
 
-Costs vary significantly depending on whether you're building bespoke, using a white-label logistics SaaS platform, or customising an existing system. A digital studio like Alvenco Ltd would typically scope a mid-range logistics portal — with TMS integration and custom branding — in the £20,000–£40,000 range, depending on complexity.
+Costs vary significantly depending on whether you're building bespoke, using a white-label logistics SaaS platform, or customising an existing system. A digital studio like Quantum Code Technologies Ltd would typically scope a mid-range logistics portal — with TMS integration and custom branding — in the £20,000–£40,000 range, depending on complexity.
 
 ---
 
@@ -190,7 +190,7 @@ If you're evaluating a client portal for your logistics business, start here:
 1. **Audit your current client service touchpoints** — log every type of inbound query your team handles for one week and categorise them. This becomes your portal feature brief.
 2. **Map your existing systems** — identify your TMS, carrier APIs, and accounting tools, and assess which already have documented APIs or integrations available.
 3. **Define your client tiers** — not all clients need the same portal features. Prioritise the functionality your top 20% of clients by revenue will actually use.
-4. **Get a scoped estimate** — approach two or three UK-based development studios, including specialists in logistics or complex web applications, with a clear brief. Alvenco Ltd works with logistics and freight businesses across the UK on exactly this type of project, if you're looking for a starting point.
+4. **Get a scoped estimate** — approach two or three UK-based development studios, including specialists in logistics or complex web applications, with a clear brief. Quantum Code Technologies Ltd works with logistics and freight businesses across the UK on exactly this type of project, if you're looking for a starting point.
 5. **Pilot before you scale** — launch with two or three clients, gather structured feedback, and iterate before rolling out to your full client base.
 
 The investment is real. So is the return — if you build the right thing.

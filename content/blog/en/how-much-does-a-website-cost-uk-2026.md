@@ -2,7 +2,7 @@
 title: "How Much Does a Website Cost in the UK? (2026 Complete Guide)"
 date: "2026-05-03"
 author: "Alessandro Fiscella"
-authorRole: "CTO, Alvenco Ltd"
+authorRole: "CTO, Quantum Code Technologies Ltd"
 excerpt: "From a simple landing page to a full e-commerce platform — a transparent breakdown of website costs in the UK in 2026, with real agency pricing and what actually drives the bill."
 tags: ["web design", "pricing", "UK", "small business"]
 readTime: "7 min read"

@@ -1,4 +1,4 @@
-# Alvenco Demo Web
+# QC Tech — qc-tech.co.uk
 
 Sito marketing multi-lingua (IT/EN) sviluppato con Next.js App Router per presentare servizi, piani e raccogliere richieste tramite form contatti con invio email.
 
@@ -73,10 +73,9 @@ npm run i18n:deepl
 
 ## Asset brand
 
-- Logo componente: `components/alvenco-logo.tsx`
-- Logo full SVG: `public/logo-full.svg` (usato nel sito)
-- Simbolo logo SVG: `public/Simbolo-logo-Alvenco_Ltd.svg` (sorgente favicon)
-- Simbolo ufficiale PNG legacy: `public/simbolo-alvenco_ltd.png`
+- Logo componente: `components/alvenco-logo.tsx` (esporta `QCTechLogo`)
+- Logo full SVG (sfondo chiaro): `public/logo-full.svg`
+- Logo full SVG (sfondo scuro): `public/logo-full-white.svg`
 - Favicon attuale: `app/favicon.ico`
 - Favicon precedente conservato: `app/favicon-old.ico`
 
@@ -89,8 +88,8 @@ npm run i18n:deepl
 - Icona WhatsApp SVG inline con colore ufficiale #25D366
 - Fix reset form contatti al cambio topic (rimossa key dinamica)
 - Migrazione da Resend a Nodemailer SMTP Aruba (smtps.aruba.it:465)
-- Auto-reply cliente da no-reply@alvencoltd.co.uk: 48h, messaggio incluso, IT/EN
-- Contatti aggiornati: hello@alvencoltd.co.uk, +44 7754 812247
+- Auto-reply cliente da no-reply@qc-tech.co.uk: 48h, messaggio incluso, IT/EN
+- Contatti aggiornati: hello@qc-tech.co.uk, +44 7754 812247
 - Posizionamento brand aggiornato: studio UK-based, worldwide reach
 - Google Search Console verificata con record TXT su Aruba
 - WhatsApp Business configurato con messaggi automatici e risposte rapide
@@ -104,7 +103,7 @@ npm run i18n:deepl
 - Frase informativa form semplificata (nessun nome provider nel copy utente)
 - CTA hero verso sezione prezzi (`#prezzi`) e miglioramenti UX scroll
 - Settori servizi aggiunti (Hotel, Ristorazione, Logistica, Professionisti)
-- Favicon aggiornato con simbolo Alvenco, con backup del precedente
+- Favicon aggiornato con simbolo QC Tech, con backup del precedente
 - Logo sito migrato a SVG full + favicon rigenerata da simbolo SVG
 - Logo aumentato su desktop mantenendo scala mobile invariata
 

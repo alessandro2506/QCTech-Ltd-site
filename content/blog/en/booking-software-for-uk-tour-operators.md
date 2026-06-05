@@ -1,7 +1,7 @@
 ---
 title: "Booking Software for UK Tour Operators: How to Choose the Right System in 2026"
 date: "2026-05-25"
-author: "Alvenco Ltd"
+author: "Quantum Code Technologies Ltd"
 authorRole: "Digital Studio — Bishop's Stortford, UK"
 excerpt: "Choosing the right booking software can make or break a UK tour operator's revenue. Here's what to look for, what to avoid, and which platforms lead the market in 2026."
 tags: ["booking software", "tour operators", "UK travel tech", "e-commerce"]
@@ -90,7 +90,7 @@ Your booking software is only as effective as its integration with your website.
 
 The best implementations use the booking platform's API to deliver a fully embedded, branded checkout experience that never takes the customer off your website. This matters for trust (customers are increasingly wary of unfamiliar URLs during payment), for SEO (bouncing users to a subdomain affects session data), and for brand consistency.
 
-If you're unsure whether your current website is technically capable of a proper API integration, studios like Alvenco Ltd — who work regularly with Hertfordshire and wider UK travel businesses on web and e-commerce builds — can advise on what's required and whether your existing platform supports it cleanly.
+If you're unsure whether your current website is technically capable of a proper API integration, studios like Quantum Code Technologies Ltd — who work regularly with Hertfordshire and wider UK travel businesses on web and e-commerce builds — can advise on what's required and whether your existing platform supports it cleanly.
 
 ---
 

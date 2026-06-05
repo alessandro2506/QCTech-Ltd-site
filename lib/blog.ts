@@ -35,7 +35,7 @@ export function getPostBySlug(slug: string, locale: string): BlogPost | null {
     title: data.title ?? "",
     date: data.date ?? "",
     excerpt: data.excerpt ?? "",
-    author: data.author ?? "Alvenco Ltd",
+    author: data.author ?? "QC Tech",
     authorRole: data.authorRole ?? "",
     tags: data.tags ?? [],
     readTime: data.readTime ?? "5 min read",

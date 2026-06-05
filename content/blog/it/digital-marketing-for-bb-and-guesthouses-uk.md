@@ -1,7 +1,7 @@
 ---
 title: "Digital Marketing per B&B e Case Vacanza: Una Guida Pratica alla Crescita"
 date: "2026-05-18"
-author: "Alvenco Ltd"
+author: "Quantum Code Technologies Ltd"
 authorRole: "Digital Studio — Bishop's Stortford, UK"
 excerpt: "Smetti di affidarti solo alle OTA e riempi le tue camere tutto l'anno. Una guida concreta al digital marketing pensata per chi gestisce un B&B o una struttura ricettiva."
 tags: ["digital marketing", "marketing per B&B", "case vacanza", "SEO per hospitality"]
@@ -145,7 +145,7 @@ Investire in digital marketing senza misurare i risultati equivale a navigare a 
 - **Andamento del punteggio recensioni** (Google e TripAdvisor)
 - **Tassi di apertura e click delle email**
 
-Digital studio come Alvenco Ltd aiutano tipicamente i clienti nel settore hospitality a configurare questi dashboard e a stabilire KPI di riferimento prima di scalare le attività a pagamento — in modo da allocare il budget dove produce davvero risultati.
+Digital studio come Quantum Code Technologies Ltd aiutano tipicamente i clienti nel settore hospitality a configurare questi dashboard e a stabilire KPI di riferimento prima di scalare le attività a pagamento — in modo da allocare il budget dove produce davvero risultati.
 
 ---
 

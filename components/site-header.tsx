@@ -5,7 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { navRoutes } from "@/app.config";
-import { AlvencoLogo } from "@/components/alvenco-logo";
+import { QCTechLogo } from "@/components/alvenco-logo";
 import { Link, usePathname } from "@/i18n/routing";
 
 export function SiteHeader() {
@@ -44,7 +44,7 @@ export function SiteHeader() {
         <div className="relative mx-auto flex min-h-14 max-w-6xl items-center justify-end gap-2 px-4 py-1.5 sm:min-h-[3.75rem] sm:px-6">
           {showBar ? (
             <div className="absolute left-3 top-1/2 max-w-[min(100%,calc(100%-8rem))] -translate-y-1/2 sm:left-5">
-              <AlvencoLogo variant="header" linkToHome />
+              <QCTechLogo variant="header" linkToHome />
             </div>
           ) : null}
 

@@ -3,20 +3,22 @@
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
 
-const FULL_LOGO = "/logo-full.svg";
+const LOGO_LIGHT = "/logo-full.svg";
+const LOGO_WHITE = "/logo-full-white.svg";
 
-type AlvencoLogoProps = {
+type QCTechLogoProps = {
   variant?: "hero" | "header";
   linkToHome?: boolean;
   className?: string;
 };
 
-export function AlvencoLogo({
+export function QCTechLogo({
   variant = "hero",
   linkToHome = false,
   className = "",
-}: AlvencoLogoProps) {
+}: QCTechLogoProps) {
   const isHero = variant === "hero";
+  const logoSrc = isHero ? LOGO_WHITE : LOGO_LIGHT;
   const logoBox = isHero
     ? "h-[4.75rem] w-[13.2rem] sm:h-[6.2rem] sm:w-[17.2rem]"
     : "h-10 w-[9.8rem] sm:h-[3.35rem] sm:w-[13.2rem]";
@@ -25,8 +27,8 @@ export function AlvencoLogo({
     <span className={`inline-flex items-center ${className}`}>
       <span className={`relative block shrink-0 ${logoBox}`}>
         <Image
-          src={FULL_LOGO}
-          alt="Alvenco Ltd"
+          src={logoSrc}
+          alt="QC Tech"
           fill
           className="object-contain object-left"
           sizes={isHero ? "240px" : "190px"}
@@ -38,7 +40,7 @@ export function AlvencoLogo({
 
   if (linkToHome) {
     return (
-      <Link href="/" className="inline-flex" aria-label="Alvenco Ltd — Home">
+      <Link href="/" className="inline-flex" aria-label="QC Tech — Home">
         {inner}
       </Link>
     );

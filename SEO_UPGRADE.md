@@ -1,6 +1,6 @@
-# SEO_UPGRADE.md — Piano di upgrade SEO e conversione per alvencoltd.co.uk
+# SEO_UPGRADE.md — Piano di upgrade SEO e conversione per qc-tech.co.uk
 > Versione: 1.0 — Aprile 2026
-> Questo file contiene tutte le istruzioni per Cursor per eseguire l'upgrade SEO e di conversione del sito Alvenco.
+> Questo file contiene tutte le istruzioni per Cursor per eseguire l'upgrade SEO e di conversione del sito QC Tech.
 > **LEGGERE PRIMA DI QUALSIASI MODIFICA**: Questo è Next.js 16 con App Router e next-intl 4.x. Le convenzioni sono diverse da Next.js 13/14. Leggi `AGENTS.md` prima di scrivere qualsiasi codice.
 
 ---
@@ -45,7 +45,7 @@ Crea il file `app/sitemap.ts` nella root di `app/`:
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.alvencoltd.co.uk'
+  const baseUrl = 'https://www.qc-tech.co.uk'
   const locales = ['it', 'en']
   const pages = ['', '/servizi', '/vision', '/contatti']
 
@@ -86,8 +86,8 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/_next/'],
     },
-    sitemap: 'https://www.alvencoltd.co.uk/sitemap.xml',
-    host: 'https://www.alvencoltd.co.uk',
+    sitemap: 'https://www.qc-tech.co.uk/sitemap.xml',
+    host: 'https://www.qc-tech.co.uk',
   }
 }
 ```
@@ -109,16 +109,16 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: 'Metadata' })
 
   return {
-    metadataBase: new URL('https://www.alvencoltd.co.uk'),
+    metadataBase: new URL('https://www.qc-tech.co.uk'),
     title: {
       default: t('title'),
-      template: `%s | Alvenco Ltd`,
+      template: `%s | Quantum Code Technologies Ltd`,
     },
     description: t('description'),
     keywords: t('keywords'),
-    authors: [{ name: 'Alvenco Ltd', url: 'https://www.alvencoltd.co.uk' }],
-    creator: 'Alvenco Ltd',
-    publisher: 'Alvenco Ltd',
+    authors: [{ name: 'Quantum Code Technologies Ltd', url: 'https://www.qc-tech.co.uk' }],
+    creator: 'Quantum Code Technologies Ltd',
+    publisher: 'Quantum Code Technologies Ltd',
     robots: {
       index: true,
       follow: true,
@@ -134,8 +134,8 @@ export async function generateMetadata({
       type: 'website',
       locale: locale === 'it' ? 'it_IT' : 'en_GB',
       alternateLocale: locale === 'it' ? 'en_GB' : 'it_IT',
-      url: `https://www.alvencoltd.co.uk/${locale}`,
-      siteName: 'Alvenco Ltd',
+      url: `https://www.qc-tech.co.uk/${locale}`,
+      siteName: 'Quantum Code Technologies Ltd',
       title: t('title'),
       description: t('description'),
       images: [
@@ -143,7 +143,7 @@ export async function generateMetadata({
           url: '/og-image.png',
           width: 1200,
           height: 630,
-          alt: 'Alvenco Ltd — The UK–Italy Digital Studio',
+          alt: 'Quantum Code Technologies Ltd — The UK–Italy Digital Studio',
         },
       ],
     },
@@ -154,11 +154,11 @@ export async function generateMetadata({
       images: ['/og-image.png'],
     },
     alternates: {
-      canonical: `https://www.alvencoltd.co.uk/${locale}`,
+      canonical: `https://www.qc-tech.co.uk/${locale}`,
       languages: {
-        'it': 'https://www.alvencoltd.co.uk/it',
-        'en': 'https://www.alvencoltd.co.uk/en',
-        'x-default': 'https://www.alvencoltd.co.uk/en',
+        'it': 'https://www.qc-tech.co.uk/it',
+        'en': 'https://www.qc-tech.co.uk/en',
+        'x-default': 'https://www.qc-tech.co.uk/en',
       },
     },
   }
@@ -175,7 +175,7 @@ Se usi il componente dinamico:
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
-export const alt = 'Alvenco Ltd — The UK–Italy Digital Studio'
+export const alt = 'Quantum Code Technologies Ltd — The UK–Italy Digital Studio'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -204,7 +204,7 @@ export default async function Image() {
           Websites · E-commerce · Mobile Apps
         </div>
         <div style={{ color: '#B8924A', fontSize: 20, marginTop: 40, borderTop: '1px solid #B8924A', paddingTop: 20, width: '100%', textAlign: 'center' }}>
-          alvencoltd.co.uk
+          qc-tech.co.uk
         </div>
       </div>
     ),
@@ -248,7 +248,7 @@ export default withNextIntl(nextConfig);
 
 ### Strategia copy
 
-Il posizionamento centrale di Alvenco è il **differenziatore UK–Italia**: nessuna agenzia concorrente locale ha questa caratteristica. Tutto il copy deve ruotare attorno a questo.
+Il posizionamento centrale di QC Tech è il **differenziatore UK–Italia**: nessuna agenzia concorrente locale ha questa caratteristica. Tutto il copy deve ruotare attorno a questo.
 
 **Tono**: professionale, diretto, orientato ai risultati. Mai generico. Mai elenchi di tecnologie. Sempre benefici concreti.
 
@@ -263,8 +263,8 @@ Aggiungi o aggiorna il namespace `Metadata` e aggiorna i testi esistenti come se
 #### Namespace `Metadata` (nuovo — da aggiungere):
 ```json
 "Metadata": {
-  "title": "Web Agency UK & Italy — Websites, Apps & E-commerce | Alvenco Ltd",
-  "description": "Alvenco Ltd builds websites, e-commerce and mobile apps for businesses expanding between UK and Italy. Based in Bishop's Stortford, Hertfordshire. Free site audit.",
+  "title": "Web Agency UK & Italy — Websites, Apps & E-commerce | Quantum Code Technologies Ltd",
+  "description": "Quantum Code Technologies Ltd builds websites, e-commerce and mobile apps for businesses expanding between UK and Italy. Based in Bishop's Stortford, Hertfordshire. Free site audit.",
   "keywords": "web agency UK, web development Hertfordshire, app development UK, e-commerce UK Italy, web agency Bishop's Stortford, React Native app UK, Next.js development UK, Italian web agency UK"
 }
 ```
@@ -320,7 +320,7 @@ Aggiungi o aggiorna il namespace `Metadata` e aggiorna i testi esistenti come se
 ```json
 "About": {
   "headline": "We don't build sites. We build systems that bring you clients.",
-  "body": "Alvenco Ltd is a web and app studio based in Bishop's Stortford, Hertfordshire. Our team operates across UK and Italy — building digital products for businesses that want to grow in both markets.",
+  "body": "Quantum Code Technologies Ltd is a web and app studio based in Bishop's Stortford, Hertfordshire. Our team operates across UK and Italy — building digital products for businesses that want to grow in both markets.",
   "proof": "Our track record includes CivicAlert, a civic AI reporting platform deployed across UK local authorities — proof that we build things that scale.",
   "cta": "Book a free 15-minute call. No commitment."
 }
@@ -362,8 +362,8 @@ Stesso schema del file EN, tradotto professionalmente in italiano. NON usare tra
 #### Namespace `Metadata`:
 ```json
 "Metadata": {
-  "title": "Agenzia Web UK e Italia — Siti, App ed E-commerce | Alvenco Ltd",
-  "description": "Alvenco Ltd realizza siti web, e-commerce e app mobile per aziende che operano tra UK e Italia. Sede a Bishop's Stortford, Hertfordshire. Audit gratuito del sito.",
+  "title": "Agenzia Web UK e Italia — Siti, App ed E-commerce | Quantum Code Technologies Ltd",
+  "description": "Quantum Code Technologies Ltd realizza siti web, e-commerce e app mobile per aziende che operano tra UK e Italia. Sede a Bishop's Stortford, Hertfordshire. Audit gratuito del sito.",
   "keywords": "agenzia web UK, sviluppo web Hertfordshire, sviluppo app mobile UK, e-commerce UK Italia, agenzia web italiana UK, React Native UK, Next.js UK, agenzia digitale italiani in UK"
 }
 ```
@@ -419,7 +419,7 @@ Stesso schema del file EN, tradotto professionalmente in italiano. NON usare tra
 ```json
 "About": {
   "headline": "Non costruiamo siti. Costruiamo sistemi che portano clienti.",
-  "body": "Alvenco Ltd è uno studio web e app con sede a Bishop's Stortford, Hertfordshire. Il nostro team opera tra UK e Italia, costruendo prodotti digitali per aziende che vogliono crescere in entrambi i mercati.",
+  "body": "Quantum Code Technologies Ltd è uno studio web e app con sede a Bishop's Stortford, Hertfordshire. Il nostro team opera tra UK e Italia, costruendo prodotti digitali per aziende che vogliono crescere in entrambi i mercati.",
   "proof": "Il nostro portfolio include CivicAlert, una piattaforma AI civica distribuita presso enti locali del Regno Unito — la prova che costruiamo cose che scalano.",
   "cta": "Prenota una chiamata gratuita di 15 minuti. Senza impegno."
 }
@@ -467,15 +467,15 @@ export function SchemaOrg({ locale }: { locale: string }) {
     '@graph': [
       {
         '@type': 'LocalBusiness',
-        '@id': 'https://www.alvencoltd.co.uk/#organization',
-        name: 'Alvenco Ltd',
-        alternateName: 'Alvenco',
+        '@id': 'https://www.qc-tech.co.uk/#organization',
+        name: 'Quantum Code Technologies Ltd',
+        alternateName: 'QC Tech',
         description: locale === 'it'
           ? 'Studio digitale specializzato in siti web, e-commerce e app mobile per aziende UK e italiane.'
           : 'Digital studio specialised in websites, e-commerce and mobile apps for UK and Italian businesses.',
-        url: 'https://www.alvencoltd.co.uk',
+        url: 'https://www.qc-tech.co.uk',
         telephone: '+447895907800',
-        email: 'hello@alvenco.co.uk',
+        email: 'hello@qc-tech.co.uk',
         address: {
           '@type': 'PostalAddress',
           addressLocality: "Bishop's Stortford",
@@ -497,14 +497,14 @@ export function SchemaOrg({ locale }: { locale: string }) {
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://www.alvencoltd.co.uk/#website',
-        url: 'https://www.alvencoltd.co.uk',
-        name: 'Alvenco Ltd',
-        publisher: { '@id': 'https://www.alvencoltd.co.uk/#organization' },
+        '@id': 'https://www.qc-tech.co.uk/#website',
+        url: 'https://www.qc-tech.co.uk',
+        name: 'Quantum Code Technologies Ltd',
+        publisher: { '@id': 'https://www.qc-tech.co.uk/#organization' },
         inLanguage: ['en-GB', 'it-IT'],
         potentialAction: {
           '@type': 'SearchAction',
-          target: 'https://www.alvencoltd.co.uk/en?q={search_term_string}',
+          target: 'https://www.qc-tech.co.uk/en?q={search_term_string}',
           'query-input': 'required name=search_term_string',
         },
       },

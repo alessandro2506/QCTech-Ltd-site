@@ -9,7 +9,7 @@ const blogSlugs = [
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://www.alvencoltd.co.uk";
+  const baseUrl = "https://www.qc-tech.co.uk";
 
   const itPages = [
     { path: "/it", priority: 1.0, freq: "weekly" },

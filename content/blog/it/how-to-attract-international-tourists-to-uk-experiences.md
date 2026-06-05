@@ -1,7 +1,7 @@
 ---
 title: "Come Attrarre Turisti Internazionali verso la Tua Esperienza: Una Guida Pratica per Imprenditori"
 date: "2026-05-03"
-author: "Alvenco Ltd"
+author: "Quantum Code Technologies Ltd"
 authorRole: "Digital Studio — Bishop's Stortford, UK"
 excerpt: "I visitatori internazionali hanno speso 31,9 miliardi di sterline nel Regno Unito nel 2024. Ecco come la tua attività esperienziale può conquistare una fetta più grande di questo mercato."
 tags: ["turismo internazionale", "marketing turistico UK", "attività esperienziale", "digital marketing UK"]
@@ -52,7 +52,7 @@ Il tuo sito web è quasi sempre il primo vero punto di contatto. Se è stato pen
 - **Prestazioni ottimizzate per mobile:** Oltre il 78% delle ricerche di viaggi inizia da smartphone a livello globale (Google Travel Insights, 2025). Un'esperienza mobile lenta o difficile da usare è una perdita diretta di fatturato.
 - **Disponibilità nel fuso orario del visitatore:** Mostra gli orari disponibili nel fuso orario del visitatore, oppure specifica chiaramente in quale fuso orario operi.
 
-Studi come Alvenco Ltd collaborano con attività esperienziali nel Regno Unito per verificare e ottimizzare questi elementi — in particolare per le realtà che faticano a trasformare il traffico web in prenotazioni concrete.
+Studi come Quantum Code Technologies Ltd collaborano con attività esperienziali nel Regno Unito per verificare e ottimizzare questi elementi — in particolare per le realtà che faticano a trasformare il traffico web in prenotazioni concrete.
 
 ---
 

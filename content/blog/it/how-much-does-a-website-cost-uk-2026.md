@@ -2,7 +2,7 @@
 title: "Quanto Costa un Sito Web nel 2026? (Guida Completa per il Mercato UK)"
 date: "2026-05-03"
 author: "Alessandro Fiscella"
-authorRole: "CTO, Alvenco Ltd"
+authorRole: "CTO, Quantum Code Technologies Ltd"
 excerpt: "Dalla landing page alla piattaforma e-commerce — una panoramica trasparente sui costi dei siti web nel mercato UK nel 2026, con prezzi reali e tutto ciò che influenza il preventivo."
 tags: ["web design", "prezzi", "UK", "piccole imprese"]
 readTime: "7 min di lettura"

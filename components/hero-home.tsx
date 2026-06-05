@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowRight, ShieldCheck } from "lucide-react";
-import { AlvencoLogo } from "@/components/alvenco-logo";
+import { QCTechLogo } from "@/components/alvenco-logo";
 import { Link } from "@/i18n/routing";
 
 export function HeroHome() {
@@ -27,7 +27,7 @@ export function HeroHome() {
           className="mb-6 sm:mb-8"
         >
           <div className="flex justify-center">
-            <AlvencoLogo variant="hero" />
+            <QCTechLogo variant="hero" />
           </div>
         </motion.div>
 

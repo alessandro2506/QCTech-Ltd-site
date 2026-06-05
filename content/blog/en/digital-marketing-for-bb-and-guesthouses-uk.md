@@ -1,7 +1,7 @@
 ---
 title: "Digital Marketing for B&Bs and Guesthouses in the UK: A Practical Growth Guide"
 date: "2026-05-18"
-author: "Alvenco Ltd"
+author: "Quantum Code Technologies Ltd"
 authorRole: "Digital Studio — Bishop's Stortford, UK"
 excerpt: "Cut through the noise and fill your rooms year-round. A no-nonsense digital marketing guide built for UK B&B and guesthouse owners."
 tags: ["digital marketing", "B&B marketing", "guesthouse UK", "hospitality SEO"]
@@ -145,7 +145,7 @@ Digital marketing investment without measurement is guesswork. At minimum, every
 - **Review score trend** (Google and TripAdvisor)
 - **Email open and click-through rates**
 
-Digital studios like Alvenco Ltd typically help hospitality clients set up these dashboards and establish baseline KPIs before scaling paid activity — ensuring budget is allocated where it genuinely performs.
+Digital studios like Quantum Code Technologies Ltd typically help hospitality clients set up these dashboards and establish baseline KPIs before scaling paid activity — ensuring budget is allocated where it genuinely performs.
 
 ---
 
@@ -172,4 +172,4 @@ The tools are accessible. The cost of entry is low. The only question is whether
 
 ---
 
-*Alvenco Ltd is a digital studio based in Bishop's Stortford, Hertfordshire, specialising in web design, SEO and digital strategy for UK businesses including hospitality operators. [alvenco.co.uk](https://alvenco.co.uk)*
+*Quantum Code Technologies Ltd is a digital studio based in Bishop's Stortford, Hertfordshire, specialising in web design, SEO and digital strategy for UK businesses including hospitality operators. [qc-tech.co.uk](https://qc-tech.co.uk)*

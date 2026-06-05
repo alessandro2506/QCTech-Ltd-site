@@ -1,7 +1,7 @@
 ---
 title: "Software di Prenotazione per Tour Operator: Come Scegliere il Sistema Giusto nel 2026"
 date: "2026-05-25"
-author: "Alvenco Ltd"
+author: "Quantum Code Technologies Ltd"
 authorRole: "Digital Studio — Bishop's Stortford, UK"
 excerpt: "Scegliere il software di prenotazione giusto può determinare il successo o il fallimento di un tour operator. Ecco cosa valutare, cosa evitare e quali piattaforme dominano il mercato nel 2026."
 tags: ["software di prenotazione", "tour operator", "travel tech", "e-commerce"]
@@ -90,7 +90,7 @@ Il software di prenotazione vale quanto la sua integrazione con il vostro sito. 
 
 Le implementazioni migliori utilizzano le API della piattaforma di prenotazione per offrire un'esperienza di acquisto completamente integrata e brandizzata, senza mai portare il cliente fuori dal vostro sito. Questo è importante per la fiducia (gli utenti sono sempre più diffidenti nei confronti di URL sconosciuti durante il pagamento), per la SEO (il rimbalzo verso un sottodominio influisce sui dati di sessione) e per la coerenza del brand.
 
-Se non siete sicuri che il vostro sito attuale sia tecnicamente in grado di supportare una corretta integrazione via API, studi come Alvenco Ltd — che lavorano regolarmente con aziende italiane e britanniche del settore travel su progetti web ed e-commerce — possono valutare cosa è necessario e se la vostra piattaforma attuale lo supporta.
+Se non siete sicuri che il vostro sito attuale sia tecnicamente in grado di supportare una corretta integrazione via API, studi come Quantum Code Technologies Ltd — che lavorano regolarmente con aziende italiane e britanniche del settore travel su progetti web ed e-commerce — possono valutare cosa è necessario e se la vostra piattaforma attuale lo supporta.
 
 ---
 

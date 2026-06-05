@@ -26,11 +26,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: post.excerpt,
     ...(post.tags.length > 0 ? { keywords: post.tags.join(", ") } : {}),
     alternates: {
-      canonical: `https://www.alvencoltd.co.uk/${locale}/blog/${slug}`,
+      canonical: `https://www.qc-tech.co.uk/${locale}/blog/${slug}`,
       languages: {
-        it: `https://www.alvencoltd.co.uk/it/blog/${slug}`,
-        en: `https://www.alvencoltd.co.uk/en/blog/${slug}`,
-        "x-default": `https://www.alvencoltd.co.uk/en/blog/${slug}`,
+        it: `https://www.qc-tech.co.uk/it/blog/${slug}`,
+        en: `https://www.qc-tech.co.uk/en/blog/${slug}`,
+        "x-default": `https://www.qc-tech.co.uk/en/blog/${slug}`,
       },
     },
     openGraph: {
@@ -62,10 +62,10 @@ export default async function BlogPostPage({ params }: Props) {
     author: { "@type": "Person", name: post.author },
     publisher: {
       "@type": "Organization",
-      name: "Alvenco Ltd",
-      url: "https://www.alvencoltd.co.uk",
+      name: "Quantum Code Technologies Ltd",
+      url: "https://www.qc-tech.co.uk",
     },
-    url: `https://www.alvencoltd.co.uk/${locale}/blog/${slug}`,
+    url: `https://www.qc-tech.co.uk/${locale}/blog/${slug}`,
     inLanguage: locale === "it" ? "it-IT" : "en-GB",
   };
 

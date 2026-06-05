@@ -17,7 +17,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
   return {
-    metadataBase: new URL("https://www.alvencoltd.co.uk"),
+    metadataBase: new URL("https://www.qc-tech.co.uk"),
     title: t("servicesTitle"),
     description: t("servicesDescription"),
   };

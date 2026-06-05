@@ -1,16 +1,17 @@
 /**
- * Alvenco demo — config non testuale (URL, contatti).
+ * QC Tech — config non testuale (URL, contatti).
  * Le stringhe UI vivono in messages/{locale}.json.
  */
 export const siteConfig = {
-  name: "Alvenco Ltd",
-  shortName: "Alvenco",
-  url: "https://www.alvencoltd.co.uk",
+  name: "Quantum Code Technologies Ltd",
+  shortName: "QC Tech",
+  url: "https://www.qc-tech.co.uk",
   localeIt: "it_IT",
   localeEn: "en_GB",
   links: {
-    email: "hello@alvenco.co.uk",
+    email: "hello@qc-tech.co.uk",
     phone: "+44 7754 812247",
+    whatsapp: "https://wa.me/447754812247",
   },
   address: {
     streetAddress: "Flat 3, Jackson Wharf, Adderley Road",

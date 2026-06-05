@@ -1,7 +1,7 @@
 ---
 title: "How to Attract International Tourists to UK Experiences: A Practical Guide for Business Owners"
 date: "2026-05-03"
-author: "Alvenco Ltd"
+author: "Quantum Code Technologies Ltd"
 authorRole: "Digital Studio — Bishop's Stortford, UK"
 excerpt: "International visitors spent £31.9bn in the UK in 2024. Here's how your experience business can capture a greater share of that market."
 tags: ["international tourism", "UK travel marketing", "experience business", "digital marketing UK"]
@@ -52,7 +52,7 @@ Your website is almost always the first real point of contact. If it is built fo
 - **Mobile-first performance:** Over 78% of travel searches begin on mobile globally (Google Travel Insights, 2025). A slow or clunky mobile experience is a direct revenue leak.
 - **Booking in local time zones:** Show availability in the visitor's own time zone, or state clearly which time zone you operate in.
 
-Studios like Alvenco Ltd work with UK experience businesses to audit and rebuild these touchpoints — particularly for businesses finding that their traffic doesn't convert into bookings at the rate it should.
+Studios like Quantum Code Technologies Ltd work with UK experience businesses to audit and rebuild these touchpoints — particularly for businesses finding that their traffic doesn't convert into bookings at the rate it should.
 
 ---
 
@@ -161,4 +161,4 @@ Fix the infrastructure. Optimise for discovery. Price with confidence. Then scal
 
 ---
 
-*Want an honest assessment of how your experience business appears to international visitors online? The team at Alvenco Ltd offers digital audits for UK tourism and experience businesses — covering everything from site performance and SEO to booking conversion. Based in Bishop's Stortford, we work with clients across Hertfordshire, Essex, and the wider UK.*
+*Want an honest assessment of how your experience business appears to international visitors online? The team at Quantum Code Technologies Ltd offers digital audits for UK tourism and experience businesses — covering everything from site performance and SEO to booking conversion. Based in Bishop's Stortford, we work with clients across Hertfordshire, Essex, and the wider UK.*

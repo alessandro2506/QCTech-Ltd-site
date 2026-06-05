@@ -53,16 +53,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const localePath = getLocalizedPath("/", locale as "it" | "en");
 
   return {
-    metadataBase: new URL("https://www.alvencoltd.co.uk"),
+    metadataBase: new URL("https://www.qc-tech.co.uk"),
     title: {
       default: t("title"),
-      template: "%s | Alvenco Ltd",
+      template: "%s | QC Tech",
     },
     description: t("description"),
     keywords: t("keywords"),
-    authors: [{ name: "Alvenco Ltd", url: "https://www.alvencoltd.co.uk" }],
-    creator: "Alvenco Ltd",
-    publisher: "Alvenco Ltd",
+    authors: [{ name: "Quantum Code Technologies Ltd", url: "https://www.qc-tech.co.uk" }],
+    creator: "Quantum Code Technologies Ltd",
+    publisher: "Quantum Code Technologies Ltd",
     robots: {
       index: true,
       follow: true,
@@ -78,8 +78,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "website",
       locale: locale === "it" ? "it_IT" : "en_GB",
       alternateLocale: locale === "it" ? "en_GB" : "it_IT",
-      url: `https://www.alvencoltd.co.uk${localePath}`,
-      siteName: "Alvenco Ltd",
+      url: `https://www.qc-tech.co.uk${localePath}`,
+      siteName: "QC Tech",
       title: t("title"),
       description: t("description"),
       images: [
@@ -87,7 +87,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           url: "/og-image.png",
           width: 1200,
           height: 630,
-          alt: "Alvenco Ltd — The UK–Italy Digital Studio",
+          alt: "QC Tech — The UK–Italy Digital Studio",
         },
       ],
     },
@@ -98,11 +98,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: ["/og-image.png"],
     },
     alternates: {
-      canonical: `https://www.alvencoltd.co.uk${localePath}`,
+      canonical: `https://www.qc-tech.co.uk${localePath}`,
       languages: {
-        it: `https://www.alvencoltd.co.uk${getLocalizedPath("/", "it")}`,
-        en: `https://www.alvencoltd.co.uk${getLocalizedPath("/", "en")}`,
-        "x-default": `https://www.alvencoltd.co.uk${getLocalizedPath("/", "en")}`,
+        it: `https://www.qc-tech.co.uk${getLocalizedPath("/", "it")}`,
+        en: `https://www.qc-tech.co.uk${getLocalizedPath("/", "en")}`,
+        "x-default": `https://www.qc-tech.co.uk${getLocalizedPath("/", "en")}`,
       },
     },
   };

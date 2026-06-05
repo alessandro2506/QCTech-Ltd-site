@@ -6,16 +6,16 @@ export function SchemaOrg({ locale }: { locale: string }) {
     "@graph": [
       {
         "@type": "LocalBusiness",
-        "@id": "https://www.alvencoltd.co.uk/#organization",
-        name: "Alvenco Ltd",
-        alternateName: "Alvenco",
+        "@id": "https://www.qc-tech.co.uk/#organization",
+        name: "Quantum Code Technologies Ltd",
+        alternateName: "QC Tech",
         description:
           locale === "it"
             ? "Studio digitale specializzato in siti web, e-commerce e app mobile per aziende UK e italiane."
             : "Digital studio specialised in websites, e-commerce and mobile apps for UK and Italian businesses.",
-        url: "https://www.alvencoltd.co.uk",
-        telephone: "+447895907800",
-        email: "hello@alvenco.co.uk",
+        url: "https://www.qc-tech.co.uk",
+        telephone: "+447754812247",
+        email: "hello@qc-tech.co.uk",
         address: {
           "@type": "PostalAddress",
           streetAddress: siteConfig.address.streetAddress,
@@ -37,14 +37,14 @@ export function SchemaOrg({ locale }: { locale: string }) {
       },
       {
         "@type": "WebSite",
-        "@id": "https://www.alvencoltd.co.uk/#website",
-        url: "https://www.alvencoltd.co.uk",
-        name: "Alvenco Ltd",
-        publisher: { "@id": "https://www.alvencoltd.co.uk/#organization" },
+        "@id": "https://www.qc-tech.co.uk/#website",
+        url: "https://www.qc-tech.co.uk",
+        name: "QC Tech",
+        publisher: { "@id": "https://www.qc-tech.co.uk/#organization" },
         inLanguage: ["en-GB", "it-IT"],
         potentialAction: {
           "@type": "SearchAction",
-          target: "https://www.alvencoltd.co.uk/en?q={search_term_string}",
+          target: "https://www.qc-tech.co.uk/en?q={search_term_string}",
           "query-input": "required name=search_term_string",
         },
       },
