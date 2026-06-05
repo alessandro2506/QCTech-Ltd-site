@@ -18,10 +18,10 @@ export function QCTechLogo({
   className = "",
 }: QCTechLogoProps) {
   const isHero = variant === "hero";
-  const logoSrc = isHero ? LOGO_WHITE : LOGO_LIGHT;
+  const logoSrc = LOGO_LIGHT;
   const logoBox = isHero
-    ? "h-[4.75rem] w-[13.2rem] sm:h-[6.2rem] sm:w-[17.2rem]"
-    : "h-10 w-[9.8rem] sm:h-[3.35rem] sm:w-[13.2rem]";
+    ? "h-[6rem] w-[16.8rem] sm:h-[8rem] sm:w-[22.4rem]"
+    : "h-[3.2rem] w-[12rem] sm:h-[4rem] sm:w-[15rem]";
 
   const inner = (
     <span className={`inline-flex items-center ${className}`}>
@@ -31,7 +31,7 @@ export function QCTechLogo({
           alt="QC Tech"
           fill
           className="object-contain object-left"
-          sizes={isHero ? "240px" : "190px"}
+          sizes={isHero ? "(max-width:640px) 314px, 426px" : "(max-width:640px) 192px, 240px"}
           priority={isHero}
         />
       </span>

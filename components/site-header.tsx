@@ -5,7 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { navRoutes } from "@/app.config";
-import { QCTechLogo } from "@/components/alvenco-logo";
+import { QCTechLogo } from "@/components/qctech-logo";
 import { Link, usePathname } from "@/i18n/routing";
 
 export function SiteHeader() {

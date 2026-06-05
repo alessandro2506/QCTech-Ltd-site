@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowRight, ShieldCheck } from "lucide-react";
-import { QCTechLogo } from "@/components/alvenco-logo";
+import { QCTechLogo } from "@/components/qctech-logo";
 import { Link } from "@/i18n/routing";
 
 export function HeroHome() {
