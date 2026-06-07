@@ -14,7 +14,7 @@ export function HeroHome() {
     <section className="relative overflow-hidden pb-20 pt-[4.5rem] sm:pb-28 sm:pt-[4.75rem]">
       {/* Matrix rain full-hero background */}
       <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden>
-        <MatrixRain className="absolute inset-0 opacity-[0.09]" />
+        <MatrixRain className="absolute inset-0 opacity-[0.22]" />
       </div>
 
       {/* Quantum ambient glows */}

@@ -33,7 +33,7 @@ export function MatrixRain({ className }: { className?: string }) {
       lastTime = now;
 
       // Fade trail
-      ctx.fillStyle = "rgba(8, 5, 15, 0.05)";
+      ctx.fillStyle = "rgba(8, 5, 15, 0.04)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       ctx.font = `${FONT_SIZE}px "Geist Mono", monospace`;
@@ -43,15 +43,15 @@ export function MatrixRain({ className }: { className?: string }) {
         // Head: bright cyan
         const headBrightness = drops[i] > 0 ? 1 : 0;
         if (headBrightness > 0) {
-          ctx.fillStyle = `rgba(0, 212, 255, 0.7)`;
+          ctx.fillStyle = `rgba(0, 212, 255, 0.95)`;
           ctx.fillText(
             CHARS[Math.floor(Math.random() * CHARS.length)],
             i * FONT_SIZE,
             y,
           );
         }
-        // Trail: violet fading
-        ctx.fillStyle = `rgba(108, 99, 255, 0.25)`;
+        // Trail: violet
+        ctx.fillStyle = `rgba(108, 99, 255, 0.55)`;
         ctx.fillText(
           CHARS[Math.floor(Math.random() * CHARS.length)],
           i * FONT_SIZE,
