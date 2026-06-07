@@ -26,21 +26,23 @@ export default async function HomePage() {
     <>
       <HeroHome />
 
-      <section className="border-y border-slate-100 bg-slate-50/60 py-12">
-        <div className="mx-auto grid max-w-6xl gap-8 px-4 sm:grid-cols-3 sm:px-6">
+      {/* Value cards — dark glass */}
+      <section className="relative border-y border-violet-500/10 py-12">
+        <div className="section-glow-top absolute inset-x-0 top-0 h-px" />
+        <div className="mx-auto grid max-w-6xl gap-6 px-4 sm:grid-cols-3 sm:px-6">
           {valueCards.map((item, i) => {
             const Icon = icons[i];
             return (
               <div
                 key={item.title}
-                className="flex gap-4 rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm"
+                className="glass-card flex gap-4 rounded-2xl p-5 transition-colors hover:border-violet-400/30"
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-cyan-500 text-white shadow-md shadow-cyan-500/20">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-violet-600 to-cyan-500 text-white shadow-md shadow-violet-500/20">
                   <Icon className="h-6 w-6" aria-hidden />
                 </div>
                 <div>
-                  <h2 className="font-semibold text-slate-900">{item.title}</h2>
-                  <p className="mt-1 text-sm text-slate-600">{item.body}</p>
+                  <h2 className="font-semibold text-slate-100">{item.title}</h2>
+                  <p className="mt-1 text-sm text-slate-400">{item.body}</p>
                 </div>
               </div>
             );
@@ -48,18 +50,22 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* Pricing section */}
       <section
         id="prezzi"
-        className="mx-auto max-w-6xl scroll-mt-24 space-y-12 px-4 py-20 sm:scroll-mt-28 sm:px-6"
+        className="relative mx-auto max-w-6xl scroll-mt-24 space-y-12 px-4 py-20 sm:scroll-mt-28 sm:px-6"
       >
+        {/* Ambient glow */}
+        <div className="pointer-events-none absolute left-1/2 top-0 h-64 w-96 -translate-x-1/2 rounded-full bg-violet-600/8 blur-[80px]" aria-hidden />
+
         <div className="max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-widest text-cyan-600">
+          <p className="text-xs font-semibold uppercase tracking-widest text-cyan-400">
             {t("pricingIntroEyebrow")}
           </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+          <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
             {t("pricingIntroTitle")}
           </h2>
-          <p className="mt-3 text-lg text-slate-600">{t("pricingIntroBody")}</p>
+          <p className="mt-3 text-lg text-slate-400">{t("pricingIntroBody")}</p>
         </div>
 
         <PricingCluster
@@ -89,14 +95,16 @@ export default async function HomePage() {
           contactTopic="ecommerce"
         />
 
-        <div className="rounded-2xl border border-blue-100 bg-gradient-to-br from-blue-600/5 via-white to-cyan-500/10 p-8 text-center">
-          <p className="text-lg font-semibold text-slate-900">
+        {/* CTA band */}
+        <div className="relative overflow-hidden rounded-2xl border border-violet-500/25 bg-gradient-to-br from-violet-600/10 via-transparent to-cyan-500/10 p-8 text-center">
+          <div className="pointer-events-none absolute inset-0 bg-quantum-grid opacity-30" aria-hidden />
+          <p className="relative text-lg font-semibold text-slate-100">
             {t("ctaBandTitle")}
           </p>
-          <p className="mt-2 text-slate-600">{t("ctaBandBody")}</p>
+          <p className="relative mt-2 text-slate-400">{t("ctaBandBody")}</p>
           <Link
             href="/contatti"
-            className="mt-6 inline-flex rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-cyan-500/25 transition hover:brightness-105"
+            className="relative mt-6 inline-flex rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-violet-500/25 transition hover:brightness-110"
           >
             {t("ctaBandButton")}
           </Link>

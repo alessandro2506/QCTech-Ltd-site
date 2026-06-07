@@ -22,7 +22,7 @@ export function FaqAccordion({ items }: Props) {
         return (
           <div
             key={item.question}
-            className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
+            className="overflow-hidden rounded-2xl border border-violet-500/15 bg-white/3 transition hover:border-violet-400/25"
           >
             <button
               type="button"
@@ -30,11 +30,11 @@ export function FaqAccordion({ items }: Props) {
               onClick={() => setOpenIdx((curr) => (curr === idx ? null : idx))}
               aria-expanded={isOpen}
             >
-              <span className="text-base font-semibold text-slate-900">
+              <span className="text-base font-semibold text-slate-200">
                 {item.question}
               </span>
               <span
-                className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-slate-300 text-lg font-medium text-slate-700"
+                className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-violet-500/30 text-lg font-medium text-violet-400"
                 aria-hidden
               >
                 {isOpen ? "−" : "+"}
@@ -50,7 +50,7 @@ export function FaqAccordion({ items }: Props) {
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.24, ease: "easeInOut" }}
                 >
-                  <p className="border-t border-slate-100 px-5 py-4 text-sm leading-relaxed text-slate-600">
+                  <p className="border-t border-violet-500/10 px-5 py-4 text-sm leading-relaxed text-slate-400">
                     {item.answer}
                   </p>
                 </motion.div>

@@ -27,10 +27,10 @@ export default async function FAQPage() {
   return (
     <div className="pb-24 pt-28 sm:pt-32">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
-        <p className="text-xs font-semibold uppercase tracking-widest text-cyan-600">
+        <p className="text-xs font-semibold uppercase tracking-widest text-cyan-400">
           FAQ
         </p>
-        <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+        <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
           {t("title")}
         </h1>
 
@@ -38,13 +38,13 @@ export default async function FAQPage() {
           <FaqAccordion items={items} />
         </div>
 
-        <div className="mt-12 rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50 to-cyan-50/60 p-6 text-center">
-          <p className="text-sm text-slate-600">
+        <div className="mt-12 rounded-2xl border border-violet-500/25 bg-gradient-to-br from-violet-600/8 via-transparent to-cyan-500/5 p-6 text-center">
+          <p className="text-sm text-slate-400">
             {t("a3")}
           </p>
           <Link
             href="/contatti"
-            className="mt-4 inline-flex rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/25 transition hover:brightness-105"
+            className="mt-4 inline-flex rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-violet-500/25 transition hover:brightness-110"
           >
             {tNav("quote")}
           </Link>

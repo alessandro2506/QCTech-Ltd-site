@@ -37,7 +37,7 @@ export function SiteHeader() {
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,border-color] duration-300 ${
           showBar
-            ? "border-b border-slate-200/80 bg-white/85 shadow-sm backdrop-blur-md"
+            ? "border-b border-violet-500/15 bg-[#08050f]/90 shadow-[0_1px_20px_rgba(108,99,255,0.08)] backdrop-blur-md"
             : "border-b border-transparent bg-transparent"
         }`}
       >
@@ -48,11 +48,11 @@ export function SiteHeader() {
             </div>
           ) : null}
 
-          <div className="hidden items-center gap-1 rounded-xl border border-slate-200/80 bg-white/90 px-1 py-0.5 text-xs font-semibold shadow-sm sm:flex">
+          <div className="hidden items-center gap-1 rounded-xl border border-violet-500/25 bg-white/5 px-1 py-0.5 text-xs font-semibold backdrop-blur-sm sm:flex">
             <Link
               href={pathname}
               locale="it"
-              className={`rounded-lg px-2 py-1 ${locale === "it" ? "bg-slate-900 text-white" : "text-slate-600 hover:bg-slate-100"}`}
+              className={`rounded-lg px-2 py-1 transition-colors ${locale === "it" ? "bg-violet-600 text-white" : "text-slate-400 hover:bg-white/10 hover:text-slate-200"}`}
               aria-current={locale === "it" ? "true" : undefined}
             >
               {t("langIt")}
@@ -60,7 +60,7 @@ export function SiteHeader() {
             <Link
               href={pathname}
               locale="en"
-              className={`rounded-lg px-2 py-1 ${locale === "en" ? "bg-slate-900 text-white" : "text-slate-600 hover:bg-slate-100"}`}
+              className={`rounded-lg px-2 py-1 transition-colors ${locale === "en" ? "bg-violet-600 text-white" : "text-slate-400 hover:bg-white/10 hover:text-slate-200"}`}
               aria-current={locale === "en" ? "true" : undefined}
             >
               {t("langEn")}
@@ -72,8 +72,8 @@ export function SiteHeader() {
             onClick={() => setDrawerOpen(true)}
             className={`flex h-11 w-11 items-center justify-center rounded-xl transition-colors ${
               showBar
-                ? "text-slate-800 hover:bg-slate-100"
-                : "bg-white/90 text-slate-800 shadow-md ring-1 ring-slate-200/80 hover:bg-white"
+                ? "text-slate-200 hover:bg-white/10"
+                : "bg-white/5 text-slate-200 shadow-md ring-1 ring-violet-500/25 backdrop-blur-sm hover:bg-white/10"
             }`}
             aria-expanded={drawerOpen}
             aria-controls="site-drawer"
@@ -106,28 +106,28 @@ export function SiteHeader() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 28, stiffness: 320 }}
-              className="fixed right-0 top-0 z-[70] flex h-full w-[min(100vw-3rem,20rem)] flex-col border-l border-slate-200 bg-white shadow-2xl"
+              className="fixed right-0 top-0 z-[70] flex h-full w-[min(100vw-3rem,20rem)] flex-col border-l border-violet-500/20 bg-[#0d0720] shadow-2xl shadow-violet-900/30"
             >
-              <div className="flex items-center justify-between border-b border-slate-100 px-4 py-4">
-                <span className="text-sm font-semibold text-slate-900">
+              <div className="flex items-center justify-between border-b border-violet-500/15 px-4 py-4">
+                <span className="text-sm font-semibold text-slate-200">
                   {t("menu")}
                 </span>
                 <button
                   type="button"
                   onClick={() => setDrawerOpen(false)}
-                  className="flex h-10 w-10 items-center justify-center rounded-lg text-slate-600 hover:bg-slate-100"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg text-slate-400 hover:bg-white/10 hover:text-slate-200"
                   aria-label={t("close")}
                 >
                   <X className="h-5 w-5" />
                 </button>
               </div>
 
-              <div className="flex gap-2 border-b border-slate-100 px-4 py-3">
+              <div className="flex gap-2 border-b border-violet-500/15 px-4 py-3">
                 <Link
                   href={pathname}
                   locale="it"
                   onClick={() => setDrawerOpen(false)}
-                  className={`flex-1 rounded-lg py-2 text-center text-sm font-semibold ${locale === "it" ? "bg-slate-900 text-white" : "bg-slate-100 text-slate-700"}`}
+                  className={`flex-1 rounded-lg py-2 text-center text-sm font-semibold transition-colors ${locale === "it" ? "bg-violet-600 text-white" : "bg-white/5 text-slate-400 hover:bg-white/10"}`}
                 >
                   {t("langIt")}
                 </Link>
@@ -135,7 +135,7 @@ export function SiteHeader() {
                   href={pathname}
                   locale="en"
                   onClick={() => setDrawerOpen(false)}
-                  className={`flex-1 rounded-lg py-2 text-center text-sm font-semibold ${locale === "en" ? "bg-slate-900 text-white" : "bg-slate-100 text-slate-700"}`}
+                  className={`flex-1 rounded-lg py-2 text-center text-sm font-semibold transition-colors ${locale === "en" ? "bg-violet-600 text-white" : "bg-white/5 text-slate-400 hover:bg-white/10"}`}
                 >
                   {t("langEn")}
                 </Link>
@@ -151,8 +151,8 @@ export function SiteHeader() {
                         onClick={() => setDrawerOpen(false)}
                         className={`block rounded-xl px-4 py-3 text-base font-medium transition-colors ${
                           active
-                            ? "bg-gradient-to-r from-blue-600/10 to-cyan-500/10 text-blue-700"
-                            : "text-slate-700 hover:bg-slate-50"
+                            ? "bg-gradient-to-r from-violet-600/20 to-cyan-500/10 text-violet-300"
+                            : "text-slate-300 hover:bg-white/5 hover:text-slate-100"
                         }`}
                       >
                         {t(item.key)}
@@ -161,11 +161,11 @@ export function SiteHeader() {
                   );
                 })}
               </ul>
-              <div className="border-t border-slate-100 p-4">
+              <div className="border-t border-violet-500/15 p-4">
                 <Link
                   href="/contatti"
                   onClick={() => setDrawerOpen(false)}
-                  className="flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/25 transition hover:brightness-105"
+                  className="flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-violet-500/25 transition hover:brightness-110"
                 >
                   {t("quote")}
                 </Link>

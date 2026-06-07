@@ -123,7 +123,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       lang={locale}
       className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-white text-slate-900">
+      <body className="flex min-h-full flex-col bg-[#08050f] text-slate-100">
         {/* Google Analytics 4 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-9T00M6BEF3"

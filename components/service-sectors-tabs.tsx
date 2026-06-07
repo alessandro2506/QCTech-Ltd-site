@@ -56,19 +56,19 @@ export function ServiceSectorsTabs({
       initial={{ opacity: 0, y: 24 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-      className="mt-14 rounded-2xl border border-slate-200/90 bg-gradient-to-br from-white via-slate-50/40 to-cyan-50/30 p-6 shadow-sm sm:mt-16 sm:p-8"
+      className="glass-card mt-14 rounded-2xl p-6 sm:mt-16 sm:p-8"
       aria-labelledby="sectors-heading"
     >
-      <p className="text-xs font-semibold uppercase tracking-widest text-cyan-600">
+      <p className="text-xs font-semibold uppercase tracking-widest text-cyan-400">
         {eyebrow}
       </p>
       <h2
         id="sectors-heading"
-        className="mt-2 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl"
+        className="mt-2 text-2xl font-bold tracking-tight text-white sm:text-3xl"
       >
         {title}
       </h2>
-      <p className="mt-3 max-w-2xl text-slate-600">{intro}</p>
+      <p className="mt-3 max-w-2xl text-slate-400">{intro}</p>
 
       <div
         className="mt-8 flex flex-wrap gap-2"
@@ -86,8 +86,8 @@ export function ServiceSectorsTabs({
             onClick={() => setActive(i)}
             className={`rounded-xl px-4 py-2.5 text-sm font-semibold transition ${
               active === i
-                ? "bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-md shadow-cyan-500/20"
-                : "border border-slate-200 bg-white text-slate-700 hover:border-cyan-300/60 hover:bg-slate-50"
+                ? "bg-gradient-to-r from-violet-600 to-cyan-500 text-white shadow-md shadow-violet-500/25"
+                : "border border-violet-500/20 bg-white/5 text-slate-400 hover:border-violet-400/30 hover:bg-white/10 hover:text-slate-200"
             }`}
           >
             {tab.label}
@@ -106,25 +106,25 @@ export function ServiceSectorsTabs({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm sm:p-8"
+            className="rounded-2xl border border-violet-500/15 bg-white/3 p-6 sm:p-8"
           >
             <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500 text-white shadow-lg shadow-cyan-500/15">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-600 to-cyan-500 text-white shadow-lg shadow-violet-500/15">
                 <Icon className="h-7 w-7" aria-hidden />
               </div>
               <div className="min-w-0 flex-1">
-                <h3 className="text-xl font-bold text-slate-900">
+                <h3 className="text-xl font-bold text-white">
                   {current.title}
                 </h3>
-                <p className="mt-2 text-slate-600">{current.description}</p>
+                <p className="mt-2 text-slate-400">{current.description}</p>
                 <ul className="mt-5 space-y-2.5">
                   {current.bullets.map((b) => (
                     <li
                       key={b}
-                      className="flex items-start gap-2.5 text-sm text-slate-700"
+                      className="flex items-start gap-2.5 text-sm text-slate-300"
                     >
                       <Check
-                        className="mt-0.5 h-4 w-4 shrink-0 text-cyan-600"
+                        className="mt-0.5 h-4 w-4 shrink-0 text-cyan-500"
                         aria-hidden
                       />
                       {b}

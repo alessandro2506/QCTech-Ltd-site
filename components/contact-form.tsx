@@ -199,10 +199,10 @@ export function ContactForm({
     >
       {hasSelectedTopic ? (
         <div
-          className="rounded-xl border border-cyan-200/80 bg-gradient-to-br from-cyan-50/80 to-white px-4 py-3 text-sm text-slate-700"
+          className="rounded-xl border border-cyan-500/25 bg-cyan-500/8 px-4 py-3 text-sm text-slate-300"
           role="status"
         >
-          <span className="font-semibold text-slate-900">{t("quoteBanner")}</span>{" "}
+          <span className="font-semibold text-slate-100">{t("quoteBanner")}</span>{" "}
           {t("topicWord")} <strong>{currentTopicLabel}</strong>
           {visiblePlanLabel ? (
             <>
@@ -216,7 +216,7 @@ export function ContactForm({
       <div>
         <label
           htmlFor="name"
-          className="block text-sm font-medium text-slate-700"
+          className="block text-sm font-medium text-slate-300"
         >
           {t("name")}
         </label>
@@ -228,13 +228,13 @@ export function ContactForm({
           value={name}
           onChange={(e) => setName(e.target.value)}
           disabled={status === "loading"}
-          className="mt-1.5 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 shadow-sm outline-none ring-cyan-500/40 transition focus:border-cyan-400 focus:ring-2 disabled:opacity-60"
+          className="mt-1.5 w-full rounded-xl border border-violet-500/20 bg-white/5 px-4 py-3 text-slate-100 shadow-sm outline-none ring-violet-500/40 transition placeholder:text-slate-600 focus:border-violet-400 focus:ring-2 disabled:opacity-60"
         />
       </div>
       <div>
         <label
           htmlFor="email"
-          className="block text-sm font-medium text-slate-700"
+          className="block text-sm font-medium text-slate-300"
         >
           {t("email")}
         </label>
@@ -247,13 +247,13 @@ export function ContactForm({
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           disabled={status === "loading"}
-          className="mt-1.5 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 shadow-sm outline-none ring-cyan-500/40 transition focus:border-cyan-400 focus:ring-2 disabled:opacity-60"
+          className="mt-1.5 w-full rounded-xl border border-violet-500/20 bg-white/5 px-4 py-3 text-slate-100 shadow-sm outline-none ring-violet-500/40 transition placeholder:text-slate-600 focus:border-violet-400 focus:ring-2 disabled:opacity-60"
         />
       </div>
       <div>
         <label
           htmlFor="topic"
-          className="block text-sm font-medium text-slate-700"
+          className="block text-sm font-medium text-slate-300"
         >
           {t("topic")}
         </label>
@@ -272,7 +272,7 @@ export function ContactForm({
             syncContactQuery({ topic: nextTopic || undefined });
           }}
           disabled={status === "loading"}
-          className="mt-1.5 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 shadow-sm outline-none ring-cyan-500/40 transition focus:border-cyan-400 focus:ring-2 disabled:opacity-60"
+          className="mt-1.5 w-full rounded-xl border border-violet-500/20 bg-white/5 px-4 py-3 text-slate-100 shadow-sm outline-none ring-violet-500/40 transition placeholder:text-slate-600 focus:border-violet-400 focus:ring-2 disabled:opacity-60"
         >
           {topicOptions.map((opt) => (
             <option key={opt.value || "empty"} value={opt.value}>
@@ -286,7 +286,7 @@ export function ContactForm({
         <div>
           <label
             htmlFor="contact-plan"
-            className="block text-sm font-medium text-slate-700"
+            className="block text-sm font-medium text-slate-300"
           >
             {t("selectPlan")}
           </label>
@@ -307,7 +307,7 @@ export function ContactForm({
               });
             }}
             disabled={status === "loading"}
-            className="mt-1.5 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 shadow-sm outline-none ring-cyan-500/40 transition focus:border-cyan-400 focus:ring-2 disabled:opacity-60"
+            className="mt-1.5 w-full rounded-xl border border-violet-500/20 bg-white/5 px-4 py-3 text-slate-100 shadow-sm outline-none ring-violet-500/40 transition placeholder:text-slate-600 focus:border-violet-400 focus:ring-2 disabled:opacity-60"
           >
             <option value="">{t("selectPlanPlaceholder")}</option>
             {pricingPlans.map((p) => (
@@ -321,16 +321,16 @@ export function ContactForm({
 
       {topicNeedsPlan(topic) ? (
         <div>
-          <span className="block text-sm font-medium text-slate-700">
+          <span className="block text-sm font-medium text-slate-300">
             {t("message")}
           </span>
-          <div className="mt-1.5 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm ring-cyan-500/40 focus-within:ring-2">
+          <div className="mt-1.5 overflow-hidden rounded-xl border border-violet-500/20 bg-white/5 ring-violet-500/40 focus-within:ring-2">
             {planBlock ? (
-              <div className="border-b border-slate-100 bg-slate-50/90 px-4 py-3">
-                <p className="text-xs font-medium uppercase tracking-wide text-cyan-700">
+              <div className="border-b border-violet-500/15 bg-violet-500/5 px-4 py-3">
+                <p className="text-xs font-medium uppercase tracking-wide text-cyan-400">
                   {t("messagePlanIncluded")}
                 </p>
-                <pre className="mt-2 whitespace-pre-wrap break-words font-sans text-sm font-semibold leading-relaxed text-slate-900">
+                <pre className="mt-2 whitespace-pre-wrap break-words font-sans text-sm font-semibold leading-relaxed text-slate-200">
                   {planBlock}
                 </pre>
               </div>
@@ -346,7 +346,7 @@ export function ContactForm({
               onChange={(e) => setMessageExtra(e.target.value)}
               disabled={status === "loading"}
               placeholder={t("messagePlaceholder")}
-              className="w-full resize-y border-0 bg-transparent px-4 py-3 text-sm text-slate-900 outline-none ring-0 focus:ring-0 disabled:opacity-60"
+              className="w-full resize-y border-0 bg-transparent px-4 py-3 text-sm text-slate-200 outline-none ring-0 placeholder:text-slate-600 focus:ring-0 disabled:opacity-60"
             />
           </div>
         </div>
@@ -354,7 +354,7 @@ export function ContactForm({
         <div>
           <label
             htmlFor="message"
-            className="block text-sm font-medium text-slate-700"
+            className="block text-sm font-medium text-slate-300"
           >
             {t("message")}
           </label>
@@ -366,7 +366,7 @@ export function ContactForm({
             value={messageOther}
             onChange={(e) => setMessageOther(e.target.value)}
             disabled={status === "loading"}
-            className="mt-1.5 w-full resize-y rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 shadow-sm outline-none ring-cyan-500/40 transition focus:border-cyan-400 focus:ring-2 disabled:opacity-60"
+            className="mt-1.5 w-full resize-y rounded-xl border border-violet-500/20 bg-white/5 px-4 py-3 text-slate-100 shadow-sm outline-none ring-violet-500/40 transition placeholder:text-slate-600 focus:border-violet-400 focus:ring-2 disabled:opacity-60"
             placeholder={t("messagePlaceholder")}
           />
         </div>
@@ -375,13 +375,13 @@ export function ContactForm({
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 py-3.5 text-sm font-semibold text-white shadow-lg shadow-cyan-500/25 transition hover:brightness-105 disabled:opacity-60 sm:w-auto sm:px-10"
+        className="w-full rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 py-3.5 text-sm font-semibold text-white shadow-lg shadow-violet-500/25 transition hover:brightness-110 disabled:opacity-60 sm:w-auto sm:px-10"
       >
         {status === "loading" ? t("submitting") : t("submit")}
       </button>
 
       {status === "success" ? (
-        <p className="text-sm font-medium text-cyan-700" role="status">
+        <p className="text-sm font-medium text-cyan-400" role="status">
           {t("success")}
         </p>
       ) : null}
