@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    version="1.1"
-   viewBox="-12 -12 1242 706"
+   viewBox="-12 -12 1900 1080.0322"
    id="svg210"
    sodipodi:docname="logo-v2-white-wide.svg"
    inkscape:version="1.4.3 (0d15f750, 2025-12-25)"
    inkscape:export-filename="QuantumCodeTechnologies_Logo_v2_White-wide.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
+   width="1900"
+   height="1080.0322"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -64,19 +66,19 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="0.28184281"
-     inkscape:cx="989.91348"
-     inkscape:cy="450.60578"
+     inkscape:zoom="0.099646481"
+     inkscape:cx="913.22843"
+     inkscape:cy="863.05105"
      inkscape:window-width="1195"
      inkscape:window-height="575"
-     inkscape:window-x="395"
-     inkscape:window-y="226"
+     inkscape:window-x="80"
+     inkscape:window-y="207"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg210"
      showguides="true" />
   <g
      id="g3"
-     transform="matrix(3.9572668,0,0,3.9572668,-146.265,-675.82387)">
+     transform="matrix(3.9572668,0,0,3.9572668,-158.265,-687.82387)">
     <g
        id="g5"
        style="fill:#ccaaff">
@@ -148,18 +150,18 @@
   </g>
   <path
      fill="#4aa7de"
-     d="m 656.90186,376.65075 -28.80891,-8.03322 c 1.14762,-14.68148 3.36368,-40.48284 -19.46973,-40.04755 q -21.765,0.39573 -45.62732,1.18716 a 11.436501,11.436501 0 0 0 -9.73485,6.13378 q -6.8065,13.05896 -4.47172,29.16505 l -27.54256,-2.69094 c -2.01822,-30.43137 5.34229,-57.41994 40.7994,-58.48838 q 11.23865,-0.31659 50.53431,-0.63318 33.28061,-0.2769 44.04436,30.5501 3.20541,9.18084 0.2769,42.85718 z"
+     d="m 644.90186,364.65075 -28.80891,-8.03322 c 1.14762,-14.68148 3.36368,-40.48284 -19.46973,-40.04755 q -21.765,0.39573 -45.62732,1.18716 a 11.436501,11.436501 0 0 0 -9.73485,6.13378 q -6.8065,13.05896 -4.47172,29.16505 l -27.54256,-2.69094 c -2.01822,-30.43137 5.34229,-57.41994 40.7994,-58.48838 q 11.23865,-0.31659 50.53431,-0.63318 33.28061,-0.2769 44.04436,30.5501 3.20541,9.18084 0.2769,42.85718 z"
      id="path186"
      style="stroke-width:3.95726" />
   <path
      fill="#9c8fdc"
-     d="m 1430.7058,354.29221 -26.7115,-1.02888 c -5.936,-36.05071 18.2429,-49.98029 49.5053,-49.82198 q 31.2228,0.1977 61.6542,1.22676 a 6.8460715,6.766926 88.1 0 1 6.5295,6.17331 l 1.1476,11.63435 a 5.8567545,5.8567545 0 0 1 -5.8172,6.41077 q -3.3637,-0.0396 -67.6692,-0.39573 -20.7756,-0.15839 -18.6387,25.8014 z"
+     d="m 1418.7059,342.29221 -26.7115,-1.02888 c -5.936,-36.05071 18.2429,-49.98029 49.5053,-49.82198 q 31.2228,0.1977 61.6542,1.22676 a 6.8460715,6.766926 88.1 0 1 6.5295,6.17331 l 1.1476,11.63435 a 5.8567545,5.8567545 0 0 1 -5.8172,6.41077 q -3.3637,-0.0396 -67.6692,-0.39573 -20.7756,-0.15839 -18.6387,25.8014 z"
      id="path187"
      style="fill:#a02c89;stroke-width:3.95726" />
   <g
      id="g4"
      style="fill:#f5f5f5;fill-opacity:1"
-     transform="matrix(3.9572668,0,0,3.9572668,-146.265,-675.82387)">
+     transform="matrix(3.9572668,0,0,3.9572668,-158.265,-687.82387)">
     <path
        fill="#1a597a"
        d="m 284.2,291.37 a 0.46,0.46 0 0 1 0.46,-0.46 h 4.07 a 0.69,0.69 0 0 1 0.69,0.69 v 4.97 a 0.91,0.9 -4.8 0 0 1.06,0.89 q 1.31,-0.21 6.71,-0.11 c 3.71,0.07 6.26,1.79 6.49,5.22 q 0.19,2.88 -0.07,13.94 a 0.66,0.66 0 0 1 -0.66,0.65 h -3.86 a 0.79,0.79 0 0 1 -0.79,-0.79 v -13.11 a 0.64,0.63 -90 0 0 -0.63,-0.64 h -7.76 a 0.53,0.53 0 0 0 -0.53,0.53 v 13.09 a 0.94,0.93 0 0 1 -0.94,0.93 h -3.35 a 0.89,0.89 0 0 1 -0.89,-0.89 z"
@@ -238,7 +240,7 @@
   </g>
   <g
      id="g2"
-     transform="matrix(2.088025,0,0,2.088025,-421.09146,210.90347)">
+     transform="matrix(2.088025,0,0,2.088025,-433.09146,198.90347)">
     <path
        fill="#58e2eb"
        d="m 338.89,42.35 q 2.23,3.26 6.43,5.16 a 3.42,3.31 77 0 1 0.74,0.48 q 3.84,3.29 8.05,5.83 a 7.71,7.04 -5.4 0 1 1.18,0.89 q 2.37,2.16 5.72,4.34 l -13.61,0.06 a 1.89,1.88 0.9 0 0 -1.88,1.81 l -0.25,6.31 q -4.88,-1.61 -9.98,-1.85 -12.24,-0.56 -24.68,-3.59 9.13,-6.98 11.75,-8.67 6.02,-3.88 11.89,-7.99 0.82,-0.57 1.17,-1.07 0.71,-1 -0.12,-1.33 2.58,-1.01 3.59,-0.38 z"
@@ -590,12 +592,12 @@
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:ultra-condensed;font-size:52.7635px;font-family:'.SF Georgian';-inkscape-font-specification:'.SF Georgian Thin Ultra-Condensed';text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:3.95726"
-     x="1217.9542"
-     y="682.61243"
+     x="1205.9542"
+     y="670.61243"
      id="text2"><tspan
        sodipodi:role="line"
        id="tspan2"
-       x="1227.2291"
-       y="682.61243"
+       x="1215.229"
+       y="670.61243"
        style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:ultra-condensed;font-size:52.7635px;font-family:'.SF Georgian';-inkscape-font-specification:'.SF Georgian Thin Ultra-Condensed';fill:#ffffff;fill-opacity:1;stroke-width:3.95726">- IT Solutions &amp; Services - </tspan></text>
 </svg>
