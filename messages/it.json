@@ -65,46 +65,49 @@
   },
   "pricingWeb": {
     "eyebrow": "Sito web professionale",
-    "title": "Presenza digitale e crescita misurabile",
-    "description": "Manutenzione, hosting e ottimizzazioni continue: meno rischio operativo, più lead qualificati.",
-    "cta": "Richiedi preventivo — Sito web",
+    "title": "Il sito giusto per ogni fase di crescita.",
+    "description": "Dalla landing page ad alto impatto al sito corporate completo — prezzo fisso, zero sorprese.",
+    "cta": "Richiedi un preventivo — Sito web",
     "plans": [
       {
-        "id": "web-a",
-        "name": "Plan A",
-        "price": "€105/mese",
-        "subtitle": "Ideale per presenza online stabile e sicura.",
+        "id": "web-landing",
+        "name": "Landing Page",
+        "price": "Da £700",
+        "subtitle": "1 pagina, hero + sezioni + form contatti + CTA.",
         "highlight": false,
         "bullets": [
-          "Manutenzione core (CMS / stack)",
-          "Hosting gestito e certificato SSL",
-          "Backup programmati e aggiornamenti di sicurezza"
+          "Pagina singola, design su misura",
+          "Form per la generazione di lead",
+          "SEO on-page inclusa",
+          "SSL e hosting gestito"
         ]
       },
       {
-        "id": "web-b",
-        "name": "Plan B",
-        "price": "€187/mese",
-        "subtitle": "Per chi vuole crescere con dati e priorità.",
+        "id": "web-vetrina",
+        "name": "Sito Vetrina",
+        "price": "Da £1.400",
+        "subtitle": "3–5 pagine, design custom, form contatti, SEO on-page.",
         "highlight": true,
         "bullets": [
-          "Tutto del Plan A",
-          "Supporto prioritario (SLA dedicato)",
-          "Analytics e report mensili sulle conversioni",
-          "Ottimizzazioni CRO leggere incluse"
+          "Fino a 5 pagine (Home, Chi siamo, Servizi, Blog, Contatti)",
+          "Design custom — nessun template",
+          "SEO on-page e Core Web Vitals",
+          "Mobile-first e SSL inclusi",
+          "Opzione CMS disponibile"
         ]
       },
       {
-        "id": "web-c",
-        "name": "Plan C",
-        "price": "€328/mese",
-        "subtitle": "Partner tecnico con roadmap condivisa.",
+        "id": "web-corporate",
+        "name": "Sito Corporate",
+        "price": "Da £5.000",
+        "subtitle": "10–20 pagine, architettura scalabile, UI/UX premium.",
         "highlight": false,
         "bullets": [
-          "Tutto del Plan B",
-          "Sprint mensili di sviluppo (feature / landing)",
-          "A/B test e integrazioni marketing",
-          "Review architetturale e performance budget"
+          "Fino a 20 pagine con architettura scalabile",
+          "Design system UI/UX premium",
+          "Supporto multilingua",
+          "Integrazioni avanzate (CRM, analytics, API)",
+          "Performance audit incluso"
         ]
       }
     ]

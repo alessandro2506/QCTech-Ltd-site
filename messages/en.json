@@ -65,46 +65,49 @@
   },
   "pricingWeb": {
     "eyebrow": "Professional website",
-    "title": "Digital presence and measurable growth",
-    "description": "Maintenance, hosting and continuous optimisation: less operational risk, more qualified leads.",
+    "title": "The right site for every stage of growth.",
+    "description": "From a high-converting landing page to a full corporate site — fixed price, no surprises.",
     "cta": "Request a quote — Website",
     "plans": [
       {
-        "id": "web-a",
-        "name": "Plan A",
-        "price": "£90/mo",
-        "subtitle": "Ideal for a stable, secure online presence.",
+        "id": "web-landing",
+        "name": "Landing Page",
+        "price": "From £700",
+        "subtitle": "1 page, hero + sections + contact form + CTA.",
         "highlight": false,
         "bullets": [
-          "Core maintenance (CMS / stack)",
-          "Managed hosting and SSL certificate",
-          "Scheduled backups and security updates"
+          "Single page, custom design",
+          "Lead generation form",
+          "SEO on-page included",
+          "SSL and managed hosting"
         ]
       },
       {
-        "id": "web-b",
-        "name": "Plan B",
-        "price": "£160/mo",
-        "subtitle": "For teams that want data and priority support.",
+        "id": "web-vetrina",
+        "name": "Business Site",
+        "price": "From £1,400",
+        "subtitle": "3–5 pages, custom design, contact form, on-page SEO.",
         "highlight": true,
         "bullets": [
-          "Everything in Plan A",
-          "Priority support (dedicated SLA)",
-          "Monthly analytics and conversion reports",
-          "Light CRO optimisations included"
+          "Up to 5 pages (Home, About, Services, Blog, Contact)",
+          "Custom design — no templates",
+          "On-page SEO and Core Web Vitals",
+          "Mobile-first and SSL included",
+          "CMS option available"
         ]
       },
       {
-        "id": "web-c",
-        "name": "Plan C",
-        "price": "£280/mo",
-        "subtitle": "Technical partner with a shared roadmap.",
+        "id": "web-corporate",
+        "name": "Corporate Site",
+        "price": "From £5,000",
+        "subtitle": "10–20 pages, scalable architecture, premium UI/UX.",
         "highlight": false,
         "bullets": [
-          "Everything in Plan B",
-          "Monthly development sprints (features / landings)",
-          "A/B tests and marketing integrations",
-          "Architecture and performance budget reviews"
+          "Up to 20 pages with scalable architecture",
+          "Premium UI/UX design system",
+          "Multilingual support",
+          "Advanced integrations (CRM, analytics, API)",
+          "Performance audit included"
         ]
       }
     ]

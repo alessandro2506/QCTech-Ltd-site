@@ -43,7 +43,7 @@ export function SiteHeader() {
       >
         <div className="relative mx-auto flex min-h-14 max-w-6xl items-center justify-end gap-2 px-4 py-1.5 sm:min-h-[3.75rem] sm:px-6">
           {showBar ? (
-            <div className="absolute left-3 top-1/2 max-w-[min(100%,calc(100%-8rem))] -translate-y-1/2 sm:left-5">
+            <div className="absolute left-0 top-1/2 -translate-y-1/2 sm:left-5">
               <QCTechLogo variant="header" linkToHome />
             </div>
           ) : null}
