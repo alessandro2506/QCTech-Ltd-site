@@ -41,7 +41,7 @@ export function SiteHeader() {
             : "border-b border-transparent bg-transparent"
         }`}
       >
-        <div className="mx-auto flex min-h-14 max-w-6xl items-center justify-between gap-2 px-4 py-1.5 sm:min-h-[3.75rem] sm:px-6">
+        <div className="mx-auto flex min-h-14 max-w-6xl items-center justify-between gap-2 pl-0 pr-4 py-1.5 sm:min-h-[3.75rem] sm:px-6">
           <div className="flex-shrink-0">
             {showBar ? <QCTechLogo variant="header" linkToHome /> : null}
           </div>
