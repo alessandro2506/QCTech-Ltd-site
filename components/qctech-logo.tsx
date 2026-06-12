@@ -3,7 +3,9 @@
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
 
-const LOGO_WHITE = "/logo-v2-white.svg";
+const LOGO_LIGHT = "/logo-full.svg";
+const LOGO_WHITE = "/logo-full-white.svg";
+const LOGO_WIDE = "/logo-full-wide.svg";
 const LOGO_WHITE_WIDE = "/logo-v2-white-wide.svg";
 
 type QCTechLogoProps = {
@@ -18,10 +20,10 @@ export function QCTechLogo({
   className = "",
 }: QCTechLogoProps) {
   const isHero = variant === "hero";
-  const logoSrc = isHero ? LOGO_WHITE : LOGO_WHITE_WIDE;
+  const logoSrc = isHero ? LOGO_LIGHT : LOGO_WHITE_WIDE;
   const logoBox = isHero
     ? "h-[10rem] w-[18.32rem] sm:h-[14rem] sm:w-[25.65rem] md:h-[17rem] md:w-[31.14rem]"
-    : "h-[3.5rem] w-[16.5rem] sm:h-[4rem] sm:w-[18.75rem]";
+    : "h-[2rem] w-[8rem] sm:h-[2.4rem] sm:w-[9.6rem]";
 
   const inner = (
     <span className={`inline-flex items-center ${className}`}>
@@ -31,7 +33,7 @@ export function QCTechLogo({
           alt="QC Tech"
           fill
           className="object-contain"
-          sizes={isHero ? "(max-width:640px) 293px, (max-width:768px) 410px, 498px" : "(max-width:640px) 192px, 232px"}
+          sizes={isHero ? "(max-width:640px) 293px, (max-width:768px) 410px, 498px" : "(max-width:640px) 128px, 154px"}
           priority={isHero}
         />
       </span>
