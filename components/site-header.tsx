@@ -41,12 +41,10 @@ export function SiteHeader() {
             : "border-b border-transparent bg-transparent"
         }`}
       >
-        <div className="relative mx-auto flex min-h-14 max-w-6xl items-center justify-end gap-2 px-4 py-1.5 sm:min-h-[3.75rem] sm:px-6">
-          {showBar ? (
-            <div className="absolute left-0 top-1/2 -translate-y-1/2 sm:left-5">
-              <QCTechLogo variant="header" linkToHome />
-            </div>
-          ) : null}
+        <div className="mx-auto flex min-h-14 max-w-6xl items-center justify-between gap-2 px-4 py-1.5 sm:min-h-[3.75rem] sm:px-6">
+          <div className="flex-shrink-0">
+            {showBar ? <QCTechLogo variant="header" linkToHome /> : null}
+          </div>
 
           <div className="hidden items-center gap-1 rounded-xl border border-violet-500/25 bg-white/5 px-1 py-0.5 text-xs font-semibold backdrop-blur-sm sm:flex">
             <Link
