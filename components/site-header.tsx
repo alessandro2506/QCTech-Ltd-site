@@ -41,44 +41,48 @@ export function SiteHeader() {
             : "border-b border-transparent bg-transparent"
         }`}
       >
-        <div className="mx-auto flex min-h-14 max-w-6xl items-center justify-between gap-2 pl-0 pr-4 py-1.5 sm:min-h-[3.75rem] sm:px-6">
-          <div className="flex-shrink-0">
+        <div className="mx-auto flex min-h-14 max-w-6xl items-center px-0 py-1.5 sm:min-h-[3.75rem] sm:px-0">
+          {/* Logo — flush a sinistra con padding minimo controllato */}
+          <div className="flex-shrink-0 mr-auto pl-2 sm:pl-4">
             {showBar ? <QCTechLogo variant="header" linkToHome /> : null}
           </div>
 
-          <div className="hidden items-center gap-1 rounded-xl border border-violet-500/25 bg-white/5 px-1 py-0.5 text-xs font-semibold backdrop-blur-sm sm:flex">
-            <Link
-              href={pathname}
-              locale="it"
-              className={`rounded-lg px-2 py-1 transition-colors ${locale === "it" ? "bg-violet-600 text-white" : "text-slate-400 hover:bg-white/10 hover:text-slate-200"}`}
-              aria-current={locale === "it" ? "true" : undefined}
-            >
-              {t("langIt")}
-            </Link>
-            <Link
-              href={pathname}
-              locale="en"
-              className={`rounded-lg px-2 py-1 transition-colors ${locale === "en" ? "bg-violet-600 text-white" : "text-slate-400 hover:bg-white/10 hover:text-slate-200"}`}
-              aria-current={locale === "en" ? "true" : undefined}
-            >
-              {t("langEn")}
-            </Link>
-          </div>
+          {/* Destra: switch lingua + hamburger sempre affiancati */}
+          <div className="flex items-center gap-2 pr-4 sm:pr-6">
+            <div className="hidden items-center gap-1 rounded-xl border border-violet-500/25 bg-white/5 px-1 py-0.5 text-xs font-semibold backdrop-blur-sm sm:flex">
+              <Link
+                href={pathname}
+                locale="it"
+                className={`rounded-lg px-2 py-1 transition-colors ${locale === "it" ? "bg-violet-600 text-white" : "text-slate-400 hover:bg-white/10 hover:text-slate-200"}`}
+                aria-current={locale === "it" ? "true" : undefined}
+              >
+                {t("langIt")}
+              </Link>
+              <Link
+                href={pathname}
+                locale="en"
+                className={`rounded-lg px-2 py-1 transition-colors ${locale === "en" ? "bg-violet-600 text-white" : "text-slate-400 hover:bg-white/10 hover:text-slate-200"}`}
+                aria-current={locale === "en" ? "true" : undefined}
+              >
+                {t("langEn")}
+              </Link>
+            </div>
 
-          <button
-            type="button"
-            onClick={() => setDrawerOpen(true)}
-            className={`flex h-11 w-11 items-center justify-center rounded-xl transition-colors ${
-              showBar
-                ? "text-slate-200 hover:bg-white/10"
-                : "bg-white/5 text-slate-200 shadow-md ring-1 ring-violet-500/25 backdrop-blur-sm hover:bg-white/10"
-            }`}
-            aria-expanded={drawerOpen}
-            aria-controls="site-drawer"
-            aria-label={t("openMenu")}
-          >
-            <Menu className="h-6 w-6" />
-          </button>
+            <button
+              type="button"
+              onClick={() => setDrawerOpen(true)}
+              className={`flex h-11 w-11 items-center justify-center rounded-xl transition-colors ${
+                showBar
+                  ? "text-slate-200 hover:bg-white/10"
+                  : "bg-white/5 text-slate-200 shadow-md ring-1 ring-violet-500/25 backdrop-blur-sm hover:bg-white/10"
+              }`}
+              aria-expanded={drawerOpen}
+              aria-controls="site-drawer"
+              aria-label={t("openMenu")}
+            >
+              <Menu className="h-6 w-6" />
+            </button>
+          </div>
         </div>
       </header>
 
