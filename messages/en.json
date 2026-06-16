@@ -365,6 +365,11 @@
         "id": "finedining",
         "label": "Fine Dining",
         "description": "Fine Dining — website for an upscale Italo-Belgian restaurant, delivered to production."
+      },
+      {
+        "id": "fooddelivery",
+        "label": "Food Delivery & Ordering",
+        "description": "Food Delivery — online ordering platform for a food delivery business, built before major aggregators became mainstream. Delivered to production."
       }
     ],
     "quoteEyebrow": "Quote",

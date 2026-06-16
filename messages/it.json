@@ -365,6 +365,11 @@
         "id": "finedining",
         "label": "Fine Dining",
         "description": "Fine Dining — sito per ristorante Italo-Belga di alta classe, portato in produzione."
+      },
+      {
+        "id": "fooddelivery",
+        "label": "Food Delivery & Ordering",
+        "description": "Food Delivery — piattaforma di ordinazione online per locale di ristorazione con consegna a domicilio, realizzata prima della diffusione dei grandi aggregatori. Portato in produzione."
       }
     ],
     "quoteEyebrow": "Preventivo",
