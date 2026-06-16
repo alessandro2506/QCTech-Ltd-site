@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import { Building2, Cloud, Code2, Search, Smartphone, UtensilsCrossed } from "lucide-react";
+import { BedDouble, Building2, Cloud, Code2, Search, Smartphone, Trophy, UtensilsCrossed, Wine } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import {
   ServiceSectorsTabs,
@@ -14,6 +14,9 @@ type PastSector = { id: string; label: string; description: string };
 const pastSectorIconMap: Record<string, React.ElementType> = {
   ristorazione: UtensilsCrossed,
   hotel: Building2,
+  bb: BedDouble,
+  sport: Trophy,
+  finedining: Wine,
 };
 
 type PageProps = { params: Promise<{ locale: string }> };

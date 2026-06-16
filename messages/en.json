@@ -350,6 +350,21 @@
         "id": "hotel",
         "label": "Hospitality",
         "description": "Digital integration for a hospitality property: multilingual site, online booking flow and guest communications — shipped to production."
+      },
+      {
+        "id": "bb",
+        "label": "B&B & Accommodation",
+        "description": "B&B & Accommodation — digital presence for a small hospitality property, delivered to production."
+      },
+      {
+        "id": "sport",
+        "label": "Sport & Football Academy",
+        "description": "Sport & Football Academy — multilingual website (IT/FR/EN) with international camp management, registrations and gallery, still live in production."
+      },
+      {
+        "id": "finedining",
+        "label": "Fine Dining",
+        "description": "Fine Dining — website for an upscale Italo-Belgian restaurant, delivered to production."
       }
     ],
     "quoteEyebrow": "Quote",

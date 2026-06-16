@@ -350,6 +350,21 @@
         "id": "hotel",
         "label": "Hospitality",
         "description": "Integrazione digitale per struttura ricettiva: sito multilingua, flusso di prenotazione online e comunicazioni agli ospiti — portato in produzione."
+      },
+      {
+        "id": "bb",
+        "label": "B&B & Accommodation",
+        "description": "B&B e strutture ricettive — presenza digitale per struttura ricettiva di piccole dimensioni, portato in produzione."
+      },
+      {
+        "id": "sport",
+        "label": "Sport & Football Academy",
+        "description": "Sport & Football Academy — sito multilingua (IT/FR/EN) con gestione stage internazionali, iscrizioni e gallery, ancora attivo in produzione."
+      },
+      {
+        "id": "finedining",
+        "label": "Fine Dining",
+        "description": "Fine Dining — sito per ristorante Italo-Belga di alta classe, portato in produzione."
       }
     ],
     "quoteEyebrow": "Preventivo",
