@@ -256,9 +256,9 @@
     "eyebrow": "Servizi",
     "title": "ROI-first: tecnologia al servizio del business",
     "intro": "Ogni offerta è strutturata per ridurre rischio, accelerare time-to-value e collegare investimenti marketing a risultati misurabili.",
-    "sectorsEyebrow": "Esperienza sul campo",
-    "sectorsTitle": "Settori in cui collaboriamo",
-    "sectorsIntro": "Lavoriamo già con strutture operative reali: siti, portali, integrazioni e strumenti digitali portati in produzione per questi verticali.",
+    "sectorsEyebrow": "Collaborazioni attive",
+    "sectorsTitle": "Settori in cui operiamo",
+    "sectorsIntro": "Lavoriamo attivamente con strutture operative reali: siti, portali, integrazioni e strumenti digitali portati in produzione per questi verticali.",
     "sectors": [
       {
         "id": "hotel",
@@ -336,6 +336,20 @@
           "Moduli richiesta appuntamento e reminder (dove applicabile)",
           "Contenuti di fiducia: team, specializzazioni, FAQ e recensioni"
         ]
+      }
+    ],
+    "pastSectorsTitle": "Settori in cui abbiamo già operato",
+    "pastSectorsIntro": "Progetti portati in produzione — prova concreta della nostra capacità di consegnare in questi verticali, non solo pianificare.",
+    "pastSectors": [
+      {
+        "id": "ristorazione",
+        "label": "Ristorazione & Food",
+        "description": "Sito pubblico multilingua + dashboard admin con gestione prenotazioni, menu digitali, galleria e chiusure programmate — portato in produzione."
+      },
+      {
+        "id": "hotel",
+        "label": "Hospitality",
+        "description": "Integrazione digitale per struttura ricettiva: sito multilingua, flusso di prenotazione online e comunicazioni agli ospiti — portato in produzione."
       }
     ],
     "quoteEyebrow": "Preventivo",

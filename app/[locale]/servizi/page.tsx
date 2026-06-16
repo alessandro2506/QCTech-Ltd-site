@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import { Cloud, Code2, Search, Smartphone } from "lucide-react";
+import { Building2, Cloud, Code2, Search, Smartphone, UtensilsCrossed } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import {
   ServiceSectorsTabs,
@@ -8,6 +8,13 @@ import {
 } from "@/components/service-sectors-tabs";
 
 const icons = [Code2, Smartphone, Cloud, Search] as const;
+
+type PastSector = { id: string; label: string; description: string };
+
+const pastSectorIconMap: Record<string, React.ElementType> = {
+  ristorazione: UtensilsCrossed,
+  hotel: Building2,
+};
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -30,6 +37,7 @@ export default async function ServiziPage() {
     points: string[];
   }[];
   const sectors = t.raw("sectors") as SectorTab[];
+  const pastSectors = t.raw("pastSectors") as PastSector[];
 
   return (
     <div className="pb-20 pt-28 sm:pt-32">
@@ -48,6 +56,40 @@ export default async function ServiziPage() {
           intro={t("sectorsIntro")}
           tabs={sectors}
         />
+
+        {/* Blocco B — Settori in cui abbiamo già operato */}
+        <section className="mt-14" aria-labelledby="past-sectors-heading">
+          <h2
+            id="past-sectors-heading"
+            className="text-xl font-bold tracking-tight text-white sm:text-2xl"
+          >
+            {t("pastSectorsTitle")}
+          </h2>
+          <p className="mt-2 text-slate-400">{t("pastSectorsIntro")}</p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            {pastSectors.map((sector) => {
+              const PastIcon = pastSectorIconMap[sector.id] ?? Building2;
+              return (
+                <div
+                  key={sector.id}
+                  className="glass-card rounded-2xl p-6"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/5 text-slate-400">
+                      <PastIcon className="h-5 w-5" aria-hidden />
+                    </div>
+                    <span className="text-sm font-semibold text-slate-200">
+                      {sector.label}
+                    </span>
+                  </div>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-400">
+                    {sector.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </section>
 
         <div className="mt-14 grid gap-8 sm:grid-cols-2">
           {items.map((s, i) => {

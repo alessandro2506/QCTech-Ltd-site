@@ -6,6 +6,9 @@ const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 const nextConfig: NextConfig = {
   async redirects() {
     return [
+      // 301 redirect dominio vecchio → nuovo (richiede che alvencoltd.co.uk punti allo stesso deployment Vercel)
+      { source: "/:path*", has: [{ type: "host", value: "alvencoltd.co.uk" }], destination: "https://www.qc-tech.co.uk/:path*", permanent: true },
+      { source: "/:path*", has: [{ type: "host", value: "www.alvencoltd.co.uk" }], destination: "https://www.qc-tech.co.uk/:path*", permanent: true },
       { source: "/servizi", destination: "/it/servizi", permanent: true },
       { source: "/vision", destination: "/it/vision", permanent: true },
       { source: "/faq", destination: "/it/faq", permanent: true },
