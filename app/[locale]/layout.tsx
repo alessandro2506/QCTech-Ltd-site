@@ -130,7 +130,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body className="flex min-h-full flex-col bg-[#08050f] text-slate-100">
         {/* Google Analytics 4 */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-9T00M6BEF3"
+          src="https://www.googletagmanager.com/gtag/js?id=G-EK5XQ10BZP"
           strategy="afterInteractive"
         />
         <Script id="ga4-init" strategy="afterInteractive">
@@ -138,7 +138,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-9T00M6BEF3');
+            gtag('config', 'G-EK5XQ10BZP');
           `}
         </Script>
         <NextIntlClientProvider messages={messages}>
