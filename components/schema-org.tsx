@@ -58,7 +58,7 @@ export function SchemaOrg({ locale }: { locale: string }) {
                   name: "Quanto costa un sito web?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "I nostri siti partono da £600 per una landing page fino a £15.000+ per una piattaforma corporate completa.",
+                    text: "I nostri siti partono da £900 per una landing page fino a £25.000+ per una piattaforma corporate completa.",
                   },
                 },
                 {
@@ -84,7 +84,7 @@ export function SchemaOrg({ locale }: { locale: string }) {
                   name: "How much does a website cost?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "Our websites start from £600 for a landing page up to £15,000+ for a full corporate platform. We also serve Italian clients with pricing in EUR.",
+                    text: "Our websites start from £900 for a landing page up to £25,000+ for a full corporate platform. We also serve Italian clients with pricing in EUR.",
                   },
                 },
                 {

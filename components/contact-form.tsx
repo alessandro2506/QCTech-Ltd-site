@@ -23,7 +23,7 @@ type Props = {
 };
 
 function topicNeedsPlan(topic: ContactTopic | ""): boolean {
-  return topic === "web" || topic === "mobile" || topic === "ecommerce";
+  return topic === "web" || topic === "mobile" || topic === "ecommerce" || topic === "presence";
 }
 
 export function ContactForm({
@@ -36,6 +36,7 @@ export function ContactForm({
   const tWeb = useTranslations("pricingWeb");
   const tMob = useTranslations("pricingMobile");
   const tEco = useTranslations("pricingEcommerce");
+  const tPres = useTranslations("pricingPresence");
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -61,8 +62,10 @@ export function ContactForm({
       return (tMob.raw("plans") as PlanForMessage[]) ?? [];
     if (topic === "ecommerce")
       return (tEco.raw("plans") as PlanForMessage[]) ?? [];
+    if (topic === "presence")
+      return (tPres.raw("plans") as PlanForMessage[]) ?? [];
     return [];
-  }, [topic, tWeb, tMob, tEco]);
+  }, [topic, tWeb, tMob, tEco, tPres]);
 
   const selectedPlan = useMemo(
     () => pricingPlans.find((p) => p.id === selectedPlanId),
@@ -95,7 +98,9 @@ export function ContactForm({
               ? "topicMobile"
               : value === "ecommerce"
                 ? "topicEcommerce"
-                : "topicOther",
+                : value === "presence"
+                  ? "topicPresence"
+                  : "topicOther",
         ),
       })),
     ],

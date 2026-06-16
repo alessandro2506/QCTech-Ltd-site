@@ -1,5 +1,5 @@
 /** Valori `topic` accettati da form e API (allineati alla query string). */
-export const CONTACT_TOPICS = ["web", "mobile", "ecommerce", "other"] as const;
+export const CONTACT_TOPICS = ["web", "mobile", "ecommerce", "presence", "other"] as const;
 
 export type ContactTopic = (typeof CONTACT_TOPICS)[number];
 

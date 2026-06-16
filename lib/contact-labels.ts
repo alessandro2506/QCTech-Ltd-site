@@ -19,6 +19,8 @@ export function contactTopicLabel(
       return f.topicMobile;
     case "ecommerce":
       return f.topicEcommerce;
+    case "presence":
+      return f.topicPresence;
     case "other":
       return f.topicOther;
   }

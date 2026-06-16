@@ -72,7 +72,7 @@
       {
         "id": "web-landing",
         "name": "Landing Page",
-        "price": "From £700",
+        "price": "From £900",
         "subtitle": "1 page, hero + sections + contact form + CTA.",
         "highlight": false,
         "bullets": [
@@ -99,7 +99,7 @@
       {
         "id": "web-corporate",
         "name": "Corporate Site",
-        "price": "From £5,000",
+        "price": "From £8,000",
         "subtitle": "10–20 pages, scalable architecture, premium UI/UX.",
         "highlight": false,
         "bullets": [
@@ -108,6 +108,56 @@
           "Multilingual support",
           "Advanced integrations (CRM, analytics, API)",
           "Performance audit included"
+        ]
+      }
+    ],
+    "paymentNote": "Payment terms: projects under £700 — 100% on signing. Above that — 50% deposit + 50% on delivery."
+  },
+  "pricingPresence": {
+    "eyebrow": "Digital Presence Management",
+    "title": "Be found. Be trusted. Be consistent.",
+    "description": "Monthly management of your business profiles on Google, social and review platforms. Minimum 3-month contract. Setup included in month one.",
+    "cta": "Get started — Digital Presence",
+    "plans": [
+      {
+        "id": "pres-starter",
+        "name": "Starter",
+        "price": "£75 / mo",
+        "subtitle": "Google Business Profile + Search Console — save £10/mo vs. individual.",
+        "highlight": false,
+        "bullets": [
+          "Google Business Profile management (£55/mo individually)",
+          "Google Search Console monitoring (£30/mo individually)",
+          "Monthly performance report",
+          "Setup included in month one"
+        ]
+      },
+      {
+        "id": "pres-digital",
+        "name": "Digital Presence",
+        "price": "£100 / mo",
+        "subtitle": "Starter + Google Analytics 4. Best value — save £23/mo.",
+        "highlight": true,
+        "bullets": [
+          "Google Business Profile management",
+          "Google Search Console monitoring",
+          "Google Analytics 4 monitoring & insights (£38/mo individually)",
+          "Monthly performance report",
+          "Setup included in month one"
+        ]
+      },
+      {
+        "id": "pres-full",
+        "name": "Full Suite",
+        "price": "Custom quote",
+        "subtitle": "All channels — Trustpilot, LinkedIn and more.",
+        "highlight": false,
+        "bullets": [
+          "Everything in Digital Presence",
+          "Trustpilot / Reviews management (£47/mo)",
+          "LinkedIn Business Page management (£55/mo)",
+          "Priority response and dedicated contact",
+          "Add-on available: corporate video production (£800–£3,000)"
         ]
       }
     ]
@@ -207,6 +257,7 @@
     "topicWeb": "Professional website",
     "topicMobile": "Mobile app (RN / Flutter)",
     "topicEcommerce": "E-commerce / inventory",
+    "topicPresence": "Digital Presence Management",
     "topicOther": "Other",
     "quoteBanner": "Quote requested for:",
     "planWord": "plan",
@@ -512,7 +563,7 @@
   "FAQ": {
     "title": "Frequently asked questions",
     "q1": "How much does a website cost?",
-    "a1": "Our websites start from £600 for a landing page up to £15,000+ for a full corporate platform. Every project gets a personalised quote. We also serve Italian clients with pricing in EUR.",
+    "a1": "Our websites start from £900 for a landing page up to £25,000+ for a full corporate platform. Every project gets a personalised quote. We also serve Italian clients with pricing in EUR.",
     "q2": "Do you work with Italian companies?",
     "a2": "Yes. We operate across both UK and Italy. We handle IT and EN content, UK GDPR and EU GDPR compliance, and billing in both GBP and EUR.",
     "q3": "What is a free site audit?",

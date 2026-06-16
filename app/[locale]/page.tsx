@@ -19,6 +19,7 @@ export default async function HomePage() {
   const tWeb = await getTranslations("pricingWeb");
   const tMob = await getTranslations("pricingMobile");
   const tEco = await getTranslations("pricingEcommerce");
+  const tPres = await getTranslations("pricingPresence");
 
   const valueCards = t.raw("valueCards") as { title: string; body: string }[];
 
@@ -77,6 +78,8 @@ export default async function HomePage() {
           contactTopic="web"
         />
 
+        <p className="text-xs text-slate-500">{tWeb("paymentNote")}</p>
+
         <PricingCluster
           eyebrow={tMob("eyebrow")}
           title={tMob("title")}
@@ -93,6 +96,15 @@ export default async function HomePage() {
           plans={asTuple(tEco.raw("plans"))}
           ctaLabel={tEco("cta")}
           contactTopic="ecommerce"
+        />
+
+        <PricingCluster
+          eyebrow={tPres("eyebrow")}
+          title={tPres("title")}
+          description={tPres("description")}
+          plans={asTuple(tPres.raw("plans"))}
+          ctaLabel={tPres("cta")}
+          contactTopic="presence"
         />
 
         {/* CTA band */}

@@ -5,6 +5,7 @@ const TOPIC_PRICING_NS: Record<Exclude<ContactTopic, "other">, string> = {
   web: "pricingWeb",
   mobile: "pricingMobile",
   ecommerce: "pricingEcommerce",
+  presence: "pricingPresence",
 };
 
 /**
