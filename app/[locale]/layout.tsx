@@ -106,6 +106,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         "x-default": `https://www.qc-tech.co.uk${getLocalizedPath("/", "en")}`,
       },
     },
+    verification: {
+      google: "qkkUA1oP7CJy4tFCJIoq4MZHzHYxqcg9rdR9SXpwqp8",
+    },
   };
 }
 
