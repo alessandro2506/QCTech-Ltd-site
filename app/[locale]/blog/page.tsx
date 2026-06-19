@@ -1,6 +1,7 @@
 import { getAllPosts } from "@/lib/blog";
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
+import { CtaBanner } from "@/components/cta-banner";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -63,6 +64,7 @@ export default async function BlogPage({ params }: Props) {
           ))}
         </div>
       )}
+      <CtaBanner />
     </section>
   );
 }

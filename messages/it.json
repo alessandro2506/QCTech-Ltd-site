@@ -287,7 +287,15 @@
     "intro": "Rispondiamo dal Regno Unito e dall'Italia. Indicate stack, mercato di riferimento e urgenza: prepareremo una proposta chiara.",
     "addressLabel": "Sede legale",
     "formTitle": "Modulo richiesta",
-    "formHint": "Le richieste sono inviate in modo sicuro al nostro team via email."
+    "formHint": "Le richieste sono inviate in modo sicuro al nostro team via email.",
+    "socialProof": {
+      "guarantee": "Risposta garantita entro 24h",
+      "freeQuote": "Preventivo gratuito e senza impegno"
+    }
+  },
+  "ctaBanner": {
+    "text": "Pronto a iniziare? Richiedi un preventivo gratuito — risposta entro 24h.",
+    "cta": "Richiedi Preventivo"
   },
   "Contact": {
     "hours": {

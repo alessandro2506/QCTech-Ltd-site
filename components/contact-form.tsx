@@ -182,6 +182,12 @@ export function ContactForm({
         return;
       }
       setStatus("success");
+      if (typeof window !== "undefined" && window.gtag) {
+        window.gtag("event", "generate_lead", {
+          event_category: "contact_form",
+          event_label: "form_contatti",
+        });
+      }
       setName("");
       setEmail("");
       setMessageExtra("");

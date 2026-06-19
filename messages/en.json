@@ -287,7 +287,15 @@
     "intro": "We respond from the UK and Italy. Share your stack, target market and urgency — we’ll prepare a clear proposal.",
     "addressLabel": "Registered office",
     "formTitle": "Request form",
-    "formHint": "Submissions are sent securely to our team by email."
+    "formHint": "Submissions are sent securely to our team by email.",
+    "socialProof": {
+      "guarantee": "Reply within 24h",
+      "freeQuote": "Free quote, no commitment"
+    }
+  },
+  "ctaBanner": {
+    "text": "Ready to start? Request a free quote — we reply within 24h.",
+    "cta": "Get a Quote"
   },
   "Contact": {
     "hours": {

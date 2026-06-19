@@ -135,6 +135,29 @@ export default async function ContattiPage({
             {t("formTitle")}
           </h2>
           <p className="mt-1 text-sm text-slate-400">{t("formHint")}</p>
+          <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-slate-400">
+            <span className="flex items-center gap-1.5">
+              <span className="flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500/20 text-xs text-emerald-400">
+                ✓
+              </span>
+              {t("socialProof.guarantee")}
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500/20 text-xs text-emerald-400">
+                ✓
+              </span>
+              {t("socialProof.freeQuote")}
+            </span>
+            <a
+              href="https://wa.me/447754812247"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-emerald-400 transition-colors hover:text-emerald-300"
+            >
+              <WhatsAppIcon className="h-3.5 w-3.5 shrink-0" />
+              +44 7754 812247
+            </a>
+          </div>
           <div className="mt-6">
             <ContactForm
               defaultTopic={topic ?? ""}

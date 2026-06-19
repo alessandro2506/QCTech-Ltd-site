@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import { FaqAccordion } from "@/components/faq-accordion";
+import { CtaBanner } from "@/components/cta-banner";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -49,6 +50,7 @@ export default async function FAQPage() {
             {tNav("quote")}
           </Link>
         </div>
+        <CtaBanner />
       </div>
     </div>
   );

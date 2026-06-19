@@ -12,6 +12,12 @@ import { MainWrapper } from "@/components/main-wrapper";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
