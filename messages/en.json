@@ -111,7 +111,7 @@
         ]
       }
     ],
-    "paymentNote": "Payment terms: projects under £700 — 100% on signing. Above that — 50% deposit + 50% on delivery."
+    "paymentNote": "Payment terms: projects under £700 — 100% on signing. Above £700 — 50% on signing · 25% at mid-project · 25% on delivery."
   },
   "pricingPresence": {
     "eyebrow": "Digital Presence Management",
