@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Cpu, Layers, Rocket, Sparkles } from "lucide-react";
 import { Link } from "@/i18n/routing";
-import { CtaBanner } from "@/components/cta-banner";
-
 const iconMap = {
   layers: Layers,
   cpu: Cpu,
@@ -122,7 +120,6 @@ export default async function VisionPage() {
             {t("cta.button")}
           </Link>
         </section>
-        <CtaBanner />
       </div>
     </div>
   );

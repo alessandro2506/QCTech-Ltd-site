@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { BedDouble, Building2, Cloud, Code2, Search, ShoppingCart, Smartphone, Trophy, UtensilsCrossed, Wine } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
-import { CtaBanner } from "@/components/cta-banner";
 import {
   ServiceSectorsTabs,
   type SectorTab,
@@ -145,7 +144,6 @@ export default async function ServiziPage() {
             <ContactForm />
           </div>
         </section>
-        <CtaBanner />
       </div>
     </div>
   );
