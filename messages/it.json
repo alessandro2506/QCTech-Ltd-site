@@ -570,6 +570,9 @@
   },
   "FAQ": {
     "title": "Domande frequenti",
+    "ctaTitle": "Pronto a iniziare? Richiedi un preventivo gratuito — risposta entro 24h.",
+    "ctaBody": "Una chiamata di 15 minuti in cui analizziamo il tuo sito attuale e ti diciamo esattamente cosa impedisce le conversioni. Senza impegno. Prenota tramite il modulo contatti.",
+    "ctaButton": "Richiedi Preventivo",
     "q1": "Quanto costa un sito web?",
     "a1": "I nostri siti partono da £900 per una landing page fino a £25.000+ per una piattaforma corporate completa. Ogni progetto riceve un preventivo personalizzato. Serviamo anche clienti italiani con prezzi in EUR.",
     "q2": "Lavorate con aziende italiane?",

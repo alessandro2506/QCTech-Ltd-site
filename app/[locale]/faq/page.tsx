@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import { FaqAccordion } from "@/components/faq-accordion";
-import { CtaBanner } from "@/components/cta-banner";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -18,7 +17,6 @@ export async function generateMetadata({
 
 export default async function FAQPage() {
   const t = await getTranslations("FAQ");
-  const tNav = await getTranslations("nav");
 
   const items = Array.from({ length: 15 }, (_, idx) => idx + 1).map((i) => ({
     question: t(`q${i}` as "q1"),
@@ -40,17 +38,19 @@ export default async function FAQPage() {
         </div>
 
         <div className="mt-12 rounded-2xl border border-violet-500/25 bg-gradient-to-br from-violet-600/8 via-transparent to-cyan-500/5 p-6 text-center">
-          <p className="text-sm text-slate-400">
-            {t("a3")}
+          <p className="text-lg font-semibold text-white sm:text-xl">
+            {t("ctaTitle")}
+          </p>
+          <p className="mt-3 text-sm text-slate-400">
+            {t("ctaBody")}
           </p>
           <Link
             href="/contatti"
             className="mt-4 inline-flex rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-violet-500/25 transition hover:brightness-110"
           >
-            {tNav("quote")}
+            {t("ctaButton")}
           </Link>
         </div>
-        <CtaBanner />
       </div>
     </div>
   );

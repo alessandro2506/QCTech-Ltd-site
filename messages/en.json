@@ -570,6 +570,9 @@
   },
   "FAQ": {
     "title": "Frequently asked questions",
+    "ctaTitle": "Ready to start? Request a free quote — we reply within 24h.",
+    "ctaBody": "A 15-minute call where we analyse your current site and tell you exactly what's blocking conversions. No commitment. Book via the contact form.",
+    "ctaButton": "Get a Quote",
     "q1": "How much does a website cost?",
     "a1": "Our websites start from £900 for a landing page up to £25,000+ for a full corporate platform. Every project gets a personalised quote. We also serve Italian clients with pricing in EUR.",
     "q2": "Do you work with Italian companies?",
