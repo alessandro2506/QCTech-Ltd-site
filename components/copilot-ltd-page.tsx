@@ -190,28 +190,28 @@ export function CopilotLtdPage() {
 
       {/* Solution */}
       <ScrollSection className="mx-auto mt-20 max-w-6xl px-4 sm:px-6">
-        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-          <div>
-            <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
-              {t("solution.title")}
-            </h2>
-            <p className="mt-3 text-slate-400">{t("solution.intro")}</p>
-          </div>
-          <ol className="space-y-4">
-            {steps.map((step, i) => (
-              <li
-                key={step}
-                className="flex gap-4 rounded-xl border border-violet-500/15 bg-white/3 p-4"
-              >
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-violet-600 to-cyan-500 text-sm font-bold text-white">
-                  {i + 1}
-                </span>
-                <p className="pt-0.5 text-sm leading-relaxed text-slate-300">
-                  {step}
-                </p>
-              </li>
-            ))}
-          </ol>
+        <div className="text-center">
+          <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
+            {t("solution.title")}
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-slate-400">
+            {t("solution.intro")}
+          </p>
+        </div>
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {steps.map((step, i) => (
+            <div
+              key={step}
+              className="flex gap-4 rounded-xl border border-violet-500/15 bg-white/3 p-4"
+            >
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-violet-600 to-cyan-500 text-sm font-bold text-white">
+                {i + 1}
+              </span>
+              <p className="pt-0.5 text-sm leading-relaxed text-slate-300">
+                {step}
+              </p>
+            </div>
+          ))}
         </div>
       </ScrollSection>
 
