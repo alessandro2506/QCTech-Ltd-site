@@ -39,6 +39,7 @@ export function SiteFooter() {
       <div className="border-t border-violet-500/10 px-4 py-6 text-center text-xs text-slate-600 sm:px-6">
         <p>{tf("legal")}</p>
         <p className="mt-1">{siteConfig.address.full}</p>
+        <p className="mt-1">Company Number 17317573</p>
       </div>
     </footer>
   );
