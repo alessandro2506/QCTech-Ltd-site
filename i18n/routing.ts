@@ -12,6 +12,7 @@ export const routing = defineRouting({
     "/faq": "/faq",
     "/blog": "/blog",
     "/contatti": { it: "/contatti", en: "/contacts" },
+    "/copilot-ltd": "/copilot-ltd",
   },
 });
 

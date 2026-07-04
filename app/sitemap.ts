@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/it/faq", priority: 0.7, freq: "monthly" },
     { path: "/it/blog", priority: 0.9, freq: "weekly" },
     { path: "/it/contatti", priority: 0.8, freq: "monthly" },
+    { path: "/it/copilot-ltd", priority: 0.7, freq: "monthly" },
   ];
 
   const enPages = [
@@ -27,6 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/en/faq", priority: 0.7, freq: "monthly" },
     { path: "/en/blog", priority: 0.9, freq: "weekly" },
     { path: "/en/contacts", priority: 0.8, freq: "monthly" },
+    { path: "/en/copilot-ltd", priority: 0.7, freq: "monthly" },
   ];
 
   const entries: MetadataRoute.Sitemap = [];

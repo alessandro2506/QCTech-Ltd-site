@@ -639,5 +639,85 @@
       "title": "Ready to work together?",
       "button": "Get in touch →"
     }
+  },
+  "copilotLtd": {
+    "meta": {
+      "title": "Open a UK Ltd in Italian | QC Tech Copilot",
+      "description": "The first AI copilot that guides you step by step through opening a UK company — in Italian, with predictive validation before filing with Companies House."
+    },
+    "hero": {
+      "eyebrow": "New — AI Copilot for Italian entrepreneurs",
+      "title": "Open a UK Ltd in Italian. In less than 24 hours.",
+      "subtitle": "The first AI copilot that guides you step by step through opening a UK company — in Italian, with predictive validation before filing with Companies House.",
+      "cta": "See how it works"
+    },
+    "problem": {
+      "cards": [
+        {
+          "title": "Forms only in English",
+          "description": "Companies House accepts English only. One filing error can cost you weeks."
+        },
+        {
+          "title": "Complex identity verification",
+          "description": "Passport, proof of address, digital signature. No guidance in Italian."
+        },
+        {
+          "title": "Costly mistakes",
+          "description": "One wrong field blocks everything. Resubmitting means starting from scratch."
+        }
+      ]
+    },
+    "solution": {
+      "title": "How the Copilot works",
+      "intro": "Four steps from your first question to an incorporated company.",
+      "steps": [
+        "Answer questions in Italian — no legal jargon required",
+        "The Copilot validates every field before it reaches Companies House",
+        "Receive documents ready for signature",
+        "Your Ltd is open. Usually within 24 hours."
+      ]
+    },
+    "proof": {
+      "title": "Proven on ourselves",
+      "body": "QC Tech Ltd — Company Number 17317573 — incorporated on 3 July 2026. We used this process internally before making it available."
+    },
+    "pricing": {
+      "title": "How much does it cost?",
+      "body": "We're finalising pricing. Current indication is £49–99 one-off. No subscription. Register now for priority access at launch price.",
+      "badge": "Early Access"
+    },
+    "form": {
+      "title": "Early access",
+      "subtitle": "Leave your details — we'll notify you when the Copilot launches.",
+      "name": "Full name",
+      "email": "Email",
+      "statusLabel": "Do you already have a UK Ltd in mind?",
+      "statusPlaceholder": "— Select —",
+      "statusOptions": [
+        { "value": "evaluating", "label": "I'm evaluating" },
+        { "value": "name_decided", "label": "I already have a name in mind" },
+        { "value": "had_issues", "label": "I've tried before but had issues" }
+      ],
+      "submit": "I want early access",
+      "submitting": "Sending…",
+      "success": "Thank you! You're on the list. We'll contact you as soon as the Copilot is available.",
+      "errorRequired": "Please fill in all fields.",
+      "errorNetwork": "Network error. Please try again.",
+      "errorGeneric": "Could not send. Please try again later."
+    }
+  },
+  "apiCopilot": {
+    "emailSubject": "New Copilot Ltd lead — {name}",
+    "emailHeading": "New Copilot Ltd lead",
+    "emailName": "Name",
+    "emailEmail": "Email",
+    "emailStatus": "UK Ltd status",
+    "autoReplySubject": "You're on the list — QC Tech Copilot",
+    "autoReplyBody": "Thank you {name}, you're on the list. We'll contact you as soon as the Copilot is available. — The QC Tech team",
+    "statusLabels": {
+      "evaluating": "I'm evaluating",
+      "name_decided": "I already have a name in mind",
+      "had_issues": "I've tried before but had issues"
+    }
   }
 }
