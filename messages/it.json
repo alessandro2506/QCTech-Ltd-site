@@ -643,67 +643,67 @@
   "copilotLtd": {
     "meta": {
       "title": "Apri una UK Ltd in italiano | QC Tech Copilot",
-      "description": "Il primo copilot AI che ti guida passo dopo passo nell'apertura di una società inglese — in italiano, con validazione predittiva prima del deposito su Companies House."
+      "description": "Il copilot AI che guida gli imprenditori italiani nell'apertura di una società inglese — in italiano, con validazione intelligente prima del deposito su Companies House."
     },
     "hero": {
-      "eyebrow": "Nuovo — AI Copilot per imprenditori italiani",
-      "title": "Apri una UK Ltd in italiano. In meno di 24 ore.",
-      "subtitle": "Il primo copilot AI che ti guida passo dopo passo nell'apertura di una società inglese — in italiano, con validazione predittiva prima del deposito su Companies House.",
+      "eyebrow": "AI Copilot · Esclusivo per imprenditori italiani",
+      "title": "La tua UK Ltd aperta in italiano. Senza errori.",
+      "subtitle": "Companies House è in inglese, i moduli sono ostici e un campo sbagliato può costare settimane. Il nostro Copilot AI raccoglie i tuoi dati in italiano, li valida in tempo reale e deposita tutto correttamente — di solito entro 24 ore.",
       "cta": "Scopri come funziona"
     },
     "problem": {
       "cards": [
         {
-          "title": "Form solo in inglese",
-          "description": "Companies House accetta solo English. Un errore di compilazione costa settimane."
+          "title": "Tutto in inglese, nessuna guida",
+          "description": "Companies House usa terminologia legale anglosassone. Senza esperienza locale, ogni campo è un'incognita — e gli errori si pagano in settimane di ritardo."
         },
         {
-          "title": "Verifica identità complessa",
-          "description": "Passaporto, proof of address, firma digitale. Nessuna guida in italiano."
+          "title": "Verifica identità: un labirinto burocratico",
+          "description": "Passaporto, proof of address, firma elettronica qualificata. La procedura è frammentata e nessun portale ufficiale la spiega in italiano."
         },
         {
-          "title": "Errori costosi",
-          "description": "Un campo sbagliato blocca tutto. Rifare la domanda significa ricominciare da zero."
+          "title": "Un errore basta per ricominciare da zero",
+          "description": "Companies House non corregge domande parziali: si rigetta e si rideposita. Ogni tentativo fallito è tempo e denaro perso."
         }
       ]
     },
     "solution": {
       "title": "Come funziona il Copilot",
-      "intro": "Quattro passaggi dalla prima domanda alla società incorporata.",
+      "intro": "Quattro step dalla registrazione alla società operativa.",
       "steps": [
-        "Rispondi alle domande in italiano — nessun termine legale da conoscere",
-        "Il Copilot valida ogni dato prima che arrivi a Companies House",
-        "Ricevi i documenti pronti per la firma",
-        "La tua Ltd è aperta. Di solito entro 24 ore."
+        "Rispondi in italiano — nessun termine legale da conoscere, nessun modulo in inglese da interpretare",
+        "Il Copilot valida ogni dato in tempo reale prima che raggiunga Companies House",
+        "Ricevi i documenti pronti per la firma digitale",
+        "La tua UK Ltd è registrata. Nella maggior parte dei casi entro 24 ore."
       ]
     },
     "proof": {
-      "title": "Provato su noi stessi",
-      "body": "QC Tech Ltd — Company Number 17317573 — incorporata il 3 luglio 2026. Abbiamo usato questo processo internamente prima di renderlo disponibile."
+      "title": "Prima lo abbiamo usato su noi stessi",
+      "body": "QC Tech Ltd — Company Number 17317573 — è stata incorporata il 3 luglio 2026. Abbiamo validato l'intero processo internamente prima di renderlo disponibile: zero errori di deposito, approvazione in meno di 24 ore."
     },
     "pricing": {
-      "title": "Quanto costa?",
-      "body": "Stiamo definendo il pricing finale. L'indicazione attuale è €60–120 una tantum. Nessun abbonamento. Se ti registri ora, avrai accesso prioritario al prezzo di lancio.",
-      "badge": "Early Access"
+      "title": "Quanto costa aprire una UK Ltd con il Copilot?",
+      "body": "Stiamo finalizzando il pricing. L'indicazione attuale è €60–120 una tantum — nessun abbonamento, nessun costo ricorrente. Chi si iscrive ora accede al prezzo di lancio più basso garantito.",
+      "badge": "Early Access — posti limitati"
     },
     "form": {
-      "title": "Accesso anticipato",
-      "subtitle": "Lascia i tuoi dati — ti avviseremo quando il Copilot sarà disponibile.",
-      "name": "Nome",
+      "title": "Vuoi aprire una UK Ltd?",
+      "subtitle": "Lascia i tuoi dati. Ti avvisiamo in anteprima quando il Copilot sarà disponibile — e ti riserviamo il prezzo di lancio.",
+      "name": "Nome e cognome",
       "email": "Email",
-      "statusLabel": "Hai già una UK Ltd in mente?",
+      "statusLabel": "A che punto sei con l'apertura della tua Ltd?",
       "statusPlaceholder": "— Seleziona —",
       "statusOptions": [
-        { "value": "evaluating", "label": "Sto valutando" },
-        { "value": "name_decided", "label": "Ho già deciso il nome" },
-        { "value": "had_issues", "label": "Ho già provato ma ho avuto problemi" }
+        { "value": "evaluating", "label": "Sto ancora valutando se conviene" },
+        { "value": "name_decided", "label": "Ho già scelto il nome e voglio procedere" },
+        { "value": "had_issues", "label": "Ho già provato ma sono rimasto bloccato" }
       ],
-      "submit": "Voglio l'accesso anticipato",
+      "submit": "Riservami l'accesso anticipato",
       "submitting": "Invio in corso…",
-      "success": "Grazie! Sei in lista. Ti contatteremo non appena il Copilot sarà disponibile.",
-      "errorRequired": "Compila tutti i campi.",
-      "errorNetwork": "Errore di rete. Riprova.",
-      "errorGeneric": "Invio non riuscito. Riprova più tardi."
+      "success": "Perfetto — sei in lista. Ti contatteremo in anticipo rispetto al lancio pubblico.",
+      "errorRequired": "Compila tutti i campi per procedere.",
+      "errorNetwork": "Errore di connessione. Riprova tra qualche secondo.",
+      "errorGeneric": "Invio non riuscito. Riprova o scrivici a hello@qc-tech.co.uk."
     }
   },
   "apiCopilot": {
