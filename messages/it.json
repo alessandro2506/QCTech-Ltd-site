@@ -72,7 +72,7 @@
       {
         "id": "web-landing",
         "name": "Landing Page",
-        "price": "Da £900",
+        "price": "Da €1.100",
         "subtitle": "1 pagina, hero + sezioni + form contatti + CTA.",
         "highlight": false,
         "bullets": [
@@ -85,7 +85,7 @@
       {
         "id": "web-vetrina",
         "name": "Sito Vetrina",
-        "price": "Da £1.400",
+        "price": "Da €1.700",
         "subtitle": "3–5 pagine, design custom, form contatti, SEO on-page.",
         "highlight": true,
         "bullets": [
@@ -99,7 +99,7 @@
       {
         "id": "web-corporate",
         "name": "Sito Corporate",
-        "price": "Da £8.000",
+        "price": "Da €9.500",
         "subtitle": "10–20 pagine, architettura scalabile, UI/UX premium.",
         "highlight": false,
         "bullets": [
@@ -111,7 +111,7 @@
         ]
       }
     ],
-    "paymentNote": "Progetti sotto £700 — 100% alla firma. Sopra £700 — 50% alla firma · 25% a metà progetto · 25% alla consegna."
+    "paymentNote": "Progetti sotto €850 — 100% alla firma. Sopra €850 — 50% alla firma · 25% a metà progetto · 25% alla consegna."
   },
   "pricingPresence": {
     "eyebrow": "Gestione Presenza Digitale",
@@ -122,12 +122,12 @@
       {
         "id": "pres-starter",
         "name": "Starter",
-        "price": "£75 / mese",
-        "subtitle": "Google Business Profile + Search Console — risparmio £10/mese rispetto ai singoli.",
+        "price": "€90 / mese",
+        "subtitle": "Google Business Profile + Search Console — risparmio €12/mese rispetto ai singoli.",
         "highlight": false,
         "bullets": [
-          "Gestione Google Business Profile (£55/mese singolo)",
-          "Monitoraggio Google Search Console (£30/mese singolo)",
+          "Gestione Google Business Profile (€65/mese singolo)",
+          "Monitoraggio Google Search Console (€36/mese singolo)",
           "Report mensile delle performance",
           "Setup incluso nel primo mese"
         ]
@@ -135,13 +135,13 @@
       {
         "id": "pres-digital",
         "name": "Digital Presence",
-        "price": "£100 / mese",
-        "subtitle": "Starter + Google Analytics 4. Il più conveniente — risparmio £23/mese.",
+        "price": "€120 / mese",
+        "subtitle": "Starter + Google Analytics 4. Il più conveniente — risparmio €28/mese.",
         "highlight": true,
         "bullets": [
           "Gestione Google Business Profile",
           "Monitoraggio Google Search Console",
-          "Monitoraggio e insight Google Analytics 4 (£38/mese singolo)",
+          "Monitoraggio e insight Google Analytics 4 (€45/mese singolo)",
           "Report mensile delle performance",
           "Setup incluso nel primo mese"
         ]
@@ -154,10 +154,10 @@
         "highlight": false,
         "bullets": [
           "Tutto incluso nel Digital Presence",
-          "Gestione Trustpilot / Recensioni (£47/mese)",
-          "Gestione pagina LinkedIn Business (£55/mese)",
+          "Gestione Trustpilot / Recensioni (€56/mese)",
+          "Gestione pagina LinkedIn Business (€65/mese)",
           "Risposta prioritaria e contatto dedicato",
-          "Add-on disponibile: produzione video aziendale (£800–£3.000)"
+          "Add-on disponibile: produzione video aziendale (€950–€3.570)"
         ]
       }
     ]
@@ -171,7 +171,7 @@
       {
         "id": "mob-starter",
         "name": "MVP App",
-        "price": "da €7.605",
+        "price": "da €7.600",
         "subtitle": "React Native o Flutter — time-to-market rapido.",
         "highlight": false,
         "bullets": [
@@ -216,7 +216,7 @@
       {
         "id": "eco-starter",
         "name": "Store Essentials",
-        "price": "da €3.745",
+        "price": "da €3.700",
         "subtitle": "Custom store + gestione ordini essenziale.",
         "highlight": false,
         "bullets": [
@@ -228,7 +228,7 @@
       {
         "id": "eco-inventory",
         "name": "Inventory Pro",
-        "price": "da €7.605",
+        "price": "da €7.600",
         "subtitle": "Sync magazzino e canali multipli.",
         "highlight": true,
         "bullets": [
@@ -574,7 +574,7 @@
     "ctaBody": "Una chiamata di 15 minuti in cui analizziamo il tuo sito attuale e ti diciamo esattamente cosa impedisce le conversioni. Senza impegno. Prenota tramite il modulo contatti.",
     "ctaButton": "Richiedi Preventivo",
     "q1": "Quanto costa un sito web?",
-    "a1": "I nostri siti partono da £900 per una landing page fino a £25.000+ per una piattaforma corporate completa. Ogni progetto riceve un preventivo personalizzato. Serviamo anche clienti italiani con prezzi in EUR.",
+    "a1": "I nostri siti partono da €1.100 per una landing page fino a €25.000+ per una piattaforma corporate completa. Ogni progetto riceve un preventivo personalizzato. Serviamo anche clienti italiani con prezzi in EUR.",
     "q2": "Lavorate con aziende italiane?",
     "a2": "Sì. Operiamo sia in UK che in Italia. Gestiamo contenuti in IT e EN, conformità UK GDPR e GDPR UE, e fatturazione in GBP ed EUR.",
     "q3": "Cos'è l'audit gratuito del sito?",
@@ -594,7 +594,7 @@
     "q10": "Potete ridisegnare il mio sito esistente senza perdere il posizionamento su Google?",
     "a10": "Sì — e questo è fondamentale. Un redesign fatto senza cura per la SEO può distruggere anni di posizionamento. Conduciamo un audit SEO completo prima di qualsiasi redesign, preserviamo tutti gli URL esistenti o impostiamo i redirect corretti, e trasferiamo tutti i dati strutturati e i metadati. La tua visibilità su Google è protetta durante l'intero processo.",
     "q11": "Offrite manutenzione del sito web dopo il lancio?",
-    "a11": "Sì. Offriamo piani di manutenzione mensile a partire da £120/mese che includono aggiornamenti di sicurezza, monitoraggio delle performance, modifiche ai contenuti, correzione di bug e controllo dell'uptime. I clienti a lungo termine hanno anche tempi di risposta prioritari. Un sito senza manutenzione è un rischio — ci assicuriamo che il tuo rimanga veloce, sicuro e aggiornato.",
+    "a11": "Sì. Offriamo piani di manutenzione mensile a partire da €145/mese che includono aggiornamenti di sicurezza, monitoraggio delle performance, modifiche ai contenuti, correzione di bug e controllo dell'uptime. I clienti a lungo termine hanno anche tempi di risposta prioritari. Un sito senza manutenzione è un rischio — ci assicuriamo che il tuo rimanga veloce, sicuro e aggiornato.",
     "q12": "Potete integrare l'AI nel mio sito o nella mia app?",
     "a12": "Assolutamente sì. L'integrazione AI è una delle nostre competenze principali. Implementiamo AI per: chatbot intelligenti e automazione del servizio clienti, analisi e moderazione dei contenuti, motori di personalizzazione, ricerca predittiva, riconoscimento delle immagini e reportistica automatizzata. Utilizziamo OpenAI, Google AI e modelli personalizzati in base al caso d'uso — sempre dove aggiunge valore reale al business.",
     "q13": "Cos'è un MVP e ne ho bisogno per la mia idea di app?",
@@ -683,7 +683,7 @@
     },
     "pricing": {
       "title": "Quanto costa?",
-      "body": "Stiamo definendo il pricing finale. L'indicazione attuale è £49–99 una tantum. Nessun abbonamento. Se ti registri ora, avrai accesso prioritario al prezzo di lancio.",
+      "body": "Stiamo definendo il pricing finale. L'indicazione attuale è €60–120 una tantum. Nessun abbonamento. Se ti registri ora, avrai accesso prioritario al prezzo di lancio.",
       "badge": "Early Access"
     },
     "form": {
