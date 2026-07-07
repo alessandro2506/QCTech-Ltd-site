@@ -642,65 +642,65 @@
   },
   "copilotLtd": {
     "meta": {
-      "title": "Apri una UK Ltd in italiano | QC Tech Copilot",
-      "description": "Il copilot AI che guida gli imprenditori italiani nell'apertura di una società inglese — in italiano, con validazione intelligente prima del deposito su Companies House."
+      "title": "Apri la tua società in Inghilterra in italiano | QC Tech",
+      "description": "Il servizio AI che ti guida passo dopo passo nell'apertura di una società inglese — tutto in italiano, approvazione in 24 ore."
     },
     "hero": {
-      "eyebrow": "AI Copilot · Esclusivo per imprenditori italiani",
+      "eyebrow": "Pensato per gli imprenditori italiani",
       "title": "Apri la tua società in Inghilterra. Tutto in italiano, approvazione in 24 ore.",
-      "subtitle": "Companies House è in inglese, i moduli sono ostici e un campo sbagliato può costare settimane. Il nostro Copilot AI raccoglie i tuoi dati in italiano, li valida in tempo reale e deposita tutto correttamente — di solito entro 24 ore.",
-      "cta": "Scopri come funziona"
+      "subtitle": "Aprire una società in Inghilterra sembra complicato: moduli in inglese, procedure burocratiche e il rischio di commettere errori costosi. Il nostro assistente AI ti guida passo dopo passo, in italiano, e ti conferma l'avvenuta registrazione entro 24 ore.",
+      "cta": "Inizia ora — è gratis"
     },
     "problem": {
       "cards": [
         {
-          "title": "Tutto in inglese, nessuna guida",
-          "description": "Companies House usa terminologia legale anglosassone. Senza esperienza locale, ogni campo è un'incognita — e gli errori si pagano in settimane di ritardo."
+          "title": "Tutto in inglese",
+          "description": "Le procedure ufficiali sono in inglese e usano termini legali difficili. Un errore di compilazione può bloccare la tua richiesta per settimane."
         },
         {
-          "title": "Verifica identità: un labirinto burocratico",
-          "description": "Passaporto, proof of address, firma elettronica qualificata. La procedura è frammentata e nessun portale ufficiale la spiega in italiano."
+          "title": "Documenti e verifiche complesse",
+          "description": "Passaporto, documento di residenza, firma digitale. Ogni passaggio richiede documenti diversi e nessuna istruzione è disponibile in italiano."
         },
         {
-          "title": "Un errore basta per ricominciare da zero",
-          "description": "Companies House non corregge domande parziali: si rigetta e si rideposita. Ogni tentativo fallito è tempo e denaro perso."
+          "title": "Un errore e si ricomincia da capo",
+          "description": "Se sbagli anche un solo campo, la domanda viene rigettata e devi ripartire dall'inizio. Tempo perso, soldi sprecati."
         }
       ]
     },
     "solution": {
-      "title": "Come funziona il Copilot",
-      "intro": "Quattro step dalla registrazione alla società operativa.",
+      "title": "Come funziona",
+      "intro": "Quattro passaggi e la tua società è pronta.",
       "steps": [
-        "Rispondi in italiano — nessun termine legale da conoscere, nessun modulo in inglese da interpretare",
-        "Il Copilot valida ogni dato in tempo reale prima che raggiunga Companies House",
-        "Ricevi i documenti pronti per la firma digitale",
-        "La tua UK Ltd è registrata. Nella maggior parte dei casi entro 24 ore."
+        "Rispondi a semplici domande in italiano — nessun modulo inglese, nessun termine legale",
+        "Il nostro sistema controlla ogni informazione prima di inviarla alle autorità competenti",
+        "Ricevi i documenti via email, già pronti per la firma",
+        "La tua società è registrata. Nella maggior parte dei casi entro 24 ore."
       ]
     },
     "proof": {
-      "title": "Prima lo abbiamo usato su noi stessi",
-      "body": "QC Tech Ltd — Company Number 17317573 — è stata incorporata il 3 luglio 2026. Abbiamo validato l'intero processo internamente prima di renderlo disponibile: zero errori di deposito, approvazione in meno di 24 ore."
+      "title": "Testato prima su di noi",
+      "body": "QC Tech è una società inglese registrata ufficialmente il 3 luglio 2026 (numero di registrazione 17317573). Abbiamo usato questo stesso processo per aprirla — zero errori, approvazione in meno di 24 ore."
     },
     "pricing": {
-      "title": "Quanto costa aprire una UK Ltd con il Copilot?",
-      "body": "Stiamo finalizzando il pricing. L'indicazione attuale è €60–120 una tantum — nessun abbonamento, nessun costo ricorrente. Chi si iscrive ora accede al prezzo di lancio più basso garantito.",
-      "badge": "Early Access — posti limitati"
+      "title": "Quanto costa?",
+      "body": "Stiamo definendo il prezzo finale. L'indicazione attuale è tra €60 e €120 — pagamento unico, nessun abbonamento. Chi si registra ora riceve il prezzo di lancio più basso, garantito.",
+      "badge": "Accesso anticipato — posti limitati"
     },
     "form": {
-      "title": "Vuoi aprire una UK Ltd?",
-      "subtitle": "Lascia i tuoi dati. Ti avvisiamo in anteprima quando il Copilot sarà disponibile — e ti riserviamo il prezzo di lancio.",
+      "title": "Vuoi aprire la tua società in Inghilterra?",
+      "subtitle": "Lascia i tuoi dati. Ti avvisiamo in anteprima quando il servizio sarà disponibile e ti riserviamo il prezzo di lancio.",
       "name": "Nome e cognome",
       "email": "Email",
-      "statusLabel": "A che punto sei con l'apertura della tua Ltd?",
+      "statusLabel": "A che punto sei?",
       "statusPlaceholder": "— Seleziona —",
       "statusOptions": [
-        { "value": "evaluating", "label": "Sto ancora valutando se conviene" },
-        { "value": "name_decided", "label": "Ho già scelto il nome e voglio procedere" },
-        { "value": "had_issues", "label": "Ho già provato ma sono rimasto bloccato" }
+        { "value": "evaluating", "label": "Sto ancora valutando" },
+        { "value": "name_decided", "label": "Ho già scelto il nome" },
+        { "value": "had_issues", "label": "Ho già provato ma ho avuto problemi" }
       ],
-      "submit": "Riservami l'accesso anticipato",
+      "submit": "Voglio essere tra i primi",
       "submitting": "Invio in corso…",
-      "success": "Perfetto — sei in lista. Ti contatteremo in anticipo rispetto al lancio pubblico.",
+      "success": "Perfetto, sei in lista. Ti contatteremo prima del lancio pubblico.",
       "errorRequired": "Compila tutti i campi per procedere.",
       "errorNetwork": "Errore di connessione. Riprova tra qualche secondo.",
       "errorGeneric": "Invio non riuscito. Riprova o scrivici a hello@qc-tech.co.uk."
