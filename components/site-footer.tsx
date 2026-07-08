@@ -1,10 +1,11 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { siteConfig, navRoutes } from "@/app.config";
 import { Link } from "@/i18n/routing";
 
 export function SiteFooter() {
+  const locale = useLocale();
   const t = useTranslations("nav");
   const tf = useTranslations("footer");
   const tm = useTranslations("meta");
@@ -40,6 +41,23 @@ export function SiteFooter() {
         <p>{tf("legal")}</p>
         <p className="mt-1">{siteConfig.address.full}</p>
         <p className="mt-1">Company Number 17317573</p>
+        <p className="mt-2">
+          <Link
+            href="/privacy"
+            locale={locale}
+            className="text-slate-600 transition-colors hover:text-violet-400"
+          >
+            {t("privacy")}
+          </Link>
+          <span className="mx-1.5 text-slate-700">·</span>
+          <Link
+            href="/termini"
+            locale={locale}
+            className="text-slate-600 transition-colors hover:text-violet-400"
+          >
+            {locale === "it" ? "Termini e Condizioni" : "Terms & Conditions"}
+          </Link>
+        </p>
       </div>
     </footer>
   );

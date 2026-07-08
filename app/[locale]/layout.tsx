@@ -3,18 +3,20 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
-import Script from "next/script";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { SchemaOrg } from "@/components/schema-org";
 import { MainWrapper } from "@/components/main-wrapper";
+import { CookieBanner } from "@/components/cookie-banner";
+import { GoogleAnalytics } from "@/components/google-analytics";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
 
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
+    dataLayer?: unknown[];
   }
 }
 
@@ -134,25 +136,14 @@ export default async function LocaleLayout({ children, params }: Props) {
       className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth antialiased`}
     >
       <body className="flex min-h-full flex-col bg-[#08050f] text-slate-100">
-        {/* Google Analytics 4 */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-EK5XQ10BZP"
-          strategy="afterInteractive"
-        />
-        <Script id="ga4-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-EK5XQ10BZP');
-          `}
-        </Script>
         <NextIntlClientProvider messages={messages}>
           <SchemaOrg locale={locale} />
+          <GoogleAnalytics />
           <SiteHeader />
           <MainWrapper>{children}</MainWrapper>
           <SiteFooter />
           <ScrollToTop />
+          <CookieBanner />
         </NextIntlClientProvider>
       </body>
     </html>

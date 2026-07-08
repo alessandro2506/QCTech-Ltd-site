@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" aria-label="QuiPalermo">
+  <g transform="translate(0, -8) scale(0.583)">
+    <path fill="#FFFFFF" d="M8,30 Q8,8 30,8 L66,8 Q88,8 88,30 L88,58 Q88,63 85,67 L53,105 Q48,111 43,105 L11,67 Q8,63 8,58 Z"/>
+    <path fill="#1A3A5C" d="M30,60 L30,44 Q30,23 48,23 Q66,23 66,44 L66,60 Z"/>
+  </g>
+  <text x="64" y="54" font-family="'Geist', system-ui, -apple-system, sans-serif" font-size="42" fill="#FFFFFF" font-weight="900" letter-spacing="-1.5">Qui</text>
+  <text x="120" y="54" font-family="'Geist', system-ui, -apple-system, sans-serif" font-size="42" fill="#FFFFFF" font-weight="300" letter-spacing="-1.5" opacity="0.72">Palermo</text>
+</svg>

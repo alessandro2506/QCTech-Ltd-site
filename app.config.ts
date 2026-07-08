@@ -30,5 +30,6 @@ export const navRoutes = [
   { href: "/vision" as const, key: "vision" as const },
   { href: "/faq" as const, key: "faq" as const },
   { href: "/blog" as const, key: "blog" as const },
+  { href: "/progetti" as const, key: "projects" as const },
   { href: "/contatti" as const, key: "contacts" as const },
 ];

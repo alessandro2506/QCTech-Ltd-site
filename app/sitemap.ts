@@ -19,6 +19,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/it/blog", priority: 0.9, freq: "weekly" },
     { path: "/it/contatti", priority: 0.8, freq: "monthly" },
     { path: "/it/copilot-ltd", priority: 0.7, freq: "monthly" },
+    { path: "/it/progetti", priority: 0.8, freq: "monthly" },
+    { path: "/it/privacy", priority: 0.5, freq: "yearly" },
+    { path: "/it/termini", priority: 0.5, freq: "yearly" },
   ];
 
   const enPages = [
@@ -29,6 +32,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/en/blog", priority: 0.9, freq: "weekly" },
     { path: "/en/contacts", priority: 0.8, freq: "monthly" },
     { path: "/en/copilot-ltd", priority: 0.7, freq: "monthly" },
+    { path: "/en/projects", priority: 0.8, freq: "monthly" },
+    { path: "/en/privacy", priority: 0.5, freq: "yearly" },
+    { path: "/en/terms", priority: 0.5, freq: "yearly" },
   ];
 
   const entries: MetadataRoute.Sitemap = [];
@@ -43,7 +49,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
           ? "/vision"
           : normalizedPath === "/contacts"
             ? "/contatti"
-            : normalizedPath;
+            : normalizedPath === "/projects"
+              ? "/progetti"
+              : normalizedPath === "/terms"
+                ? "/termini"
+                : normalizedPath;
     const enPath =
       normalizedPath === "/servizi"
         ? "/services"
@@ -51,7 +61,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
           ? "/about"
           : normalizedPath === "/contatti"
             ? "/contacts"
-            : normalizedPath;
+            : normalizedPath === "/progetti"
+              ? "/projects"
+              : normalizedPath === "/termini"
+                ? "/terms"
+                : normalizedPath;
 
     entries.push({
       url: `${baseUrl}${page.path}`,

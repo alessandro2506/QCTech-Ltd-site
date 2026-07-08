@@ -11,8 +11,11 @@ export const routing = defineRouting({
     "/vision": { it: "/vision", en: "/about" },
     "/faq": "/faq",
     "/blog": "/blog",
+    "/progetti": { it: "/progetti", en: "/projects" },
     "/contatti": { it: "/contatti", en: "/contacts" },
     "/copilot-ltd": "/copilot-ltd",
+    "/privacy": "/privacy",
+    "/termini": { it: "/termini", en: "/terms" },
   },
 });
 

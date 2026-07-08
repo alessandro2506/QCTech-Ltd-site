@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 90" width="460" height="90">
+  <g transform="translate(2, 5) scale(0.57)">
+    <path fill="#22C55E" d="M50 4C74.3 4 94 23.7 94 48C94 82 50 126 50 126C50 126 6 82 6 48C6 23.7 25.7 4 50 4Z"/>
+    <rect fill="#FFFFFF" x="27" y="34" width="10" height="18" rx="1"/>
+    <rect fill="#14532D" x="39" y="22" width="10" height="30" rx="1"/>
+    <rect fill="#FFFFFF" x="51" y="28" width="10" height="24" rx="1"/>
+    <rect fill="#FFFFFF" x="63" y="36" width="10" height="16" rx="1"/>
+    <ellipse cx="50" cy="128" rx="18" ry="5" fill="none" stroke="#14532D" stroke-width="1.5" opacity="0.25"/>
+    <ellipse cx="50" cy="128" rx="26" ry="7" fill="none" stroke="#14532D" stroke-width="1.5" opacity="0.12"/>
+  </g>
+  <text x="70" y="58" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="700" fill="#14532D">Here</text>
+  <text x="158" y="58" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="300" fill="#22C55E">BishopsStortford</text>
+</svg>
