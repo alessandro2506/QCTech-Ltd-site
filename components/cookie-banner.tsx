@@ -41,7 +41,7 @@ export function CookieBanner() {
       <button
         type="button"
         onClick={() => setPanelOpen((open) => !open)}
-        className="fixed bottom-5 right-5 z-[80] flex h-12 w-12 items-center justify-center rounded-full border border-[#22C55E]/40 bg-[#08050f]/85 text-xl shadow-[0_0_20px_rgba(34,197,94,0.35)] backdrop-blur-sm transition hover:border-[#22C55E]/70 hover:shadow-[0_0_28px_rgba(34,197,94,0.5)]"
+        className="fixed bottom-5 left-5 z-[80] flex h-12 w-12 items-center justify-center rounded-full border border-[#22C55E]/40 bg-[#08050f]/85 text-xl shadow-[0_0_20px_rgba(34,197,94,0.35)] backdrop-blur-sm transition hover:border-[#22C55E]/70 hover:shadow-[0_0_28px_rgba(34,197,94,0.5)]"
         aria-label={t.title}
         aria-expanded={panelOpen}
       >
@@ -58,7 +58,7 @@ export function CookieBanner() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 24 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed bottom-20 right-5 z-[80] w-[min(calc(100vw-2.5rem),22rem)] rounded-2xl border border-violet-500/20 bg-[#0d0720]/95 p-5 shadow-2xl shadow-violet-900/30 backdrop-blur-md"
+            className="fixed bottom-20 left-5 z-[80] w-[min(calc(100vw-2.5rem),22rem)] rounded-2xl border border-violet-500/20 bg-[#0d0720]/95 p-5 shadow-2xl shadow-violet-900/30 backdrop-blur-md"
           >
             <h2
               id="cookie-panel-title"
