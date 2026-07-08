@@ -642,68 +642,68 @@
   },
   "copilotLtd": {
     "meta": {
-      "title": "Open a UK Ltd in Italian | QC Tech Copilot",
-      "description": "The first AI copilot that guides you step by step through opening a UK company — in Italian, with predictive validation before filing with Companies House."
+      "title": "Open a Company in England in Italian | QC Tech",
+      "description": "The AI service that guides Italian entrepreneurs through opening an English company — entirely in Italian, registration confirmed within 24 hours."
     },
     "hero": {
-      "eyebrow": "New — AI Copilot for Italian entrepreneurs",
-      "title": "Open a UK Ltd in Italian. In less than 24 hours.",
-      "subtitle": "The first AI copilot that guides you step by step through opening a UK company — in Italian, with predictive validation before filing with Companies House.",
-      "cta": "See how it works"
+      "eyebrow": "Built for Italian entrepreneurs",
+      "title": "Open a Company in England. Entirely in Italian, approved in 24 hours.",
+      "subtitle": "Opening a company in England sounds complex: English-only forms, bureaucratic steps, and costly mistakes if you get it wrong. Our AI assistant guides you through everything in Italian and confirms your registration within 24 hours.",
+      "cta": "Get started — it's free"
     },
     "problem": {
       "cards": [
         {
-          "title": "Forms only in English",
-          "description": "Companies House accepts English only. One filing error can cost you weeks."
+          "title": "Everything is in English",
+          "description": "The official process uses complex legal terminology. A single mistake can delay your application by weeks."
         },
         {
-          "title": "Complex identity verification",
-          "description": "Passport, proof of address, digital signature. No guidance in Italian."
+          "title": "Documents and complex checks",
+          "description": "Passport, proof of address, digital signature. Each step requires different documents and no guidance is available in Italian."
         },
         {
-          "title": "Costly mistakes",
-          "description": "One wrong field blocks everything. Resubmitting means starting from scratch."
+          "title": "One mistake means starting over",
+          "description": "If you get even one field wrong, your application is rejected and you have to start from scratch. Time wasted, money lost."
         }
       ]
     },
     "solution": {
-      "title": "How the Copilot works",
-      "intro": "Four steps from your first question to an incorporated company.",
+      "title": "How it works",
+      "intro": "Four steps and your company is ready.",
       "steps": [
-        "Answer questions in Italian — no legal jargon required",
-        "The Copilot validates every field before it reaches Companies House",
-        "Receive documents ready for signature",
-        "Your Ltd is open. Usually within 24 hours."
+        "Answer simple questions in Italian — no English forms, no legal jargon",
+        "Our system checks every piece of information before submitting it to the authorities",
+        "Receive your documents by email, ready to sign",
+        "Your company is registered. In most cases within 24 hours."
       ]
     },
     "proof": {
-      "title": "Proven on ourselves",
-      "body": "QC Tech Ltd — Company Number 17317573 — incorporated on 3 July 2026. We used this process internally before making it available."
+      "title": "We tested it on ourselves first",
+      "body": "QC Tech is an officially registered English company, incorporated on 3 July 2026 (registration number 17317573). We used this exact process to open it — zero errors, approved in under 24 hours."
     },
     "pricing": {
       "title": "How much does it cost?",
-      "body": "We're finalising pricing. Current indication is £49–99 one-off. No subscription. Register now for priority access at launch price.",
-      "badge": "Early Access"
+      "body": "We're finalising pricing. Current indication is £49–99 — one-off payment, no subscription. Register now and we'll guarantee you the lowest launch price.",
+      "badge": "Early Access — limited spots"
     },
     "form": {
-      "title": "Early access",
-      "subtitle": "Leave your details — we'll notify you when the Copilot launches.",
+      "title": "Want to open your company in England?",
+      "subtitle": "Leave your details. We'll notify you before the public launch and reserve the launch price for you.",
       "name": "Full name",
       "email": "Email",
-      "statusLabel": "Do you already have a UK Ltd in mind?",
+      "statusLabel": "Where are you right now?",
       "statusPlaceholder": "— Select —",
       "statusOptions": [
-        { "value": "evaluating", "label": "I'm evaluating" },
-        { "value": "name_decided", "label": "I already have a name in mind" },
-        { "value": "had_issues", "label": "I've tried before but had issues" }
+        { "value": "evaluating", "label": "Still exploring my options" },
+        { "value": "name_decided", "label": "I've already chosen a name" },
+        { "value": "had_issues", "label": "I've tried before but got stuck" }
       ],
-      "submit": "I want early access",
+      "submit": "I want to be among the first",
       "submitting": "Sending…",
-      "success": "Thank you! You're on the list. We'll contact you as soon as the Copilot is available.",
-      "errorRequired": "Please fill in all fields.",
-      "errorNetwork": "Network error. Please try again.",
-      "errorGeneric": "Could not send. Please try again later."
+      "success": "You're on the list. We'll reach out before the public launch.",
+      "errorRequired": "Please fill in all fields to continue.",
+      "errorNetwork": "Connection error. Please try again in a moment.",
+      "errorGeneric": "Submission failed. Try again or contact us at hello@qc-tech.co.uk."
     }
   },
   "apiCopilot": {
