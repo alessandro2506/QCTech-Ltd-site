@@ -93,10 +93,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: t("description"),
       images: [
         {
-          url: "/og-image.png",
+          url: "https://www.qc-tech.co.uk/logo-full.svg",
           width: 1200,
           height: 630,
-          alt: "QC Tech — The UK–Italy Digital Studio",
+          alt: "Quantum Code Technologies Ltd — QC Tech",
         },
       ],
     },
@@ -104,7 +104,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: t("title"),
       description: t("description"),
-      images: ["/og-image.png"],
+      images: ["https://www.qc-tech.co.uk/logo-full.svg"],
     },
     alternates: {
       canonical: `https://www.qc-tech.co.uk${localePath}`,
