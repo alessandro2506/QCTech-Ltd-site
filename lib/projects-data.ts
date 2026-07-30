@@ -49,7 +49,7 @@ export const projects: ProjectItem[] = [
     name: "CivicAlert",
     logo: "/nostri-progetti/Loghi/CivicAlert/civicalert_logo_v2.svg",
     descriptionIt:
-      "App civica per il mercato UK — segnalazioni di problemi urbani, alert locali in tempo reale e collegamento diretto con gli enti pubblici territoriali. Sviluppata per il mercato inglese, scalabile su qualsiasi città.",
+      "App civica per il mercato UK — segnalazioni di problemi urbani, alert locali in tempo reale e collegamento diretto con gli enti pubblici territoriali. In sviluppo per il mercato inglese, pensata per essere scalabile su qualsiasi città.",
     descriptionEn:
       "Civic app for the UK market — urban issue reporting, real-time local alerts and direct connection with public authorities. Built for the British market, scalable to any city.",
     statusIt: "In sviluppo",

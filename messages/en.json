@@ -114,12 +114,12 @@
         ]
       }
     ],
-    "paymentNote": "Projects under £700 — 100% on signing. Above £700 — 50% on signing · 25% at mid-project · 25% on delivery."
+    "paymentNote": "Projects under £700 — 100% on signing. Above £700 — 40% on signing · 30% at mid-project/approval · 30% on delivery."
   },
   "pricingPresence": {
     "eyebrow": "Digital Presence Management",
     "title": "Be found. Be trusted. Be consistent.",
-    "description": "Monthly management of your business profiles on Google, social and review platforms. Minimum 3-month contract. Setup included in month one.",
+    "description": "Monthly management of your business profiles on Google, social and review platforms. Minimum 3-month contract. Setup cost charged with the first monthly fee, not requested separately.",
     "cta": "Get started — Digital Presence",
     "plans": [
       {
@@ -132,7 +132,7 @@
           "Google Business Profile management (£55/mo individually)",
           "Google Search Console monitoring (£30/mo individually)",
           "Monthly performance report",
-          "Setup included in month one"
+          "Setup cost charged with the first monthly fee, not requested separately."
         ]
       },
       {
@@ -146,7 +146,7 @@
           "Google Search Console monitoring",
           "Google Analytics 4 monitoring & insights (£38/mo individually)",
           "Monthly performance report",
-          "Setup included in month one"
+          "Setup cost charged with the first monthly fee, not requested separately."
         ]
       },
       {
@@ -625,7 +625,7 @@
     },
     "team": {
       "title": "Who we are",
-      "body": "We are a small, senior team. Alessandro Fiscella leads development and technical architecture from Italy. Our commercial operations are based at Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX and are led by Vincenzo Sedita. We work remotely with clients across the UK, Europe and beyond — time zones are not a barrier."
+      "body": "We are a senior team, distributed across England and Italy. Our commercial operations are based at Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX and are led by Vincenzo Sedita. We work remotely with clients across the UK, Europe and beyond — time zones are not a barrier."
     },
     "values": {
       "title": "How we work",

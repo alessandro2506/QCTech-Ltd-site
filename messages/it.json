@@ -76,11 +76,11 @@
         "id": "web-landing",
         "name": "Landing Page",
         "price": "Da €1.100",
-        "subtitle": "1 pagina, hero + sezioni + form contatti + CTA.",
+        "subtitle": "1 pagina, sezione principale (hero) + sezioni + form contatti + call-to-action (CTA).",
         "highlight": false,
         "bullets": [
           "Pagina singola, design su misura",
-          "Form per la generazione di lead",
+          "Form per la generazione di contatti potenziali (lead)",
           "SEO on-page inclusa",
           "SSL e hosting gestito"
         ]
@@ -114,12 +114,12 @@
         ]
       }
     ],
-    "paymentNote": "Progetti sotto €850 — 100% alla firma. Sopra €850 — 50% alla firma · 25% a metà progetto · 25% alla consegna."
+    "paymentNote": "Progetti sotto €850 — 100% alla firma. Sopra €850 — 40% alla firma · 30% a metà progetto/approvazione · 30% alla consegna."
   },
   "pricingPresence": {
     "eyebrow": "Gestione Presenza Digitale",
     "title": "Trovato. Fidato. Coerente.",
-    "description": "Gestione mensile dei profili aziendali su Google, social e piattaforme di recensione. Contratto minimo 3 mesi. Setup incluso nel primo mese.",
+    "description": "Gestione mensile dei profili aziendali su Google, social e piattaforme di recensione. Contratto minimo 3 mesi. Costo di setup addebitato con il primo canone mensile, non richiesto separatamente.",
     "cta": "Inizia ora — Presenza Digitale",
     "plans": [
       {
@@ -129,10 +129,10 @@
         "subtitle": "Google Business Profile + Search Console — risparmio €12/mese rispetto ai singoli.",
         "highlight": false,
         "bullets": [
-          "Gestione Google Business Profile (€65/mese singolo)",
-          "Monitoraggio Google Search Console (€36/mese singolo)",
+          "Gestione Google Business Profile (€65/mese se acquistato singolarmente)",
+          "Monitoraggio Google Search Console (€36/mese se acquistato singolarmente)",
           "Report mensile delle performance",
-          "Setup incluso nel primo mese"
+          "Costo di setup addebitato con il primo canone mensile, non richiesto separatamente."
         ]
       },
       {
@@ -146,7 +146,7 @@
           "Monitoraggio Google Search Console",
           "Monitoraggio e insight Google Analytics 4 (€45/mese singolo)",
           "Report mensile delle performance",
-          "Setup incluso nel primo mese"
+          "Costo di setup addebitato con il primo canone mensile, non richiesto separatamente."
         ]
       },
       {
@@ -179,7 +179,7 @@
         "highlight": false,
         "bullets": [
           "1 piattaforma (iOS o Android) + design system",
-          "Auth, notifiche push, analytics base",
+          "Autenticazione, notifiche push, analytics base",
           "Pubblicazione store assistita"
         ]
       },
@@ -212,7 +212,7 @@
   },
   "pricingEcommerce": {
     "eyebrow": "E-commerce",
-    "title": "Custom store & inventory",
+    "title": "Negozio su misura e gestione magazzino",
     "description": "Negozi su misura con focus su magazzino, integrazioni e conversione checkout.",
     "cta": "Richiedi preventivo — E-commerce",
     "plans": [
@@ -223,9 +223,9 @@
         "subtitle": "Custom store + gestione ordini essenziale.",
         "highlight": false,
         "bullets": [
-          "Tema su misura o headless storefront",
+          "Tema su misura o headless storefront (vetrina separata dal CMS)",
           "Catalogo, varianti, tasse e spedizioni",
-          "Pagamenti PSD2-ready (Stripe / provider EU)"
+          "Pagamenti PSD2-ready (Stripe / provider UE)"
         ]
       },
       {
@@ -448,7 +448,7 @@
         ]
       },
       {
-        "title": "Mobile applications",
+        "title": "Applicazioni Mobile",
         "points": [
           "React Native e Flutter: un codebase, store iOS e Android.",
           "UX nativa, deep link, push e monetizzazione in-app.",
@@ -456,7 +456,7 @@
         ]
       },
       {
-        "title": "Cloud solutions",
+        "title": "Soluzioni Cloud",
         "points": [
           "Infra su AWS / GCP / Vercel con costi prevedibili.",
           "CI/CD, ambienti staging, backup e disaster recovery.",
@@ -625,7 +625,7 @@
     },
     "team": {
       "title": "Chi siamo",
-      "body": "Siamo uno small team composto da senior. Alessandro Fiscella guida lo sviluppo e l'architettura tecnica dall'Italia. Le operazioni commerciali hanno sede legale a Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX e sono seguite da Vincenzo Sedita. Lavoriamo da remoto con clienti in UK, Europa e oltre — i fusi orari non sono un ostacolo."
+      "body": "Siamo un team di soli senior, distribuito tra Inghilterra e Italia. Le operazioni commerciali hanno sede legale a Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX e sono seguite da Vincenzo Sedita. Lavoriamo da remoto con clienti in UK, Europa e oltre — i fusi orari non sono un ostacolo."
     },
     "values": {
       "title": "Come lavoriamo",
