@@ -5,25 +5,32 @@ export function SchemaOrg({ locale }: { locale: string }) {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "LocalBusiness",
+        "@type": ["Organization", "LocalBusiness"],
         "@id": "https://www.qc-tech.co.uk/#organization",
-        name: "Quantum Code Technologies Ltd",
-        alternateName: "QC Tech",
+        name: "QC Tech",
+        legalName: "Quantum Code Technologies Ltd",
+        alternateName: ["Quantum Code Technologies", "QC Tech Ltd"],
         description:
-          locale === "it"
-            ? "Studio digitale specializzato in siti web, e-commerce e app mobile per aziende UK e italiane."
-            : "Digital studio specialised in websites, e-commerce and mobile apps for UK and Italian businesses.",
+          "Quantum Code Technologies Ltd (QC Tech) is a UK-registered digital studio offering web development, mobile apps, e-commerce and AI integration services to businesses in the UK and Italy.",
         url: "https://www.qc-tech.co.uk",
-        telephone: "+447754812247",
+        logo: "https://www.qc-tech.co.uk/logo-full.svg",
         email: "hello@qc-tech.co.uk",
+        telephone: "+447754812247",
         address: {
           "@type": "PostalAddress",
           streetAddress: siteConfig.address.streetAddress,
           addressLocality: siteConfig.address.addressLocality,
-          addressRegion: siteConfig.address.addressRegion,
           postalCode: siteConfig.address.postalCode,
           addressCountry: siteConfig.address.addressCountry,
         },
+        identifier: {
+          "@type": "PropertyValue",
+          name: "Companies House Number",
+          value: "17317573",
+        },
+        sameAs: [
+          "https://find-and-update.company-information.service.gov.uk/company/17317573",
+        ],
         areaServed: ["GB", "IT"],
         serviceType: [
           "Web Development",
@@ -33,7 +40,6 @@ export function SchemaOrg({ locale }: { locale: string }) {
           "Digital Marketing",
         ],
         priceRange: "££",
-        sameAs: ["https://github.com/alessandro2506"],
       },
       {
         "@type": "WebSite",

@@ -65,6 +65,15 @@ export function HeroHome() {
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45, delay: 0.12 }}
+          className="mt-4 text-sm text-slate-500"
+        >
+          {t("legalLine")}
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, delay: 0.16 }}
           className="mt-5 max-w-2xl text-lg text-slate-400 sm:text-xl"
         >
