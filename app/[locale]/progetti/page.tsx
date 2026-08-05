@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ProjectsGrid } from "@/components/projects-grid";
+import { buildAlternates } from "@/lib/seo";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -8,22 +9,15 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { locale } = await params;
   const isIt = locale === "it";
-  const path = isIt ? "/it/progetti" : "/en/projects";
+  const loc = locale as "it" | "en";
 
   return {
-    metadataBase: new URL("https://www.qc-tech.co.uk"),
-    title: isIt ? "I Nostri Progetti | QC Tech" : "Our Projects | QC Tech",
+    title: isIt ? "I Nostri Progetti" : "Our Projects",
     description: isIt
       ? "Portali civici, app mobile e piattaforme digitali sviluppate da QC Tech per comunità italiane e britanniche."
       : "Civic portals, mobile apps and digital platforms developed by QC Tech for Italian and British communities.",
-    alternates: {
-      canonical: `https://www.qc-tech.co.uk${path}`,
-      languages: {
-        it: "https://www.qc-tech.co.uk/it/progetti",
-        en: "https://www.qc-tech.co.uk/en/projects",
-        "x-default": "https://www.qc-tech.co.uk/en/projects",
-      },
-    },
+    alternates: buildAlternates("/progetti", loc),
+    openGraph: { url: buildAlternates("/progetti", loc).canonical as string },
   };
 }
 

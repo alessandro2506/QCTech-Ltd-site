@@ -33,7 +33,20 @@ const transporterNoReply = nodemailer.createTransport({
   },
 });
 
+function getRequestLocale(request: Request): "it" | "en" {
+  const referer = request.headers.get("referer") ?? "";
+  if (referer.includes("/en/") || referer.endsWith("/en")) return "en";
+  if (referer.includes("/it/") || referer.endsWith("/it")) return "it";
+
+  const accept = request.headers.get("accept-language") ?? "";
+  if (accept.toLowerCase().startsWith("it")) return "it";
+  return "en";
+}
+
 export async function POST(request: Request) {
+  const fallbackLocale = getRequestLocale(request);
+  const fallbackErrors = apiErrors(fallbackLocale);
+
   const to = process.env.CONTACT_TO_EMAIL?.trim();
   const from = process.env.SMTP_USER?.trim();
   const noReplyFrom = process.env.SMTP_NOREPLY_USER?.trim();
@@ -46,7 +59,7 @@ export async function POST(request: Request) {
     !process.env.SMTP_NOREPLY_PASS
   ) {
     return NextResponse.json(
-      { error: apiErrors("it").config },
+      { error: fallbackErrors.config },
       { status: 503 },
     );
   }
@@ -55,11 +68,17 @@ export async function POST(request: Request) {
   try {
     body = await request.json();
   } catch {
-    return NextResponse.json({ error: apiErrors("it").json }, { status: 400 });
+    return NextResponse.json(
+      { error: fallbackErrors.json },
+      { status: 400 },
+    );
   }
 
   if (!body || typeof body !== "object") {
-    return NextResponse.json({ error: apiErrors("it").body }, { status: 400 });
+    return NextResponse.json(
+      { error: fallbackErrors.body },
+      { status: 400 },
+    );
   }
 
   const o = body as Record<string, unknown>;
@@ -111,7 +130,12 @@ export async function POST(request: Request) {
       subject: L.emailSubject.replace("{name}", name),
       html: internalHtml,
     });
+  } catch (err) {
+    console.error("[copilot-lead] SMTP internal:", err);
+    return NextResponse.json({ error: errors.sendFailed }, { status: 502 });
+  }
 
+  try {
     await transporterNoReply.sendMail({
       from: `"Quantum Code Technologies Ltd" <${noReplyFrom}>`,
       to: email,
@@ -119,8 +143,7 @@ export async function POST(request: Request) {
       html: autoReplyHtml,
     });
   } catch (err) {
-    console.error("[copilot-lead] SMTP:", err);
-    return NextResponse.json({ error: errors.sendFailed }, { status: 502 });
+    console.error("[copilot-lead] SMTP autoreply:", err);
   }
 
   return NextResponse.json({ ok: true });

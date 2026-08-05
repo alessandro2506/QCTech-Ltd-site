@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Link } from "@/i18n/routing";
+import { buildAlternates } from "@/lib/seo";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -7,23 +8,16 @@ export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { locale } = await params;
-  const path = `/${locale}/privacy`;
+  const loc = locale as "it" | "en";
 
   return {
-    metadataBase: new URL("https://www.qc-tech.co.uk"),
-    title: "Privacy Policy | QC Tech",
+    title: locale === "it" ? "Informativa sulla Privacy" : "Privacy Policy",
     description:
       locale === "it"
         ? "Informativa sulla privacy di QC Tech — Quantum Code Technologies Ltd."
         : "QC Tech privacy policy — Quantum Code Technologies Ltd.",
-    alternates: {
-      canonical: `https://www.qc-tech.co.uk${path}`,
-      languages: {
-        it: "https://www.qc-tech.co.uk/it/privacy",
-        en: "https://www.qc-tech.co.uk/en/privacy",
-        "x-default": "https://www.qc-tech.co.uk/en/privacy",
-      },
-    },
+    alternates: buildAlternates("/privacy", loc),
+    openGraph: { url: buildAlternates("/privacy", loc).canonical as string },
   };
 }
 

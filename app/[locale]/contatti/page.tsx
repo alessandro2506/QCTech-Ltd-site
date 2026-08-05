@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { buildAlternates } from "@/lib/seo";
 import { Mail, MapPin } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
@@ -17,10 +18,12 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
+  const loc = locale as "it" | "en";
   return {
-    metadataBase: new URL("https://www.qc-tech.co.uk"),
     title: t("contactsTitle"),
     description: t("contactsDescription"),
+    alternates: buildAlternates("/contatti", loc),
+    openGraph: { url: buildAlternates("/contatti", loc).canonical as string },
   };
 }
 

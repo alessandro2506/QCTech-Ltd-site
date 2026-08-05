@@ -1,9 +1,24 @@
+import type { Metadata } from "next";
 import { getAllPosts } from "@/lib/blog";
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { CtaBanner } from "@/components/cta-banner";
+import { buildAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "blog" });
+  const loc = locale as "it" | "en";
+
+  return {
+    title: t("title"),
+    description: t("subtitle"),
+    alternates: buildAlternates("/blog", loc),
+    openGraph: { url: buildAlternates("/blog", loc).canonical as string },
+  };
+}
 
 export default async function BlogPage({ params }: Props) {
   const { locale } = await params;

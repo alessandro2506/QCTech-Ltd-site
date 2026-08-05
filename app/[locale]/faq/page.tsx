@@ -2,16 +2,19 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import { FaqAccordion } from "@/components/faq-accordion";
+import { buildAlternates } from "@/lib/seo";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  await params;
+  const { locale } = await params;
+  const loc = locale as "it" | "en";
   return {
-    metadataBase: new URL("https://www.qc-tech.co.uk"),
-    title: "FAQ | QC Tech",
+    title: "FAQ",
+    alternates: buildAlternates("/faq", loc),
+    openGraph: { url: buildAlternates("/faq", loc).canonical as string },
   };
 }
 

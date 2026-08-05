@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { CopilotLtdPage } from "@/components/copilot-ltd-page";
+import { buildAlternates } from "@/lib/seo";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -9,20 +10,13 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "copilotLtd" });
-  const path = `/${locale}/copilot-ltd`;
+  const loc = locale as "it" | "en";
 
   return {
-    metadataBase: new URL("https://www.qc-tech.co.uk"),
     title: t("meta.title"),
     description: t("meta.description"),
-    alternates: {
-      canonical: `https://www.qc-tech.co.uk${path}`,
-      languages: {
-        it: "https://www.qc-tech.co.uk/it/copilot-ltd",
-        en: "https://www.qc-tech.co.uk/en/copilot-ltd",
-        "x-default": "https://www.qc-tech.co.uk/en/copilot-ltd",
-      },
-    },
+    alternates: buildAlternates("/copilot-ltd", loc),
+    openGraph: { url: buildAlternates("/copilot-ltd", loc).canonical as string },
   };
 }
 

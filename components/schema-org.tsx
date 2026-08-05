@@ -48,11 +48,6 @@ export function SchemaOrg({ locale }: { locale: string }) {
         name: "QC Tech",
         publisher: { "@id": "https://www.qc-tech.co.uk/#organization" },
         inLanguage: ["en-GB", "it-IT"],
-        potentialAction: {
-          "@type": "SearchAction",
-          target: "https://www.qc-tech.co.uk/en?q={search_term_string}",
-          "query-input": "required name=search_term_string",
-        },
       },
       {
         "@type": "FAQPage",

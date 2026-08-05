@@ -10,6 +10,7 @@ import { SchemaOrg } from "@/components/schema-org";
 import { MainWrapper } from "@/components/main-wrapper";
 import { CookieBanner } from "@/components/cookie-banner";
 import { GoogleAnalytics } from "@/components/google-analytics";
+import { siteConfig } from "@/app.config";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
 
@@ -42,34 +43,16 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Metadata" });
-  const getLocalizedPath = (basePath: "/" | "/servizi" | "/vision" | "/contatti", targetLocale: "it" | "en") => {
-    if (targetLocale === "it") {
-      return basePath === "/" ? "/it" : `/it${basePath}`;
-    }
-
-    switch (basePath) {
-      case "/servizi":
-        return "/en/services";
-      case "/vision":
-        return "/en/about";
-      case "/contatti":
-        return "/en/contacts";
-      default:
-        return "/en";
-    }
-  };
-
-  const localePath = getLocalizedPath("/", locale as "it" | "en");
 
   return {
-    metadataBase: new URL("https://www.qc-tech.co.uk"),
+    metadataBase: new URL(siteConfig.url),
     title: {
       default: t("title"),
       template: "%s | QC Tech",
     },
     description: t("description"),
     keywords: t("keywords"),
-    authors: [{ name: "Quantum Code Technologies Ltd", url: "https://www.qc-tech.co.uk" }],
+    authors: [{ name: "Quantum Code Technologies Ltd", url: siteConfig.url }],
     creator: "Quantum Code Technologies Ltd",
     publisher: "Quantum Code Technologies Ltd",
     robots: {
@@ -87,13 +70,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "website",
       locale: locale === "it" ? "it_IT" : "en_GB",
       alternateLocale: locale === "it" ? "en_GB" : "it_IT",
-      url: `https://www.qc-tech.co.uk${localePath}`,
       siteName: "QC Tech",
       title: t("title"),
       description: t("description"),
       images: [
         {
-          url: "https://www.qc-tech.co.uk/logo-full.svg",
+          url: `${siteConfig.url}/logo-full.svg`,
           width: 1200,
           height: 630,
           alt: "Quantum Code Technologies Ltd — QC Tech",
@@ -104,15 +86,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: t("title"),
       description: t("description"),
-      images: ["https://www.qc-tech.co.uk/logo-full.svg"],
-    },
-    alternates: {
-      canonical: `https://www.qc-tech.co.uk${localePath}`,
-      languages: {
-        it: `https://www.qc-tech.co.uk${getLocalizedPath("/", "it")}`,
-        en: `https://www.qc-tech.co.uk${getLocalizedPath("/", "en")}`,
-        "x-default": `https://www.qc-tech.co.uk${getLocalizedPath("/", "en")}`,
-      },
+      images: [`${siteConfig.url}/logo-full.svg`],
     },
     verification: {
       google: "qkkUA1oP7CJy4tFCJIoq4MZHzHYxqcg9rdR9SXpwqp8",

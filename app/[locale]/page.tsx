@@ -1,9 +1,11 @@
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { BarChart3, Globe2, Smartphone } from "lucide-react";
 import { HeroHome } from "@/components/hero-home";
 import { PricingCluster } from "@/components/pricing-cluster";
 import type { PricingPlan } from "@/components/pricing-cluster";
 import { Link } from "@/i18n/routing";
+import { buildAlternates } from "@/lib/seo";
 
 const icons = [Globe2, Smartphone, BarChart3] as const;
 
@@ -12,6 +14,22 @@ function asTuple(
 ): [PricingPlan, PricingPlan, PricingPlan] {
   const a = raw as PricingPlan[];
   return [a[0], a[1], a[2]];
+}
+
+type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Metadata" });
+  const loc = locale as "it" | "en";
+  const alternates = buildAlternates("/", loc);
+
+  return {
+    alternates,
+    openGraph: { url: alternates.canonical as string },
+    title: t("title"),
+    description: t("description"),
+  };
 }
 
 export default async function HomePage() {

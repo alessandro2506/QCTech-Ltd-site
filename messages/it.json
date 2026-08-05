@@ -2,11 +2,11 @@
   "meta": {
     "defaultTitle": "QC Tech — Web, E-commerce & Mobile",
     "defaultDescription": "Lo studio digitale con sede in UK, costruito per lavorare con il mondo.",
-    "servicesTitle": "Servizi | QC Tech",
+    "servicesTitle": "Servizi",
     "servicesDescription": "Siti web, app mobile, cloud e SEO orientati al ROI per clienti UK e Italia.",
-    "visionTitle": "Vision | QC Tech",
+    "visionTitle": "Vision",
     "visionDescription": "Scalabilità tecnologica, architetture evolutive e roadmap prodotto per QC Tech.",
-    "contactsTitle": "Contatti | QC Tech",
+    "contactsTitle": "Contatti",
     "contactsDescription": "Richiedi un preventivo o una call conoscitiva con Quantum Code Technologies Ltd."
   },
   "nav": {
@@ -646,7 +646,7 @@
   },
   "copilotLtd": {
     "meta": {
-      "title": "Apri la tua società in Inghilterra in italiano | QC Tech",
+      "title": "Apri la tua società in Inghilterra in italiano",
       "description": "Il servizio AI che ti guida passo dopo passo nell'apertura di una società inglese — tutto in italiano, approvazione in 24 ore."
     },
     "hero": {

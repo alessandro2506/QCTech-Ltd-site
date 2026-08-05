@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Link } from "@/i18n/routing";
+import { buildAlternates } from "@/lib/seo";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
@@ -8,23 +9,16 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { locale } = await params;
   const isIt = locale === "it";
-  const path = isIt ? "/it/termini" : "/en/terms";
+  const loc = locale as "it" | "en";
 
   return {
-    metadataBase: new URL("https://www.qc-tech.co.uk"),
-    title: isIt ? "Termini e Condizioni | QC Tech" : "Terms & Conditions | QC Tech",
+    title: isIt ? "Termini e Condizioni" : "Terms & Conditions",
     description:
       locale === "it"
         ? "Termini e condizioni d'uso del sito qc-tech.co.uk — Quantum Code Technologies Ltd."
         : "Terms and conditions for qc-tech.co.uk — Quantum Code Technologies Ltd.",
-    alternates: {
-      canonical: `https://www.qc-tech.co.uk${path}`,
-      languages: {
-        it: "https://www.qc-tech.co.uk/it/termini",
-        en: "https://www.qc-tech.co.uk/en/terms",
-        "x-default": "https://www.qc-tech.co.uk/en/terms",
-      },
-    },
+    alternates: buildAlternates("/termini", loc),
+    openGraph: { url: buildAlternates("/termini", loc).canonical as string },
   };
 }
 
