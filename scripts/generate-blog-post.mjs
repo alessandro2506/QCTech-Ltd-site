@@ -15,6 +15,14 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+/**
+ * Strips markdown code fences that Claude sometimes wraps around output.
+ * e.g. ```markdown\n---\n...\n``` → ---\n...
+ */
+function stripCodeFence(text) {
+  return text.replace(/^```(?:markdown)?\n?([\s\S]*?)```\s*$/m, "$1").trim();
+}
 const ROOT = path.resolve(__dirname, "..");
 const BLOG_EN = path.join(ROOT, "content/blog/en");
 const BLOG_IT = path.join(ROOT, "content/blog/it");
@@ -167,10 +175,12 @@ async function main() {
     messages: [{ role: "user", content: buildENPrompt(topic) }],
   });
 
-  const enContent = enResponse.content
-    .filter((b) => b.type === "text")
-    .map((b) => b.text)
-    .join("\n");
+  const enContent = stripCodeFence(
+    enResponse.content
+      .filter((b) => b.type === "text")
+      .map((b) => b.text)
+      .join("\n")
+  );
 
   // Save EN
   const enPath = path.join(BLOG_EN, `${slug}.md`);
@@ -185,10 +195,12 @@ async function main() {
     messages: [{ role: "user", content: buildITPrompt(enContent, topic) }],
   });
 
-  const itContent = itResponse.content
-    .filter((b) => b.type === "text")
-    .map((b) => b.text)
-    .join("\n");
+  const itContent = stripCodeFence(
+    itResponse.content
+      .filter((b) => b.type === "text")
+      .map((b) => b.text)
+      .join("\n")
+  );
 
   // Save IT
   const itPath = path.join(BLOG_IT, `${slug}.md`);

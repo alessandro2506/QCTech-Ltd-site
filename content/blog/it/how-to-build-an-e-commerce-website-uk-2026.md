@@ -1,4 +1,3 @@
-```
 ---
 title: "Come Costruire un Sito E-Commerce nel 2026: Guida Pratica per Imprenditori"
 date: "2026-08-24"

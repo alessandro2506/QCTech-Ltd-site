@@ -1,4 +1,3 @@
-```markdown
 ---
 title: "Trasformazione Digitale per le Aziende Logistiche: Una Guida Pratica per Restare Competitivi nel 2026"
 date: "2026-10-05"

@@ -1,4 +1,3 @@
-```markdown
 ---
 title: "Social Media Strategy for UK Restaurants in 2026: What Actually Works"
 date: "2026-08-10"
@@ -190,4 +189,3 @@ The marginal cost of getting social media right is low. The cost of getting it w
 6. Review your analytics at the end of week four and adjust accordingly
 
 The strategy is straightforward. The discipline to execute it consistently is where most restaurants fall short — and where the real competitive advantage lies.
-```

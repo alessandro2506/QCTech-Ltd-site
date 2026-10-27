@@ -1,4 +1,3 @@
-```markdown
 ---
 title: "Digital Marketing for UK Tourism Businesses in 2026: Strategies That Drive Real Bookings"
 date: "2026-06-22"
@@ -175,4 +174,3 @@ Digital marketing for tourism is not a one-time project. It is an operational fu
 5. **Define your cost-per-booking by channel**: Spend 30 minutes in GA4 or with your marketing partner to establish this figure — it changes every decision you make
 
 The businesses winning in UK tourism digital marketing are not spending the most. They are spending intelligently, measuring ruthlessly, and iterating consistently. That is the only sustainable competitive advantage in 2026.
-```

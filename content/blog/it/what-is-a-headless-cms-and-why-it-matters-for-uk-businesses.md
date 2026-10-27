@@ -1,4 +1,3 @@
-```
 ---
 title: "Cos'è un Headless CMS e Perché È Importante per le Aziende nel 2026"
 date: "2026-10-26"

@@ -1,4 +1,3 @@
-```markdown
 ---
 title: "How to Get Your Business Found on Google UK: A Practical Guide for 2026"
 date: "2026-09-28"
@@ -181,4 +180,3 @@ The hierarchy is straightforward: fix your technical foundations, optimise your 
 5. Identify three local keywords you want to rank for and search them — see exactly who you're up against
 
 The gap between a business that dominates local search and one that barely appears is rarely talent or budget. It's almost always consistency and clarity of execution. Start there.
-```

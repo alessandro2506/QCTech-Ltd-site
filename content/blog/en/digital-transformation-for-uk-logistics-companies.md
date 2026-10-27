@@ -1,4 +1,3 @@
-```markdown
 ---
 title: "Digital Transformation for UK Logistics Companies: A Practical Guide to Staying Competitive in 2026"
 date: "2026-10-05"
@@ -181,4 +180,3 @@ The question in 2026 is not whether to transform. It is how quickly you can do i
 ---
 
 *Sources: Logistics UK Industry Report 2025, McKinsey Supply Chain Survey 2025, ONS E-commerce Statistics 2025, ICO Enforcement Actions 2024–25, NCSC Annual Review 2025, Innovate UK Made Smarter Programme Guidelines 2026.*
-```

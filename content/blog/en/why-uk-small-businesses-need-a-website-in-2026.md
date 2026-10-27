@@ -1,4 +1,3 @@
-```markdown
 ---
 title: "Why UK Small Businesses Need a Website in 2026: The Cost of Staying Offline"
 date: "2026-09-14"
@@ -167,4 +166,3 @@ A website built with strategy, technical rigour, and your customer's journey in 
 ---
 
 *Data sources: ONS Business Population Estimates 2025, FSB Small Business Survey 2025, BrightLocal Local Consumer Review Survey 2025, Statista UK E-Commerce Report 2025, Google Search Behaviour Insights 2025.*
-```

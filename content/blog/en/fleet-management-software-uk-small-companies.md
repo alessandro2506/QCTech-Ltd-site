@@ -1,4 +1,3 @@
-```markdown
 ---
 title: "Fleet Management Software UK: The Small Business Buyer's Guide for 2026"
 date: "2026-09-21"
@@ -172,4 +171,3 @@ The market has matured. Implementation is straightforward. The regulatory enviro
 - Audit your current fuel card spend and insurance premiums before your first meeting — vendors who can't show a clear ROI against your actual numbers should not get your signature
 - Brief your drivers before any hardware is installed — transparency drives adoption
 - Review your UK GDPR obligations and update your driver privacy notices before go-live
-```

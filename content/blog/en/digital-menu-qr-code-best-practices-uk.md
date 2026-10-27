@@ -1,4 +1,3 @@
-```markdown
 ---
 title: "Digital Menu QR Code Best Practices UK: A Complete Guide for Hospitality Businesses"
 date: "2026-07-27"
@@ -203,4 +202,3 @@ Get the technical foundation right: dynamic codes, mobile-first pages, proper al
 5. **Connect your menu URL to your Google Business Profile** today — this is free and takes five minutes
 
 If you need a bespoke digital menu solution built to perform across all of the above criteria, the team at Quantum Code Technologies Ltd works with hospitality operators across the UK to deliver exactly that.
-```

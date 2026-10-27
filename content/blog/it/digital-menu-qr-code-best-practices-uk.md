@@ -1,4 +1,3 @@
-```markdown
 ---
 title: "Menu Digitali con QR Code: Guida Completa alle Best Practice per il Settore Hospitality"
 date: "2026-07-27"
