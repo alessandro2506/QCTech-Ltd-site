@@ -19,11 +19,7 @@ const ROOT = path.resolve(__dirname, "..");
 const BLOG_EN = path.join(ROOT, "content/blog/en");
 const BLOG_IT = path.join(ROOT, "content/blog/it");
 
-const client = new Anthropic({
-  ...(process.env.ANTHROPIC_OIDC_TOKEN
-    ? { authToken: process.env.ANTHROPIC_OIDC_TOKEN }
-    : { apiKey: process.env.ANTHROPIC_API_KEY }),
-});
+const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
 // ── TOPIC POOL ────────────────────────────────────────────────────────────────
 const TOPIC_POOL = [
