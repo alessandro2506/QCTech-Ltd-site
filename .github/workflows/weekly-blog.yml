@@ -27,7 +27,7 @@ jobs:
 
       - name: Generate blog post
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.qctech_blog }}
         run: node scripts/generate-blog-post.mjs
 
       - name: Commit and push
