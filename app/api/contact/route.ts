@@ -11,10 +11,9 @@ import { isContactTopic, sanitizeText } from "@/lib/contact";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const transporter = nodemailer.createTransport({
-  host: "smtp.ionos.co.uk",
-  port: 587,
-  secure: false,
-  requireTLS: true,
+  host: "smtps.aruba.it",
+  port: 465,
+  secure: true,
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
@@ -22,10 +21,9 @@ const transporter = nodemailer.createTransport({
 });
 
 const transporterNoReply = nodemailer.createTransport({
-  host: "smtp.ionos.co.uk",
-  port: 587,
-  secure: false,
-  requireTLS: true,
+  host: "smtps.aruba.it",
+  port: 465,
+  secure: true,
   auth: {
     user: process.env.SMTP_NOREPLY_USER,
     pass: process.env.SMTP_NOREPLY_PASS,
