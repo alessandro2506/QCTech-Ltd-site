@@ -27,8 +27,13 @@ jobs:
 
       - name: Generate blog post
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.qctech_blog }}
-        run: node scripts/generate-blog-post.mjs
+          ANTHROPIC_API_KEY: ${{ secrets.qctech_blog || secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "::error::Missing secret: set 'qctech_blog' or 'ANTHROPIC_API_KEY' in repo Settings > Secrets > Actions"
+            exit 1
+          fi
+          node scripts/generate-blog-post.mjs
 
       - name: Commit and push
         run: |
