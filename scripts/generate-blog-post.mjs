@@ -171,7 +171,7 @@ async function main() {
   console.log("✍️  Generating EN article...");
   const enResponse = await client.messages.create({
     model: "claude-sonnet-4-6",
-    max_tokens: 4096,
+    max_tokens: 8192,
     messages: [{ role: "user", content: buildENPrompt(topic) }],
   });
 
@@ -191,7 +191,7 @@ async function main() {
   console.log("🇮🇹 Translating to Italian...");
   const itResponse = await client.messages.create({
     model: "claude-sonnet-4-6",
-    max_tokens: 4096,
+    max_tokens: 8192,
     messages: [{ role: "user", content: buildITPrompt(enContent, topic) }],
   });
 
