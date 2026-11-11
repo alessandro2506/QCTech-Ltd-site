@@ -8,6 +8,7 @@ import { SiteHeader } from "@/components/site-header";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { SchemaOrg } from "@/components/schema-org";
 import { MainWrapper } from "@/components/main-wrapper";
+import { ThemeScope } from "@/components/theme-scope";
 import { CookieBanner } from "@/components/cookie-banner";
 import { GoogleAnalytics } from "@/components/google-analytics";
 import { siteConfig } from "@/app.config";
@@ -113,11 +114,13 @@ export default async function LocaleLayout({ children, params }: Props) {
         <NextIntlClientProvider messages={messages}>
           <SchemaOrg locale={locale} />
           <GoogleAnalytics />
-          <SiteHeader />
-          <MainWrapper>{children}</MainWrapper>
-          <SiteFooter />
-          <ScrollToTop />
-          <CookieBanner />
+          <ThemeScope>
+            <SiteHeader />
+            <MainWrapper>{children}</MainWrapper>
+            <SiteFooter />
+            <ScrollToTop />
+            <CookieBanner />
+          </ThemeScope>
         </NextIntlClientProvider>
       </body>
     </html>

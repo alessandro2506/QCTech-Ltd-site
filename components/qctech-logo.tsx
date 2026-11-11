@@ -10,17 +10,20 @@ const LOGO_WHITE_WIDE = "/logo-v2-white-wide.svg";
 
 type QCTechLogoProps = {
   variant?: "hero" | "header";
+  /** Dark-coloured mark for light chrome (home / progetti header). */
+  onLight?: boolean;
   linkToHome?: boolean;
   className?: string;
 };
 
 export function QCTechLogo({
   variant = "hero",
+  onLight = false,
   linkToHome = false,
   className = "",
 }: QCTechLogoProps) {
   const isHero = variant === "hero";
-  const logoSrc = isHero ? LOGO_LIGHT : LOGO_WHITE_WIDE;
+  const logoSrc = isHero ? LOGO_LIGHT : onLight ? LOGO_WIDE : LOGO_WHITE_WIDE;
   const logoBox = isHero
     ? "h-[10rem] w-[18.32rem] sm:h-[14rem] sm:w-[25.65rem] md:h-[17rem] md:w-[31.14rem]"
     : "h-[9rem] w-[18rem] sm:h-[9.75rem] sm:w-[22rem]";
