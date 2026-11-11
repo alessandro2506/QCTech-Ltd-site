@@ -90,34 +90,46 @@
       "intro": "Sei linee di lavoro, con prezzi di partenza. Il preventivo è sempre su misura.",
       "rows": [
         {
+          "id": "web",
           "title": "Siti web",
           "description": "Landing, vetrina, vetrina pro o corporate — dal primo contatto al sito completo.",
-          "fromPrice": "da €1.100"
+          "fromPrice": "da €1.100",
+          "previewAlt": "Anteprima laptop con schermo vuoto"
         },
         {
+          "id": "restyle",
           "title": "Restyle sito web",
           "description": "Ridisegno del sito esistente: contenuti, struttura e aspetto aggiornati.",
-          "fromPrice": "da €1.700"
+          "fromPrice": "da €1.700",
+          "previewAlt": "Anteprima sito hospitality"
         },
         {
+          "id": "ecommerce",
           "title": "E-commerce",
           "description": "Negozi su misura, catalogo e checkout. Base o Advanced in base al catalogo.",
-          "fromPrice": "da €3.800"
+          "fromPrice": "da €3.800",
+          "previewAlt": "Anteprima vetrina e-commerce"
         },
         {
+          "id": "app",
           "title": "App mobile",
           "description": "MVP o app standard per iOS e Android, con un solo team di sviluppo.",
-          "fromPrice": "da €7.700"
+          "fromPrice": "da €7.700",
+          "previewAlt": "Anteprima smartphone con schermo vuoto"
         },
         {
+          "id": "webapp",
           "title": "Web app e portali",
           "description": "Strumenti e portali su misura. Il valore in euro si definisce in preventivo.",
-          "fromPrice": "su preventivo"
+          "fromPrice": "su preventivo",
+          "previewAlt": "Anteprima interfaccia web"
         },
         {
+          "id": "seo",
           "title": "Visibilità su Google e AI",
           "description": "SEO Base mensile. AEO e GEO solo come add-on abbinati alla SEO, senza garanzia di comparsa nelle risposte AI.",
-          "fromPrice": "SEO Base da €600/mese"
+          "fromPrice": "SEO Base da €600/mese",
+          "previewAlt": "Anteprima presenza locale"
         }
       ]
     },

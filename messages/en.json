@@ -90,34 +90,46 @@
       "intro": "Six lines of work, with starting prices. Every quote is tailored.",
       "rows": [
         {
+          "id": "web",
           "title": "Websites",
           "description": "Landing, brochure, brochure pro or corporate — from a first page to a full site.",
-          "fromPrice": "from £900"
+          "fromPrice": "from £900",
+          "previewAlt": "Laptop mockup with a blank screen"
         },
         {
+          "id": "restyle",
           "title": "Website restyle",
           "description": "A redesign of the site you already have: content, structure and look.",
-          "fromPrice": "from £1,400"
+          "fromPrice": "from £1,400",
+          "previewAlt": "Hospitality website preview"
         },
         {
+          "id": "ecommerce",
           "title": "E-commerce",
           "description": "Custom stores, catalogue and checkout. Base or Advanced depending on the catalogue.",
-          "fromPrice": "from £3,200"
+          "fromPrice": "from £3,200",
+          "previewAlt": "E-commerce storefront preview"
         },
         {
+          "id": "app",
           "title": "Mobile apps",
           "description": "MVP or standard apps for iOS and Android, delivered by one team.",
-          "fromPrice": "from £6,500"
+          "fromPrice": "from £6,500",
+          "previewAlt": "Smartphone mockup with a blank screen"
         },
         {
+          "id": "webapp",
           "title": "Web apps and portals",
           "description": "Bespoke tools and portals. Scope and price are set in the quote.",
-          "fromPrice": "from £8,000"
+          "fromPrice": "from £8,000",
+          "previewAlt": "Web interface preview"
         },
         {
+          "id": "seo",
           "title": "Visibility on Google and AI",
           "description": "Monthly SEO Base. AEO and GEO only as add-ons alongside SEO, with no guarantee of appearing in AI answers.",
-          "fromPrice": "SEO Base from £500/month"
+          "fromPrice": "SEO Base from £500/month",
+          "previewAlt": "Local presence preview"
         }
       ]
     },
