@@ -36,30 +36,91 @@
     "scrollToTop": "Back to top"
   },
   "hero": {
-    "headlineBefore": "The UK–Italy Digital Studio",
-    "headlineAccent": "that turns visitors into clients",
-    "sub": "We build websites, e-commerce and mobile apps for businesses that want to grow — wherever they are.",
-    "legalLine": "Quantum Code Technologies Ltd — UK digital studio",
-    "ctaPrimary": "Get a free site audit",
-    "ctaSecondary": "See our services",
-    "ctaPlans": "View plans",
-    "trust": "SSL, SEO best practices and cloud-ready architectures."
+    "headline": "Websites and apps built to bring you customers",
+    "ctaPrimary": "Request a quote",
+    "ctaSecondary": "See our work",
+    "availability": "Taking on new projects · We reply within 48 hours",
+    "chipsLabel": "Use cases",
+    "chips": [
+      {
+        "id": "web",
+        "label": "Website",
+        "support": "Landing, brochure or corporate: a clear site that explains who you are and asks for the right action."
+      },
+      {
+        "id": "restyle",
+        "label": "Restyle",
+        "support": "We refresh the site you already have — structure, copy and look — without starting from scratch."
+      },
+      {
+        "id": "ecommerce",
+        "label": "E-commerce",
+        "support": "Catalogue, payments and checkout built to sell, not just to display products."
+      },
+      {
+        "id": "app",
+        "label": "Mobile app",
+        "support": "An iOS and Android app from MVP to a live product, with one team."
+      },
+      {
+        "id": "webapp",
+        "label": "Web app",
+        "support": "Portals and tools for your team or your customers, shaped around how you work."
+      },
+      {
+        "id": "seo",
+        "label": "Google and AI",
+        "support": "Base SEO, with AEO and GEO only as add-ons alongside it — no promise of appearing in AI answers."
+      }
+    ]
   },
   "home": {
-    "valueCards": [
-      {
-        "title": "High-converting web & landing pages",
-        "body": "Core Web Vitals, technical SEO and clear messaging for UK/IT markets."
-      },
-      {
-        "title": "Native-quality apps, one team",
-        "body": "React Native and Flutter with release pipelines and store readiness."
-      },
-      {
-        "title": "Data that guides spend",
-        "body": "Event tracking, funnels and readable reports for commercial decisions."
-      }
-    ],
+    "trust": {
+      "label": "Company details",
+      "items": [
+        "Quantum Code Technologies Ltd",
+        "Company No. 17317573",
+        "Registered in the United Kingdom",
+        "Bishop's Stortford",
+        "ICO registration"
+      ]
+    },
+    "services": {
+      "title": "Services",
+      "intro": "Six lines of work, with starting prices. Every quote is tailored.",
+      "rows": [
+        {
+          "title": "Websites",
+          "description": "Landing, brochure, brochure pro or corporate — from a first page to a full site.",
+          "fromPrice": "from £900"
+        },
+        {
+          "title": "Website restyle",
+          "description": "A redesign of the site you already have: content, structure and look.",
+          "fromPrice": "from £1,400"
+        },
+        {
+          "title": "E-commerce",
+          "description": "Custom stores, catalogue and checkout. Base or Advanced depending on the catalogue.",
+          "fromPrice": "from £3,200"
+        },
+        {
+          "title": "Mobile apps",
+          "description": "MVP or standard apps for iOS and Android, delivered by one team.",
+          "fromPrice": "from £6,500"
+        },
+        {
+          "title": "Web apps and portals",
+          "description": "Bespoke tools and portals. Scope and price are set in the quote.",
+          "fromPrice": "from £8,000"
+        },
+        {
+          "title": "Visibility on Google and AI",
+          "description": "Monthly SEO Base. AEO and GEO only as add-ons alongside SEO, with no guarantee of appearing in AI answers.",
+          "fromPrice": "SEO Base from £500/month"
+        }
+      ]
+    },
     "pricingIntroEyebrow": "Clear investment",
     "pricingIntroTitle": "Tailored solutions to grow your business.",
     "pricingIntroBody": "From web development to mobile apps and e-commerce: explore our modular plans designed to maximise your results and scale your digital presence.",

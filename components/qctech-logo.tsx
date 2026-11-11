@@ -25,7 +25,7 @@ export function QCTechLogo({
   const isHero = variant === "hero";
   const logoSrc = isHero ? LOGO_LIGHT : onLight ? LOGO_WIDE : LOGO_WHITE_WIDE;
   const logoBox = isHero
-    ? "h-[10rem] w-[18.32rem] sm:h-[14rem] sm:w-[25.65rem] md:h-[17rem] md:w-[31.14rem]"
+    ? "h-20 w-[11.5rem] sm:h-24 sm:w-[14rem]"
     : "h-[9rem] w-[18rem] sm:h-[9.75rem] sm:w-[22rem]";
 
   const inner = (

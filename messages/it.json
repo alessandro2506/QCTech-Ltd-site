@@ -36,30 +36,91 @@
     "scrollToTop": "Torna in cima"
   },
   "hero": {
-    "headlineBefore": "Lo studio digitale tra UK e Italia",
-    "headlineAccent": "che trasforma visitatori in clienti",
-    "sub": "Realizziamo siti web, e-commerce e app mobile per aziende che vogliono crescere — ovunque si trovino.",
-    "legalLine": "Quantum Code Technologies Ltd — studio digitale UK",
-    "ctaPrimary": "Richiedi un audit gratuito",
-    "ctaSecondary": "Scopri i servizi",
-    "ctaPlans": "Vedi i piani",
-    "trust": "SSL, best practice SEO e architetture cloud-ready."
+    "headline": "Siti web e app su misura, pensati per portare clienti",
+    "ctaPrimary": "Richiedi un preventivo",
+    "ctaSecondary": "Vedi i progetti",
+    "availability": "Disponibili per nuovi progetti · Rispondiamo entro 48 ore",
+    "chipsLabel": "Casi d'uso",
+    "chips": [
+      {
+        "id": "web",
+        "label": "Sito web",
+        "support": "Landing, vetrina o corporate: un sito chiaro che spiega chi sei e chiede l'azione giusta."
+      },
+      {
+        "id": "restyle",
+        "label": "Restyle",
+        "support": "Aggiorniamo il sito che hai già: struttura, messaggi e aspetto, senza ripartire da zero."
+      },
+      {
+        "id": "ecommerce",
+        "label": "E-commerce",
+        "support": "Catalogo, pagamenti e checkout pensati per vendere, non solo per mostrare i prodotti."
+      },
+      {
+        "id": "app",
+        "label": "App mobile",
+        "support": "Un'app iOS e Android dal MVP al prodotto in uso, con un solo team."
+      },
+      {
+        "id": "webapp",
+        "label": "Web app",
+        "support": "Portali e strumenti interni o per i clienti, su misura per come lavorate."
+      },
+      {
+        "id": "seo",
+        "label": "Google e AI",
+        "support": "SEO di base, con AEO e GEO solo come add-on abbinati — senza promesse di comparsa nelle risposte AI."
+      }
+    ]
   },
   "home": {
-    "valueCards": [
-      {
-        "title": "Web & landing ad alta conversione",
-        "body": "Core Web Vitals, SEO tecnico e messaggi chiari per mercati UK/IT."
-      },
-      {
-        "title": "App native-quality, un solo team",
-        "body": "React Native e Flutter con release pipeline e store readiness."
-      },
-      {
-        "title": "Dati che guidano il budget",
-        "body": "Event tracking, funnel e report leggibili per decisioni commerciali."
-      }
-    ],
+    "trust": {
+      "label": "Dati societari",
+      "items": [
+        "Quantum Code Technologies Ltd",
+        "Company No. 17317573",
+        "Registrata nel Regno Unito",
+        "Bishop's Stortford",
+        "Registrazione ICO"
+      ]
+    },
+    "services": {
+      "title": "Servizi",
+      "intro": "Sei linee di lavoro, con prezzi di partenza. Il preventivo è sempre su misura.",
+      "rows": [
+        {
+          "title": "Siti web",
+          "description": "Landing, vetrina, vetrina pro o corporate — dal primo contatto al sito completo.",
+          "fromPrice": "da €1.100"
+        },
+        {
+          "title": "Restyle sito web",
+          "description": "Ridisegno del sito esistente: contenuti, struttura e aspetto aggiornati.",
+          "fromPrice": "da €1.700"
+        },
+        {
+          "title": "E-commerce",
+          "description": "Negozi su misura, catalogo e checkout. Base o Advanced in base al catalogo.",
+          "fromPrice": "da €3.800"
+        },
+        {
+          "title": "App mobile",
+          "description": "MVP o app standard per iOS e Android, con un solo team di sviluppo.",
+          "fromPrice": "da €7.700"
+        },
+        {
+          "title": "Web app e portali",
+          "description": "Strumenti e portali su misura. Il valore in euro si definisce in preventivo.",
+          "fromPrice": "su preventivo"
+        },
+        {
+          "title": "Visibilità su Google e AI",
+          "description": "SEO Base mensile. AEO e GEO solo come add-on abbinati alla SEO, senza garanzia di comparsa nelle risposte AI.",
+          "fromPrice": "SEO Base da €600/mese"
+        }
+      ]
+    },
     "pricingIntroEyebrow": "Investimento chiaro",
     "pricingIntroTitle": "Soluzioni su misura per far crescere il tuo business.",
     "pricingIntroBody": "Dallo sviluppo web alle applicazioni mobile, fino all'e-commerce: scopri i nostri piani modulari progettati per massimizzare i tuoi risultati e scalare la tua presenza digitale.",
