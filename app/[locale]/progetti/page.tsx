@@ -55,7 +55,7 @@ export default async function ProgettiPage({ params }: PageProps) {
           </div>
         </section>
         <div className="mt-16">
-          <ProjectsGrid locale={locale} />
+          <ProjectsGrid locale={locale} excludeIds={["quipalermo"]} />
         </div>
       </div>
     </div>
