@@ -121,12 +121,109 @@
         }
       ]
     },
-    "pricingIntroEyebrow": "Clear investment",
-    "pricingIntroTitle": "Tailored solutions to grow your business.",
-    "pricingIntroBody": "From web development to mobile apps and e-commerce: explore our modular plans designed to maximise your results and scale your digital presence.",
-    "ctaBandTitle": "Need a tailored plan or a free audit?",
-    "ctaBandBody": "Tell us your goals and timeline — we reply within one business day.",
-    "ctaBandButton": "Talk to us"
+    "projects": {
+      "title": "Work",
+      "intro": "Sites we have built. Only QuiPalermo and Alvenco are ours and include a link.",
+      "allLink": "All projects",
+      "realizedTitle": "Sites we have built",
+      "labels": {
+        "quipalermo": "QuiPalermo",
+        "alvenco": "Alvenco",
+        "hotel-boutique": "Boutique hotel",
+        "noleggio-con-conducente": "Chauffeur and coach hire",
+        "bed-and-breakfast": "Bed & breakfast",
+        "manutenzione-uk": "Property maintenance (UK)",
+        "traslochi": "Removals",
+        "studio-legale-uk-demo": "Law firm (demo concept)",
+        "ecommerce-demo": "E-commerce (demo)",
+        "consulenza-tributaria": "Tax advisory",
+        "consulenza-del-lavoro": "Employment consultancy",
+        "educazione-cinofila": "Dog training",
+        "ambulatorio-veterinario": "Veterinary clinic",
+        "centro-cinofilo-demo": "Dog centre (demo)"
+      }
+    },
+    "method": {
+      "title": "How we work",
+      "intro": "Four steps, from the first conversation to support after launch.",
+      "steps": [
+        {
+          "title": "Listen",
+          "body": "Understand goals, constraints and who will use the site or app."
+        },
+        {
+          "title": "Propose",
+          "body": "A clear proposal: scope, timeline and a starting price."
+        },
+        {
+          "title": "Build",
+          "body": "We build, show progress and adjust where it matters."
+        },
+        {
+          "title": "Launch and support",
+          "body": "Go-live, handover and support after launch."
+        }
+      ]
+    },
+    "plans": {
+      "title": "Plans",
+      "intro": "Starting prices. Every quote is tailored.",
+      "cta": "Request a quote",
+      "tabs": [
+        {
+          "id": "web",
+          "label": "Website",
+          "fromPrice": "from £900",
+          "note": "Landing, brochure, brochure pro or corporate.",
+          "items": [
+            { "name": "Landing", "price": "from £900" },
+            { "name": "Brochure", "price": "from £1,400" },
+            { "name": "Brochure Pro", "price": "from £2,800" },
+            { "name": "Corporate", "price": "from £8,000" }
+          ]
+        },
+        {
+          "id": "mobile",
+          "label": "Mobile app",
+          "fromPrice": "from £6,500",
+          "note": "MVP or standard apps for iOS and Android.",
+          "items": [
+            { "name": "MVP", "price": "from £6,500" },
+            { "name": "Standard", "price": "from £12,000" }
+          ]
+        },
+        {
+          "id": "ecommerce",
+          "label": "E-commerce",
+          "fromPrice": "from £3,200",
+          "note": "Base or Advanced depending on the catalogue.",
+          "items": [
+            { "name": "Base", "price": "from £3,200" },
+            { "name": "Advanced", "price": "from £6,500" }
+          ]
+        },
+        {
+          "id": "presence",
+          "label": "Digital presence",
+          "fromPrice": "from £75 / month",
+          "note": "Monthly packages, separate from website maintenance.",
+          "items": [
+            { "name": "Starter", "price": "£75 / month" },
+            { "name": "Digital Presence", "price": "£100 / month" }
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "allLink": "All FAQs"
+    },
+    "finalCta": {
+      "title": "Let’s talk about your project",
+      "body": "Request a quote or message us on WhatsApp.",
+      "quote": "Request a quote",
+      "whatsapp": "WhatsApp"
+    }
   },
   "pricingWeb": {
     "eyebrow": "Professional website",
@@ -137,7 +234,7 @@
       {
         "id": "web-landing",
         "name": "Landing Page",
-        "price": "From £900",
+        "price": "from £900",
         "subtitle": "1 page, hero + sections + contact form + CTA.",
         "highlight": false,
         "bullets": [
@@ -150,7 +247,7 @@
       {
         "id": "web-vetrina",
         "name": "Business Site",
-        "price": "From £1,400",
+        "price": "from £1,400",
         "subtitle": "3–5 pages, custom design, contact form, on-page SEO.",
         "highlight": true,
         "bullets": [
@@ -162,9 +259,22 @@
         ]
       },
       {
+        "id": "web-vetrina-pro",
+        "name": "Brochure Pro",
+        "price": "from £2,800",
+        "subtitle": "A larger brochure site, with more sections and integrations.",
+        "highlight": false,
+        "bullets": [
+          "More pages and sections than the brochure site",
+          "Custom design",
+          "On-page SEO",
+          "Baseline integrations"
+        ]
+      },
+      {
         "id": "web-corporate",
         "name": "Corporate Site",
-        "price": "From £8,000",
+        "price": "from £8,000",
         "subtitle": "10–20 pages, scalable architecture, premium UI/UX.",
         "highlight": false,
         "bullets": [
@@ -187,7 +297,7 @@
       {
         "id": "pres-starter",
         "name": "Starter",
-        "price": "£75 / mo",
+        "price": "£75 / month",
         "subtitle": "Google Business Profile + Search Console — save £10/mo vs. individual.",
         "highlight": false,
         "bullets": [
@@ -200,7 +310,7 @@
       {
         "id": "pres-digital",
         "name": "Digital Presence",
-        "price": "£100 / mo",
+        "price": "£100 / month",
         "subtitle": "Starter + Google Analytics 4. Best value — save £23/mo.",
         "highlight": true,
         "bullets": [
@@ -209,20 +319,6 @@
           "Google Analytics 4 monitoring & insights (£38/mo individually)",
           "Monthly performance report",
           "Setup cost charged with the first monthly fee, not requested separately."
-        ]
-      },
-      {
-        "id": "pres-full",
-        "name": "Full Suite",
-        "price": "Custom quote",
-        "subtitle": "All channels — Trustpilot, LinkedIn and more.",
-        "highlight": false,
-        "bullets": [
-          "Everything in Digital Presence",
-          "Trustpilot / Reviews management (£47/mo)",
-          "LinkedIn Business Page management (£55/mo)",
-          "Priority response and dedicated contact",
-          "Add-on available: corporate video production (£800–£3,000)"
         ]
       }
     ]
@@ -235,7 +331,7 @@
     "plans": [
       {
         "id": "mob-starter",
-        "name": "MVP App",
+        "name": "MVP",
         "price": "from £6,500",
         "subtitle": "React Native or Flutter — fast time-to-market.",
         "highlight": false,
@@ -246,28 +342,15 @@
         ]
       },
       {
-        "id": "mob-growth",
-        "name": "Cross-platform",
+        "id": "mob-standard",
+        "name": "Standard",
         "price": "from £12,000",
-        "subtitle": "Same codebase, maximum coverage.",
+        "subtitle": "iOS and Android from one team.",
         "highlight": true,
         "bullets": [
           "iOS + Android from a single codebase",
           "API / payments / deep link integrations",
-          "CI/CD and signed builds",
-          "3 months post-launch bugfixes"
-        ]
-      },
-      {
-        "id": "mob-scale",
-        "name": "Product & scale",
-        "price": "Custom quote",
-        "subtitle": "Native modules, offline-first, enterprise.",
-        "highlight": false,
-        "bullets": [
-          "Modular architectures and feature flags",
-          "Performance tuning and crash-free sessions",
-          "Quarterly roadmap with product KPIs"
+          "CI/CD and signed builds"
         ]
       }
     ]
@@ -279,8 +362,8 @@
     "cta": "Request a quote — E-commerce",
     "plans": [
       {
-        "id": "eco-starter",
-        "name": "Store Essentials",
+        "id": "eco-base",
+        "name": "Base",
         "price": "from £3,200",
         "subtitle": "Custom store + essential order management.",
         "highlight": false,
@@ -291,8 +374,8 @@
         ]
       },
       {
-        "id": "eco-inventory",
-        "name": "Inventory Pro",
+        "id": "eco-advanced",
+        "name": "Advanced",
         "price": "from £6,500",
         "subtitle": "Stock sync across multiple channels.",
         "highlight": true,
@@ -301,18 +384,6 @@
           "Near real-time stock synchronisation",
           "Alerts and replenishment automation",
           "Operations dashboard for your team"
-        ]
-      },
-      {
-        "id": "eco-enterprise",
-        "name": "Commerce Suite",
-        "price": "Custom quote",
-        "subtitle": "Complex, international e-commerce.",
-        "highlight": false,
-        "bullets": [
-          "Multi-store, multi-currency, B2B + B2C",
-          "Advanced logistics and commercial rules",
-          "Observability, catalogue A/B tests, dedicated SLA"
         ]
       }
     ]

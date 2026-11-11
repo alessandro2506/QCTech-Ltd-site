@@ -121,12 +121,109 @@
         }
       ]
     },
-    "pricingIntroEyebrow": "Investimento chiaro",
-    "pricingIntroTitle": "Soluzioni su misura per far crescere il tuo business.",
-    "pricingIntroBody": "Dallo sviluppo web alle applicazioni mobile, fino all'e-commerce: scopri i nostri piani modulari progettati per massimizzare i tuoi risultati e scalare la tua presenza digitale.",
-    "ctaBandTitle": "Vuoi un piano su misura o un audit gratuito?",
-    "ctaBandBody": "Raccontaci obiettivi e timeline: rispondiamo entro un giorno lavorativo.",
-    "ctaBandButton": "Parla con noi"
+    "projects": {
+      "title": "Progetti",
+      "intro": "Siti che abbiamo realizzato. Solo QuiPalermo e Alvenco sono proprietà nostra e hanno un link.",
+      "allLink": "Tutti i progetti",
+      "realizedTitle": "Siti realizzati",
+      "labels": {
+        "quipalermo": "QuiPalermo",
+        "alvenco": "Alvenco",
+        "hotel-boutique": "Hotel boutique",
+        "noleggio-con-conducente": "Noleggio con conducente",
+        "bed-and-breakfast": "Bed & breakfast",
+        "manutenzione-uk": "Servizi di manutenzione (UK)",
+        "traslochi": "Traslochi",
+        "studio-legale-uk-demo": "Studio legale (demo)",
+        "ecommerce-demo": "E-commerce (demo)",
+        "consulenza-tributaria": "Consulenza tributaria",
+        "consulenza-del-lavoro": "Consulenza del lavoro",
+        "educazione-cinofila": "Educazione cinofila",
+        "ambulatorio-veterinario": "Ambulatorio veterinario",
+        "centro-cinofilo-demo": "Centro cinofilo (demo)"
+      }
+    },
+    "method": {
+      "title": "Metodo",
+      "intro": "Quattro passi, dal primo ascolto al supporto dopo il lancio.",
+      "steps": [
+        {
+          "title": "Ascolto",
+          "body": "Capire obiettivi, vincoli e chi deve usare il sito o l'app."
+        },
+        {
+          "title": "Proposta",
+          "body": "Una proposta chiara: ambito, tempi e prezzo di partenza."
+        },
+        {
+          "title": "Sviluppo",
+          "body": "Costruiamo, mostriamo avanzamenti e adattiamo dove serve."
+        },
+        {
+          "title": "Lancio e supporto",
+          "body": "Pubblicazione, passaggio in carico e supporto dopo il go-live."
+        }
+      ]
+    },
+    "plans": {
+      "title": "Piani",
+      "intro": "Prezzi di partenza. Il preventivo è sempre su misura.",
+      "cta": "Richiedi un preventivo",
+      "tabs": [
+        {
+          "id": "web",
+          "label": "Sito web",
+          "fromPrice": "da €1.100",
+          "note": "Landing, vetrina, vetrina pro o corporate.",
+          "items": [
+            { "name": "Landing", "price": "da €1.100" },
+            { "name": "Vetrina", "price": "da €1.700" },
+            { "name": "Vetrina Pro", "price": "da €3.300" },
+            { "name": "Corporate", "price": "da €9.500" }
+          ]
+        },
+        {
+          "id": "mobile",
+          "label": "App mobile",
+          "fromPrice": "da €7.700",
+          "note": "MVP o app standard, iOS e Android.",
+          "items": [
+            { "name": "MVP", "price": "da €7.700" },
+            { "name": "Standard", "price": "da €14.000" }
+          ]
+        },
+        {
+          "id": "ecommerce",
+          "label": "E-commerce",
+          "fromPrice": "da €3.800",
+          "note": "Base o Advanced in base al catalogo.",
+          "items": [
+            { "name": "Base", "price": "da €3.800" },
+            { "name": "Advanced", "price": "da €7.700" }
+          ]
+        },
+        {
+          "id": "presence",
+          "label": "Presenza digitale",
+          "fromPrice": "da €90 / mese",
+          "note": "Pacchetti mensili, distinti dalla manutenzione siti.",
+          "items": [
+            { "name": "Starter", "price": "€90 / mese" },
+            { "name": "Digital Presence", "price": "€120 / mese" }
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "title": "Domande frequenti",
+      "allLink": "Tutte le FAQ"
+    },
+    "finalCta": {
+      "title": "Parliamo del tuo progetto",
+      "body": "Scrivici per un preventivo o aprici una chat su WhatsApp.",
+      "quote": "Richiedi un preventivo",
+      "whatsapp": "WhatsApp"
+    }
   },
   "pricingWeb": {
     "eyebrow": "Sito web professionale",
@@ -137,7 +234,7 @@
       {
         "id": "web-landing",
         "name": "Landing Page",
-        "price": "Da €1.100",
+        "price": "da €1.100",
         "subtitle": "1 pagina, sezione principale (hero) + sezioni + form contatti + call-to-action (CTA).",
         "highlight": false,
         "bullets": [
@@ -150,7 +247,7 @@
       {
         "id": "web-vetrina",
         "name": "Sito Vetrina",
-        "price": "Da €1.700",
+        "price": "da €1.700",
         "subtitle": "3–5 pagine, design custom, form contatti, SEO on-page.",
         "highlight": true,
         "bullets": [
@@ -162,9 +259,22 @@
         ]
       },
       {
+        "id": "web-vetrina-pro",
+        "name": "Sito Vetrina Pro",
+        "price": "da €3.300",
+        "subtitle": "Sito vetrina più ampio, con più sezioni e integrazioni.",
+        "highlight": false,
+        "bullets": [
+          "Pagine e sezioni estese rispetto alla vetrina",
+          "Design custom",
+          "SEO on-page",
+          "Integrazioni di base"
+        ]
+      },
+      {
         "id": "web-corporate",
         "name": "Sito Corporate",
-        "price": "Da €9.500",
+        "price": "da €9.500",
         "subtitle": "10–20 pagine, architettura scalabile, UI/UX premium.",
         "highlight": false,
         "bullets": [
@@ -210,20 +320,6 @@
           "Report mensile delle performance",
           "Costo di setup addebitato con il primo canone mensile, non richiesto separatamente."
         ]
-      },
-      {
-        "id": "pres-full",
-        "name": "Full Suite",
-        "price": "Su preventivo",
-        "subtitle": "Tutti i canali — Trustpilot, LinkedIn e altro.",
-        "highlight": false,
-        "bullets": [
-          "Tutto incluso nel Digital Presence",
-          "Gestione Trustpilot / Recensioni (€56/mese)",
-          "Gestione pagina LinkedIn Business (€65/mese)",
-          "Risposta prioritaria e contatto dedicato",
-          "Add-on disponibile: produzione video aziendale (€950–€3.600)"
-        ]
       }
     ]
   },
@@ -235,8 +331,8 @@
     "plans": [
       {
         "id": "mob-starter",
-        "name": "MVP App",
-        "price": "da €7.600",
+        "name": "MVP",
+        "price": "da €7.700",
         "subtitle": "React Native o Flutter — time-to-market rapido.",
         "highlight": false,
         "bullets": [
@@ -246,28 +342,15 @@
         ]
       },
       {
-        "id": "mob-growth",
-        "name": "Cross-Platform",
+        "id": "mob-standard",
+        "name": "Standard",
         "price": "da €14.000",
-        "subtitle": "Stesso codice, massima copertura.",
+        "subtitle": "iOS e Android da un solo team.",
         "highlight": true,
         "bullets": [
           "iOS + Android da codebase unica",
           "Integrazioni API / pagamenti / deep link",
-          "CI/CD e build firmate",
-          "3 mesi di bugfix post-launch"
-        ]
-      },
-      {
-        "id": "mob-scale",
-        "name": "Prodotto & Scale",
-        "price": "Su preventivo",
-        "subtitle": "Moduli nativi, offline-first, enterprise.",
-        "highlight": false,
-        "bullets": [
-          "Architetture modulari e feature flags",
-          "Ottimizzazione performance e crash-free sessions",
-          "Roadmap trimestrale con KPI prodotto"
+          "CI/CD e build firmate"
         ]
       }
     ]
@@ -279,10 +362,10 @@
     "cta": "Richiedi preventivo — E-commerce",
     "plans": [
       {
-        "id": "eco-starter",
-        "name": "Store Essentials",
-        "price": "da €3.700",
-        "subtitle": "Custom store + gestione ordini essenziale.",
+        "id": "eco-base",
+        "name": "Base",
+        "price": "da €3.800",
+        "subtitle": "Negozio su misura e gestione ordini essenziale.",
         "highlight": false,
         "bullets": [
           "Tema su misura o headless storefront (vetrina separata dal CMS)",
@@ -291,9 +374,9 @@
         ]
       },
       {
-        "id": "eco-inventory",
-        "name": "Inventory Pro",
-        "price": "da €7.600",
+        "id": "eco-advanced",
+        "name": "Advanced",
+        "price": "da €7.700",
         "subtitle": "Sync magazzino e canali multipli.",
         "highlight": true,
         "bullets": [
@@ -301,18 +384,6 @@
           "Sincronizzazione stock in near real-time",
           "Automazioni alert e rifornimento",
           "Dashboard operativa per il team"
-        ]
-      },
-      {
-        "id": "eco-enterprise",
-        "name": "Commerce Suite",
-        "price": "Su preventivo",
-        "subtitle": "E-commerce complesso e internazionale.",
-        "highlight": false,
-        "bullets": [
-          "Multi-store, multi-valuta, B2B + B2C",
-          "Logistica avanzata e regole commerciali",
-          "Osservabilità, A/B test catalogo, SLA dedicato"
         ]
       }
     ]
