@@ -29,10 +29,10 @@ export default async function FAQPage() {
   return (
     <div className="pb-24 pt-28 sm:pt-32">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
-        <p className="text-xs font-semibold uppercase tracking-widest text-cyan-400">
+        <p className="text-xs font-semibold uppercase tracking-widest text-[var(--light-primary)]">
           FAQ
         </p>
-        <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        <h1 className="mt-2 text-3xl font-bold tracking-tight text-[var(--light-emphasis)] sm:text-4xl">
           {t("title")}
         </h1>
 
@@ -40,16 +40,16 @@ export default async function FAQPage() {
           <FaqAccordion items={items} />
         </div>
 
-        <div className="mt-12 rounded-2xl border border-violet-500/25 bg-gradient-to-br from-violet-600/8 via-transparent to-cyan-500/5 p-6 text-center">
-          <p className="text-lg font-semibold text-white sm:text-xl">
+        <div className="mt-12 rounded-2xl border border-[var(--light-border)] bg-[var(--light-surface)] p-6 text-center">
+          <p className="text-lg font-semibold text-[var(--light-emphasis)] sm:text-xl">
             {t("ctaTitle")}
           </p>
-          <p className="mt-3 text-sm text-slate-400">
+          <p className="mt-3 text-sm text-[var(--light-text-muted)]">
             {t("ctaBody")}
           </p>
           <Link
             href="/contatti"
-            className="mt-4 inline-flex rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-violet-500/25 transition hover:brightness-110"
+            className="mt-4 inline-flex rounded-full bg-[var(--light-primary)] px-7 py-3 text-sm font-semibold text-white transition hover:brightness-110"
           >
             {t("ctaButton")}
           </Link>

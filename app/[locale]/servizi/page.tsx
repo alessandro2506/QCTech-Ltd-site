@@ -49,13 +49,13 @@ export default async function ServiziPage() {
   return (
     <div className="pb-20 pt-28 sm:pt-32">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <p className="text-xs font-semibold uppercase tracking-widest text-cyan-400">
+        <p className="text-xs font-semibold uppercase tracking-widest text-[var(--light-primary)]">
           {t("eyebrow")}
         </p>
-        <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        <h1 className="mt-2 text-3xl font-bold tracking-tight text-[var(--light-emphasis)] sm:text-4xl">
           {t("title")}
         </h1>
-        <p className="mt-4 max-w-2xl text-lg text-slate-400">{t("intro")}</p>
+        <p className="mt-4 max-w-2xl text-lg text-[var(--light-text-muted)]">{t("intro")}</p>
 
         <ServiceSectorsTabs
           eyebrow={t("sectorsEyebrow")}
@@ -68,28 +68,28 @@ export default async function ServiziPage() {
         <section className="mt-14" aria-labelledby="past-sectors-heading">
           <h2
             id="past-sectors-heading"
-            className="text-xl font-bold tracking-tight text-white sm:text-2xl"
+            className="text-xl font-bold tracking-tight text-[var(--light-emphasis)] sm:text-2xl"
           >
             {t("pastSectorsTitle")}
           </h2>
-          <p className="mt-2 text-slate-400">{t("pastSectorsIntro")}</p>
+          <p className="mt-2 text-[var(--light-text-muted)]">{t("pastSectorsIntro")}</p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {pastSectors.map((sector) => {
               const PastIcon = pastSectorIconMap[sector.id] ?? Building2;
               return (
                 <div
                   key={sector.id}
-                  className="glass-card rounded-2xl p-6"
+                  className="rounded-2xl border border-[var(--light-border)] bg-white p-6"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/5 text-slate-400">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--light-surface)] text-[var(--light-primary)]">
                       <PastIcon className="h-5 w-5" aria-hidden />
                     </div>
-                    <span className="text-sm font-semibold text-slate-200">
+                    <span className="text-sm font-semibold text-[var(--light-text)]">
                       {sector.label}
                     </span>
                   </div>
-                  <p className="mt-3 text-sm leading-relaxed text-slate-400">
+                  <p className="mt-3 text-sm leading-relaxed text-[var(--light-text-muted)]">
                     {sector.description}
                   </p>
                 </div>
@@ -104,19 +104,19 @@ export default async function ServiziPage() {
             return (
               <article
                 key={s.title}
-                className="glass-card group rounded-2xl p-8 transition hover:border-violet-400/30"
+                className="group rounded-2xl border border-[var(--light-border)] bg-white p-8 transition hover:border-[var(--light-primary)]/40"
               >
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-violet-600 to-cyan-500 text-white shadow-lg shadow-violet-500/20">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[var(--light-surface)] text-[var(--light-primary)]">
                   <Icon className="h-7 w-7" aria-hidden />
                 </div>
-                <h2 className="mt-6 text-xl font-bold text-white">
+                <h2 className="mt-6 text-xl font-bold text-[var(--light-emphasis)]">
                   {s.title}
                 </h2>
-                <ul className="mt-4 space-y-3 text-slate-400">
+                <ul className="mt-4 space-y-3 text-[var(--light-text-muted)]">
                   {s.points.map((p) => (
                     <li key={p} className="flex gap-2 text-sm leading-relaxed">
                       <span
-                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"
+                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--light-primary)]"
                         aria-hidden
                       />
                       {p}
@@ -130,19 +130,19 @@ export default async function ServiziPage() {
 
         <section
           id="richiedi-preventivo"
-          className="mt-24 scroll-mt-28 rounded-2xl border border-violet-500/25 bg-gradient-to-br from-violet-600/8 via-transparent to-cyan-500/5 p-8 sm:p-10"
+          className="mt-24 scroll-mt-28 rounded-2xl border border-[var(--light-border)] bg-[var(--light-surface)] p-8 sm:p-10"
           aria-labelledby="servizi-preventivo-heading"
         >
-          <p className="text-xs font-semibold uppercase tracking-widest text-cyan-400">
+          <p className="text-xs font-semibold uppercase tracking-widest text-[var(--light-primary)]">
             {t("quoteEyebrow")}
           </p>
           <h2
             id="servizi-preventivo-heading"
-            className="mt-2 text-2xl font-bold tracking-tight text-white sm:text-3xl"
+            className="mt-2 text-2xl font-bold tracking-tight text-[var(--light-emphasis)] sm:text-3xl"
           >
             {t("quoteTitle")}
           </h2>
-          <p className="mt-3 max-w-2xl text-slate-400">{t("quoteBody")}</p>
+          <p className="mt-3 max-w-2xl text-[var(--light-text-muted)]">{t("quoteBody")}</p>
           <div className="mx-auto mt-8 max-w-xl">
             <ContactForm />
           </div>
