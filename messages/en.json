@@ -164,13 +164,13 @@
         "bed-and-breakfast": "Bed & breakfast",
         "manutenzione-uk": "Property maintenance (UK)",
         "traslochi": "Removals",
-        "studio-legale-uk-demo": "Law firm (demo concept)",
-        "ecommerce-demo": "E-commerce (demo)",
+        "studio-legale-uk-demo": "Law firm",
+        "ecommerce-demo": "E-commerce",
         "consulenza-tributaria": "Tax advisory",
         "consulenza-del-lavoro": "Employment consultancy",
         "educazione-cinofila": "Dog training",
         "ambulatorio-veterinario": "Veterinary clinic",
-        "centro-cinofilo-demo": "Dog centre (demo)"
+        "centro-cinofilo-demo": "Dog centre"
       }
     },
     "method": {

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import { siteConfig } from "@/app.config";
+import { getPortfolioDetail } from "@/lib/portfolio-details";
 import {
   isOwnPortfolio,
   isPortfolioId,
@@ -61,6 +62,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   const t = await getTranslations("home.projects");
   const tNav = await getTranslations("nav");
   const label = t(`labels.${id}`);
+  const detail = getPortfolioDetail(id, locale);
   const externalUrl = isOwnPortfolio(id) ? portfolioExternalUrl(id) : undefined;
 
   return (
@@ -77,6 +79,41 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         <h1 className="mt-8 text-3xl font-bold tracking-tight text-[var(--light-emphasis)] sm:text-4xl">
           {label}
         </h1>
+        <section className="mt-8">
+          <h2 className="text-sm font-semibold uppercase tracking-widest text-[var(--light-primary)]">
+            {t("tagsLabel")}
+          </h2>
+          <ul className="mt-3 flex flex-wrap gap-2">
+            {detail.tags.map((tag) => (
+              <li
+                key={tag}
+                className="rounded-full border border-[var(--light-border)] bg-[var(--light-surface)] px-3 py-1 text-sm font-medium text-[var(--light-text)]"
+              >
+                {tag}
+              </li>
+            ))}
+          </ul>
+        </section>
+        <section className="mt-8">
+          <h2 className="text-sm font-semibold uppercase tracking-widest text-[var(--light-primary)]">
+            {t("productLabel")}
+          </h2>
+          <p className="mt-2 text-[var(--light-text)]">{detail.product}</p>
+        </section>
+        <section className="mt-8">
+          <h2 className="text-sm font-semibold uppercase tracking-widest text-[var(--light-primary)]">
+            {t("clientLabel")}
+          </h2>
+          <p className="mt-2 text-[var(--light-text)]">{detail.client}</p>
+        </section>
+        <section className="mt-8">
+          <h2 className="text-sm font-semibold uppercase tracking-widest text-[var(--light-primary)]">
+            {t("descriptionLabel")}
+          </h2>
+          <p className="mt-2 text-[var(--light-text-muted)] leading-relaxed">
+            {detail.description}
+          </p>
+        </section>
         <div className="mt-8 flex flex-wrap gap-3">
           <Link
             href="/contatti"
