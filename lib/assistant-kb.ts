@@ -206,18 +206,230 @@ export function getAssistantKb(locale: string): KbEntry[] {
   return [...pageFaqs, ...priceFaqs];
 }
 
-const GENERIC_KEYWORDS = new Set([
-  "costo",
-  "prezzo",
+const STOP_WORDS = new Set([
+  "a",
+  "an",
+  "and",
+  "at",
+  "che",
+  "ci",
+  "come",
+  "con",
+  "cosa",
+  "da",
+  "dai",
+  "dal",
+  "dalla",
+  "de",
+  "dei",
+  "del",
+  "della",
+  "delle",
+  "di",
+  "do",
+  "does",
+  "e",
+  "fa",
+  "fare",
+  "for",
+  "from",
+  "gli",
+  "how",
+  "i",
+  "il",
+  "in",
+  "is",
+  "it",
+  "la",
+  "le",
+  "lo",
+  "ma",
+  "o",
+  "of",
+  "on",
+  "or",
+  "ore",
+  "per",
+  "quale",
+  "quali",
   "quanto",
+  "se",
+  "si",
+  "sono",
+  "su",
+  "the",
+  "to",
+  "un",
+  "una",
+  "uno",
+  "vuole",
+  "what",
+  "when",
+  "where",
+  "with",
+  "you",
+]);
+
+const GENERIC_WORDS = new Set([
+  "articoli",
   "costa",
-  "sito",
-  "euro",
+  "costo",
   "cost",
+  "euro",
+  "fare",
+  "much",
+  "prezzo",
   "price",
-  "how much",
+  "progetto",
+  "project",
+  "sito",
+  "site",
+  "tempo",
+  "tempi",
+  "time",
+  "take",
+  "web",
   "website",
 ]);
+
+const STRONG_PHRASES = [
+  "e-commerce",
+  "ecommerce",
+  "manutenzione",
+  "maintenance",
+  "audit",
+  "preventivo",
+  "quote",
+  "tecnologie",
+  "tecnologia",
+  "technologies",
+  "technology",
+  "seo",
+  "app",
+  "mobile",
+  "restyle",
+  "redesign",
+  "mvp",
+  "gdpr",
+  "privacy",
+  "chatbot",
+  "landing",
+  "vetrina",
+  "corporate",
+  "portale",
+  "portal",
+  "dashboard",
+  "webapp",
+  "web app",
+  "agenzia",
+  "agency",
+  "quanto tempo",
+  "how long",
+  "settimane",
+  "weeks",
+  "timeline",
+  "durata",
+  "duration",
+  "italiane",
+  "italian",
+  "italia",
+  "startup",
+  "intelligenza",
+  "openai",
+  "react",
+  "typescript",
+  "fatturazione",
+  "billing",
+  "cookie",
+  "conformita",
+  "compliance",
+  "qc tech",
+  "posizionamento",
+  "redirect",
+  "aeo",
+  "geo",
+  "ios",
+  "android",
+  "negozio",
+  "checkout",
+  "catalogo",
+  "catalogue",
+  "saas",
+  "iniziare",
+  "get started",
+  "primo passo",
+  "first step",
+  "primo giorno",
+  "day one",
+  "applicazione web",
+  "web application",
+  "ridisegnare",
+  "after launch",
+  "dopo il lancio",
+] as const;
+
+const COST_SIGNALS = [
+  "quanto costa",
+  "how much",
+  "costo",
+  "costa",
+  "prezzo",
+  "price",
+  "cost",
+] as const;
+
+const DURATION_SIGNALS = [
+  "quanto tempo",
+  "how long",
+  "tempi",
+  "durata",
+  "duration",
+  "timeline",
+  "settimane",
+  "weeks",
+  "mesi",
+  "months",
+  "ci vuole",
+] as const;
+
+const COST_OBJECTS: { phrase: string; id: FaqId }[] = [
+  { phrase: "e-commerce", id: "p-ecommerce" },
+  { phrase: "ecommerce", id: "p-ecommerce" },
+  { phrase: "negozio", id: "p-ecommerce" },
+  { phrase: "shop", id: "p-ecommerce" },
+  { phrase: "store", id: "p-ecommerce" },
+  { phrase: "restyle", id: "p-restyle" },
+  { phrase: "redesign", id: "p-restyle" },
+  { phrase: "web app", id: "p-webapp" },
+  { phrase: "webapp", id: "p-webapp" },
+  { phrase: "portale", id: "p-webapp" },
+  { phrase: "portal", id: "p-webapp" },
+  { phrase: "app", id: "p-mobile" },
+  { phrase: "mobile", id: "p-mobile" },
+  { phrase: "seo", id: "p-seo" },
+  { phrase: "presenza", id: "p-presence" },
+  { phrase: "presence", id: "p-presence" },
+  { phrase: "manutenzione", id: "p-presence" },
+  { phrase: "maintenance", id: "p-presence" },
+  { phrase: "landing", id: "a1" },
+  { phrase: "vetrina", id: "a1" },
+  { phrase: "corporate", id: "a1" },
+  { phrase: "sito", id: "a1" },
+  { phrase: "website", id: "a1" },
+  { phrase: "web", id: "a1" },
+];
+
+const DURATION_OBJECTS = [
+  "sito",
+  "website",
+  "web",
+  "progetto",
+  "project",
+  "app",
+  "landing",
+  "ecommerce",
+  "e-commerce",
+];
 
 function normalize(text: string): string {
   return text
@@ -229,11 +441,64 @@ function normalize(text: string): string {
     .trim();
 }
 
-function keywordWeight(kw: string): number {
-  if (GENERIC_KEYWORDS.has(kw)) return 1;
-  if (kw.includes(" ")) return 5;
-  if (kw.length >= 6) return 4;
-  return 3;
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function hasPhrase(hay: string, phrase: string): boolean {
+  const p = normalize(phrase);
+  if (p.length === 0) return false;
+  if (p.includes(" ") || p.includes("-")) return hay.includes(p);
+  return new RegExp(`(?:^|\\s)${escapeRegExp(p)}(?:$|\\s)`).test(hay);
+}
+
+function significantTokens(text: string): string[] {
+  return normalize(text)
+    .split(" ")
+    .filter(
+      (token) =>
+        token.length >= 3 &&
+        !STOP_WORDS.has(token) &&
+        !GENERIC_WORDS.has(token),
+    );
+}
+
+function faqCorpus(entry: KbEntry): string {
+  return normalize([entry.question, ...entry.keywords].join(" "));
+}
+
+function overlapCount(queryTokens: string[], corpus: string): number {
+  let count = 0;
+  const seen = new Set<string>();
+  for (const token of queryTokens) {
+    if (seen.has(token)) continue;
+    seen.add(token);
+    if (hasPhrase(corpus, token)) count += 1;
+  }
+  return count;
+}
+
+function strongHits(hay: string, corpus: string): number {
+  let count = 0;
+  for (const phrase of STRONG_PHRASES) {
+    if (hasPhrase(hay, phrase) && hasPhrase(corpus, phrase)) count += 1;
+  }
+  return count;
+}
+
+function costObjectId(hay: string): FaqId | null {
+  if (!COST_SIGNALS.some((signal) => hasPhrase(hay, signal))) return null;
+  for (const item of COST_OBJECTS) {
+    if (hasPhrase(hay, item.phrase)) return item.id;
+  }
+  return null;
+}
+
+function hasDurationIntent(hay: string): boolean {
+  return (
+    DURATION_SIGNALS.some((signal) => hasPhrase(hay, signal)) &&
+    DURATION_OBJECTS.some((object) => hasPhrase(hay, object))
+  );
 }
 
 export function matchFaqByKeywords(
@@ -243,20 +508,31 @@ export function matchFaqByKeywords(
   const hay = normalize(message);
   if (hay.length < 2) return null;
 
+  const queryTokens = significantTokens(hay);
+  const costId = costObjectId(hay);
+  const durationIntent = hasDurationIntent(hay);
+
   let best: { entry: KbEntry; score: number } | null = null;
   for (const entry of getAssistantKb(locale)) {
-    let score = 0;
-    for (const raw of entry.keywords) {
-      const kw = normalize(raw);
-      if (kw.length === 0) continue;
-      if (hay.includes(kw)) score += keywordWeight(kw);
-    }
-    if (hay.includes(normalize(entry.question))) score += 10;
+    const corpus = faqCorpus(entry);
+    const exactQuestion = hay.includes(normalize(entry.question));
+    const strong = strongHits(hay, corpus);
+    const overlap = overlapCount(queryTokens, corpus);
+    const durationHit = durationIntent && entry.id === "a4";
+    const costHit = costId === entry.id;
+
+    const qualified =
+      exactQuestion || strong >= 1 || overlap >= 2 || durationHit || costHit;
+    if (!qualified) continue;
+
+    let score = strong * 8 + overlap * 3;
+    if (exactQuestion) score += 20;
+    if (durationHit) score += 12;
+    if (costHit) score += 12;
     if (!best || score > best.score) best = { entry, score };
   }
 
-  if (!best || best.score < 3) return null;
-  return best.entry;
+  return best?.entry ?? null;
 }
 
 export const CHIP_FAQ_IDS: FaqId[] = ["a1", "a4", "a11", "a2", "a6"];
