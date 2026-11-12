@@ -706,6 +706,84 @@ body {
   }
 }
 
+.scroll-to-top {
+  position: fixed;
+  right: 16px;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  z-index: 40;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  padding: 0;
+  overflow: visible;
+  border: 1px solid var(--light-border);
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.1);
+  color: var(--light-text);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.2s ease,
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.scroll-to-top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.scroll-to-top.is-end {
+  background: var(--light-emphasis);
+  border-color: var(--light-emphasis);
+  color: #fff;
+}
+
+.scroll-to-top-ring {
+  position: absolute;
+  inset: 0;
+  width: 48px;
+  height: 48px;
+  transform: rotate(-90deg);
+}
+
+.scroll-to-top-track,
+.scroll-to-top-progress {
+  fill: none;
+  stroke-width: 3;
+}
+
+.scroll-to-top-track {
+  stroke: var(--light-border);
+}
+
+.scroll-to-top-progress {
+  stroke: var(--light-primary);
+  stroke-linecap: round;
+}
+
+.scroll-to-top.is-end .scroll-to-top-track,
+.scroll-to-top.is-end .scroll-to-top-progress {
+  stroke: #fff;
+}
+
+.scroll-to-top-icon {
+  position: relative;
+  z-index: 1;
+  width: 20px;
+  height: 20px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-to-top {
+    transition: none;
+  }
+}
+
 .quantis-float {
   --quantis-bob: 12px;
   position: fixed;

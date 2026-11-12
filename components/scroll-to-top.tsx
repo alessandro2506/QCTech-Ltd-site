@@ -1,65 +1,79 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
-import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUp } from "lucide-react";
 
-function scrollProgress(): number {
-  if (typeof window === "undefined") return 0;
-  const el = document.documentElement;
-  const scrollable = el.scrollHeight - window.innerHeight;
-  if (scrollable <= 0) return 0;
-  return window.scrollY / scrollable;
-}
-
-function subscribe(onChange: () => void) {
-  const handler = () => onChange();
-  window.addEventListener("scroll", handler, { passive: true });
-  window.addEventListener("resize", handler, { passive: true });
-  return () => {
-    window.removeEventListener("scroll", handler);
-    window.removeEventListener("resize", handler);
-  };
-}
-
-function getScrollTopVisible(): boolean {
-  return scrollProgress() >= 0.5;
-}
+const RING_RADIUS = 22;
+const RING_CIRCUMFERENCE = 2 * Math.PI * RING_RADIUS;
 
 export function ScrollToTop() {
   const t = useTranslations("common");
-  const visible = useSyncExternalStore(
-    subscribe,
-    getScrollTopVisible,
-    () => false,
-  );
+  const rafRef = useRef(0);
+  const [visible, setVisible] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [atEnd, setAtEnd] = useState(false);
+
+  useEffect(() => {
+    const measure = () => {
+      rafRef.current = 0;
+      const root = document.documentElement;
+      const y = window.scrollY;
+      const scrollable = root.scrollHeight - window.innerHeight;
+      const next = scrollable <= 0 ? 0 : Math.min(1, y / scrollable);
+      setVisible(y > 8);
+      setProgress(next);
+      setAtEnd(next >= 0.99);
+    };
+
+    const onScroll = () => {
+      if (rafRef.current !== 0) return;
+      rafRef.current = window.requestAnimationFrame(measure);
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    measure();
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (rafRef.current !== 0) window.cancelAnimationFrame(rafRef.current);
+    };
+  }, []);
 
   const goTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
   };
 
   return (
-    <AnimatePresence>
-      {visible ? (
-        <motion.div
-          key="scroll-top"
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 12 }}
-          transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-          className="pointer-events-none fixed bottom-6 right-4 z-40 sm:bottom-8 sm:right-6"
-        >
-          <button
-            type="button"
-            onClick={goTop}
-            className="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full border border-[var(--light-border)] bg-white text-[var(--light-primary)] shadow-md transition hover:border-[var(--light-primary)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--light-primary)]"
-            aria-label={t("scrollToTop")}
-          >
-            <ArrowUp className="h-5 w-5" strokeWidth={2.25} aria-hidden />
-          </button>
-        </motion.div>
-      ) : null}
-    </AnimatePresence>
+    <button
+      type="button"
+      className={`scroll-to-top${visible ? " is-visible" : ""}${atEnd ? " is-end" : ""}`}
+      aria-label={t("scrollToTop")}
+      tabIndex={visible ? 0 : -1}
+      onClick={goTop}
+    >
+      <svg className="scroll-to-top-ring" viewBox="0 0 48 48" aria-hidden>
+        <circle
+          className="scroll-to-top-track"
+          cx="24"
+          cy="24"
+          r={RING_RADIUS}
+        />
+        <circle
+          className="scroll-to-top-progress"
+          cx="24"
+          cy="24"
+          r={RING_RADIUS}
+          strokeDasharray={RING_CIRCUMFERENCE}
+          strokeDashoffset={RING_CIRCUMFERENCE * (1 - progress)}
+        />
+      </svg>
+      <ArrowUp className="scroll-to-top-icon" strokeWidth={2.25} aria-hidden />
+    </button>
   );
 }
