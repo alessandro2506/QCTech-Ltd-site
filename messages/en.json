@@ -38,7 +38,8 @@
   },
   "common": {
     "scrollToTop": "Back to top",
-    "quantisOpen": "Open Quantis assistant"
+    "quantisOpen": "Open the FAQ assistant",
+    "quantisFaqLabel": "FAQ assistant"
   },
   "hero": {
     "headline": "Websites and apps built to bring you customers",

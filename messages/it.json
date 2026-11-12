@@ -38,7 +38,8 @@
   },
   "common": {
     "scrollToTop": "Torna in cima",
-    "quantisOpen": "Apri assistente Quantis"
+    "quantisOpen": "Apri l'assistente FAQ",
+    "quantisFaqLabel": "Assistente FAQ"
   },
   "hero": {
     "headline": "Siti web e app su misura, pensati per portare clienti",

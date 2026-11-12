@@ -5,7 +5,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 
 type QuantisState = "idle" | "near" | "open" | "thinking";
-type QuantisPlacement = "float" | "header" | "hero" | "pill";
+type QuantisPlacement = "dock" | "hero" | "pill";
 
 function isHeldState(state: QuantisState): boolean {
   switch (state) {
@@ -23,7 +23,7 @@ function isHeldState(state: QuantisState): boolean {
 }
 
 export function QuantisFloat({
-  placement = "float",
+  placement = "dock",
 }: {
   placement?: QuantisPlacement;
 }) {
@@ -130,17 +130,13 @@ export function QuantisFloat({
       markPx = 512;
       sizes = "(min-width: 1280px) 300px, 240px";
       break;
-    case "header":
-      markPx = 40;
-      sizes = "40px";
+    case "dock":
+      markPx = 34;
+      sizes = "34px";
       break;
     case "pill":
-      markPx = 36;
-      sizes = "36px";
-      break;
-    case "float":
-      markPx = 72;
-      sizes = "72px";
+      markPx = 28;
+      sizes = "28px";
       break;
     default: {
       const _exhaustive: never = placement;
@@ -179,6 +175,12 @@ export function QuantisFloat({
           />
         </span>
       </span>
+      {placement === "pill" ? (
+        <span className="quantis-float-label">{t("quantisFaqLabel")}</span>
+      ) : null}
+      {placement === "dock" ? (
+        <span className="quantis-float-badge">FAQ</span>
+      ) : null}
     </button>
   );
 }

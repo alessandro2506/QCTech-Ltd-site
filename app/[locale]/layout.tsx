@@ -5,6 +5,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { QuantisFloat } from "@/components/quantis-float";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { SchemaOrg } from "@/components/schema-org";
 import { MainWrapper } from "@/components/main-wrapper";
@@ -118,6 +119,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             <SiteHeader />
             <MainWrapper>{children}</MainWrapper>
             <SiteFooter />
+            <QuantisFloat placement="dock" />
             <ScrollToTop />
             <CookieBanner />
           </ThemeScope>
