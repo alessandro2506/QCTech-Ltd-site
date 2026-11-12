@@ -31,6 +31,7 @@ export function QuantisFloat({
   const buttonRef = useRef<HTMLButtonElement>(null);
   const stateRef = useRef<QuantisState>("idle");
   const [state, setState] = useState<QuantisState>("idle");
+  const [dockShifted, setDockShifted] = useState(false);
 
   const updateState = useCallback((next: QuantisState) => {
     stateRef.current = next;
@@ -121,6 +122,25 @@ export function QuantisFloat({
     };
   }, [updateState]);
 
+  useEffect(() => {
+    if (placement !== "dock") return;
+    const rafRef = { current: 0 };
+    const measure = () => {
+      rafRef.current = 0;
+      setDockShifted(window.scrollY > 8);
+    };
+    const onScroll = () => {
+      if (rafRef.current !== 0) return;
+      rafRef.current = window.requestAnimationFrame(measure);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    measure();
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (rafRef.current !== 0) window.cancelAnimationFrame(rafRef.current);
+    };
+  }, [placement]);
+
   const expanded = state === "open" || state === "thinking";
 
   let markPx: number;
@@ -131,8 +151,8 @@ export function QuantisFloat({
       sizes = "(min-width: 1280px) 300px, 240px";
       break;
     case "dock":
-      markPx = 34;
-      sizes = "34px";
+      markPx = 48;
+      sizes = "48px";
       break;
     case "pill":
       markPx = 28;
@@ -153,7 +173,9 @@ export function QuantisFloat({
     <button
       ref={buttonRef}
       type="button"
-      className={`quantis-float quantis-float--${placement}`}
+      className={`quantis-float quantis-float--${placement}${
+        placement === "dock" && dockShifted ? " is-shifted" : ""
+      }`}
       data-state={state}
       aria-label={t("quantisOpen")}
       aria-expanded={expanded}
