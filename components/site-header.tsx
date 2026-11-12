@@ -81,7 +81,7 @@ export function SiteHeader() {
 
         <div className="site-header-mobile site-header-mobile--light">
           <QuantisFloat placement="header" />
-          <div className="justify-self-center">
+          <div className="flex min-w-0 items-center justify-center justify-self-center overflow-hidden px-1">
             <QCTechLogo variant="header" onLight linkToHome />
           </div>
           <button
