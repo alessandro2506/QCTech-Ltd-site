@@ -53,7 +53,7 @@ export function ScrollToTop() {
           <button
             type="button"
             onClick={goTop}
-            className="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full border border-violet-500/30 bg-[#0d0720]/90 text-violet-400 shadow-lg shadow-violet-900/20 backdrop-blur-sm transition hover:border-violet-400/50 hover:text-violet-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500"
+            className="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full border border-[var(--light-border)] bg-white text-[var(--light-primary)] shadow-md transition hover:border-[var(--light-primary)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--light-primary)]"
             aria-label={t("scrollToTop")}
           >
             <ArrowUp className="h-5 w-5" strokeWidth={2.25} aria-hidden />

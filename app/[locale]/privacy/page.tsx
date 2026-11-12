@@ -30,8 +30,8 @@ function Section({
 }) {
   return (
     <section className="mt-8">
-      <h2 className="text-lg font-semibold text-slate-200">{title}</h2>
-      <div className="mt-3 space-y-3 text-sm leading-relaxed text-slate-400">
+      <h2 className="text-lg font-semibold text-[var(--light-text)]">{title}</h2>
+      <div className="mt-3 space-y-3 text-sm leading-relaxed text-[var(--light-text-muted)]">
         {children}
       </div>
     </section>
@@ -45,23 +45,23 @@ export default async function PrivacyPage({ params }: PageProps) {
   return (
     <div className="pb-24 pt-28 sm:pt-32">
       <article className="mx-auto max-w-3xl px-4 sm:px-6">
-        <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        <h1 className="text-3xl font-bold tracking-tight text-[var(--light-emphasis)] sm:text-4xl">
           {isIt ? "Informativa sulla Privacy" : "Privacy Policy"}
         </h1>
-        <p className="mt-3 text-sm text-slate-500">
+        <p className="mt-3 text-sm text-[var(--light-text-muted)]">
           {isIt ? "Ultimo aggiornamento: 8 luglio 2026" : "Last updated: 8 July 2026"}
         </p>
 
         {isIt ? (
           <>
-            <p className="mt-6 text-sm leading-relaxed text-slate-400">
-              <strong className="text-slate-300">Titolare del trattamento:</strong>{" "}
+            <p className="mt-6 text-sm leading-relaxed text-[var(--light-text-muted)]">
+              <strong className="text-[var(--light-text)]">Titolare del trattamento:</strong>{" "}
               Quantum Code Technologies Ltd, Company Number 17317573, Flat 3,
               Jackson Wharf, Adderley Road, Bishop&apos;s Stortford, CM23 3AX,
               England. Email:{" "}
               <a
                 href="mailto:hello@qc-tech.co.uk"
-                className="text-violet-400 hover:text-violet-300"
+                className="text-[var(--light-primary)] hover:underline"
               >
                 hello@qc-tech.co.uk
               </a>
@@ -80,20 +80,20 @@ export default async function PrivacyPage({ params }: PageProps) {
             <Section title="2. Dati raccolti">
               <ul className="list-disc space-y-2 pl-5">
                 <li>
-                  <strong className="text-slate-300">Modulo contatti:</strong>{" "}
+                  <strong className="text-[var(--light-text)]">Modulo contatti:</strong>{" "}
                   nome, email, messaggio, argomento selezionato
                 </li>
                 <li>
-                  <strong className="text-slate-300">Modulo Copilot Ltd:</strong>{" "}
+                  <strong className="text-[var(--light-text)]">Modulo Copilot Ltd:</strong>{" "}
                   nome, email, stato della richiesta
                 </li>
                 <li>
-                  <strong className="text-slate-300">Google Analytics 4:</strong>{" "}
+                  <strong className="text-[var(--light-text)]">Google Analytics 4:</strong>{" "}
                   dati di navigazione anonimi (pagine visitate, durata sessione,
                   paese, dispositivo)
                 </li>
                 <li>
-                  <strong className="text-slate-300">Cookie tecnici:</strong>{" "}
+                  <strong className="text-[var(--light-text)]">Cookie tecnici:</strong>{" "}
                   necessari al funzionamento del sito (Next.js, Vercel)
                 </li>
               </ul>
@@ -154,7 +154,7 @@ export default async function PrivacyPage({ params }: PageProps) {
                   href="https://ico.org.uk"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-violet-400 hover:text-violet-300"
+                  className="text-[var(--light-primary)] hover:underline"
                 >
                   ico.org.uk
                 </a>
@@ -171,14 +171,14 @@ export default async function PrivacyPage({ params }: PageProps) {
           </>
         ) : (
           <>
-            <p className="mt-6 text-sm leading-relaxed text-slate-400">
-              <strong className="text-slate-300">Data controller:</strong> Quantum
+            <p className="mt-6 text-sm leading-relaxed text-[var(--light-text-muted)]">
+              <strong className="text-[var(--light-text)]">Data controller:</strong> Quantum
               Code Technologies Ltd, Company Number 17317573, Flat 3, Jackson
               Wharf, Adderley Road, Bishop&apos;s Stortford, CM23 3AX, England.
               Email:{" "}
               <a
                 href="mailto:hello@qc-tech.co.uk"
-                className="text-violet-400 hover:text-violet-300"
+                className="text-[var(--light-primary)] hover:underline"
               >
                 hello@qc-tech.co.uk
               </a>
@@ -198,20 +198,20 @@ export default async function PrivacyPage({ params }: PageProps) {
             <Section title="2. Data We Collect">
               <ul className="list-disc space-y-2 pl-5">
                 <li>
-                  <strong className="text-slate-300">Contact form:</strong>{" "}
+                  <strong className="text-[var(--light-text)]">Contact form:</strong>{" "}
                   name, email, message, selected topic
                 </li>
                 <li>
-                  <strong className="text-slate-300">Copilot Ltd form:</strong>{" "}
+                  <strong className="text-[var(--light-text)]">Copilot Ltd form:</strong>{" "}
                   name, email, request status
                 </li>
                 <li>
-                  <strong className="text-slate-300">Google Analytics 4:</strong>{" "}
+                  <strong className="text-[var(--light-text)]">Google Analytics 4:</strong>{" "}
                   anonymous browsing data (pages visited, session duration,
                   country, device)
                 </li>
                 <li>
-                  <strong className="text-slate-300">Technical cookies:</strong>{" "}
+                  <strong className="text-[var(--light-text)]">Technical cookies:</strong>{" "}
                   required for site operation (Next.js, Vercel)
                 </li>
               </ul>
@@ -271,7 +271,7 @@ export default async function PrivacyPage({ params }: PageProps) {
                   href="https://ico.org.uk"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-violet-400 hover:text-violet-300"
+                  className="text-[var(--light-primary)] hover:underline"
                 >
                   ico.org.uk
                 </a>
@@ -287,8 +287,8 @@ export default async function PrivacyPage({ params }: PageProps) {
           </>
         )}
 
-        <p className="mt-10 text-sm text-slate-500">
-          <Link href="/termini" className="text-violet-400 hover:text-violet-300">
+        <p className="mt-10 text-sm text-[var(--light-text-muted)]">
+          <Link href="/termini" className="text-[var(--light-primary)] hover:underline">
             {isIt ? "Termini e Condizioni" : "Terms & Conditions"}
           </Link>
         </p>

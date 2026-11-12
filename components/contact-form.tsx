@@ -210,10 +210,10 @@ export function ContactForm({
     >
       {hasSelectedTopic ? (
         <div
-          className="rounded-xl border border-cyan-500/25 bg-cyan-500/8 px-4 py-3 text-sm text-slate-300"
+          className="rounded-xl border border-[var(--light-border)] bg-[var(--light-surface)] px-4 py-3 text-sm text-[var(--light-text)]"
           role="status"
         >
-          <span className="font-semibold text-slate-100">{t("quoteBanner")}</span>{" "}
+          <span className="font-semibold text-[var(--light-emphasis)]">{t("quoteBanner")}</span>{" "}
           {t("topicWord")} <strong>{currentTopicLabel}</strong>
           {visiblePlanLabel ? (
             <>
@@ -227,7 +227,7 @@ export function ContactForm({
       <div>
         <label
           htmlFor="name"
-          className="block text-sm font-medium text-slate-300"
+          className="block text-sm font-medium text-[var(--light-text)]"
         >
           {t("name")}
         </label>
@@ -239,13 +239,13 @@ export function ContactForm({
           value={name}
           onChange={(e) => setName(e.target.value)}
           disabled={status === "loading"}
-          className="mt-1.5 w-full rounded-xl border border-violet-500/20 bg-white/5 px-4 py-3 text-slate-100 shadow-sm outline-none ring-violet-500/40 transition placeholder:text-slate-600 focus:border-violet-400 focus:ring-2 disabled:opacity-60"
+          className="mt-1.5 w-full rounded-xl border border-[var(--light-border)] bg-white px-4 py-3 text-[var(--light-text)] shadow-sm outline-none ring-[var(--light-primary)]/40 transition placeholder:text-[var(--light-text-muted)] focus:border-[var(--light-primary)] focus:ring-2 disabled:opacity-60"
         />
       </div>
       <div>
         <label
           htmlFor="email"
-          className="block text-sm font-medium text-slate-300"
+          className="block text-sm font-medium text-[var(--light-text)]"
         >
           {t("email")}
         </label>
@@ -258,13 +258,13 @@ export function ContactForm({
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           disabled={status === "loading"}
-          className="mt-1.5 w-full rounded-xl border border-violet-500/20 bg-white/5 px-4 py-3 text-slate-100 shadow-sm outline-none ring-violet-500/40 transition placeholder:text-slate-600 focus:border-violet-400 focus:ring-2 disabled:opacity-60"
+          className="mt-1.5 w-full rounded-xl border border-[var(--light-border)] bg-white px-4 py-3 text-[var(--light-text)] shadow-sm outline-none ring-[var(--light-primary)]/40 transition placeholder:text-[var(--light-text-muted)] focus:border-[var(--light-primary)] focus:ring-2 disabled:opacity-60"
         />
       </div>
       <div>
         <label
           htmlFor="topic"
-          className="block text-sm font-medium text-slate-300"
+          className="block text-sm font-medium text-[var(--light-text)]"
         >
           {t("topic")}
         </label>
@@ -283,7 +283,7 @@ export function ContactForm({
             syncContactQuery({ topic: nextTopic || undefined });
           }}
           disabled={status === "loading"}
-          className="mt-1.5 w-full rounded-xl border border-violet-500/20 bg-white/5 px-4 py-3 text-slate-100 shadow-sm outline-none ring-violet-500/40 transition placeholder:text-slate-600 focus:border-violet-400 focus:ring-2 disabled:opacity-60"
+          className="mt-1.5 w-full rounded-xl border border-[var(--light-border)] bg-white px-4 py-3 text-[var(--light-text)] shadow-sm outline-none ring-[var(--light-primary)]/40 transition placeholder:text-[var(--light-text-muted)] focus:border-[var(--light-primary)] focus:ring-2 disabled:opacity-60"
         >
           {topicOptions.map((opt) => (
             <option key={opt.value || "empty"} value={opt.value}>
@@ -297,7 +297,7 @@ export function ContactForm({
         <div>
           <label
             htmlFor="contact-plan"
-            className="block text-sm font-medium text-slate-300"
+            className="block text-sm font-medium text-[var(--light-text)]"
           >
             {t("selectPlan")}
           </label>
@@ -318,7 +318,7 @@ export function ContactForm({
               });
             }}
             disabled={status === "loading"}
-            className="mt-1.5 w-full rounded-xl border border-violet-500/20 bg-white/5 px-4 py-3 text-slate-100 shadow-sm outline-none ring-violet-500/40 transition placeholder:text-slate-600 focus:border-violet-400 focus:ring-2 disabled:opacity-60"
+            className="mt-1.5 w-full rounded-xl border border-[var(--light-border)] bg-white px-4 py-3 text-[var(--light-text)] shadow-sm outline-none ring-[var(--light-primary)]/40 transition placeholder:text-[var(--light-text-muted)] focus:border-[var(--light-primary)] focus:ring-2 disabled:opacity-60"
           >
             <option value="">{t("selectPlanPlaceholder")}</option>
             {pricingPlans.map((p) => (
@@ -332,16 +332,16 @@ export function ContactForm({
 
       {topicNeedsPlan(topic) ? (
         <div>
-          <span className="block text-sm font-medium text-slate-300">
+          <span className="block text-sm font-medium text-[var(--light-text)]">
             {t("message")}
           </span>
-          <div className="mt-1.5 overflow-hidden rounded-xl border border-violet-500/20 bg-white/5 ring-violet-500/40 focus-within:ring-2">
+          <div className="mt-1.5 overflow-hidden rounded-xl border border-[var(--light-border)] bg-white ring-[var(--light-primary)]/40 focus-within:ring-2">
             {planBlock ? (
-              <div className="border-b border-violet-500/15 bg-violet-500/5 px-4 py-3">
-                <p className="text-xs font-medium uppercase tracking-wide text-cyan-400">
+              <div className="border-b border-[var(--light-border)] bg-[var(--light-surface)] px-4 py-3">
+                <p className="text-xs font-medium uppercase tracking-wide text-[var(--light-primary)]">
                   {t("messagePlanIncluded")}
                 </p>
-                <pre className="mt-2 whitespace-pre-wrap break-words font-sans text-sm font-semibold leading-relaxed text-slate-200">
+                <pre className="mt-2 whitespace-pre-wrap break-words font-sans text-sm font-semibold leading-relaxed text-[var(--light-text)]">
                   {planBlock}
                 </pre>
               </div>
@@ -357,7 +357,7 @@ export function ContactForm({
               onChange={(e) => setMessageExtra(e.target.value)}
               disabled={status === "loading"}
               placeholder={t("messagePlaceholder")}
-              className="w-full resize-y border-0 bg-transparent px-4 py-3 text-sm text-slate-200 outline-none ring-0 placeholder:text-slate-600 focus:ring-0 disabled:opacity-60"
+              className="w-full resize-y border-0 bg-transparent px-4 py-3 text-sm text-[var(--light-text)] outline-none ring-0 placeholder:text-[var(--light-text-muted)] focus:ring-0 disabled:opacity-60"
             />
           </div>
         </div>
@@ -365,7 +365,7 @@ export function ContactForm({
         <div>
           <label
             htmlFor="message"
-            className="block text-sm font-medium text-slate-300"
+            className="block text-sm font-medium text-[var(--light-text)]"
           >
             {t("message")}
           </label>
@@ -377,7 +377,7 @@ export function ContactForm({
             value={messageOther}
             onChange={(e) => setMessageOther(e.target.value)}
             disabled={status === "loading"}
-            className="mt-1.5 w-full resize-y rounded-xl border border-violet-500/20 bg-white/5 px-4 py-3 text-slate-100 shadow-sm outline-none ring-violet-500/40 transition placeholder:text-slate-600 focus:border-violet-400 focus:ring-2 disabled:opacity-60"
+            className="mt-1.5 w-full resize-y rounded-xl border border-[var(--light-border)] bg-white px-4 py-3 text-[var(--light-text)] shadow-sm outline-none ring-[var(--light-primary)]/40 transition placeholder:text-[var(--light-text-muted)] focus:border-[var(--light-primary)] focus:ring-2 disabled:opacity-60"
             placeholder={t("messagePlaceholder")}
           />
         </div>
@@ -386,13 +386,13 @@ export function ContactForm({
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 py-3.5 text-sm font-semibold text-white shadow-lg shadow-violet-500/25 transition hover:brightness-110 disabled:opacity-60 sm:w-auto sm:px-10"
+        className="w-full rounded-full bg-[var(--light-primary)] py-3.5 text-sm font-semibold text-white transition hover:brightness-110 disabled:opacity-60 sm:w-auto sm:px-10"
       >
         {status === "loading" ? t("submitting") : t("submit")}
       </button>
 
       {status === "success" ? (
-        <p className="text-sm font-medium text-cyan-400" role="status">
+        <p className="text-sm font-medium text-[var(--light-primary)]" role="status">
           {t("success")}
         </p>
       ) : null}

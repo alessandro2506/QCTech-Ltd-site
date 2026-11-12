@@ -41,7 +41,7 @@ export function CookieBanner() {
       <button
         type="button"
         onClick={() => setPanelOpen((open) => !open)}
-        className="fixed bottom-5 left-5 z-[80] flex h-12 w-12 items-center justify-center rounded-full border border-[#22C55E]/40 bg-[#08050f]/85 text-xl shadow-[0_0_20px_rgba(34,197,94,0.35)] backdrop-blur-sm transition hover:border-[#22C55E]/70 hover:shadow-[0_0_28px_rgba(34,197,94,0.5)]"
+        className="fixed bottom-5 left-5 z-[80] flex h-12 w-12 items-center justify-center rounded-full border border-[var(--light-border)] bg-white text-xl shadow-md transition hover:border-[var(--light-primary)]"
         aria-label={t.title}
         aria-expanded={panelOpen}
       >
@@ -58,37 +58,37 @@ export function CookieBanner() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 24 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed bottom-20 left-5 z-[80] w-[min(calc(100vw-2.5rem),22rem)] rounded-2xl border border-violet-500/20 bg-[#0d0720]/95 p-5 shadow-2xl shadow-violet-900/30 backdrop-blur-md"
+            className="fixed bottom-20 left-5 z-[80] w-[min(calc(100vw-2.5rem),22rem)] rounded-2xl border border-[var(--light-border)] bg-white p-5 shadow-2xl shadow-slate-900/10"
           >
             <h2
               id="cookie-panel-title"
-              className="text-base font-semibold text-slate-100"
+              className="text-base font-semibold text-[var(--light-text)]"
             >
               {t.title}
             </h2>
-            <p className="mt-2 text-sm leading-relaxed text-slate-400">
+            <p className="mt-2 text-sm leading-relaxed text-[var(--light-text-muted)]">
               {t.body}
             </p>
             <div className="mt-4 flex flex-col gap-2">
               <button
                 type="button"
                 onClick={() => handleChoice("all")}
-                className="rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:brightness-110"
+                className="rounded-full bg-[var(--light-primary)] px-4 py-2.5 text-sm font-semibold text-white transition hover:brightness-110"
               >
                 {t.acceptAll}
               </button>
               <button
                 type="button"
                 onClick={() => handleChoice("essential")}
-                className="rounded-xl border border-violet-500/25 bg-white/5 px-4 py-2.5 text-sm font-semibold text-slate-300 transition hover:bg-white/10"
+                className="rounded-full border border-[var(--light-border)] bg-[var(--light-surface)] px-4 py-2.5 text-sm font-semibold text-[var(--light-text)] transition hover:bg-[var(--light-border)]"
               >
                 {t.essentialOnly}
               </button>
             </div>
-            <p className="mt-3 text-xs text-slate-500">
+            <p className="mt-3 text-xs text-[var(--light-text-muted)]">
               <Link
                 href="/privacy"
-                className="text-violet-400 hover:text-violet-300"
+                className="text-[var(--light-primary)] hover:underline"
                 onClick={() => setPanelOpen(false)}
               >
                 {t.privacy}
