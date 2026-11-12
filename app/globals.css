@@ -1296,6 +1296,12 @@ body {
   font-weight: 600;
 }
 
+.assistant-source {
+  margin: 0.45rem 0 0;
+  font-size: 0.7rem;
+  color: var(--light-text-muted);
+}
+
 .assistant-privacy {
   margin: 0.5rem 0 0;
   font-size: 0.8rem;
@@ -1400,10 +1406,15 @@ body {
 }
 
 .assistant-panel-foot {
-  padding: 0 14px 12px;
+  margin: 0;
+  padding: 0 14px 4px;
   color: var(--light-text-muted);
   font-size: 0.72rem;
   line-height: 1.35;
+}
+
+.assistant-panel-foot-privacy {
+  padding-bottom: 12px;
 }
 
 @media (min-width: 1024px) and (hover: hover) and (pointer: fine) {

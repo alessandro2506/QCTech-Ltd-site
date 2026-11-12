@@ -43,7 +43,7 @@
   },
   "assistant": {
     "title": "Q.U.A.N.TI.S · Assistente FAQ",
-    "intro": "Ciao, sono Q.U.A.N.TI.S, il tuo assistente AI. Rispondo alle domande più frequenti su siti web, app, prezzi e tempi. Non inserire dati personali.",
+    "intro": "Ciao, sono Q.U.A.N.TI.S, il tuo assistente AI. Chiedimi di siti web, app, prezzi e tempi: rispondo io. Non inserire dati personali.",
     "privacy": "Informativa privacy",
     "placeholder": "Scrivi una domanda…",
     "send": "Invia",
@@ -54,7 +54,16 @@
     "quote": "Richiedi un preventivo",
     "tooLong": "Il messaggio può avere al massimo 300 caratteri.",
     "chipsLabel": "Domande frequenti",
-    "foot": "Il testo digitato può essere inviato a un servizio esterno solo per scegliere la FAQ. Non inserire dati personali."
+    "foot": "Non inserire dati personali.",
+    "notice": "Le risposte dell'AI possono contenere errori. Per prezzi e tempi fa fede il preventivo.",
+    "sourceAi": "Risposta generata da AI",
+    "sourceFaq": "Dalle FAQ",
+    "writing": "Sto scrivendo…",
+    "statusListening": "In attesa",
+    "statusThinking": "Sto scrivendo…",
+    "statusAnswered": "Risposta pronta",
+    "statusError": "Nessuna risposta",
+    "statusClosed": "Chat chiusa"
   },
   "hero": {
     "headline": "Siti web e app su misura, pensati per portare clienti",

@@ -43,7 +43,7 @@
   },
   "assistant": {
     "title": "Q.U.A.N.TI.S · FAQ assistant",
-    "intro": "Hi, I'm Q.U.A.N.TI.S, your AI assistant. I answer the most common questions about websites, apps, prices and timelines. Please don't enter personal data.",
+    "intro": "Hi, I'm Q.U.A.N.TI.S, your AI assistant. Ask me about websites, apps, prices and timelines. Please don't enter personal data.",
     "privacy": "Privacy policy",
     "placeholder": "Type a question…",
     "send": "Send",
@@ -54,7 +54,16 @@
     "quote": "Request a quote",
     "tooLong": "Messages can be at most 300 characters.",
     "chipsLabel": "Frequent questions",
-    "foot": "Typed text may be sent to an external service only to pick the FAQ. Do not enter personal data."
+    "foot": "Do not enter personal data.",
+    "notice": "AI answers may contain mistakes. Prices and timelines are confirmed only in your quote.",
+    "sourceAi": "AI-generated answer",
+    "sourceFaq": "From the FAQ",
+    "writing": "Writing…",
+    "statusListening": "Waiting",
+    "statusThinking": "Writing…",
+    "statusAnswered": "Answer ready",
+    "statusError": "No useful answer",
+    "statusClosed": "Chat closed"
   },
   "hero": {
     "headline": "Websites and apps built to bring you customers",

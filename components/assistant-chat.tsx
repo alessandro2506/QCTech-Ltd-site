@@ -10,9 +10,36 @@ import { Link } from "@/i18n/routing";
 type ChatLine =
   | { kind: "intro" }
   | { kind: "user"; text: string }
+  | { kind: "ai"; text: string }
   | { kind: "faq"; entry: KbEntry }
   | { kind: "fallback" }
   | { kind: "too_long" };
+
+function historyFromLines(lines: ChatLine[]): { role: "user" | "assistant"; content: string }[] {
+  const turns: { role: "user" | "assistant"; content: string }[] = [];
+  for (const line of lines) {
+    switch (line.kind) {
+      case "user":
+        turns.push({ role: "user", content: line.text });
+        break;
+      case "ai":
+        turns.push({ role: "assistant", content: line.text });
+        break;
+      case "faq":
+        turns.push({ role: "assistant", content: line.entry.answer });
+        break;
+      case "fallback":
+      case "too_long":
+      case "intro":
+        break;
+      default: {
+        const _exhaustive: never = line;
+        return _exhaustive;
+      }
+    }
+  }
+  return turns.slice(-12);
+}
 
 type Props = {
   open: boolean;
@@ -178,14 +205,28 @@ export function AssistantChat({ open, onClose }: Props) {
       const response = await fetch("/api/assistant", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ locale, message }),
+        body: JSON.stringify({
+          locale,
+          message,
+          history: historyFromLines(lines),
+        }),
       });
       const data: unknown = await response.json();
       const type =
         data && typeof data === "object" && "type" in data
           ? String((data as { type: unknown }).type)
           : "";
+      const answer =
+        data && typeof data === "object" && "answer" in data
+          ? String((data as { answer: unknown }).answer ?? "")
+          : "";
       switch (type) {
+        case "ai":
+          setLines((prev) => [
+            ...prev,
+            answer.length > 0 ? { kind: "ai", text: answer } : { kind: "fallback" },
+          ]);
+          break;
         case "faq": {
           const id =
             data && typeof data === "object" && "id" in data
@@ -295,7 +336,7 @@ export function AssistantChat({ open, onClose }: Props) {
           ))}
           {busy ? (
             <p className="assistant-bubble assistant-bubble-bot" aria-live="polite">
-              …
+              {t("writing")}
             </p>
           ) : null}
         </div>
@@ -331,6 +372,9 @@ export function AssistantChat({ open, onClose }: Props) {
           </button>
         </form>
         <p className="assistant-panel-foot">
+          {t("notice")}
+        </p>
+        <p className="assistant-panel-foot assistant-panel-foot-privacy">
           {t("foot")}{" "}
           <Link href="/privacy">{t("privacy")}</Link>
         </p>
@@ -370,11 +414,22 @@ function ChatBubble({
       );
     case "user":
       return <p className="assistant-bubble assistant-bubble-user">{line.text}</p>;
+    case "ai":
+      return (
+        <div className="assistant-bubble assistant-bubble-bot">
+          <p>{line.text}</p>
+          <p className="assistant-source">{t("sourceAi")}</p>
+          <div className="assistant-fallback-actions">
+            <QuoteCta onClose={onClose} />
+          </div>
+        </div>
+      );
     case "faq":
       return (
         <div className="assistant-bubble assistant-bubble-bot">
           <p className="assistant-faq-q">{line.entry.question}</p>
           <p>{line.entry.answer}</p>
+          <p className="assistant-source">{t("sourceFaq")}</p>
           <div className="assistant-fallback-actions">
             <QuoteCta onClose={onClose} />
           </div>
