@@ -173,6 +173,7 @@ async function fullProbe(
         model,
         temperature: ASSISTANT_LLM_TEMPERATURE,
         max_tokens: ASSISTANT_LLM_MAX_TOKENS,
+        reasoning: { effort: "none" },
         messages,
       }),
       signal: controller.signal,
@@ -306,6 +307,11 @@ export async function GET(request: Request) {
         error: result.error,
         id: result.id ?? null,
         replyLocale: result.replyLocale,
+        reasoningSent: result.reasoningSent,
+        reasoningTokens: result.reasoningTokens,
+        promptTokens: result.promptTokens,
+        userChars: result.userChars,
+        lastUserContent: result.lastUserContent,
       });
     }
     return NextResponse.json({

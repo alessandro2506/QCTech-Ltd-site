@@ -2,8 +2,8 @@ import { getAssistantKb } from "@/lib/assistant-kb";
 
 export const ASSISTANT_LLM_TIMEOUT_MS = 10_000;
 export const ASSISTANT_LLM_BUDGET_MS = 20_000;
-export const ASSISTANT_LLM_MAX_ATTEMPTS = 2;
-export const ASSISTANT_LLM_MAX_TOKENS = 600;
+export const ASSISTANT_LLM_MAX_TOKENS = 400;
+export const ASSISTANT_LLM_REASONING_MAX_TOKENS = 1500;
 export const ASSISTANT_LLM_TEMPERATURE = 0.3;
 
 export type ChatTurn = {
