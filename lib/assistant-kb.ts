@@ -173,6 +173,12 @@ export function isFaqId(value: string): value is FaqId {
   return (FAQ_IDS as readonly string[]).includes(value);
 }
 
+export function formatAssistantKnowledgeBase(locale: string): string {
+  return getAssistantKb(locale)
+    .map((entry) => `[${entry.id}]\nQ: ${entry.question}\nA: ${entry.answer}`)
+    .join("\n\n");
+}
+
 export function getAssistantKb(locale: string): KbEntry[] {
   const isIt = locale !== "en";
   const faq = (isIt ? itMessages : enMessages).FAQ;
