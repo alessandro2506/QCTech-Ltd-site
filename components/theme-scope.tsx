@@ -1,7 +1,14 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { usePathname } from "@/i18n/routing";
 import { isLightPath } from "@/lib/is-light-path";
+
+const QuantisFloat = dynamic(
+  () =>
+    import("@/components/quantis-float").then((mod) => mod.QuantisFloat),
+  { ssr: false },
+);
 
 export function ThemeScope({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -16,6 +23,7 @@ export function ThemeScope({ children }: { children: React.ReactNode }) {
       }
     >
       {children}
+      {light ? <QuantisFloat /> : null}
     </div>
   );
 }

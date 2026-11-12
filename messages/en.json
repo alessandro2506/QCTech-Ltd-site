@@ -33,7 +33,8 @@
     "legal": "© 2026 Quantum Code Technologies Ltd."
   },
   "common": {
-    "scrollToTop": "Back to top"
+    "scrollToTop": "Back to top",
+    "quantisOpen": "Open Quantis assistant"
   },
   "hero": {
     "headline": "Websites and apps built to bring you customers",
