@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { runAssistant } from "@/lib/assistant-engine";
 import { getAssistantKb } from "@/lib/assistant-kb";
 import {
   ASSISTANT_LLM_MAX_TOKENS,
@@ -268,7 +269,7 @@ async function fullProbe(
   }
 }
 
-export async function GET() {
+export async function GET(request: Request) {
   if (process.env.VERCEL_ENV === "production") {
     return new NextResponse(null, { status: 404 });
   }
@@ -278,6 +279,49 @@ export async function GET() {
   const key = process.env.ASSISTANT_API_KEY?.trim() ?? "";
   const models = parseModels(process.env.ASSISTANT_MODEL ?? "");
   const dailyMax = Number(process.env.ASSISTANT_DAILY_MAX) || DEFAULT_DAILY_MAX;
+  const url = new URL(request.url);
+  const question = url.searchParams.get("q")?.trim() ?? "";
+  const locale = url.searchParams.get("locale") === "it" ? "it" : "en";
+  const runsRaw = Number(url.searchParams.get("runs") ?? 3);
+  const runs = Number.isFinite(runsRaw)
+    ? Math.min(5, Math.max(1, Math.floor(runsRaw)))
+    : 3;
+
+  if (question.length > 0) {
+    const questionRuns = [];
+    for (let i = 0; i < runs; i += 1) {
+      const result = await runAssistant({
+        message: question,
+        pageLocale: locale,
+        history: [],
+        consumeDaily: false,
+      });
+      questionRuns.push({
+        type: result.type,
+        latencyMs: result.latencyMs,
+        usedModel: result.usedModel,
+        finishReason: result.finishReason,
+        contentLength: result.contentLength,
+        tried: result.tried,
+        error: result.error,
+        id: result.id ?? null,
+        replyLocale: result.replyLocale,
+      });
+    }
+    return NextResponse.json({
+      vercelEnv,
+      hasBaseUrl: base.length > 0,
+      baseUrlHost: base.length > 0 ? hostOf(base) : null,
+      hasKey: key.length > 0,
+      keyLength: key.length,
+      models,
+      dailyMax,
+      question,
+      locale,
+      runs: questionRuns,
+    });
+  }
+
   const historyAfterOpen = chatHistoryAfterOpen();
 
   const probes =

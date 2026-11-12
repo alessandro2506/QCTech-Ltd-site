@@ -23,6 +23,9 @@ export const FAQ_IDS = [
   "p-webapp",
   "p-seo",
   "p-presence",
+  "k-apps",
+  "k-discount",
+  "k-identity",
 ] as const;
 
 export type FaqId = (typeof FAQ_IDS)[number];
@@ -54,7 +57,7 @@ const PRICE_IT: Record<
     question: "Quanto costa un'app mobile?",
     answer:
       "Le app mobile partono da 7.700 € per un MVP e da 14.000 € per la linea Standard. Tempi e ambito si definiscono in preventivo.",
-    keywords: ["app", "mobile", "ios", "android", "mvp"],
+    keywords: ["app", "mobile", "ios", "iphone", "android", "mvp", "app mobile"],
   },
   "p-webapp": {
     question: "Quanto costa una web app o un portale?",
@@ -99,7 +102,7 @@ const PRICE_EN: typeof PRICE_IT = {
     question: "How much does a mobile app cost?",
     answer:
       "Mobile apps start from £6,500 for an MVP and from £12,000 for Standard. Scope and timing are set in the quote.",
-    keywords: ["app", "mobile", "ios", "android", "mvp"],
+    keywords: ["app", "mobile", "ios", "iphone", "android", "mvp", "mobile app"],
   },
   "p-webapp": {
     question: "How much does a web app or portal cost?",
@@ -127,7 +130,24 @@ const PRICE_EN: typeof PRICE_IT = {
   },
 };
 
-const FAQ_KEYWORDS_IT: Record<Exclude<FaqId, `p-${string}`>, string[]> = {
+const FAQ_KEYWORDS_IT: Record<
+  | "a1"
+  | "a2"
+  | "a3"
+  | "a4"
+  | "a5"
+  | "a6"
+  | "a7"
+  | "a8"
+  | "a9"
+  | "a10"
+  | "a11"
+  | "a12"
+  | "a13"
+  | "a14"
+  | "a15",
+  string[]
+> = {
   a1: ["costo", "prezzo", "quanto", "costa", "sito", "landing", "vetrina", "corporate", "euro"],
   a2: ["italiane", "italia", "uk", "inghilterra", "gdpr", "fatturazione", "lingue"],
   a3: ["audit", "gratuito", "chiamata", "15", "conversioni"],
@@ -135,12 +155,12 @@ const FAQ_KEYWORDS_IT: Record<Exclude<FaqId, `p-${string}`>, string[]> = {
   a5: ["tecnolog", "tecnologie", "stack", "next", "react", "typescript", "strumenti"],
   a6: ["iniziare", "come faccio", "primo passo", "preventivo", "contatto"],
   a7: ["aprire", "azienda", "primo giorno", "startup", "landing", "aprire un"],
-  a8: ["differenza", "applicazione web", "web app", "sito web"],
+  a8: ["differenza", "applicazione web", "web application"],
   a9: ["agenzia", "scegliere", "scelgo", "giusta"],
   a10: ["ridisegnare", "seo", "google", "posizionamento", "redirect"],
   a11: ["manutenzione", "dopo", "lancio", "110", "mensile"],
   a12: ["ai", "intelligenza", "chatbot", "openai"],
-  a13: ["mvp", "app", "idea", "minimo"],
+  a13: ["mvp", "idea", "minimo"],
   a14: ["privacy", "gdpr", "dati", "cookie", "conformità"],
   a15: ["distingue", "diversa", "perché voi", "qc tech"],
 };
@@ -153,20 +173,77 @@ const FAQ_KEYWORDS_EN: typeof FAQ_KEYWORDS_IT = {
   a5: ["technolog", "technologies", "stack", "next", "react", "typescript", "tools"],
   a6: ["get started", "start", "first step", "quote", "contact"],
   a7: ["start a business", "day one", "startup", "landing"],
-  a8: ["difference", "web application", "web app", "website"],
+  a8: ["difference", "web application"],
   a9: ["agency", "choose", "right"],
   a10: ["redesign", "seo", "google", "ranking", "redirect"],
   a11: ["maintenance", "after launch", "90", "monthly"],
   a12: ["ai", "chatbot", "openai", "intelligence"],
-  a13: ["mvp", "app", "idea", "minimum"],
+  a13: ["mvp", "idea", "minimum"],
   a14: ["privacy", "gdpr", "data", "cookie", "compliance"],
   a15: ["different", "makes you", "qc tech", "why you"],
 };
 
-function isFaqPageId(
-  id: FaqId,
-): id is Exclude<FaqId, `p-${string}`> {
-  return !id.startsWith("p-");
+const EXTRA_IT: Record<
+  Extract<FaqId, `k-${string}`>,
+  { question: string; answer: string; keywords: string[] }
+> = {
+  "k-apps": {
+    question: "Fate anche app per iPhone, iOS e Android?",
+    answer:
+      "Sviluppiamo app per iOS e Android. Un MVP parte da 7.700 €, la linea Standard da 14.000 €. Il preventivo è sempre su misura.",
+    keywords: [
+      "iphone",
+      "ios",
+      "android",
+      "app mobile",
+      "app per",
+      "app iphone",
+    ],
+  },
+  "k-discount": {
+    question: "Fate sconti o promozioni?",
+    answer:
+      "I prezzi sul sito sono di partenza. Eventuali condizioni particolari si valutano solo nel preventivo personalizzato. In chat non possiamo promettere sconti.",
+    keywords: ["sconto", "sconti", "offerta", "offerte", "promozione", "promo"],
+  },
+  "k-identity": {
+    question: "Come ti chiami?",
+    answer:
+      "Sono Q.U.A.N.TI.S, l'assistente AI di Quantum Code Technologies Ltd (QC Tech).",
+    keywords: ["come ti chiami", "chi sei", "tuo nome", "chi e quantis"],
+  },
+};
+
+const EXTRA_EN: typeof EXTRA_IT = {
+  "k-apps": {
+    question: "Do you build iPhone, iOS and Android apps?",
+    answer:
+      "We build apps for iOS and Android. An MVP starts from £6,500, Standard from £12,000. Quotes are always tailored.",
+    keywords: [
+      "iphone",
+      "ios",
+      "android",
+      "mobile app",
+      "ios apps",
+      "iphone app",
+    ],
+  },
+  "k-discount": {
+    question: "Do you offer discounts or promotions?",
+    answer:
+      "Prices on the site are starting prices. Any special terms are considered only in a personalised quote. We do not promise discounts in chat.",
+    keywords: ["discount", "discounts", "offer", "promotion", "deal"],
+  },
+  "k-identity": {
+    question: "What's your name?",
+    answer:
+      "I'm Q.U.A.N.TI.S, the AI assistant of Quantum Code Technologies Ltd (QC Tech).",
+    keywords: ["what's your name", "what is your name", "who are you", "your name"],
+  },
+};
+
+function isFaqPageId(id: FaqId): boolean {
+  return /^a\d+$/.test(id);
 }
 
 export function isFaqId(value: string): value is FaqId {
@@ -193,7 +270,7 @@ export function getAssistantKb(locale: string): KbEntry[] {
       id,
       question: String(faq[questionKey]),
       answer: String(faq[answerKey]),
-      keywords: keywords[id],
+      keywords: keywords[id as keyof typeof FAQ_KEYWORDS_IT],
     };
   });
 
@@ -209,7 +286,15 @@ export function getAssistantKb(locale: string): KbEntry[] {
     return { id: key, ...prices[key] };
   });
 
-  return [...pageFaqs, ...priceFaqs];
+  const extras = isIt ? EXTRA_IT : EXTRA_EN;
+  const extraFaqs: KbEntry[] = ["k-apps", "k-discount", "k-identity"].map(
+    (id) => {
+      const key = id as Extract<FaqId, `k-${string}`>;
+      return { id: key, ...extras[key] };
+    },
+  );
+
+  return [...pageFaqs, ...priceFaqs, ...extraFaqs];
 }
 
 const STOP_WORDS = new Set([
@@ -311,8 +396,23 @@ const STRONG_PHRASES = [
   "technologies",
   "technology",
   "seo",
-  "app",
-  "mobile",
+  "iphone",
+  "ios",
+  "android",
+  "app mobile",
+  "app per",
+  "mobile app",
+  "sconto",
+  "sconti",
+  "offerta",
+  "offerte",
+  "promozione",
+  "discount",
+  "come ti chiami",
+  "chi sei",
+  "what's your name",
+  "what is your name",
+  "who are you",
   "restyle",
   "redesign",
   "mvp",
@@ -410,6 +510,15 @@ const COST_OBJECTS: { phrase: string; id: FaqId }[] = [
   { phrase: "webapp", id: "p-webapp" },
   { phrase: "portale", id: "p-webapp" },
   { phrase: "portal", id: "p-webapp" },
+  { phrase: "iphone", id: "k-apps" },
+  { phrase: "ios", id: "k-apps" },
+  { phrase: "android", id: "k-apps" },
+  { phrase: "app mobile", id: "k-apps" },
+  { phrase: "mobile app", id: "k-apps" },
+  { phrase: "sconto", id: "k-discount" },
+  { phrase: "discount", id: "k-discount" },
+  { phrase: "offerta", id: "k-discount" },
+  { phrase: "promozione", id: "k-discount" },
   { phrase: "app", id: "p-mobile" },
   { phrase: "mobile", id: "p-mobile" },
   { phrase: "seo", id: "p-seo" },
