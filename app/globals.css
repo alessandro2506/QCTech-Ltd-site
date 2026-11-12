@@ -1,18 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #08050f;
-  --surface: #100820;
-  --surface-raised: #16102a;
-  --foreground: #e2e8f0;
-  --muted: #94a3b8;
-  --brand-violet: #6c63ff;
-  --brand-cyan: #00d4ff;
-  --brand-violet-glow: rgba(108, 99, 255, 0.35);
-  --brand-cyan-glow: rgba(0, 212, 255, 0.3);
-  --border: rgba(108, 99, 255, 0.18);
-  --border-subtle: rgba(255, 255, 255, 0.06);
-  /* Light theme (home + /progetti only). Dark tokens above stay for other pages. */
+  --background: #ffffff;
+  --foreground: #0f172a;
   --light-bg: #ffffff;
   --light-surface: #f6f8fb;
   --light-text: #0f172a;
@@ -29,11 +19,6 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --color-brand-violet: var(--brand-violet);
-  --color-brand-cyan: var(--brand-cyan);
-  --color-surface: var(--surface);
-  --color-surface-raised: var(--surface-raised);
-  --color-muted: var(--muted);
 }
 
 html {
@@ -44,75 +29,6 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
-}
-
-/* Quantum grid pattern */
-.bg-quantum-grid {
-  background-image:
-    linear-gradient(rgba(108, 99, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(108, 99, 255, 0.04) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
-
-/* Glassmorphism card */
-.glass-card {
-  background: rgba(16, 8, 32, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(108, 99, 255, 0.18);
-}
-
-/* Glow effects */
-.glow-violet {
-  box-shadow: 0 0 24px rgba(108, 99, 255, 0.25), 0 0 48px rgba(108, 99, 255, 0.1);
-}
-
-.glow-cyan {
-  box-shadow: 0 0 24px rgba(0, 212, 255, 0.25), 0 0 48px rgba(0, 212, 255, 0.1);
-}
-
-/* Text glow */
-.text-glow-violet {
-  text-shadow: 0 0 20px rgba(108, 99, 255, 0.6);
-}
-
-.text-glow-cyan {
-  text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
-}
-
-/* Quantum gradient text */
-.gradient-quantum {
-  background: linear-gradient(135deg, #6c63ff 0%, #00d4ff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Animated border gradient */
-@keyframes border-flow {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-/* Pulse dot */
-@keyframes quantum-pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.5); }
-}
-
-.quantum-pulse {
-  animation: quantum-pulse 2s ease-in-out infinite;
-}
-
-/* Matrix rain fade-in */
-@keyframes matrix-fade {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* Section glow separator */
-.section-glow-top {
-  background: linear-gradient(to bottom, rgba(108, 99, 255, 0.06), transparent);
 }
 
 .theme-light :focus-visible {
@@ -185,12 +101,6 @@ body {
   box-shadow: 0 10px 40px rgba(15, 23, 42, 0.1);
 }
 
-.site-header-pill--dark {
-  border-color: rgba(255, 255, 255, 0.1);
-  background: rgba(20, 27, 46, 0.52);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
-}
-
 .site-header-nav {
   display: flex;
   flex-wrap: nowrap;
@@ -228,12 +138,6 @@ body {
 .site-header-mobile--light {
   border-bottom: 1px solid var(--light-border);
   background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(18px);
-}
-
-.site-header-mobile--dark {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(8, 5, 15, 0.92);
   backdrop-filter: blur(18px);
 }
 
