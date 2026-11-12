@@ -19,14 +19,59 @@ type Props = {
   onClose: () => void;
 };
 
+type Offset = { x: number; y: number };
+
+function desktopDragEnabled(): boolean {
+  return window.matchMedia(
+    "(min-width: 1024px) and (hover: hover) and (pointer: fine)",
+  ).matches;
+}
+
+function clampPanelOffset(
+  next: Offset,
+  visual: { left: number; top: number; width: number; height: number },
+  current: Offset,
+): Offset {
+  const header = document.querySelector(".site-header-pill");
+  const headerBottom =
+    header instanceof HTMLElement && getComputedStyle(header).display !== "none"
+      ? header.getBoundingClientRect().bottom
+      : 0;
+  const minLeft = 8;
+  const maxLeft = window.innerWidth - 8 - visual.width;
+  const minTop = Math.max(8, headerBottom + 8);
+  const maxTop = window.innerHeight - 8 - visual.height;
+  const baseLeft = visual.left - current.x;
+  const baseTop = visual.top - current.y;
+  return {
+    x: Math.min(maxLeft - baseLeft, Math.max(minLeft - baseLeft, next.x)),
+    y: Math.min(maxTop - baseTop, Math.max(minTop - baseTop, next.y)),
+  };
+}
+
 export function AssistantChat({ open, onClose }: Props) {
   const locale = useLocale();
   const t = useTranslations("assistant");
   const titleId = useId();
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
+  const panelRef = useRef<HTMLElement>(null);
+  const offsetRef = useRef<Offset>({ x: 0, y: 0 });
+  const dragRef = useRef<{
+    pointerId: number;
+    startX: number;
+    startY: number;
+    orig: Offset;
+    visLeft: number;
+    visTop: number;
+    width: number;
+    height: number;
+  } | null>(null);
   const [draft, setDraft] = useState("");
   const [busy, setBusy] = useState(false);
+  const [offset, setOffset] = useState<Offset>({ x: 0, y: 0 });
+  const [dragging, setDragging] = useState(false);
+  const [desktopDrag, setDesktopDrag] = useState(false);
   const [lines, setLines] = useState<ChatLine[]>([{ kind: "intro" }]);
   const kb = getAssistantKb(locale);
   const chips = CHIP_FAQ_IDS.map(
@@ -54,6 +99,69 @@ export function AssistantChat({ open, onClose }: Props) {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [open, onClose]);
+
+  useEffect(() => {
+    const query = window.matchMedia(
+      "(min-width: 1024px) and (hover: hover) and (pointer: fine)",
+    );
+    const sync = () => setDesktopDrag(query.matches);
+    sync();
+    query.addEventListener("change", sync);
+    return () => query.removeEventListener("change", sync);
+  }, []);
+
+  useEffect(() => {
+    if (!open || !desktopDrag) return;
+    const panel = panelRef.current;
+    if (!panel) return;
+
+    const apply = (next: Offset, visual: DOMRect | { left: number; top: number; width: number; height: number }, current: Offset) => {
+      const clamped = clampPanelOffset(next, visual, current);
+      offsetRef.current = clamped;
+      setOffset(clamped);
+    };
+
+    const onMove = (event: PointerEvent) => {
+      const drag = dragRef.current;
+      if (!drag || event.pointerId !== drag.pointerId) return;
+      apply(
+        {
+          x: drag.orig.x + event.clientX - drag.startX,
+          y: drag.orig.y + event.clientY - drag.startY,
+        },
+        {
+          left: drag.visLeft,
+          top: drag.visTop,
+          width: drag.width,
+          height: drag.height,
+        },
+        drag.orig,
+      );
+    };
+
+    const onUp = (event: PointerEvent) => {
+      const drag = dragRef.current;
+      if (!drag || event.pointerId !== drag.pointerId) return;
+      dragRef.current = null;
+      setDragging(false);
+    };
+
+    const onResize = () => {
+      const vis = panel.getBoundingClientRect();
+      apply(offsetRef.current, vis, offsetRef.current);
+    };
+
+    window.addEventListener("pointermove", onMove);
+    window.addEventListener("pointerup", onUp);
+    window.addEventListener("pointercancel", onUp);
+    window.addEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("pointerup", onUp);
+      window.removeEventListener("pointercancel", onUp);
+      window.removeEventListener("resize", onResize);
+    };
+  }, [open, desktopDrag]);
 
   async function ask(text: string) {
     const message = text.trim();
@@ -118,12 +226,57 @@ export function AssistantChat({ open, onClose }: Props) {
         onClick={onClose}
       />
       <section
-        className="assistant-panel"
+        ref={panelRef}
+        className={`assistant-panel${dragging ? " is-dragging" : ""}`}
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
+        style={
+          desktopDrag
+            ? { transform: `translate3d(${offset.x}px, ${offset.y}px, 0)` }
+            : undefined
+        }
       >
-        <header className="assistant-panel-head">
+        <header
+          className="assistant-panel-head"
+          onPointerDown={(event) => {
+            if (!desktopDragEnabled() || event.button !== 0) return;
+            const target = event.target;
+            if (
+              target instanceof Element &&
+              target.closest(".assistant-panel-close")
+            ) {
+              return;
+            }
+            const panel = panelRef.current;
+            if (!panel) return;
+            const vis = panel.getBoundingClientRect();
+            dragRef.current = {
+              pointerId: event.pointerId,
+              startX: event.clientX,
+              startY: event.clientY,
+              orig: { ...offsetRef.current },
+              visLeft: vis.left,
+              visTop: vis.top,
+              width: vis.width,
+              height: vis.height,
+            };
+            event.currentTarget.setPointerCapture(event.pointerId);
+            setDragging(true);
+          }}
+          onDoubleClick={(event) => {
+            if (!desktopDragEnabled()) return;
+            const target = event.target;
+            if (
+              target instanceof Element &&
+              target.closest(".assistant-panel-close")
+            ) {
+              return;
+            }
+            offsetRef.current = { x: 0, y: 0 };
+            setOffset({ x: 0, y: 0 });
+          }}
+        >
           <h2 id={titleId} className="assistant-panel-title">
             {t("title")}
           </h2>

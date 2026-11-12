@@ -1406,6 +1406,25 @@ body {
   line-height: 1.35;
 }
 
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+  .assistant-panel-head {
+    cursor: grab;
+    touch-action: none;
+  }
+
+  .assistant-panel-close {
+    cursor: pointer;
+  }
+
+  .assistant-panel.is-dragging {
+    user-select: none;
+  }
+
+  .assistant-panel.is-dragging .assistant-panel-head {
+    cursor: grabbing;
+  }
+}
+
 @media (min-width: 1024px) {
   .assistant-panel {
     top: 92px;
