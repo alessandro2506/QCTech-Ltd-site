@@ -3,7 +3,7 @@
     "defaultTitle": "QC Tech — Web, E-commerce & Mobile",
     "defaultDescription": "Lo studio digitale con sede in UK, costruito per lavorare con il mondo.",
     "servicesTitle": "Servizi",
-    "servicesDescription": "Siti web, app mobile, cloud e SEO orientati al ROI per clienti UK e Italia.",
+    "servicesDescription": "Siti web, app mobile e SEO orientati al ROI per clienti UK e Italia.",
     "visionTitle": "Vision",
     "visionDescription": "Scalabilità tecnologica, architetture evolutive e roadmap prodotto per QC Tech.",
     "contactsTitle": "Contatti",
@@ -594,7 +594,7 @@
     ],
     "quoteEyebrow": "Preventivo",
     "quoteTitle": "Richiedi una proposta sui servizi",
-    "quoteBody": "Descrivi obiettivi e contesto: indica se ti interessa un ambito specifico (web, app, cloud, SEO) o un pacchetto combinato. Ti rispondiamo con una stima chiara.",
+    "quoteBody": "Descrivi obiettivi e contesto: indica se ti interessa un ambito specifico (web, app, SEO) o un pacchetto combinato. Ti rispondiamo con una stima chiara.",
     "defaultSectionLabel": "Pagina Servizi",
     "items": [
       {
@@ -611,14 +611,6 @@
           "React Native e Flutter: un codebase, store iOS e Android.",
           "UX nativa, deep link, push e monetizzazione in-app.",
           "Release train e monitoraggio crash / ANR."
-        ]
-      },
-      {
-        "title": "Soluzioni Cloud",
-        "points": [
-          "Infra su AWS / GCP / Vercel con costi prevedibili.",
-          "CI/CD, ambienti staging, backup e disaster recovery.",
-          "Osservabilità: log, metriche, alerting."
         ]
       },
       {

@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { buildAlternates } from "@/lib/seo";
-import { BedDouble, Building2, Cloud, Code2, Search, ShoppingCart, Smartphone, Trophy, UtensilsCrossed, Wine } from "lucide-react";
+import { BedDouble, Building2, Code2, Search, ShoppingCart, Smartphone, Trophy, UtensilsCrossed, Wine } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import {
   ServiceSectorsTabs,
   type SectorTab,
 } from "@/components/service-sectors-tabs";
 
-const icons = [Code2, Smartphone, Cloud, Search] as const;
+const icons = [Code2, Smartphone, Search] as const;
 
 type PastSector = { id: string; label: string; description: string };
 

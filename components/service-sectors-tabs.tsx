@@ -71,7 +71,7 @@ export function ServiceSectorsTabs({
       <p className="mt-3 max-w-2xl text-[var(--light-text-muted)]">{intro}</p>
 
       <div
-        className="mt-8 flex flex-wrap gap-2"
+        className="mt-8 flex w-full flex-col gap-2 sm:flex-row sm:flex-wrap"
         role="tablist"
         aria-label={title}
       >
@@ -84,7 +84,7 @@ export function ServiceSectorsTabs({
             aria-controls={`sector-panel-${tab.id}`}
             id={`sector-tab-${tab.id}`}
             onClick={() => setActive(i)}
-            className={`rounded-full px-4 py-2.5 text-sm font-semibold transition ${
+            className={`w-full rounded-full px-4 py-2.5 text-center text-sm font-semibold transition sm:w-auto ${
               active === i
                 ? "bg-[var(--light-primary)] text-white"
                 : "border border-[var(--light-border)] bg-[var(--light-surface)] text-[var(--light-text-muted)] hover:border-[var(--light-primary)]/40 hover:text-[var(--light-text)]"
