@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -9,11 +10,26 @@ import { QCTechLogo } from "@/components/qctech-logo";
 import { QuantisFloat } from "@/components/quantis-float";
 import { Link, usePathname } from "@/i18n/routing";
 
+function languageSwitchHref(
+  pathname: ReturnType<typeof usePathname>,
+  slug: string | string[] | undefined,
+) {
+  if (pathname === "/progetti/[slug]") {
+    return {
+      pathname: "/progetti/[slug]" as const,
+      params: { slug: typeof slug === "string" ? slug : "" },
+    };
+  }
+  return pathname as Exclude<typeof pathname, "/progetti/[slug]">;
+}
+
 export function SiteHeader() {
   const pathname = usePathname();
+  const params = useParams();
   const locale = useLocale();
   const t = useTranslations("nav");
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const switchHref = languageSwitchHref(pathname, params.slug);
 
   useEffect(() => {
     document.body.style.overflow = drawerOpen ? "hidden" : "";
@@ -29,7 +45,9 @@ export function SiteHeader() {
           <QCTechLogo variant="header" onLight linkToHome />
           <nav className="site-header-nav" aria-label={t("navLabel")}>
             {navRoutes.map((item) => {
-              const active = pathname === item.href;
+              const active =
+                pathname === item.href ||
+                (item.href === "/progetti" && pathname === "/progetti/[slug]");
               return (
                 <Link
                   key={item.href}
@@ -46,7 +64,7 @@ export function SiteHeader() {
             <QuantisFloat placement="pill" />
             <div className="flex items-center gap-1 rounded-full border border-[var(--light-border)] bg-white/70 px-1 py-0.5 text-xs font-semibold">
               <Link
-                href={pathname}
+                href={switchHref}
                 locale="it"
                 className={`rounded-full px-2 py-1 transition-colors ${
                   locale === "it"
@@ -58,7 +76,7 @@ export function SiteHeader() {
                 {t("langIt")}
               </Link>
               <Link
-                href={pathname}
+                href={switchHref}
                 locale="en"
                 className={`rounded-full px-2 py-1 transition-colors ${
                   locale === "en"
@@ -136,7 +154,7 @@ export function SiteHeader() {
 
               <div className="flex gap-2 border-b border-[var(--light-border)] px-4 py-3">
                 <Link
-                  href={pathname}
+                  href={switchHref}
                   locale="it"
                   onClick={() => setDrawerOpen(false)}
                   className={`flex-1 rounded-lg py-2 text-center text-sm font-semibold transition-colors ${
@@ -148,7 +166,7 @@ export function SiteHeader() {
                   {t("langIt")}
                 </Link>
                 <Link
-                  href={pathname}
+                  href={switchHref}
                   locale="en"
                   onClick={() => setDrawerOpen(false)}
                   className={`flex-1 rounded-lg py-2 text-center text-sm font-semibold transition-colors ${
@@ -163,7 +181,9 @@ export function SiteHeader() {
 
               <ul className="flex flex-1 flex-col gap-1 p-4">
                 {navRoutes.map((item) => {
-                  const active = pathname === item.href;
+                  const active =
+                pathname === item.href ||
+                (item.href === "/progetti" && pathname === "/progetti/[slug]");
                   return (
                     <li key={item.href}>
                       <Link

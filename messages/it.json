@@ -148,8 +148,13 @@
     },
     "projects": {
       "title": "Progetti",
-      "intro": "Siti che abbiamo realizzato. Solo QuiPalermo e Alvenco sono proprietà nostra e hanno un link.",
+      "intro": "Siti che abbiamo realizzato. Solo QuiPalermo e Alvenco sono proprietà nostra.",
       "allLink": "Tutti i progetti",
+      "visitSite": "Visita il sito",
+      "tagsLabel": "Tag",
+      "productLabel": "Tipologia di prodotto",
+      "clientLabel": "Tipologia di cliente",
+      "descriptionLabel": "Descrizione",
       "realizedTitle": "Siti realizzati",
       "labels": {
         "quipalermo": "QuiPalermo",

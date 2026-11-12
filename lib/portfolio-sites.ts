@@ -32,11 +32,40 @@ export const HOME_PORTFOLIO_IDS: readonly PortfolioId[] = [
 const QUI_URL = projects.find((item) => item.id === "quipalermo")?.externalUrl;
 const ALVENCO_URL = "https://alvenco.it";
 
+export function isPortfolioId(value: string): value is PortfolioId {
+  return (PORTFOLIO_IDS as readonly string[]).includes(value);
+}
+
 export function portfolioSrc(id: PortfolioId): string {
   return `/portfolio/${id}.webp`;
 }
 
-export function portfolioHref(id: PortfolioId): string | undefined {
+export function isOwnPortfolio(id: PortfolioId): boolean {
+  switch (id) {
+    case "quipalermo":
+    case "alvenco":
+      return true;
+    case "hotel-boutique":
+    case "noleggio-con-conducente":
+    case "bed-and-breakfast":
+    case "manutenzione-uk":
+    case "traslochi":
+    case "studio-legale-uk-demo":
+    case "ecommerce-demo":
+    case "consulenza-tributaria":
+    case "consulenza-del-lavoro":
+    case "educazione-cinofila":
+    case "ambulatorio-veterinario":
+    case "centro-cinofilo-demo":
+      return false;
+    default: {
+      const _exhaustive: never = id;
+      return _exhaustive;
+    }
+  }
+}
+
+export function portfolioExternalUrl(id: PortfolioId): string | undefined {
   switch (id) {
     case "quipalermo":
       return QUI_URL;

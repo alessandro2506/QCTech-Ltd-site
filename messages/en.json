@@ -148,8 +148,13 @@
     },
     "projects": {
       "title": "Work",
-      "intro": "Sites we have built. Only QuiPalermo and Alvenco are ours and include a link.",
+      "intro": "Sites we have built. Only QuiPalermo and Alvenco are ours.",
       "allLink": "All projects",
+      "visitSite": "Visit the site",
+      "tagsLabel": "Tags",
+      "productLabel": "Product type",
+      "clientLabel": "Client type",
+      "descriptionLabel": "Description",
       "realizedTitle": "Sites we have built",
       "labels": {
         "quipalermo": "QuiPalermo",
