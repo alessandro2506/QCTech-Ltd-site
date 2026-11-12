@@ -5,7 +5,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 
 type QuantisState = "idle" | "near" | "open" | "thinking";
-type QuantisPlacement = "float" | "header" | "hero";
+type QuantisPlacement = "float" | "header" | "hero" | "pill";
 
 function isHeldState(state: QuantisState): boolean {
   switch (state) {
@@ -122,7 +122,32 @@ export function QuantisFloat({
   }, [updateState]);
 
   const expanded = state === "open" || state === "thinking";
-  const markPx = placement === "hero" ? 512 : placement === "header" ? 40 : 72;
+
+  let markPx: number;
+  let sizes: string;
+  switch (placement) {
+    case "hero":
+      markPx = 512;
+      sizes = "(min-width: 1280px) 300px, 240px";
+      break;
+    case "header":
+      markPx = 40;
+      sizes = "40px";
+      break;
+    case "pill":
+      markPx = 36;
+      sizes = "36px";
+      break;
+    case "float":
+      markPx = 72;
+      sizes = "72px";
+      break;
+    default: {
+      const _exhaustive: never = placement;
+      return _exhaustive;
+    }
+  }
+
   const markSrc =
     placement === "hero"
       ? "/quantis/quantis-mark-512.webp"
@@ -149,13 +174,7 @@ export function QuantisFloat({
             alt=""
             width={markPx}
             height={markPx}
-            sizes={
-              placement === "hero"
-                ? "(min-width: 1280px) 300px, 240px"
-                : placement === "header"
-                  ? "40px"
-                  : "72px"
-            }
+            sizes={sizes}
             draggable={false}
           />
         </span>

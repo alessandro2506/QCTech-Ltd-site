@@ -51,6 +51,7 @@ export function SiteHeader() {
             })}
           </nav>
           <div className="ml-auto flex items-center gap-3">
+            <QuantisFloat placement="pill" />
             <div
               className={`flex items-center gap-1 rounded-full border px-1 py-0.5 text-xs font-semibold ${
                 light

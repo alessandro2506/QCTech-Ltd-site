@@ -784,7 +784,8 @@ body {
   cursor: pointer;
 }
 
-.quantis-float--header {
+.quantis-float--header,
+.quantis-float--pill {
   --quantis-bob: 3px;
   position: relative;
   right: auto;
@@ -793,6 +794,11 @@ body {
   width: 40px;
   height: 40px;
   box-shadow: 0 4px 12px rgba(11, 28, 44, 0.28);
+}
+
+.quantis-float--pill {
+  width: 36px;
+  height: 36px;
 }
 
 .quantis-float--hero {
