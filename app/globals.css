@@ -201,12 +201,21 @@ body {
 
 .hero-aurora {
   position: absolute;
-  inset: 0;
+  top: -60px;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
   -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%);
   mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%);
+}
+
+@media (min-width: 1024px) {
+  .hero-aurora {
+    top: -98px;
+  }
 }
 
 .hero-aurora-dots {
@@ -918,6 +927,7 @@ body {
 
 .quantis-float {
   --quantis-bob: 12px;
+  --quantis-ring: #58e2eb;
   display: grid;
   place-items: center;
   padding: 0;
@@ -1063,11 +1073,14 @@ body {
   content: "";
   position: absolute;
   inset: 6%;
-  border: 1px solid rgba(88, 226, 235, 0.55);
+  border: 1px solid color-mix(in srgb, var(--quantis-ring) 55%, transparent);
   border-radius: 50%;
-  box-shadow: 0 0 1.1rem rgba(88, 226, 235, 0.28);
+  box-shadow: 0 0 1.1rem color-mix(in srgb, var(--quantis-ring) 28%, transparent);
   pointer-events: none;
   animation: quantis-orbit-x 12s linear infinite;
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .quantis-float-core::after {
@@ -1096,6 +1109,7 @@ body {
   inset: -18%;
   z-index: 1;
   pointer-events: none;
+  transition: filter 0.35s ease;
   background-image:
     radial-gradient(1.2px 1.2px at 12% 22%, rgba(255, 255, 255, 0.95) 70%, transparent 72%),
     radial-gradient(1px 1px at 28% 8%, rgba(180, 245, 255, 0.85) 70%, transparent 72%),
@@ -1116,21 +1130,108 @@ body {
   animation: quantis-twinkle 4s ease-in-out infinite;
 }
 
-.quantis-float[data-state="near"] .quantis-float-core::before,
-.quantis-float[data-state="thinking"] .quantis-float-core::before {
+.quantis-float[data-state="near"] .quantis-float-core::before {
   animation-duration: 2.4s;
-  box-shadow: 0 0 1.8rem rgba(88, 201, 255, 0.72);
+  box-shadow: 0 0 1.8rem color-mix(in srgb, var(--quantis-ring) 72%, transparent);
 }
 
-.quantis-float[data-state="near"] .quantis-float-core::after,
-.quantis-float[data-state="thinking"] .quantis-float-core::after {
+.quantis-float[data-state="near"] .quantis-float-core::after {
   animation-duration: 1.7s;
-  box-shadow: 0 0 1.8rem rgba(88, 201, 255, 0.72);
+  box-shadow: 0 0 1.8rem color-mix(in srgb, var(--quantis-ring) 72%, transparent);
 }
 
-.quantis-float[data-state="open"] .quantis-float-core::before,
-.quantis-float[data-state="open"] .quantis-float-core::after {
-  box-shadow: 0 0 1.5rem rgba(88, 226, 235, 0.55);
+.quantis-float[data-ai-state="listening"] {
+  --quantis-ring: #1e6fdb;
+}
+
+.quantis-float[data-ai-state="listening"] .quantis-float-core::before,
+.quantis-float[data-ai-state="listening"] .quantis-float-core::after {
+  animation: quantis-orbit-x 12s linear infinite, quantis-glow-pulse 2.4s ease-in-out infinite;
+}
+
+.quantis-float[data-ai-state="listening"] .quantis-float-core::after {
+  animation-name: quantis-orbit-y, quantis-glow-pulse;
+  animation-duration: 8s, 2.4s;
+  animation-direction: reverse, normal;
+}
+
+.quantis-float[data-ai-state="thinking"] {
+  --quantis-ring: #1e6fdb;
+}
+
+.quantis-float[data-ai-state="thinking"] .quantis-float-core::before {
+  animation-duration: 2.4s;
+}
+
+.quantis-float[data-ai-state="thinking"] .quantis-float-core::after {
+  animation-duration: 1.7s;
+}
+
+.quantis-float[data-ai-state="answered"] {
+  --quantis-ring: #f5b800;
+}
+
+.quantis-float[data-ai-state="error"] {
+  --quantis-ring: #dc2626;
+}
+
+.quantis-float[data-ai-state="error"] .quantis-float-core {
+  animation: quantis-shake 0.4s ease-out 1;
+}
+
+.quantis-float[data-ai-state="error"] .quantis-float-core::before,
+.quantis-float[data-ai-state="error"] .quantis-float-core::after {
+  animation: none;
+}
+
+.quantis-float[data-ai-state="closed"] {
+  --quantis-ring: #16a34a;
+}
+
+.quantis-float[data-ai-state="idle"] .quantis-float-core::before,
+.quantis-float[data-ai-state="idle"] .quantis-float-core::after,
+.quantis-float[data-ai-state="idle"] .quantis-float-stars {
+  transition-duration: 0.8s;
+}
+
+.quantis-float[data-ai-state="listening"] .quantis-float-stars,
+.quantis-float[data-ai-state="thinking"] .quantis-float-stars {
+  filter: drop-shadow(0 0 6px #1e6fdb);
+}
+
+.quantis-float[data-ai-state="answered"] .quantis-float-stars {
+  filter: drop-shadow(0 0 6px #f5b800);
+}
+
+.quantis-float[data-ai-state="error"] .quantis-float-stars {
+  filter: drop-shadow(0 0 6px #dc2626);
+}
+
+.quantis-float[data-ai-state="closed"] .quantis-float-stars {
+  filter: drop-shadow(0 0 6px #16a34a);
+}
+
+@keyframes quantis-glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 1.1rem color-mix(in srgb, var(--quantis-ring) 28%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 2rem color-mix(in srgb, var(--quantis-ring) 70%, transparent);
+  }
+}
+
+@keyframes quantis-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  75% {
+    transform: translateX(4px);
+  }
 }
 
 @keyframes quantis-orbit-x {
@@ -1175,7 +1276,10 @@ body {
   .quantis-float-core::before,
   .quantis-float-core::after,
   .quantis-float-mark,
-  .quantis-float-stars {
+  .quantis-float-stars,
+  .quantis-float[data-ai-state="error"] .quantis-float-core,
+  .quantis-float[data-ai-state="listening"] .quantis-float-core::before,
+  .quantis-float[data-ai-state="listening"] .quantis-float-core::after {
     animation: none;
   }
 

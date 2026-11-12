@@ -5,6 +5,10 @@ import { useLocale, useTranslations } from "next-intl";
 import { CHIP_FAQ_IDS, getAssistantKb, type KbEntry } from "@/lib/assistant-kb";
 import { getWhatsAppHref } from "@/lib/get-whatsapp-href";
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
+import {
+  emitQuantisAiState,
+  type QuantisAiState,
+} from "@/components/quantis-float";
 import { Link } from "@/i18n/routing";
 
 type ChatLine =
@@ -14,6 +18,30 @@ type ChatLine =
   | { kind: "faq"; entry: KbEntry }
   | { kind: "fallback" }
   | { kind: "too_long" };
+
+function liveStatusLabel(
+  state: QuantisAiState,
+  t: (key: string) => string,
+): string {
+  switch (state) {
+    case "idle":
+      return "";
+    case "listening":
+      return t("statusListening");
+    case "thinking":
+      return t("statusThinking");
+    case "answered":
+      return t("statusAnswered");
+    case "error":
+      return t("statusError");
+    case "closed":
+      return t("statusClosed");
+    default: {
+      const _exhaustive: never = state;
+      return _exhaustive;
+    }
+  }
+}
 
 function historyFromLines(lines: ChatLine[]): { role: "user" | "assistant"; content: string }[] {
   const turns: { role: "user" | "assistant"; content: string }[] = [];
@@ -100,6 +128,14 @@ export function AssistantChat({ open, onClose }: Props) {
   const [dragging, setDragging] = useState(false);
   const [desktopDrag, setDesktopDrag] = useState(false);
   const [lines, setLines] = useState<ChatLine[]>([{ kind: "intro" }]);
+  const [liveState, setLiveState] = useState<QuantisAiState>("idle");
+  const liveRef = useRef<QuantisAiState>("idle");
+
+  function setAiLive(next: QuantisAiState) {
+    liveRef.current = next;
+    setLiveState(next);
+    emitQuantisAiState(next);
+  }
   const kb = getAssistantKb(locale);
   const chips = CHIP_FAQ_IDS.map(
     (id) => kb.find((item) => item.id === id) ?? null,
@@ -107,9 +143,11 @@ export function AssistantChat({ open, onClose }: Props) {
 
   useEffect(() => {
     if (!open) {
-      window.dispatchEvent(new CustomEvent("quantis:idle"));
-      return;
+      setAiLive("closed");
+      const idleId = window.setTimeout(() => setAiLive("idle"), 1200);
+      return () => window.clearTimeout(idleId);
     }
+    setAiLive("listening");
     const id = window.setTimeout(() => inputRef.current?.focus(), 50);
     return () => window.clearTimeout(id);
   }, [open]);
@@ -197,10 +235,11 @@ export function AssistantChat({ open, onClose }: Props) {
     setLines((prev) => [...prev, { kind: "user", text: message }]);
     if (message.length > 300) {
       setLines((prev) => [...prev, { kind: "too_long" }]);
+      setAiLive("error");
       return;
     }
     setBusy(true);
-    window.dispatchEvent(new CustomEvent("quantis:thinking"));
+    setAiLive("thinking");
     try {
       const response = await fetch("/api/assistant", {
         method: "POST",
@@ -222,10 +261,13 @@ export function AssistantChat({ open, onClose }: Props) {
           : "";
       switch (type) {
         case "ai":
-          setLines((prev) => [
-            ...prev,
-            answer.length > 0 ? { kind: "ai", text: answer } : { kind: "fallback" },
-          ]);
+          if (answer.length > 0) {
+            setLines((prev) => [...prev, { kind: "ai", text: answer }]);
+            setAiLive("answered");
+          } else {
+            setLines((prev) => [...prev, { kind: "fallback" }]);
+            setAiLive("error");
+          }
           break;
         case "faq": {
           const id =
@@ -233,26 +275,32 @@ export function AssistantChat({ open, onClose }: Props) {
               ? String((data as { id: unknown }).id)
               : "";
           const entry = kb.find((item) => item.id === id);
-          setLines((prev) => [
-            ...prev,
-            entry ? { kind: "faq", entry } : { kind: "fallback" },
-          ]);
+          if (entry) {
+            setLines((prev) => [...prev, { kind: "faq", entry }]);
+            setAiLive("answered");
+          } else {
+            setLines((prev) => [...prev, { kind: "fallback" }]);
+            setAiLive("error");
+          }
           break;
         }
         case "too_long":
           setLines((prev) => [...prev, { kind: "too_long" }]);
+          setAiLive("error");
           break;
         case "fallback":
           setLines((prev) => [...prev, { kind: "fallback" }]);
+          setAiLive("error");
           break;
         default:
           setLines((prev) => [...prev, { kind: "fallback" }]);
+          setAiLive("error");
       }
     } catch {
       setLines((prev) => [...prev, { kind: "fallback" }]);
+      setAiLive("error");
     } finally {
       setBusy(false);
-      window.dispatchEvent(new CustomEvent("quantis:open-ui"));
     }
   }
 
@@ -278,6 +326,9 @@ export function AssistantChat({ open, onClose }: Props) {
             : undefined
         }
       >
+        <p className="sr-only" aria-live="polite">
+          {liveStatusLabel(liveState, t)}
+        </p>
         <header
           className="assistant-panel-head"
           onPointerDown={(event) => {
@@ -362,7 +413,16 @@ export function AssistantChat({ open, onClose }: Props) {
           <input
             ref={inputRef}
             value={draft}
-            onChange={(event) => setDraft(event.target.value)}
+            onChange={(event) => {
+              const value = event.target.value;
+              setDraft(value);
+              if (
+                value.length > 0 &&
+                (liveRef.current === "answered" || liveRef.current === "error")
+              ) {
+                setAiLive("listening");
+              }
+            }}
             maxLength={320}
             placeholder={t("placeholder")}
             aria-label={t("placeholder")}

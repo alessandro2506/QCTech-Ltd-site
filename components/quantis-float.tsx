@@ -4,17 +4,70 @@ import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 
-type QuantisState = "idle" | "near" | "open" | "thinking";
+type QuantisNearState = "idle" | "near";
 type QuantisPlacement = "dock" | "hero" | "pill";
 
-function isHeldState(state: QuantisState): boolean {
+export type QuantisAiState =
+  | "idle"
+  | "listening"
+  | "thinking"
+  | "answered"
+  | "error"
+  | "closed";
+
+const AI_STATES: readonly QuantisAiState[] = [
+  "idle",
+  "listening",
+  "thinking",
+  "answered",
+  "error",
+  "closed",
+];
+
+function isAiState(value: unknown): value is QuantisAiState {
+  return (
+    typeof value === "string" &&
+    (AI_STATES as readonly string[]).includes(value)
+  );
+}
+
+export function emitQuantisAiState(state: QuantisAiState): void {
+  window.dispatchEvent(
+    new CustomEvent("quantis:state", { detail: { state } }),
+  );
+}
+
+function isChatOpen(state: QuantisAiState): boolean {
   switch (state) {
-    case "open":
+    case "listening":
     case "thinking":
+    case "answered":
+    case "error":
       return true;
     case "idle":
-    case "near":
+    case "closed":
       return false;
+    default: {
+      const _exhaustive: never = state;
+      return _exhaustive;
+    }
+  }
+}
+
+function statusKey(state: QuantisAiState): "statusListening" | "statusThinking" | "statusAnswered" | "statusError" | "statusClosed" | null {
+  switch (state) {
+    case "idle":
+      return null;
+    case "listening":
+      return "statusListening";
+    case "thinking":
+      return "statusThinking";
+    case "answered":
+      return "statusAnswered";
+    case "error":
+      return "statusError";
+    case "closed":
+      return "statusClosed";
     default: {
       const _exhaustive: never = state;
       return _exhaustive;
@@ -28,19 +81,22 @@ export function QuantisFloat({
   placement?: QuantisPlacement;
 }) {
   const t = useTranslations("common");
+  const tAi = useTranslations("assistant");
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const stateRef = useRef<QuantisState>("idle");
-  const [state, setState] = useState<QuantisState>("idle");
+  const aiRef = useRef<QuantisAiState>("idle");
+  const [aiState, setAiState] = useState<QuantisAiState>("idle");
+  const [near, setNear] = useState(false);
   const [dockShifted, setDockShifted] = useState(false);
 
-  const updateState = useCallback((next: QuantisState) => {
-    stateRef.current = next;
-    setState(next);
+  const updateAiState = useCallback((next: QuantisAiState) => {
+    aiRef.current = next;
+    setAiState(next);
+    if (next !== "idle") setNear(false);
   }, []);
 
   useEffect(() => {
-    stateRef.current = state;
-  }, [state]);
+    aiRef.current = aiState;
+  }, [aiState]);
 
   useEffect(() => {
     const button = buttonRef.current;
@@ -52,12 +108,11 @@ export function QuantisFloat({
     let listening = false;
 
     const applyNear = (event: PointerEvent) => {
-      if (isHeldState(stateRef.current)) return;
+      if (aiRef.current !== "idle") return;
       const rect = button.getBoundingClientRect();
       const dx = event.clientX - (rect.left + rect.width / 2);
       const dy = event.clientY - (rect.top + rect.height / 2);
-      const near = Math.hypot(dx, dy) <= 120;
-      updateState(near ? "near" : "idle");
+      setNear(Math.hypot(dx, dy) <= 120);
     };
 
     const onPointerMove = (event: PointerEvent) => {
@@ -86,7 +141,7 @@ export function QuantisFloat({
         rafId = 0;
       }
       nextEvent = null;
-      if (!isHeldState(stateRef.current)) updateState("idle");
+      setNear(false);
     };
 
     const syncListener = (visible: boolean) => {
@@ -104,26 +159,23 @@ export function QuantisFloat({
       syncListener(visible && !document.hidden);
     };
 
+    const onAiState = (event: Event) => {
+      const detail = (event as CustomEvent<{ state?: unknown }>).detail;
+      if (isAiState(detail?.state)) updateAiState(detail.state);
+    };
+
     document.addEventListener("visibilitychange", onVisibility);
     hoverQuery.addEventListener("change", onVisibility);
-
-    const onThinking = () => updateState("thinking");
-    const onIdle = () => updateState("idle");
-    const onOpenUi = () => updateState("open");
-    window.addEventListener("quantis:thinking", onThinking);
-    window.addEventListener("quantis:idle", onIdle);
-    window.addEventListener("quantis:open-ui", onOpenUi);
+    window.addEventListener("quantis:state", onAiState);
 
     return () => {
       observer.disconnect();
       detach();
       document.removeEventListener("visibilitychange", onVisibility);
       hoverQuery.removeEventListener("change", onVisibility);
-      window.removeEventListener("quantis:thinking", onThinking);
-      window.removeEventListener("quantis:idle", onIdle);
-      window.removeEventListener("quantis:open-ui", onOpenUi);
+      window.removeEventListener("quantis:state", onAiState);
     };
-  }, [updateState]);
+  }, [updateAiState]);
 
   useEffect(() => {
     if (placement !== "dock") return;
@@ -144,7 +196,10 @@ export function QuantisFloat({
     };
   }, [placement]);
 
-  const expanded = state === "open" || state === "thinking";
+  const expanded = isChatOpen(aiState);
+  const nearState: QuantisNearState =
+    aiState === "idle" && near ? "near" : "idle";
+  const status = statusKey(aiState);
 
   let markPx: number;
   let sizes: string;
@@ -179,12 +234,14 @@ export function QuantisFloat({
       className={`quantis-float quantis-float--${placement}${
         placement === "dock" && dockShifted ? " is-shifted" : ""
       }`}
-      data-state={state}
-      aria-label={t("quantisOpen")}
+      data-state={nearState}
+      data-ai-state={aiState}
+      aria-label={
+        status ? `${t("quantisOpen")} — ${tAi(status)}` : t("quantisOpen")
+      }
       aria-expanded={expanded}
       onClick={() => {
         window.dispatchEvent(new CustomEvent("quantis:open"));
-        updateState(state === "open" ? "idle" : "open");
       }}
     >
       <span className="quantis-float-core" aria-hidden>
