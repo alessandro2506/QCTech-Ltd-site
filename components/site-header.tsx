@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { navRoutes } from "@/app.config";
 import { QCTechLogo } from "@/components/qctech-logo";
+import { QuantisFloat } from "@/components/quantis-float";
 import { Link, usePathname } from "@/i18n/routing";
 import { isLightPath } from "@/lib/is-light-path";
 
@@ -13,19 +14,8 @@ export function SiteHeader() {
   const pathname = usePathname();
   const locale = useLocale();
   const t = useTranslations("nav");
-  const isHome = pathname === "/";
   const light = isLightPath(pathname);
-  const [scrollPastHero, setScrollPastHero] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const showBar = !isHome || scrollPastHero;
-
-  useEffect(() => {
-    if (!isHome) return;
-    const onScroll = () => setScrollPastHero(window.scrollY > 72);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [isHome]);
 
   useEffect(() => {
     document.body.style.overflow = drawerOpen ? "hidden" : "";
@@ -36,43 +26,47 @@ export function SiteHeader() {
 
   return (
     <>
-      <header
-        className={`fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,border-color] duration-300 ${
-          showBar
-            ? light
-              ? "border-b border-[var(--light-border)] bg-white/90 shadow-[0_1px_12px_rgba(15,23,42,0.06)] backdrop-blur-md"
-              : "border-b border-violet-500/15 bg-[#08050f]/90 shadow-[0_1px_20px_rgba(108,99,255,0.08)] backdrop-blur-md"
-            : "border-b border-transparent bg-transparent"
-        }`}
-      >
-        <div className="mx-auto flex min-h-14 max-w-6xl items-center px-0 py-1.5 sm:min-h-[3.75rem] sm:px-0">
-          {/* Logo — flush a sinistra con padding minimo controllato */}
-          <div className="flex-shrink-0 mr-auto pl-2 sm:pl-4">
-            {showBar ? (
-              <QCTechLogo variant="header" onLight={light} linkToHome />
-            ) : null}
-          </div>
-
-          {/* Destra: switch lingua + hamburger sempre affiancati */}
-          <div className="flex items-center gap-2 pr-4 sm:pr-6">
+      <header>
+        <div
+          className={`site-header-pill ${light ? "site-header-pill--light" : "site-header-pill--dark"}`}
+        >
+          <QCTechLogo variant="header" onLight={light} linkToHome />
+          <nav className="site-header-nav" aria-label={t("navLabel")}>
+            {navRoutes.map((item) => {
+              const active = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  aria-current={active ? "page" : undefined}
+                  className={
+                    light
+                      ? "text-[var(--light-text)]"
+                      : "text-slate-200"
+                  }
+                >
+                  {t(item.key)}
+                </Link>
+              );
+            })}
+          </nav>
+          <div className="ml-auto flex items-center gap-3">
             <div
-              className={`hidden items-center gap-1 rounded-xl border px-1 py-0.5 text-xs font-semibold backdrop-blur-sm sm:flex ${
+              className={`flex items-center gap-1 rounded-full border px-1 py-0.5 text-xs font-semibold ${
                 light
-                  ? "border-[var(--light-border)] bg-[var(--light-surface)]"
-                  : "border-violet-500/25 bg-white/5"
+                  ? "border-[var(--light-border)] bg-white/70"
+                  : "border-white/10 bg-white/5"
               }`}
             >
               <Link
                 href={pathname}
                 locale="it"
-                className={`rounded-lg px-2 py-1 transition-colors ${
+                className={`rounded-full px-2 py-1 transition-colors ${
                   locale === "it"
-                    ? light
-                      ? "bg-[var(--light-primary)] text-white"
-                      : "bg-violet-600 text-white"
+                    ? "bg-[var(--light-primary)] text-white"
                     : light
-                      ? "text-[var(--light-text-muted)] hover:bg-white hover:text-[var(--light-text)]"
-                      : "text-slate-400 hover:bg-white/10 hover:text-slate-200"
+                      ? "text-[var(--light-text-muted)] hover:text-[var(--light-text)]"
+                      : "text-slate-400 hover:text-slate-200"
                 }`}
                 aria-current={locale === "it" ? "true" : undefined}
               >
@@ -81,40 +75,48 @@ export function SiteHeader() {
               <Link
                 href={pathname}
                 locale="en"
-                className={`rounded-lg px-2 py-1 transition-colors ${
+                className={`rounded-full px-2 py-1 transition-colors ${
                   locale === "en"
-                    ? light
-                      ? "bg-[var(--light-primary)] text-white"
-                      : "bg-violet-600 text-white"
+                    ? "bg-[var(--light-primary)] text-white"
                     : light
-                      ? "text-[var(--light-text-muted)] hover:bg-white hover:text-[var(--light-text)]"
-                      : "text-slate-400 hover:bg-white/10 hover:text-slate-200"
+                      ? "text-[var(--light-text-muted)] hover:text-[var(--light-text)]"
+                      : "text-slate-400 hover:text-slate-200"
                 }`}
                 aria-current={locale === "en" ? "true" : undefined}
               >
                 {t("langEn")}
               </Link>
             </div>
-
-            <button
-              type="button"
-              onClick={() => setDrawerOpen(true)}
-              className={`flex h-11 w-11 items-center justify-center rounded-xl transition-colors ${
-                light
-                  ? showBar
-                    ? "text-[var(--light-text)] hover:bg-[var(--light-surface)]"
-                    : "bg-white/80 text-[var(--light-text)] shadow-md ring-1 ring-[var(--light-border)] hover:bg-white"
-                  : showBar
-                    ? "text-slate-200 hover:bg-white/10"
-                    : "bg-white/5 text-slate-200 shadow-md ring-1 ring-violet-500/25 backdrop-blur-sm hover:bg-white/10"
-              }`}
-              aria-expanded={drawerOpen}
-              aria-controls="site-drawer"
-              aria-label={t("openMenu")}
+            <Link
+              href="/contatti"
+              className="inline-flex h-10 items-center rounded-full bg-[var(--light-primary)] px-5 text-sm font-semibold text-white transition hover:brightness-110"
             >
-              <Menu className="h-6 w-6" />
-            </button>
+              {t("quote")}
+            </Link>
           </div>
+        </div>
+
+        <div
+          className={`site-header-mobile ${light ? "site-header-mobile--light" : "site-header-mobile--dark"}`}
+        >
+          <QuantisFloat placement="header" />
+          <div className="justify-self-center">
+            <QCTechLogo variant="header" onLight={light} linkToHome />
+          </div>
+          <button
+            type="button"
+            onClick={() => setDrawerOpen(true)}
+            className={`flex h-11 w-11 items-center justify-center justify-self-end rounded-xl transition-colors ${
+              light
+                ? "text-[var(--light-text)] hover:bg-black/5"
+                : "text-slate-200 hover:bg-white/10"
+            }`}
+            aria-expanded={drawerOpen}
+            aria-controls="site-drawer"
+            aria-label={t("openMenu")}
+          >
+            <Menu className="h-6 w-6" />
+          </button>
         </div>
       </header>
 

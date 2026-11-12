@@ -19,7 +19,7 @@ export function HeroHome() {
   const active = chips.find((chip) => chip.id === activeId) ?? chips[0];
 
   return (
-    <section className="relative bg-[var(--light-bg)] pb-16 pt-[4.5rem] sm:pb-20 sm:pt-[4.75rem]">
+    <section className="relative bg-[var(--light-bg)] pb-16 pt-8 sm:pb-20 sm:pt-10">
       <div className="mx-auto flex max-w-6xl flex-col items-center px-4 text-center sm:px-6">
         <div className="mb-6 sm:mb-8">
           <QCTechLogo variant="hero" />

@@ -3,10 +3,9 @@
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
-import { usePathname } from "@/i18n/routing";
-import { isLightPath } from "@/lib/is-light-path";
 
 type QuantisState = "idle" | "near" | "open" | "thinking";
+type QuantisPlacement = "float" | "header" | "hero";
 
 function isHeldState(state: QuantisState): boolean {
   switch (state) {
@@ -23,10 +22,12 @@ function isHeldState(state: QuantisState): boolean {
   }
 }
 
-export function QuantisFloat() {
-  const pathname = usePathname();
+export function QuantisFloat({
+  placement = "float",
+}: {
+  placement?: QuantisPlacement;
+}) {
   const t = useTranslations("common");
-  const light = isLightPath(pathname);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const stateRef = useRef<QuantisState>("idle");
   const [state, setState] = useState<QuantisState>("idle");
@@ -41,11 +42,6 @@ export function QuantisFloat() {
   }, [state]);
 
   useEffect(() => {
-    if (!light) {
-      updateState("idle");
-      return;
-    }
-
     const button = buttonRef.current;
     if (!button) return;
 
@@ -106,10 +102,9 @@ export function QuantisFloat() {
       const visible = button.getClientRects().length > 0;
       syncListener(visible && !document.hidden);
     };
-    const onHoverChange = () => onVisibility();
 
     document.addEventListener("visibilitychange", onVisibility);
-    hoverQuery.addEventListener("change", onHoverChange);
+    hoverQuery.addEventListener("change", onVisibility);
 
     const onThinking = () => updateState("thinking");
     const onIdle = () => updateState("idle");
@@ -120,21 +115,24 @@ export function QuantisFloat() {
       observer.disconnect();
       detach();
       document.removeEventListener("visibilitychange", onVisibility);
-      hoverQuery.removeEventListener("change", onHoverChange);
+      hoverQuery.removeEventListener("change", onVisibility);
       window.removeEventListener("quantis:thinking", onThinking);
       window.removeEventListener("quantis:idle", onIdle);
     };
-  }, [light, updateState]);
-
-  if (!light) return null;
+  }, [updateState]);
 
   const expanded = state === "open" || state === "thinking";
+  const markPx = placement === "hero" ? 512 : placement === "header" ? 40 : 72;
+  const markSrc =
+    placement === "hero"
+      ? "/quantis/quantis-mark-512.webp"
+      : "/quantis/quantis-mark.webp";
 
   return (
     <button
       ref={buttonRef}
       type="button"
-      className="quantis-float"
+      className={`quantis-float quantis-float--${placement}`}
       data-state={state}
       aria-label={t("quantisOpen")}
       aria-expanded={expanded}
@@ -147,10 +145,17 @@ export function QuantisFloat() {
         <span className="quantis-float-stars" />
         <span className="quantis-float-mark">
           <Image
-            src="/quantis/quantis-mark.webp"
+            src={markSrc}
             alt=""
-            width={72}
-            height={72}
+            width={markPx}
+            height={markPx}
+            sizes={
+              placement === "hero"
+                ? "(min-width: 1280px) 300px, 240px"
+                : placement === "header"
+                  ? "40px"
+                  : "72px"
+            }
             draggable={false}
           />
         </span>

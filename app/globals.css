@@ -120,6 +120,91 @@ body {
   outline-offset: 3px;
 }
 
+.site-header-pill {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  z-index: 50;
+  display: none;
+  width: min(1400px, calc(100% - 32px));
+  height: 66px;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0 1.25rem;
+  border: 1px solid;
+  border-radius: 100px;
+  backdrop-filter: blur(22px);
+  transform: translateX(-50%);
+}
+
+.site-header-pill--light {
+  border-color: var(--light-border);
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 10px 40px rgba(15, 23, 42, 0.1);
+}
+
+.site-header-pill--dark {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(20, 27, 46, 0.52);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+}
+
+.site-header-nav {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.site-header-nav a {
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-header-nav a[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 1.5px;
+}
+
+.site-header-mobile {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: 40px 1fr 44px;
+  align-items: center;
+  height: 60px;
+  padding: 0 0.75rem;
+}
+
+.site-header-mobile--light {
+  border-bottom: 1px solid var(--light-border);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(18px);
+}
+
+.site-header-mobile--dark {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(8, 5, 15, 0.92);
+  backdrop-filter: blur(18px);
+}
+
+@media (min-width: 1024px) {
+  .site-header-pill {
+    display: flex;
+  }
+
+  .site-header-mobile {
+    display: none;
+  }
+}
+
 .home-service-preview {
   display: none;
 }
@@ -198,6 +283,7 @@ body {
 }
 
 .quantis-float {
+  --quantis-bob: 12px;
   position: fixed;
   right: 1rem;
   bottom: 1.5rem;
@@ -215,12 +301,41 @@ body {
   cursor: pointer;
 }
 
+.quantis-float--header {
+  --quantis-bob: 3px;
+  position: relative;
+  right: auto;
+  bottom: auto;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 4px 12px rgba(11, 28, 44, 0.28);
+}
+
+.quantis-float--hero {
+  position: relative;
+  right: auto;
+  bottom: auto;
+  z-index: 1;
+  width: 240px;
+  height: 240px;
+  background: transparent;
+  box-shadow: none;
+}
+
 @media (min-width: 640px) {
-  .quantis-float {
+  .quantis-float--float {
     right: 1.5rem;
     bottom: 2rem;
     width: 4.5rem;
     height: 4.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .quantis-float--hero {
+    width: 300px;
+    height: 300px;
   }
 }
 
@@ -334,10 +449,10 @@ body {
 @keyframes quantis-bob {
   0%,
   100% {
-    transform: translateY(-12px);
+    transform: translateY(calc(var(--quantis-bob) * -1));
   }
   50% {
-    transform: translateY(12px);
+    transform: translateY(var(--quantis-bob));
   }
 }
 

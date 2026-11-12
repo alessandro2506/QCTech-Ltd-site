@@ -26,7 +26,7 @@ export function QCTechLogo({
   const logoSrc = isHero ? LOGO_LIGHT : onLight ? LOGO_WIDE : LOGO_WHITE_WIDE;
   const logoBox = isHero
     ? "h-20 w-[11.5rem] sm:h-24 sm:w-[14rem]"
-    : "h-[9rem] w-[18rem] sm:h-[9.75rem] sm:w-[22rem]";
+    : "h-10 w-[10.5rem] lg:h-11 lg:w-[12.5rem]";
 
   const inner = (
     <span className={`inline-flex items-center ${className}`}>
