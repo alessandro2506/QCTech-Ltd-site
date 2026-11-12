@@ -11,8 +11,8 @@ export function SiteFooter() {
   const tm = useTranslations("meta");
 
   return (
-    <footer className="relative border-t border-[var(--light-border)] bg-[var(--light-surface)]">
-      <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-14 sm:flex-row sm:items-start sm:justify-between sm:px-6">
+    <footer className="site-footer relative border-t border-[var(--light-border)] bg-[var(--light-surface)]">
+      <div className="site-footer-top">
         <div>
           <p className="text-lg font-bold text-[var(--light-emphasis)]">
             {siteConfig.shortName}
@@ -21,8 +21,8 @@ export function SiteFooter() {
             {tm("defaultDescription")}
           </p>
         </div>
-        <nav aria-label={tf("navLabel")}>
-          <ul className="flex flex-col gap-2 sm:items-end">
+        <nav className="site-footer-nav" aria-label={tf("navLabel")}>
+          <ul>
             {navRoutes.map((item) => (
               <li key={item.href}>
                 <Link
@@ -36,7 +36,7 @@ export function SiteFooter() {
           </ul>
         </nav>
       </div>
-      <div className="border-t border-[var(--light-border)] px-4 py-6 text-[var(--light-text-muted)] sm:px-6">
+      <div className="site-footer-legal-bar text-[var(--light-text-muted)]">
         <div className="site-footer-legal">
           <p className="site-footer-facts">
             <span>{tf("legal")}</span>
