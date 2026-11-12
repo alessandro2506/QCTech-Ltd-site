@@ -12,23 +12,11 @@ type HeroChip = {
   support: string;
 };
 
-function splitHeadline(headline: string): { lead: string; rest: string } {
-  const comma = headline.indexOf(",");
-  if (comma === -1) {
-    return { lead: headline, rest: "" };
-  }
-  return {
-    lead: headline.slice(0, comma + 1),
-    rest: headline.slice(comma + 1),
-  };
-}
-
 export function HeroHome() {
   const t = useTranslations("hero");
   const chips = t.raw("chips") as HeroChip[];
   const [activeId, setActiveId] = useState(chips[0]?.id ?? "");
   const active = chips.find((chip) => chip.id === activeId) ?? chips[0];
-  const { lead, rest } = splitHeadline(t("headline"));
 
   return (
     <section className="hero-home">
@@ -40,10 +28,8 @@ export function HeroHome() {
           </p>
 
           <h1 className="hero-home-title">
-            {lead}
-            {rest ? (
-              <span className="hero-home-title-emphasis">{rest}</span>
-            ) : null}
+            {t("headlineLead")}{" "}
+            <span className="hero-home-title-emphasis">{t("headlineEmphasis")}</span>
           </h1>
 
           {active ? <p className="hero-home-support">{active.support}</p> : null}

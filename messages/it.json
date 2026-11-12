@@ -42,6 +42,8 @@
   },
   "hero": {
     "headline": "Siti web e app su misura, pensati per portare clienti",
+    "headlineLead": "Siti web e app su misura,",
+    "headlineEmphasis": "pensati per portare clienti",
     "ctaPrimary": "Richiedi un preventivo",
     "ctaSecondary": "Vedi i progetti",
     "availability": "Disponibili per nuovi progetti · Rispondiamo entro 48 ore",

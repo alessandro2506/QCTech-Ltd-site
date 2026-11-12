@@ -42,6 +42,8 @@
   },
   "hero": {
     "headline": "Websites and apps built to bring you customers",
+    "headlineLead": "Websites and apps",
+    "headlineEmphasis": "built to bring you customers",
     "ctaPrimary": "Request a quote",
     "ctaSecondary": "See our work",
     "availability": "Taking on new projects · We reply within 48 hours",

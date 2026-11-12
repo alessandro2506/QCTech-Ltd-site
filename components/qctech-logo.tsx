@@ -24,22 +24,30 @@ export function QCTechLogo({
 }: QCTechLogoProps) {
   const isHero = variant === "hero";
   const logoSrc = isHero ? LOGO_LIGHT : onLight ? LOGO_WIDE : LOGO_WHITE_WIDE;
-  const logoBox = isHero
-    ? "h-20 w-[11.5rem] sm:h-24 sm:w-[14rem]"
-    : "h-10 w-[10.5rem] lg:h-11 lg:w-[12.5rem]";
 
   const inner = (
     <span className={`inline-flex items-center ${className}`}>
-      <span className={`relative block shrink-0 ${logoBox}`}>
+      {isHero ? (
+        <span className="relative block h-20 w-[11.5rem] shrink-0 sm:h-24 sm:w-[14rem]">
+          <Image
+            src={logoSrc}
+            alt="QC Tech"
+            fill
+            className="object-contain"
+            sizes="(max-width:640px) 293px, (max-width:768px) 410px, 498px"
+            priority
+          />
+        </span>
+      ) : (
         <Image
           src={logoSrc}
           alt="QC Tech"
-          fill
-          className="object-contain"
-          sizes={isHero ? "(max-width:640px) 293px, (max-width:768px) 410px, 498px" : "(max-width:640px) 288px, 352px"}
-          priority={isHero}
+          width={1676}
+          height={915}
+          className="h-10 w-auto object-contain object-left lg:h-11"
+          sizes="(min-width: 1024px) 81px, 73px"
         />
-      </span>
+      )}
     </span>
   );
 
