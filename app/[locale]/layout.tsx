@@ -110,7 +110,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       lang={locale}
       className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-[#08050f] text-slate-100">
+      <body className="flex min-h-full flex-col bg-[var(--light-bg)] text-[var(--light-text)]">
         <NextIntlClientProvider messages={messages}>
           <SchemaOrg locale={locale} />
           <GoogleAnalytics />
