@@ -1195,6 +1195,20 @@ body {
   text-decoration: none;
 }
 
+.assistant-quote-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.9rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--light-primary);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
 .assistant-chips {
   display: flex;
   flex-wrap: wrap;

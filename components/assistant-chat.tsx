@@ -138,7 +138,7 @@ export function AssistantChat({ open, onClose }: Props) {
         </header>
         <div ref={listRef} className="assistant-panel-body">
           {lines.map((line, index) => (
-            <ChatBubble key={index} line={line} />
+            <ChatBubble key={index} line={line} onClose={onClose} />
           ))}
           {busy ? (
             <p className="assistant-bubble assistant-bubble-bot" aria-live="polite">
@@ -186,7 +186,22 @@ export function AssistantChat({ open, onClose }: Props) {
   );
 }
 
-function ChatBubble({ line }: { line: ChatLine }) {
+function QuoteCta({ onClose }: { onClose: () => void }) {
+  const t = useTranslations("assistant");
+  return (
+    <Link href="/contatti" className="assistant-quote-btn" onClick={onClose}>
+      {t("quote")}
+    </Link>
+  );
+}
+
+function ChatBubble({
+  line,
+  onClose,
+}: {
+  line: ChatLine;
+  onClose: () => void;
+}) {
   const t = useTranslations("assistant");
   const locale = useLocale();
 
@@ -207,6 +222,9 @@ function ChatBubble({ line }: { line: ChatLine }) {
         <div className="assistant-bubble assistant-bubble-bot">
           <p className="assistant-faq-q">{line.entry.question}</p>
           <p>{line.entry.answer}</p>
+          <div className="assistant-fallback-actions">
+            <QuoteCta onClose={onClose} />
+          </div>
         </div>
       );
     case "fallback":
@@ -214,6 +232,7 @@ function ChatBubble({ line }: { line: ChatLine }) {
         <div className="assistant-bubble assistant-bubble-bot">
           <p>{t("fallback")}</p>
           <div className="assistant-fallback-actions">
+            <QuoteCta onClose={onClose} />
             <a
               href={getWhatsAppHref(locale)}
               target="_blank"
@@ -223,9 +242,6 @@ function ChatBubble({ line }: { line: ChatLine }) {
               <WhatsAppIcon decorative className="h-4 w-4 shrink-0" />
               {t("whatsapp")}
             </a>
-            <Link href="/contatti" className="assistant-fallback-btn">
-              {t("contacts")}
-            </Link>
           </div>
         </div>
       );

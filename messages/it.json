@@ -42,8 +42,8 @@
     "quantisFaqLabel": "Assistente FAQ"
   },
   "assistant": {
-    "title": "Assistente FAQ",
-    "intro": "Sono un assistente AI: uso le domande frequenti del sito per risponderti. Non inserire dati personali. Il testo può essere inviato a un servizio esterno solo per scegliere la FAQ.",
+    "title": "Q.U.A.N.TI.S · Assistente FAQ",
+    "intro": "Ciao, sono Q.U.A.N.TI.S, il tuo assistente AI. Rispondo alle domande più frequenti su siti web, app, prezzi e tempi. Non inserire dati personali.",
     "privacy": "Informativa privacy",
     "placeholder": "Scrivi una domanda…",
     "send": "Invia",
@@ -51,6 +51,7 @@
     "fallback": "Non ho una risposta certa",
     "whatsapp": "Scrivici su WhatsApp",
     "contacts": "Vai ai contatti",
+    "quote": "Richiedi un preventivo",
     "tooLong": "Il messaggio può avere al massimo 300 caratteri.",
     "chipsLabel": "Domande frequenti",
     "foot": "Il testo digitato può essere inviato a un servizio esterno solo per scegliere la FAQ. Non inserire dati personali."
