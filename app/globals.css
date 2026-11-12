@@ -191,6 +191,8 @@ body {
 .hero-home {
   --mx: 0;
   --my: 0;
+  --px: 0px;
+  --py: 0px;
   position: relative;
   isolation: isolate;
   background: var(--light-bg);
@@ -210,73 +212,103 @@ body {
 .hero-aurora-dots {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(15, 23, 42, 0.07) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(15, 23, 42, 0.1) 1px, transparent 1px);
   background-size: 22px 22px;
 }
 
 .hero-aurora-blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(60px);
-  animation: hero-aurora-drift 18s ease-in-out infinite alternate;
+  filter: blur(50px);
+  animation: hero-aurora-drift 14s ease-in-out infinite alternate;
 }
 
 .hero-aurora-blob-a {
   top: -12%;
   left: -18%;
-  width: 338px;
-  height: 338px;
-  background: rgb(30 111 219 / 16%);
+  width: 400px;
+  height: 400px;
+  background: rgb(30 111 219 / 34%);
 }
 
 .hero-aurora-blob-b {
   top: 18%;
   right: -16%;
-  width: 299px;
-  height: 299px;
-  background: rgb(86 42 197 / 14%);
+  width: 360px;
+  height: 360px;
+  background: rgb(86 42 197 / 30%);
 }
 
 .hero-aurora-blob-c {
   bottom: -8%;
   left: 28%;
-  width: 247px;
-  height: 247px;
-  background: rgb(14 165 168 / 12%);
+  width: 300px;
+  height: 300px;
+  background: rgb(14 165 168 / 26%);
+}
+
+.hero-aurora-spot {
+  display: none;
 }
 
 @keyframes hero-aurora-drift {
   from {
-    transform: translate3d(-24px, 12px, 0);
+    transform: translate3d(-60px, 24px, 0);
   }
   to {
-    transform: translate3d(24px, -12px, 0);
+    transform: translate3d(60px, -24px, 0);
   }
 }
 
 @media (hover: hover) and (pointer: fine) {
   .hero-aurora-blob {
-    filter: blur(90px);
+    filter: blur(70px);
     animation: none;
-    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: transform 0.35s cubic-bezier(0.19, 1, 0.22, 1);
   }
 
   .hero-aurora-blob-a {
-    width: 520px;
-    height: 520px;
-    transform: translate3d(calc(var(--mx) * 40px), calc(var(--my) * 40px), 0);
+    width: 620px;
+    height: 620px;
+    transform: translate3d(calc(var(--mx) * 160px), calc(var(--my) * 160px), 0);
   }
 
   .hero-aurora-blob-b {
-    width: 460px;
-    height: 460px;
-    transform: translate3d(calc(var(--mx) * -28px), calc(var(--my) * -28px), 0);
+    width: 560px;
+    height: 560px;
+    transform: translate3d(calc(var(--mx) * -120px), calc(var(--my) * -120px), 0);
   }
 
   .hero-aurora-blob-c {
-    width: 380px;
-    height: 380px;
-    transform: translate3d(calc(var(--mx) * 18px), calc(var(--my) * 18px), 0);
+    width: 460px;
+    height: 460px;
+    transform: translate3d(calc(var(--mx) * 90px), calc(var(--my) * 90px), 0);
+  }
+
+  .hero-aurora-spot {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    background: radial-gradient(
+      closest-side,
+      rgb(30 111 219 / 28%),
+      rgb(86 42 197 / 14%) 45%,
+      transparent 70%
+    );
+    opacity: 0;
+    transform: translate3d(calc(var(--px) - 260px), calc(var(--py) - 260px), 0);
+    transition:
+      transform 0.18s linear,
+      opacity 0.3s;
+  }
+
+  .hero-home.is-pointer .hero-aurora-spot {
+    opacity: 1;
   }
 }
 
@@ -285,6 +317,10 @@ body {
     animation: none;
     transform: none;
     transition: none;
+  }
+
+  .hero-aurora-spot {
+    display: none;
   }
 }
 

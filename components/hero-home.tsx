@@ -28,6 +28,8 @@ export function HeroHome() {
     let rafId = 0;
     let mx = 0;
     let my = 0;
+    let px = 0;
+    let py = 0;
     let listening = false;
     let nextEvent: PointerEvent | null = null;
 
@@ -43,9 +45,13 @@ export function HeroHome() {
         my = ((queued.clientY - rect.top) / height) * 2 - 1;
         mx = Math.max(-1, Math.min(1, mx));
         my = Math.max(-1, Math.min(1, my));
+        px = queued.clientX - rect.left;
+        py = queued.clientY - rect.top;
       }
       hero.style.setProperty("--mx", String(mx));
       hero.style.setProperty("--my", String(my));
+      hero.style.setProperty("--px", `${px}px`);
+      hero.style.setProperty("--py", `${py}px`);
     };
 
     const onMove = (event: PointerEvent) => {
@@ -54,15 +60,23 @@ export function HeroHome() {
       rafId = window.requestAnimationFrame(apply);
     };
 
+    const onEnter = () => hero.classList.add("is-pointer");
+    const onLeave = () => hero.classList.remove("is-pointer");
+
     const attach = () => {
       if (listening || !fineQuery.matches || motionQuery.matches) return;
       hero.addEventListener("pointermove", onMove, { passive: true });
+      hero.addEventListener("pointerenter", onEnter);
+      hero.addEventListener("pointerleave", onLeave);
       listening = true;
     };
 
     const detach = () => {
       if (!listening) return;
       hero.removeEventListener("pointermove", onMove);
+      hero.removeEventListener("pointerenter", onEnter);
+      hero.removeEventListener("pointerleave", onLeave);
+      hero.classList.remove("is-pointer");
       listening = false;
       if (rafId !== 0) {
         window.cancelAnimationFrame(rafId);
@@ -98,6 +112,7 @@ export function HeroHome() {
         <span className="hero-aurora-blob hero-aurora-blob-a" />
         <span className="hero-aurora-blob hero-aurora-blob-b" />
         <span className="hero-aurora-blob hero-aurora-blob-c" />
+        <span className="hero-aurora-spot" />
         <span className="hero-aurora-dots" />
       </div>
       <div className="hero-home-grid">
