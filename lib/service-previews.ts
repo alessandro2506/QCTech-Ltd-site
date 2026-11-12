@@ -5,13 +5,13 @@ export const SERVICE_PREVIEW_IDS = [
   "app",
   "webapp",
   "seo",
+  "maintenance",
 ] as const;
 
 export type ServicePreviewId = (typeof SERVICE_PREVIEW_IDS)[number];
 
 export type ServicePreview = {
   src: string;
-  framed: boolean;
 };
 
 function isServicePreviewId(id: string): id is ServicePreviewId {
@@ -19,21 +19,17 @@ function isServicePreviewId(id: string): id is ServicePreviewId {
 }
 
 export function servicePreview(id: string): ServicePreview {
-  const key: ServicePreviewId = isServicePreviewId(id) ? id : "restyle";
+  const key: ServicePreviewId = isServicePreviewId(id) ? id : "web";
 
   switch (key) {
     case "web":
-      return { src: "/services/web.webp", framed: false };
-    case "app":
-      return { src: "/services/app.webp", framed: false };
     case "restyle":
-      return { src: "/portfolio/hotel-boutique.webp", framed: true };
     case "ecommerce":
-      return { src: "/portfolio/ecommerce-demo.webp", framed: true };
+    case "app":
     case "webapp":
-      return { src: "/portfolio/studio-legale-uk-demo.webp", framed: true };
     case "seo":
-      return { src: "/portfolio/manutenzione-uk.webp", framed: true };
+    case "maintenance":
+      return { src: `/services/${key}.webp` };
     default: {
       const _exhaustive: never = key;
       return _exhaustive;

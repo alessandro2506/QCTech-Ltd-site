@@ -1,6 +1,8 @@
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
+import { ServiceCardsCursor } from "@/components/service-cards-cursor";
 import { servicePreview } from "@/lib/service-previews";
 
 type ServiceRow = {
@@ -9,7 +11,10 @@ type ServiceRow = {
   description: string;
   fromPrice: string;
   previewAlt: string;
+  tags: string[];
 };
+
+const TINTS = ["#1E6FDB", "#562AC5", "#0EA5A8"] as const;
 
 export async function HomeServiceRows() {
   const t = await getTranslations("home.services");
@@ -24,55 +29,50 @@ export async function HomeServiceRows() {
         <p className="mt-3 max-w-2xl text-base text-[var(--light-text-muted)]">
           {t("intro")}
         </p>
-        <ul className="mt-10 divide-y divide-[var(--light-border)] border-y border-[var(--light-border)]">
-          {rows.map((row) => {
-            const preview = servicePreview(row.id);
-            const image = (
-              <Image
-                src={preview.src}
-                alt=""
-                width={640}
-                height={400}
-                loading="lazy"
-                className="h-full w-full object-cover"
-              />
-            );
-
-            return (
-              <li key={row.id}>
-                <Link
-                  href="/servizi"
-                  className="home-service-row block rounded-none py-6 no-underline outline-offset-4 sm:py-7"
-                >
-                  <div className="home-service-copy max-w-xl">
-                    <p className="text-lg font-semibold text-[var(--light-text)]">
-                      {row.title}
-                    </p>
-                    <p className="mt-1 text-sm leading-relaxed text-[var(--light-text-muted)]">
-                      {row.description}
-                    </p>
-                    <p className="mt-3 text-sm font-semibold text-[var(--light-primary)]">
+        <ServiceCardsCursor>
+          <ul className="svc-list">
+            {rows.map((row, index) => {
+              const preview = servicePreview(row.id);
+              const tint = TINTS[index % TINTS.length];
+              return (
+                <li key={row.id}>
+                  <Link
+                    href="/servizi"
+                    className="svc-row"
+                    style={{ "--svc-tint": tint } as CSSProperties}
+                  >
+                    <div className="svc-body">
+                      <h3>{row.title}</h3>
+                      <p>{row.description}</p>
+                      <ul className="svc-tags">
+                        {row.tags.map((tag) => (
+                          <li key={tag}>
+                            <i aria-hidden />
+                            {tag}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="svc-shot" aria-hidden>
+                      <Image
+                        src={preview.src}
+                        alt=""
+                        width={600}
+                        height={320}
+                        loading="lazy"
+                      />
+                    </div>
+                    <span className="svc-action">
                       {row.fromPrice}
-                    </p>
-                  </div>
-                  <div className="home-service-preview" aria-hidden>
-                    {preview.framed ? (
-                      <div className="home-service-preview-frame">
-                        <span className="home-service-preview-bar" />
-                        <span className="home-service-preview-screen">
-                          {image}
-                        </span>
-                      </div>
-                    ) : (
-                      <div className="home-service-preview-photo">{image}</div>
-                    )}
-                  </div>
-                  <span className="sr-only">{row.previewAlt}</span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+                      <span aria-hidden>→</span>
+                    </span>
+                    <span className="sr-only">{row.previewAlt}</span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </ServiceCardsCursor>
       </div>
     </section>
   );
