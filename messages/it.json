@@ -41,6 +41,20 @@
     "quantisOpen": "Apri l'assistente FAQ",
     "quantisFaqLabel": "Assistente FAQ"
   },
+  "assistant": {
+    "title": "Assistente FAQ",
+    "intro": "Sono un assistente AI: uso le domande frequenti del sito per risponderti. Non inserire dati personali. Il testo può essere inviato a un servizio esterno solo per scegliere la FAQ.",
+    "privacy": "Informativa privacy",
+    "placeholder": "Scrivi una domanda…",
+    "send": "Invia",
+    "close": "Chiudi assistente",
+    "fallback": "Non ho una risposta certa",
+    "whatsapp": "Scrivici su WhatsApp",
+    "contacts": "Vai ai contatti",
+    "tooLong": "Il messaggio può avere al massimo 300 caratteri.",
+    "chipsLabel": "Domande frequenti",
+    "foot": "Il testo digitato può essere inviato a un servizio esterno solo per scegliere la FAQ. Non inserire dati personali."
+  },
   "hero": {
     "headline": "Siti web e app su misura, pensati per portare clienti",
     "headlineLead": "Siti web e app su misura,",

@@ -41,6 +41,20 @@
     "quantisOpen": "Open the FAQ assistant",
     "quantisFaqLabel": "FAQ assistant"
   },
+  "assistant": {
+    "title": "FAQ assistant",
+    "intro": "I am an AI assistant: I answer from this site’s FAQs. Do not enter personal data. Your text may be sent to an external service only to pick the matching FAQ.",
+    "privacy": "Privacy policy",
+    "placeholder": "Type a question…",
+    "send": "Send",
+    "close": "Close assistant",
+    "fallback": "I don’t have a reliable answer",
+    "whatsapp": "Message us on WhatsApp",
+    "contacts": "Go to contact",
+    "tooLong": "Messages can be at most 300 characters.",
+    "chipsLabel": "Frequent questions",
+    "foot": "Typed text may be sent to an external service only to pick the FAQ. Do not enter personal data."
+  },
   "hero": {
     "headline": "Websites and apps built to bring you customers",
     "headlineLead": "Websites and apps",

@@ -11,6 +11,7 @@ import { SchemaOrg } from "@/components/schema-org";
 import { MainWrapper } from "@/components/main-wrapper";
 import { ThemeScope } from "@/components/theme-scope";
 import { CookieBanner } from "@/components/cookie-banner";
+import { AssistantHost } from "@/components/assistant-host";
 import { GoogleAnalytics } from "@/components/google-analytics";
 import { siteConfig } from "@/app.config";
 import { routing } from "@/i18n/routing";
@@ -120,6 +121,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             <MainWrapper>{children}</MainWrapper>
             <SiteFooter />
             <QuantisFloat placement="dock" />
+            <AssistantHost />
             <ScrollToTop />
             <CookieBanner />
           </ThemeScope>

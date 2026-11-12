@@ -109,8 +109,10 @@ export function QuantisFloat({
 
     const onThinking = () => updateState("thinking");
     const onIdle = () => updateState("idle");
+    const onOpenUi = () => updateState("open");
     window.addEventListener("quantis:thinking", onThinking);
     window.addEventListener("quantis:idle", onIdle);
+    window.addEventListener("quantis:open-ui", onOpenUi);
 
     return () => {
       observer.disconnect();
@@ -119,6 +121,7 @@ export function QuantisFloat({
       hoverQuery.removeEventListener("change", onVisibility);
       window.removeEventListener("quantis:thinking", onThinking);
       window.removeEventListener("quantis:idle", onIdle);
+      window.removeEventListener("quantis:open-ui", onOpenUi);
     };
   }, [updateState]);
 
