@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
-import { QCTechLogo } from "@/components/qctech-logo";
+import { QuantisFloat } from "@/components/quantis-float";
 import { Link } from "@/i18n/routing";
 
 type HeroChip = {
@@ -12,72 +12,78 @@ type HeroChip = {
   support: string;
 };
 
+function splitHeadline(headline: string): { lead: string; rest: string } {
+  const comma = headline.indexOf(",");
+  if (comma === -1) {
+    return { lead: headline, rest: "" };
+  }
+  return {
+    lead: headline.slice(0, comma + 1),
+    rest: headline.slice(comma + 1),
+  };
+}
+
 export function HeroHome() {
   const t = useTranslations("hero");
   const chips = t.raw("chips") as HeroChip[];
   const [activeId, setActiveId] = useState(chips[0]?.id ?? "");
   const active = chips.find((chip) => chip.id === activeId) ?? chips[0];
+  const { lead, rest } = splitHeadline(t("headline"));
 
   return (
-    <section className="relative bg-[var(--light-bg)] pb-16 pt-8 sm:pb-20 sm:pt-10">
-      <div className="mx-auto flex max-w-6xl flex-col items-center px-4 text-center sm:px-6">
-        <div className="mb-6 sm:mb-8">
-          <QCTechLogo variant="hero" />
-        </div>
-
-        <p className="mb-5 rounded-full border border-[var(--light-border)] bg-[var(--light-surface)] px-4 py-1.5 text-xs font-medium text-[var(--light-text-muted)]">
-          {t("availability")}
-        </p>
-
-        <h1 className="max-w-3xl text-3xl font-bold tracking-tight text-[var(--light-text)] sm:text-4xl md:text-5xl">
-          {t("headline")}
-        </h1>
-
-        {active ? (
-          <p className="mt-5 max-w-2xl text-lg text-[var(--light-text-muted)] sm:text-xl">
-            {active.support}
+    <section className="hero-home">
+      <div className="hero-home-grid">
+        <div className="hero-home-copy">
+          <p className="hero-home-badge">
+            <span className="hero-home-badge-dot" aria-hidden />
+            {t("availability")}
           </p>
-        ) : null}
 
-        <div
-          className="mt-6 flex flex-wrap justify-center gap-2"
-          role="group"
-          aria-label={t("chipsLabel")}
-        >
-          {chips.map((chip) => {
-            const selected = chip.id === active?.id;
-            return (
-              <button
-                key={chip.id}
-                type="button"
-                aria-pressed={selected}
-                onClick={() => setActiveId(chip.id)}
-                className={`rounded-full border px-3.5 py-1.5 text-sm font-medium transition-colors ${
-                  selected
-                    ? "border-[var(--light-primary)] bg-[var(--light-primary)] text-white"
-                    : "border-[var(--light-border)] bg-white text-[var(--light-text)] hover:border-[var(--light-primary)]"
-                }`}
-              >
-                {chip.label}
-              </button>
-            );
-          })}
+          <h1 className="hero-home-title">
+            {lead}
+            {rest ? (
+              <span className="hero-home-title-emphasis">{rest}</span>
+            ) : null}
+          </h1>
+
+          {active ? <p className="hero-home-support">{active.support}</p> : null}
+
+          <div
+            className="hero-home-chips"
+            role="group"
+            aria-label={t("chipsLabel")}
+          >
+            {chips.map((chip) => {
+              const selected = chip.id === active?.id;
+              return (
+                <button
+                  key={chip.id}
+                  type="button"
+                  aria-pressed={selected}
+                  onClick={() => setActiveId(chip.id)}
+                  className={`hero-home-chip${selected ? " is-active" : ""}`}
+                >
+                  {chip.label}
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="hero-home-cta">
+            <Link href="/contatti" className="hero-home-cta-primary">
+              {t("ctaPrimary")}
+              <ArrowRight className="h-5 w-5" aria-hidden />
+            </Link>
+            <a href="#progetti" className="hero-home-cta-secondary">
+              {t("ctaSecondary")}
+            </a>
+          </div>
         </div>
 
-        <div className="mt-8 flex w-full max-w-md flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-center sm:gap-4">
-          <Link
-            href="/contatti"
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--light-primary)] px-7 py-3.5 text-base font-semibold text-white shadow-sm transition hover:brightness-110"
-          >
-            {t("ctaPrimary")}
-            <ArrowRight className="h-5 w-5" aria-hidden />
-          </Link>
-          <a
-            href="#progetti"
-            className="inline-flex items-center justify-center rounded-xl border border-[var(--light-border)] bg-white px-7 py-3.5 text-base font-semibold text-[var(--light-text)] transition hover:border-[var(--light-primary)] hover:text-[var(--light-primary)]"
-          >
-            {t("ctaSecondary")}
-          </a>
+        <div className="hero-home-mark">
+          <div className="hero-quantis-halo">
+            <QuantisFloat placement="hero" />
+          </div>
         </div>
       </div>
     </section>
