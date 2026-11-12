@@ -148,7 +148,7 @@
     },
     "projects": {
       "title": "Progetti",
-      "intro": "Siti che abbiamo realizzato. Solo QuiPalermo e Alvenco sono proprietà nostra.",
+      "intro": "Siti che abbiamo realizzato. Solo QuiPalermo è proprietà nostra.",
       "allLink": "Tutti i progetti",
       "visitSite": "Visita il sito",
       "tagsLabel": "Tag",
@@ -158,7 +158,6 @@
       "realizedTitle": "Siti realizzati",
       "labels": {
         "quipalermo": "QuiPalermo",
-        "alvenco": "Alvenco",
         "hotel-boutique": "Hotel boutique",
         "noleggio-con-conducente": "Noleggio con conducente",
         "bed-and-breakfast": "Bed & breakfast",
@@ -167,7 +166,7 @@
         "studio-legale-uk-demo": "Studio legale",
         "ecommerce-demo": "E-commerce",
         "consulenza-tributaria": "Consulenza tributaria",
-        "consulenza-del-lavoro": "Consulenza del lavoro",
+        "studio-fiscale-contabile": "Studio fiscale e contabile",
         "educazione-cinofila": "Educazione cinofila",
         "ambulatorio-veterinario": "Ambulatorio veterinario",
         "centro-cinofilo-demo": "Centro cinofilo"

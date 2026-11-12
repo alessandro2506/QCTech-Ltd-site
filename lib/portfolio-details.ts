@@ -15,13 +15,6 @@ const IT: Record<PortfolioId, PortfolioDetail> = {
     description:
       "Sito realizzato per un portale civico. I visitatori trovano una mappa, una directory di attività, eventi con iscrizione, notizie, ricerca e una sezione per le imprese. È previsto l’invio di segnalazioni con posizione e foto. Il contenuto è in italiano e inglese. La struttura è pensata per orientare chi cerca informazioni sul territorio e per raccogliere richieste di contatto senza moltiplicare i canali.",
   },
-  alvenco: {
-    tags: ["Sito corporate", "Servizi digitali", "Piani", "Preventivo"],
-    product: "Sito vetrina corporate",
-    client: "Studio digitale",
-    description:
-      "Sito realizzato per uno studio digitale. Presenta linee di lavoro su siti web, applicazioni e commercio elettronico, con piani mensili di presenza online e un percorso chiaro verso il preventivo. Ci sono sezioni di servizio, recapiti e indicazioni su come avviare un progetto. La struttura è pensata per le richieste di contatto e per far capire in pochi passaggi cosa viene offerto, senza elencare metriche o casi nominati.",
-  },
   "hotel-boutique": {
     tags: ["Hospitality", "Camere", "Prenotazione", "IT/EN/FR/ES"],
     product: "Sito vetrina con prenotazione e area ospite",
@@ -78,12 +71,12 @@ const IT: Record<PortfolioId, PortfolioDetail> = {
     description:
       "Sito realizzato per uno studio di consulenza. Pagine in italiano: home, chi siamo, servizi, FAQ e contatti. I servizi sono suddivisi tra consulenza del lavoro e ambito fiscale, con elenchi di attività e un invito all’area riservata dall’header. Schema e form di contatto sono pensati per il primo appuntamento. La struttura è pensata per presentare lo studio e raccogliere richieste senza esporre fascicoli o dati di assistiti.",
   },
-  "consulenza-del-lavoro": {
+  "studio-fiscale-contabile": {
     tags: ["Fisco", "Tributario", "Contabilità", "FAQ"],
     product: "Sito vetrina professionale",
-    client: "Studio professionale",
+    client: "Studio fiscale e contabile",
     description:
-      "Sito realizzato per uno studio di consulenza fiscale e tributaria. Pagine in italiano: home, chi siamo, servizi, team, FAQ e contatti. I servizi coprono pianificazione fiscale, diritto tributario, rapporti con la pubblica amministrazione, contabilità e assistenza alle imprese. C’è una chiamata alla consulenza preliminare. La struttura è pensata per spiegare le competenze e avviare il primo contatto da form o recapiti.",
+      "Sito realizzato per uno studio fiscale e contabile. Pagine in italiano: home, chi siamo, servizi, team, FAQ e contatti. I servizi coprono pianificazione fiscale, diritto tributario, rapporti con la pubblica amministrazione, contabilità e assistenza alle imprese. C’è una chiamata alla consulenza preliminare. La struttura è pensata per spiegare le competenze e avviare il primo contatto da form o recapiti.",
   },
   "educazione-cinofila": {
     tags: ["Educazione cinofila", "Servizi", "Blog", "Eventi"],
@@ -115,13 +108,6 @@ const EN: Record<PortfolioId, PortfolioDetail> = {
     client: "Civic / local information initiative",
     description:
       "Site built for a civic portal. Visitors get a map, a business directory, events with sign-up, news, search and a section for companies. People can send reports with a location and photos. Copy is in Italian and English. The layout is meant to help people find local information and send a contact request without spreading enquiries across too many channels.",
-  },
-  alvenco: {
-    tags: ["Corporate site", "Digital services", "Plans", "Quote"],
-    product: "Corporate brochure website",
-    client: "Digital studio",
-    description:
-      "Site built for a digital studio. It presents web, app and ecommerce work, monthly online-presence plans and a clear path to a quote. Service sections, contact details and a short explanation of how a project starts are included. The layout is meant for contact requests and to show what is offered in a few steps, without listing metrics or named case studies.",
   },
   "hotel-boutique": {
     tags: ["Hospitality", "Rooms", "Booking", "IT/EN/FR/ES"],
@@ -179,12 +165,12 @@ const EN: Record<PortfolioId, PortfolioDetail> = {
     description:
       "Site built for an advisory practice. Italian pages cover home, about, services, FAQ and contact. Services are split between employment consultancy and tax work, with activity lists and a private-area link in the header. Schema and the contact form are aimed at a first appointment. The layout is meant to present the practice and collect enquiries without showing client files.",
   },
-  "consulenza-del-lavoro": {
-    tags: ["Tax", "Litigation", "Accounts", "FAQ"],
+  "studio-fiscale-contabile": {
+    tags: ["Tax", "Accounts", "Bookkeeping", "FAQ"],
     product: "Professional brochure website",
-    client: "Professional practice",
+    client: "Tax and accounting firm",
     description:
-      "Site built for a tax and accounts practice. Italian pages cover home, about, services, team, FAQ and contact. Services include tax planning, tax litigation, dealings with public bodies, bookkeeping and support for companies. There is a call to an introductory consultation. The layout is meant to explain the skills on offer and start the first contact by form or listed details.",
+      "Site built for a tax and accounting firm. Italian pages cover home, about, services, team, FAQ and contact. Services include tax planning, tax litigation, dealings with public bodies, bookkeeping and support for companies. There is a call to an introductory consultation. The layout is meant to explain the skills on offer and start the first contact by form or listed details.",
   },
   "educazione-cinofila": {
     tags: ["Dog training", "Services", "Blog", "Events"],

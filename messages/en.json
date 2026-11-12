@@ -148,7 +148,7 @@
     },
     "projects": {
       "title": "Work",
-      "intro": "Sites we have built. Only QuiPalermo and Alvenco are ours.",
+      "intro": "Sites we have built. Only QuiPalermo is ours.",
       "allLink": "All projects",
       "visitSite": "Visit the site",
       "tagsLabel": "Tags",
@@ -158,7 +158,6 @@
       "realizedTitle": "Sites we have built",
       "labels": {
         "quipalermo": "QuiPalermo",
-        "alvenco": "Alvenco",
         "hotel-boutique": "Boutique hotel",
         "noleggio-con-conducente": "Chauffeur and coach hire",
         "bed-and-breakfast": "Bed & breakfast",
@@ -167,7 +166,7 @@
         "studio-legale-uk-demo": "Law firm",
         "ecommerce-demo": "E-commerce",
         "consulenza-tributaria": "Tax advisory",
-        "consulenza-del-lavoro": "Employment consultancy",
+        "studio-fiscale-contabile": "Tax and accounting firm",
         "educazione-cinofila": "Dog training",
         "ambulatorio-veterinario": "Veterinary clinic",
         "centro-cinofilo-demo": "Dog centre"

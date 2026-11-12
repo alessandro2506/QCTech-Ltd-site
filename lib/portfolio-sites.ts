@@ -2,7 +2,6 @@ import { projects } from "@/lib/projects-data";
 
 export const PORTFOLIO_IDS = [
   "quipalermo",
-  "alvenco",
   "hotel-boutique",
   "noleggio-con-conducente",
   "bed-and-breakfast",
@@ -11,7 +10,7 @@ export const PORTFOLIO_IDS = [
   "studio-legale-uk-demo",
   "ecommerce-demo",
   "consulenza-tributaria",
-  "consulenza-del-lavoro",
+  "studio-fiscale-contabile",
   "educazione-cinofila",
   "ambulatorio-veterinario",
   "centro-cinofilo-demo",
@@ -19,10 +18,10 @@ export const PORTFOLIO_IDS = [
 
 export type PortfolioId = (typeof PORTFOLIO_IDS)[number];
 
-/** Home: our two properties plus four sector samples. */
+/** Home: our property plus five sector samples. */
 export const HOME_PORTFOLIO_IDS: readonly PortfolioId[] = [
   "quipalermo",
-  "alvenco",
+  "traslochi",
   "hotel-boutique",
   "bed-and-breakfast",
   "ecommerce-demo",
@@ -30,7 +29,6 @@ export const HOME_PORTFOLIO_IDS: readonly PortfolioId[] = [
 ];
 
 const QUI_URL = projects.find((item) => item.id === "quipalermo")?.externalUrl;
-const ALVENCO_URL = "https://alvenco.it";
 
 export function isPortfolioId(value: string): value is PortfolioId {
   return (PORTFOLIO_IDS as readonly string[]).includes(value);
@@ -43,7 +41,6 @@ export function portfolioSrc(id: PortfolioId): string {
 export function isOwnPortfolio(id: PortfolioId): boolean {
   switch (id) {
     case "quipalermo":
-    case "alvenco":
       return true;
     case "hotel-boutique":
     case "noleggio-con-conducente":
@@ -53,7 +50,7 @@ export function isOwnPortfolio(id: PortfolioId): boolean {
     case "studio-legale-uk-demo":
     case "ecommerce-demo":
     case "consulenza-tributaria":
-    case "consulenza-del-lavoro":
+    case "studio-fiscale-contabile":
     case "educazione-cinofila":
     case "ambulatorio-veterinario":
     case "centro-cinofilo-demo":
@@ -69,8 +66,6 @@ export function portfolioExternalUrl(id: PortfolioId): string | undefined {
   switch (id) {
     case "quipalermo":
       return QUI_URL;
-    case "alvenco":
-      return ALVENCO_URL;
     case "hotel-boutique":
     case "noleggio-con-conducente":
     case "bed-and-breakfast":
@@ -79,7 +74,7 @@ export function portfolioExternalUrl(id: PortfolioId): string | undefined {
     case "studio-legale-uk-demo":
     case "ecommerce-demo":
     case "consulenza-tributaria":
-    case "consulenza-del-lavoro":
+    case "studio-fiscale-contabile":
     case "educazione-cinofila":
     case "ambulatorio-veterinario":
     case "centro-cinofilo-demo":
