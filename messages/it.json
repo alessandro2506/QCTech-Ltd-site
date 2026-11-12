@@ -30,7 +30,11 @@
   },
   "footer": {
     "navLabel": "Footer",
-    "legal": "© 2026 Quantum Code Technologies Ltd."
+    "legal": "© 2026 Quantum Code Technologies Ltd.",
+    "companyNo": "Company No. 17317573",
+    "registered": "Registrata nel Regno Unito",
+    "ico": "Registrazione ICO ZC288640",
+    "terms": "Termini e Condizioni"
   },
   "common": {
     "scrollToTop": "Torna in cima",
@@ -76,16 +80,6 @@
     ]
   },
   "home": {
-    "trust": {
-      "label": "Dati societari",
-      "items": [
-        "Quantum Code Technologies Ltd",
-        "Company No. 17317573",
-        "Registrata nel Regno Unito",
-        "Bishop's Stortford",
-        "Registrazione ICO"
-      ]
-    },
     "services": {
       "title": "Servizi",
       "intro": "Sette linee di lavoro, con prezzi di partenza. Il preventivo è sempre su misura.",

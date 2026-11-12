@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { HeroHome } from "@/components/hero-home";
-import { HomeTrust } from "@/components/home-trust";
 import { HomeServiceRows } from "@/components/home-service-rows";
 import { HomeProjects } from "@/components/home-projects";
 import { HomeMethod } from "@/components/home-method";
@@ -30,7 +29,6 @@ export default async function HomePage() {
   return (
     <>
       <HeroHome />
-      <HomeTrust />
       <HomeServiceRows />
       <HomeProjects />
       <HomeMethod />

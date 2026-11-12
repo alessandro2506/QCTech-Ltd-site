@@ -120,6 +120,48 @@ body {
   outline-offset: 3px;
 }
 
+.site-footer-legal {
+  width: min(1400px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.site-footer-facts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.site-footer-legal-links {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 12px 0 0;
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .site-footer-facts {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 16px;
+    text-align: left;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .site-footer-facts {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
 .site-header-pill {
   position: fixed;
   top: 16px;

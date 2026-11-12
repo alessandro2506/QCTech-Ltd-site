@@ -62,42 +62,48 @@ export function SiteFooter() {
         </nav>
       </div>
       <div
-        className={`border-t px-4 py-6 text-center text-xs sm:px-6 ${
+        className={`border-t px-4 py-6 sm:px-6 ${
           light
             ? "border-[var(--light-border)] text-[var(--light-text-muted)]"
             : "border-violet-500/10 text-slate-600"
         }`}
       >
-        <p>{tf("legal")}</p>
-        <p className="mt-1">{siteConfig.address.full}</p>
-        <p className="mt-1">Company Number 17317573</p>
-        <p className="mt-2">
-          <Link
-            href="/privacy"
-            locale={locale}
-            className={
-              light
-                ? "text-[var(--light-text-muted)] transition-colors hover:text-[var(--light-primary)]"
-                : "text-slate-600 transition-colors hover:text-violet-400"
-            }
-          >
-            {t("privacy")}
-          </Link>
-          <span className={`mx-1.5 ${light ? "text-[var(--light-border)]" : "text-slate-700"}`}>
-            ·
-          </span>
-          <Link
-            href="/termini"
-            locale={locale}
-            className={
-              light
-                ? "text-[var(--light-text-muted)] transition-colors hover:text-[var(--light-primary)]"
-                : "text-slate-600 transition-colors hover:text-violet-400"
-            }
-          >
-            {locale === "it" ? "Termini e Condizioni" : "Terms & Conditions"}
-          </Link>
-        </p>
+        <div className="site-footer-legal">
+          <p className="site-footer-facts">
+            <span>{tf("legal")}</span>
+            <span>{tf("companyNo")}</span>
+            <span>{tf("registered")}</span>
+            <span>{siteConfig.address.full}</span>
+            <span>{tf("ico")}</span>
+          </p>
+          <p className="site-footer-legal-links">
+            <Link
+              href="/privacy"
+              locale={locale}
+              className={
+                light
+                  ? "text-[var(--light-text-muted)] transition-colors hover:text-[var(--light-primary)]"
+                  : "text-slate-600 transition-colors hover:text-violet-400"
+              }
+            >
+              {t("privacy")}
+            </Link>
+            <span className={light ? "text-[var(--light-border)]" : "text-slate-700"}>
+              ·
+            </span>
+            <Link
+              href="/termini"
+              locale={locale}
+              className={
+                light
+                  ? "text-[var(--light-text-muted)] transition-colors hover:text-[var(--light-primary)]"
+                  : "text-slate-600 transition-colors hover:text-violet-400"
+              }
+            >
+              {tf("terms")}
+            </Link>
+          </p>
+        </div>
       </div>
     </footer>
   );
