@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { CHIP_FAQ_IDS, getAssistantKb, type KbEntry } from "@/lib/assistant-kb";
 import { getWhatsAppHref } from "@/lib/get-whatsapp-href";
@@ -76,6 +76,24 @@ type Props = {
 
 type Offset = { x: number; y: number };
 
+const AI_NOTICE_STORAGE_KEY = "quantis_ai_notice_v1";
+
+function readAiNoticeDismissed(): boolean {
+  try {
+    return window.localStorage.getItem(AI_NOTICE_STORAGE_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
+function writeAiNoticeDismissed(): void {
+  try {
+    window.localStorage.setItem(AI_NOTICE_STORAGE_KEY, "1");
+  } catch {
+    // Storage may be blocked; the notice will show again next session.
+  }
+}
+
 function desktopDragEnabled(): boolean {
   return window.matchMedia(
     "(min-width: 1024px) and (hover: hover) and (pointer: fine)",
@@ -108,7 +126,9 @@ export function AssistantChat({ open, onClose }: Props) {
   const locale = useLocale();
   const t = useTranslations("assistant");
   const titleId = useId();
+  const noticeTitleId = useId();
   const inputRef = useRef<HTMLInputElement>(null);
+  const noticeAckRef = useRef<HTMLButtonElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
   const panelRef = useRef<HTMLElement>(null);
   const offsetRef = useRef<Offset>({ x: 0, y: 0 });
@@ -129,7 +149,9 @@ export function AssistantChat({ open, onClose }: Props) {
   const [desktopDrag, setDesktopDrag] = useState(false);
   const [lines, setLines] = useState<ChatLine[]>([{ kind: "intro" }]);
   const [liveState, setLiveState] = useState<QuantisAiState>("idle");
+  const [noticeOpen, setNoticeOpen] = useState(false);
   const liveRef = useRef<QuantisAiState>("idle");
+  const noticeOpenRef = useRef(false);
 
   function setAiLive(next: QuantisAiState) {
     liveRef.current = next;
@@ -141,6 +163,17 @@ export function AssistantChat({ open, onClose }: Props) {
     (id) => kb.find((item) => item.id === id) ?? null,
   ).filter((item): item is KbEntry => item !== null);
 
+  function dismissAiNotice() {
+    writeAiNoticeDismissed();
+    noticeOpenRef.current = false;
+    setNoticeOpen(false);
+  }
+
+  function openAiNotice() {
+    noticeOpenRef.current = true;
+    setNoticeOpen(true);
+  }
+
   useEffect(() => {
     if (!open) {
       setAiLive("closed");
@@ -148,9 +181,26 @@ export function AssistantChat({ open, onClose }: Props) {
       return () => window.clearTimeout(idleId);
     }
     setAiLive("listening");
-    const id = window.setTimeout(() => inputRef.current?.focus(), 50);
-    return () => window.clearTimeout(id);
   }, [open]);
+
+  useLayoutEffect(() => {
+    if (!open) return;
+    const shouldShowNotice = !readAiNoticeDismissed();
+    noticeOpenRef.current = shouldShowNotice;
+    setNoticeOpen(shouldShowNotice);
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
+    const id = window.setTimeout(() => {
+      if (noticeOpen) {
+        noticeAckRef.current?.focus();
+      } else {
+        inputRef.current?.focus();
+      }
+    }, 50);
+    return () => window.clearTimeout(id);
+  }, [open, noticeOpen]);
 
   useEffect(() => {
     listRef.current?.scrollTo({ top: listRef.current.scrollHeight });
@@ -159,7 +209,13 @@ export function AssistantChat({ open, onClose }: Props) {
   useEffect(() => {
     if (!open) return;
     const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") onClose();
+      if (event.key !== "Escape") return;
+      if (noticeOpenRef.current) {
+        event.preventDefault();
+        dismissAiNotice();
+        return;
+      }
+      onClose();
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
@@ -431,13 +487,60 @@ export function AssistantChat({ open, onClose }: Props) {
             </button>
           ))}
         </div>
-        <p className="assistant-panel-foot">
-          {t("notice")}
+        <p className="assistant-panel-links">
+          <button
+            type="button"
+            className="assistant-panel-link"
+            onClick={openAiNotice}
+          >
+            {t("aiNoticeLink")}
+          </button>
+          <span aria-hidden="true"> · </span>
+          <Link
+            href={{ pathname: "/privacy", hash: "assistente-ai" }}
+            className="assistant-panel-link"
+          >
+            {t("privacy")}
+          </Link>
         </p>
-        <p className="assistant-panel-foot assistant-panel-foot-privacy">
-          {t("foot")}{" "}
-          <Link href="/privacy">{t("privacy")}</Link>
-        </p>
+        {noticeOpen ? (
+          <>
+            <button
+              type="button"
+              className="assistant-notice-scrim"
+              tabIndex={-1}
+              aria-hidden="true"
+              onClick={dismissAiNotice}
+            />
+            <div
+              className="assistant-notice"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby={noticeTitleId}
+            >
+              <button
+                type="button"
+                className="assistant-notice-x"
+                onClick={dismissAiNotice}
+                aria-label={t("aiNoticeClose")}
+              >
+                ×
+              </button>
+              <h3 id={noticeTitleId} className="assistant-notice-title">
+                {t("aiNoticeTitle")}
+              </h3>
+              <p className="assistant-notice-body">{t("aiNoticeBody")}</p>
+              <button
+                ref={noticeAckRef}
+                type="button"
+                className="assistant-notice-ack"
+                onClick={dismissAiNotice}
+              >
+                {t("aiNoticeAck")}
+              </button>
+            </div>
+          </>
+        ) : null}
       </section>
     </div>
   );
@@ -467,9 +570,6 @@ function ChatBubble({
       return (
         <div className="assistant-bubble assistant-bubble-bot">
           <p>{t("intro")}</p>
-          <p className="assistant-privacy">
-            <Link href="/privacy">{t("privacy")}</Link>
-          </p>
         </div>
       );
     case "user":
