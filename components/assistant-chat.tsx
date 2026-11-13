@@ -11,6 +11,7 @@ import {
 } from "@/components/quantis-float";
 import { Link, usePathname, useRouter } from "@/i18n/routing";
 import { isContactTopic, type ContactTopic } from "@/lib/contact";
+import { trackAssistantEvent } from "@/lib/assistant-analytics";
 import {
   emitDraftUpdated,
   readAssistantDraft,
@@ -194,6 +195,7 @@ export function AssistantChat({ open, onClose }: Props) {
       return () => window.clearTimeout(idleId);
     }
     setAiLive("listening");
+    trackAssistantEvent("assistant_open");
   }, [open]);
 
   useEffect(() => {
@@ -344,9 +346,11 @@ export function AssistantChat({ open, onClose }: Props) {
           if (answer.length > 0) {
             setLines((prev) => [...prev, { kind: "ai", text: answer }]);
             setAiLive("answered");
+            trackAssistantEvent("assistant_answer", { type: "ai" });
           } else {
             setLines((prev) => [...prev, { kind: "fallback" }]);
             setAiLive("error");
+            trackAssistantEvent("assistant_answer", { type: "fallback" });
           }
           break;
         case "faq": {
@@ -358,9 +362,11 @@ export function AssistantChat({ open, onClose }: Props) {
           if (entry) {
             setLines((prev) => [...prev, { kind: "faq", entry }]);
             setAiLive("answered");
+            trackAssistantEvent("assistant_answer", { type: "faq" });
           } else {
             setLines((prev) => [...prev, { kind: "fallback" }]);
             setAiLive("error");
+            trackAssistantEvent("assistant_answer", { type: "fallback" });
           }
           break;
         }
@@ -371,10 +377,12 @@ export function AssistantChat({ open, onClose }: Props) {
         case "fallback":
           setLines((prev) => [...prev, { kind: "fallback" }]);
           setAiLive("error");
+          trackAssistantEvent("assistant_answer", { type: "fallback" });
           break;
         default:
           setLines((prev) => [...prev, { kind: "fallback" }]);
           setAiLive("error");
+          trackAssistantEvent("assistant_answer", { type: "fallback" });
       }
     } catch {
       setLines((prev) => [...prev, { kind: "fallback" }]);
@@ -419,6 +427,7 @@ export function AssistantChat({ open, onClose }: Props) {
       writeAssistantDraft({ topic, message });
       setHasStoredDraft(true);
       emitDraftUpdated();
+      trackAssistantEvent("assistant_draft_created");
       const desktop = window.matchMedia("(min-width: 1024px)").matches;
       if (onContacts) {
         setAiLive("answered");

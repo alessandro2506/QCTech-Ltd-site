@@ -13,6 +13,7 @@ import {
   formatPlanMessageBlock,
   type PlanForMessage,
 } from "@/lib/format-plan-message";
+import { trackAssistantEvent } from "@/lib/assistant-analytics";
 import {
   DRAFT_UPDATED_EVENT,
   clearAssistantHandoff,
@@ -213,12 +214,16 @@ export function ContactForm({
         return;
       }
       setStatus("success");
+      const submittedWithDraft = Boolean(readAssistantDraft());
       if (typeof window !== "undefined" && window.gtag) {
         window.gtag("event", "generate_lead", {
           event_category: "contact_form",
           event_label: "form_contatti",
         });
       }
+      trackAssistantEvent("contact_submit_with_draft", {
+        contact_submit_with_draft: submittedWithDraft,
+      });
       clearAssistantHandoff();
       setDraftNotice(false);
       setName("");
