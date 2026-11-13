@@ -10,7 +10,7 @@ export async function HomeMethod() {
   const steps = t.raw("steps") as MethodStep[];
 
   return (
-    <section className="bg-[var(--light-surface)] py-16 sm:py-20">
+    <section className="section-y bg-[var(--light-surface)]">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="text-3xl font-bold tracking-tight text-[var(--light-emphasis)] sm:text-4xl">
           {t("title")}
@@ -18,7 +18,7 @@ export async function HomeMethod() {
         <p className="mt-3 max-w-2xl text-base text-[var(--light-text-muted)]">
           {t("intro")}
         </p>
-        <ol className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <ol className="section-stack mt-10 grid sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, index) => (
             <li
               key={step.title}

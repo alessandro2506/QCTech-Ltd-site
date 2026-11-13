@@ -56,7 +56,7 @@ export default async function VisionPage() {
           {t("hero.subtitle")}
         </p>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2">
+        <div className="section-stack mt-14 grid sm:grid-cols-2">
           <section className="rounded-2xl border border-[var(--light-border)] bg-white p-8">
             <h2 className="text-xl font-bold text-[var(--light-emphasis)]">{t("story.title")}</h2>
             <p className="mt-3 text-sm leading-relaxed text-[var(--light-text-muted)]">
@@ -76,7 +76,7 @@ export default async function VisionPage() {
           <h2 className="text-2xl font-bold tracking-tight text-[var(--light-emphasis)] sm:text-3xl">
             {t("values.title")}
           </h2>
-          <div className="mt-6 grid gap-6 sm:grid-cols-2">
+          <div className="section-stack mt-6 grid sm:grid-cols-2">
             {values.map((p) => {
               const Icon = iconMap[p.icon];
               return (

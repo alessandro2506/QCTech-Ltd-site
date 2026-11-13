@@ -16,7 +16,7 @@ export function PortfolioGallery({ scope, labels }: Props) {
   const ids = scope === "home" ? HOME_PORTFOLIO_IDS : PORTFOLIO_IDS;
 
   return (
-    <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <ul className="section-stack grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
       {ids.map((id, index) => {
         const label = labels[id];
 

@@ -39,7 +39,8 @@
   "common": {
     "scrollToTop": "Back to top",
     "quantisOpen": "Open the AI assistant",
-    "quantisFaqLabel": "AI assistant"
+    "quantisFaqLabel": "AI assistant",
+    "quantisFloatBadge": "AI"
   },
   "assistant": {
     "title": "Q.U.A.N.T.I.S · AI assistant",

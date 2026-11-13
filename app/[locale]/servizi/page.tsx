@@ -98,7 +98,7 @@ export default async function ServiziPage() {
           </div>
         </section>
 
-        <div className="mt-14 grid gap-8 sm:grid-cols-2">
+          <div className="section-stack mt-14 grid sm:grid-cols-2">
           {items.map((s, i) => {
             const Icon = icons[i];
             return (
