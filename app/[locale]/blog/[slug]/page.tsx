@@ -1,4 +1,4 @@
-import { getAllPosts, getPostBySlug } from "@/lib/blog";
+import { getAllPosts, getBlogHreflang, getPostBySlug } from "@/lib/blog";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
@@ -24,6 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   const post = getPostBySlug(slug, locale);
   if (!post) return {};
+  const hreflang = getBlogHreflang(slug, locale);
   return {
     title: post.title,
     description: post.excerpt,
@@ -31,9 +32,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: `https://www.qc-tech.co.uk/${locale}/blog/${slug}`,
       languages: {
-        it: `https://www.qc-tech.co.uk/it/blog/${slug}`,
-        en: `https://www.qc-tech.co.uk/en/blog/${slug}`,
-        "x-default": `https://www.qc-tech.co.uk/en/blog/${slug}`,
+        it: hreflang.it,
+        en: hreflang.en,
+        "x-default": hreflang.en,
       },
     },
     openGraph: {
@@ -73,12 +74,31 @@ export default async function BlogPostPage({ params }: Props) {
     inLanguage: locale === "it" ? "it-IT" : "en-GB",
   };
 
+  const faqSchema =
+    post.faqs.length >= 3
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: post.faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: { "@type": "Answer", text: faq.answer },
+          })),
+        }
+      : null;
+
   return (
     <article className="mx-auto max-w-3xl px-4 py-16 pt-28 sm:px-6 sm:pt-32">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+      {faqSchema ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      ) : null}
       {/* Back */}
       <Link
         href="/blog"

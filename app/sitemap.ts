@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getPostBySlug, getPostSlugs } from "@/lib/blog";
+import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { PORTFOLIO_IDS } from "@/lib/portfolio-sites";
 
 const baseUrl = "https://www.qc-tech.co.uk";
@@ -39,8 +39,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/en/terms", priority: 0.5, freq: "yearly" as const },
   ];
 
-  const itSlugs = getPostSlugs("it");
-  const enSlugs = getPostSlugs("en");
+  const itPosts = getAllPosts("it");
+  const enPosts = getAllPosts("en");
+  const itSlugs = itPosts.map((post) => post.slug);
+  const enSlugs = enPosts.map((post) => post.slug);
   const allSlugs = [...new Set([...itSlugs, ...enSlugs])];
 
   const latestPostDate = allSlugs.reduce((latest, slug) => {
@@ -103,39 +105,46 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
-  for (const slug of allSlugs) {
-    const itPost = itSlugs.includes(slug) ? getPostBySlug(slug, "it") : null;
-    const enPost = enSlugs.includes(slug) ? getPostBySlug(slug, "en") : null;
+  const postsByKey = new Map<string, { it?: (typeof itPosts)[number]; en?: (typeof enPosts)[number] }>();
+  for (const post of itPosts) {
+    const current = postsByKey.get(post.translationKey) ?? {};
+    current.it = post;
+    postsByKey.set(post.translationKey, current);
+  }
+  for (const post of enPosts) {
+    const current = postsByKey.get(post.translationKey) ?? {};
+    current.en = post;
+    postsByKey.set(post.translationKey, current);
+  }
 
-    if (itPost) {
+  for (const pair of postsByKey.values()) {
+    const itUrl = pair.it
+      ? `${baseUrl}/it/blog/${pair.it.slug}`
+      : undefined;
+    const enUrl = pair.en
+      ? `${baseUrl}/en/blog/${pair.en.slug}`
+      : undefined;
+    const languages = {
+      ...(itUrl ? { it: itUrl } : {}),
+      ...(enUrl ? { en: enUrl, "x-default": enUrl } : itUrl ? { "x-default": itUrl } : {}),
+    };
+
+    if (pair.it && itUrl) {
       entries.push({
-        url: `${baseUrl}/it/blog/${slug}`,
-        lastModified: parsePostDate(itPost.date),
+        url: itUrl,
+        lastModified: parsePostDate(pair.it.date),
         changeFrequency: "monthly",
         priority: 0.7,
-        alternates: {
-          languages: {
-            it: `${baseUrl}/it/blog/${slug}`,
-            en: `${baseUrl}/en/blog/${slug}`,
-            "x-default": `${baseUrl}/en/blog/${slug}`,
-          },
-        },
+        alternates: { languages },
       });
     }
-
-    if (enPost) {
+    if (pair.en && enUrl) {
       entries.push({
-        url: `${baseUrl}/en/blog/${slug}`,
-        lastModified: parsePostDate(enPost.date),
+        url: enUrl,
+        lastModified: parsePostDate(pair.en.date),
         changeFrequency: "monthly",
         priority: 0.7,
-        alternates: {
-          languages: {
-            it: `${baseUrl}/it/blog/${slug}`,
-            en: `${baseUrl}/en/blog/${slug}`,
-            "x-default": `${baseUrl}/en/blog/${slug}`,
-          },
-        },
+        alternates: { languages },
       });
     }
   }
