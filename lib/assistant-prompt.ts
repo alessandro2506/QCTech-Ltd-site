@@ -1,6 +1,6 @@
 import { selectRelevantKb } from "@/lib/assistant-kb";
 
-export const ASSISTANT_LLM_TIMEOUT_MS = 20_000;
+export const ASSISTANT_LLM_TIMEOUT_MS = 24_000;
 export const ASSISTANT_LLM_BUDGET_MS = 25_000;
 export const ASSISTANT_LLM_MAX_TOKENS = 400;
 export const ASSISTANT_LLM_DRAFT_MAX_TOKENS = 600;

@@ -87,7 +87,7 @@ async function main() {
     'Sure.\n```json\n{ "topic": "web", "message": "Vorrei un sito vetrina." }\n```\n',
   ) as { topic?: string; message?: string } | null;
   assert(fenced?.topic === "web", "fenced json topic");
-  assert(ASSISTANT_LLM_TIMEOUT_MS === 20_000, "call timeout 20s");
+  assert(ASSISTANT_LLM_TIMEOUT_MS === 24_000, "call timeout 24s");
   assert(ASSISTANT_LLM_BUDGET_MS === 25_000, "route budget 25s");
 
   const fallback = buildFallbackDraft("it", [
