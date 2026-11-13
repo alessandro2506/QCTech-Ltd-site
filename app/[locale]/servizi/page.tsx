@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { getTranslations } from "next-intl/server";
 import { buildAlternates } from "@/lib/seo";
 import { BedDouble, Building2, Code2, Search, ShoppingCart, Smartphone, Trophy, UtensilsCrossed, Wine } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
+import { RelatedReading } from "@/components/related-reading";
+import {
+  SERVICE_CARD_THEMES,
+  SERVICE_HASH,
+  postsForServicesPage,
+  postsForTheme,
+} from "@/lib/related-posts";
 import {
   ServiceSectorsTabs,
   type SectorTab,
@@ -37,14 +45,17 @@ export async function generateMetadata({
   };
 }
 
-export default async function ServiziPage() {
+export default async function ServiziPage({ params }: PageProps) {
+  const { locale } = await params;
   const t = await getTranslations("servicesPage");
+  const tBlog = await getTranslations("blog");
   const items = t.raw("items") as {
     title: string;
     points: string[];
   }[];
   const sectors = t.raw("sectors") as SectorTab[];
   const pastSectors = t.raw("pastSectors") as PastSector[];
+  const pagePosts = postsForServicesPage(locale);
 
   return (
     <div className="pb-20 pt-28 sm:pt-32">
@@ -101,10 +112,13 @@ export default async function ServiziPage() {
           <div className="section-stack mt-14 grid sm:grid-cols-2">
           {items.map((s, i) => {
             const Icon = icons[i];
+            const theme = SERVICE_CARD_THEMES[i];
+            const cardPosts = theme ? postsForTheme(locale, theme, 3) : [];
             return (
               <article
                 key={s.title}
-                className="group rounded-2xl border border-[var(--light-border)] bg-white p-8 transition hover:border-[var(--light-primary)]/40"
+                id={theme ? SERVICE_HASH[theme] : undefined}
+                className="group scroll-mt-28 rounded-2xl border border-[var(--light-border)] bg-white p-8 transition hover:border-[var(--light-primary)]/40"
               >
                 <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[var(--light-surface)] text-[var(--light-primary)]">
                   <Icon className="h-7 w-7" aria-hidden />
@@ -123,6 +137,15 @@ export default async function ServiziPage() {
                     </li>
                   ))}
                 </ul>
+                {theme ? (
+                  <RelatedReading
+                    title={tBlog("furtherReading")}
+                    posts={cardPosts}
+                    locale={locale}
+                    serviceTheme={theme}
+                    compact
+                  />
+                ) : null}
               </article>
             );
           })}
@@ -144,9 +167,17 @@ export default async function ServiziPage() {
           </h2>
           <p className="mt-3 max-w-2xl text-[var(--light-text-muted)]">{t("quoteBody")}</p>
           <div className="mx-auto mt-8 max-w-xl">
-            <ContactForm />
+            <Suspense fallback={null}>
+              <ContactForm />
+            </Suspense>
           </div>
         </section>
+
+        <RelatedReading
+          title={tBlog("furtherReading")}
+          posts={pagePosts}
+          locale={locale}
+        />
       </div>
     </div>
   );

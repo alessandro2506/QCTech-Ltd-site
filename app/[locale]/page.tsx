@@ -6,6 +6,7 @@ import { HomeProjects } from "@/components/home-projects";
 import { HomeMethod } from "@/components/home-method";
 import { HomePlans } from "@/components/home-plans";
 import { HomeFaq } from "@/components/home-faq";
+import { HomeBlog } from "@/components/home-blog";
 import { HomeFinalCta } from "@/components/home-final-cta";
 import { buildAlternates } from "@/lib/seo";
 
@@ -34,6 +35,7 @@ export default async function HomePage() {
       <HomeMethod />
       <HomePlans />
       <HomeFaq />
+      <HomeBlog />
       <HomeFinalCta />
     </>
   );
