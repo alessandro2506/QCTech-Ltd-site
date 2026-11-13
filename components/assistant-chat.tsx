@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { CHIP_FAQ_IDS, getAssistantKb, type KbEntry } from "@/lib/assistant-kb";
 import { getWhatsAppHref } from "@/lib/get-whatsapp-href";
@@ -76,24 +76,6 @@ type Props = {
 
 type Offset = { x: number; y: number };
 
-const AI_NOTICE_STORAGE_KEY = "quantis_ai_notice_v1";
-
-function readAiNoticeDismissed(): boolean {
-  try {
-    return window.localStorage.getItem(AI_NOTICE_STORAGE_KEY) === "1";
-  } catch {
-    return false;
-  }
-}
-
-function writeAiNoticeDismissed(): void {
-  try {
-    window.localStorage.setItem(AI_NOTICE_STORAGE_KEY, "1");
-  } catch {
-    // Storage may be blocked; the notice will show again next session.
-  }
-}
-
 function desktopDragEnabled(): boolean {
   return window.matchMedia(
     "(min-width: 1024px) and (hover: hover) and (pointer: fine)",
@@ -164,7 +146,6 @@ export function AssistantChat({ open, onClose }: Props) {
   ).filter((item): item is KbEntry => item !== null);
 
   function dismissAiNotice() {
-    writeAiNoticeDismissed();
     noticeOpenRef.current = false;
     setNoticeOpen(false);
   }
@@ -176,18 +157,13 @@ export function AssistantChat({ open, onClose }: Props) {
 
   useEffect(() => {
     if (!open) {
+      noticeOpenRef.current = false;
+      setNoticeOpen(false);
       setAiLive("closed");
       const idleId = window.setTimeout(() => setAiLive("idle"), 1200);
       return () => window.clearTimeout(idleId);
     }
     setAiLive("listening");
-  }, [open]);
-
-  useLayoutEffect(() => {
-    if (!open) return;
-    const shouldShowNotice = !readAiNoticeDismissed();
-    noticeOpenRef.current = shouldShowNotice;
-    setNoticeOpen(shouldShowNotice);
   }, [open]);
 
   useEffect(() => {

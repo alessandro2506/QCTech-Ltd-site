@@ -10,7 +10,7 @@ export async function HomeMethod() {
   const steps = t.raw("steps") as MethodStep[];
 
   return (
-    <section className="section-y bg-[var(--light-surface)]">
+    <section id="come-lavoriamo" className="section-y bg-[var(--light-surface)]">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="text-3xl font-bold tracking-tight text-[var(--light-emphasis)] sm:text-4xl">
           {t("title")}

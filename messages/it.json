@@ -176,7 +176,8 @@
     },
     "projects": {
       "title": "Progetti",
-      "intro": "Siti che abbiamo realizzato. Solo QuiPalermo è proprietà nostra.",
+      "intro": "Siti e app realizzati per i nostri clienti, più QuiPalermo, la piattaforma che abbiamo sviluppato e gestiamo noi.",
+      "ownProductBadge": "Prodotto QC Tech",
       "allLink": "Tutti i progetti",
       "visitSite": "Visita il sito",
       "tagsLabel": "Tag",
@@ -201,7 +202,7 @@
       }
     },
     "method": {
-      "title": "Metodo",
+      "title": "Come lavoriamo",
       "intro": "Quattro passi, dal primo ascolto al supporto dopo il lancio.",
       "steps": [
         {

@@ -42,9 +42,7 @@ export default async function ProgettiPage({ params }: PageProps) {
           {isIt ? "I Nostri Progetti" : "Our Projects"}
         </h1>
         <p className="mt-4 max-w-2xl text-lg text-[var(--light-text-muted)]">
-          {isIt
-            ? "Portali civici, app mobile e piattaforme digitali che portiamo in produzione per comunità italiane e britanniche."
-            : "Civic portals, mobile apps and digital platforms we build for Italian and British communities."}
+          {t("intro")}
         </p>
         <section className="mt-12">
           <h2 className="text-2xl font-bold tracking-tight text-[var(--light-emphasis)]">

@@ -176,7 +176,8 @@
     },
     "projects": {
       "title": "Work",
-      "intro": "Sites we have built. Only QuiPalermo is ours.",
+      "intro": "Websites and apps built for our clients, plus QuiPalermo, the platform we developed and run ourselves.",
+      "ownProductBadge": "QC Tech product",
       "allLink": "All projects",
       "visitSite": "Visit the site",
       "tagsLabel": "Tags",
