@@ -128,6 +128,10 @@ export function buildAssistantSystemPrompt(input: {
   ].join("\n\n");
 }
 
+export function conversationFromHistory(raw: unknown): ChatTurn[] {
+  return mergeConsecutive(parseHistory(raw)).slice(-12);
+}
+
 function parseHistory(raw: unknown): ChatTurn[] {
   if (!Array.isArray(raw)) return [];
   const turns: ChatTurn[] = [];

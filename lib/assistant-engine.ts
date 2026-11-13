@@ -1,4 +1,11 @@
 import { matchFaqByKeywords, type KbEntry } from "@/lib/assistant-kb";
+import {
+  buildDraftSystemPrompt,
+  buildFallbackDraft,
+  extractJsonObject,
+  parseDraftPayload,
+  type AssistantDraft,
+} from "@/lib/assistant-draft";
 import { stripCallSuggestions } from "@/lib/assistant-phone";
 import {
   ASSISTANT_LLM_BUDGET_MS,
@@ -7,6 +14,7 @@ import {
   ASSISTANT_LLM_TEMPERATURE,
   ASSISTANT_LLM_TIMEOUT_MS,
   buildAssistantSystemPrompt,
+  conversationFromHistory,
   detectReplyLocale,
   sanitizeHistory,
   stripThinkBlocks,
@@ -469,6 +477,62 @@ export async function runAssistant(
     userChars,
     lastUserContent,
   };
+}
+
+export type AssistantDraftResult = AssistantDraft & {
+  source: "ai" | "fallback";
+  tried: AssistantTried[];
+};
+
+export async function runAssistantDraft(input: {
+  pageLocale: "it" | "en";
+  history?: unknown;
+  ip?: string;
+  consumeDaily?: boolean;
+  dailyMax?: number;
+}): Promise<AssistantDraftResult> {
+  const pageLocale = input.pageLocale;
+  const history = conversationFromHistory(input.history);
+  const fallback = buildFallbackDraft(pageLocale, history);
+  const tried: AssistantTried[] = [];
+  const consume = input.consumeDaily !== false;
+  const ip = input.ip ?? "unknown";
+  const dailyMax =
+    input.dailyMax ?? (Number(process.env.ASSISTANT_DAILY_MAX) || DEFAULT_DAILY_MAX);
+  const base = process.env.ASSISTANT_BASE_URL?.trim().replace(/\/$/, "");
+  const key = process.env.ASSISTANT_API_KEY?.trim();
+  const models = parseAssistantModels(process.env.ASSISTANT_MODEL ?? "");
+  const canCallLlm = Boolean(base && key && models.length > 0);
+  const underDaily = !consume || dailyCount(ip) < dailyMax;
+
+  if (!canCallLlm || !underDaily || history.length === 0) {
+    return { ...fallback, source: "fallback", tried };
+  }
+
+  const system = buildDraftSystemPrompt(pageLocale);
+  const budgetEnd = Date.now() + ASSISTANT_LLM_BUDGET_MS;
+  for (const model of models) {
+    const remaining = budgetEnd - Date.now();
+    if (remaining < 400) break;
+    if (consume && dailyCount(ip) >= dailyMax) break;
+    if (consume) consumeDailySlot(ip);
+    const first = await callModel({
+      base: base as string,
+      key: key as string,
+      model,
+      system,
+      conversation: history,
+      timeoutMs: Math.min(ASSISTANT_LLM_TIMEOUT_MS, remaining),
+      reasoning: { effort: "none" },
+      maxTokens: ASSISTANT_LLM_MAX_TOKENS,
+    });
+    tried.push(first.tried);
+    if (first.text) {
+      const parsed = parseDraftPayload(extractJsonObject(first.text));
+      if (parsed) return { ...parsed, source: "ai", tried };
+    }
+  }
+  return { ...fallback, source: "fallback", tried };
 }
 
 export function isPreviewEnv(): boolean {

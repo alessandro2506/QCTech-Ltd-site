@@ -3,6 +3,7 @@ import {
   allowRate,
   MAX_CHARS,
   runAssistant,
+  runAssistantDraft,
   withAssistantDebug,
 } from "@/lib/assistant-engine";
 
@@ -48,6 +49,26 @@ export async function POST(request: Request) {
   const o = body as Record<string, unknown>;
   const locale = o.locale === "en" ? "en" : "it";
   const message = typeof o.message === "string" ? o.message.trim() : "";
+
+  if (o.mode === "draft") {
+    const draft = await runAssistantDraft({
+      pageLocale: locale,
+      history: o.history,
+      ip,
+      consumeDaily: true,
+    });
+    return NextResponse.json(
+      withAssistantDebug(
+        {
+          type: "draft",
+          topic: draft.topic,
+          message: draft.message,
+          source: draft.source,
+        },
+        draft.tried,
+      ),
+    );
+  }
 
   const result = await runAssistant({
     message,
