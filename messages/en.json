@@ -7,7 +7,7 @@
     "visionTitle": "Vision",
     "visionDescription": "Technical scalability, evolving architectures and product roadmap for QC Tech.",
     "contactsTitle": "Contact",
-    "contactsDescription": "Request a quote or an intro call with Quantum Code Technologies Ltd."
+    "contactsDescription": "Request a quote or a free website audit from Quantum Code Technologies Ltd."
   },
   "nav": {
     "home": "Home",
@@ -747,25 +747,25 @@
     "headline": "We don't build sites. We build systems that bring you clients.",
     "body": "Quantum Code Technologies Ltd is a web and app studio with registered office at Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX. Our team operates across UK and Italy — building digital products for businesses that want to grow in both markets.",
     "proof": "Our track record includes CivicAlert, a civic AI reporting platform deployed across UK local authorities — proof that we build things that scale.",
-    "cta": "Book a free 15-minute call. No commitment."
+    "cta": "Request a free website audit via the contact form. No commitment."
   },
   "FAQ": {
     "title": "Frequently asked questions",
     "ctaTitle": "Ready to start? Request a free quote — we reply within 24h.",
-    "ctaBody": "A 15-minute call where we analyse your current site and tell you exactly what's blocking conversions. No commitment. Book via the contact form.",
+    "ctaBody": "The free website audit is a review of your current site, requested only through the contact form. We reply in writing within 48 hours on what is stopping conversions, with no obligation.",
     "ctaButton": "Get a Quote",
     "q1": "How much does a website cost?",
     "a1": "Our websites start from £900 for a landing page, from £1,400 for a business website, from £8,000 for a corporate platform. Every project gets a personalised quote.",
     "q2": "Do you work with Italian companies?",
     "a2": "Yes. We operate across both UK and Italy. We handle IT and EN content, UK GDPR and EU GDPR compliance, and billing in both GBP and EUR.",
     "q3": "What is a free site audit?",
-    "a3": "A 15-minute call where we review your current site and tell you exactly what's stopping it from converting. No strings attached. Book via the contact form.",
+    "a3": "The free website audit is a review of your current site, requested only through the contact form. We reply in writing within 48 hours on what is stopping conversions, with no obligation.",
     "q4": "How long does a website project take?",
     "a4": "Landing pages: 1–2 weeks. Full websites: 4–8 weeks. E-commerce: 6–12 weeks. Mobile apps: 3–6 months depending on complexity.",
     "q5": "What technologies do you use?",
     "a5": "Next.js, React Native, Tailwind CSS, TypeScript, Supabase, and AI integrations (OpenAI, Google Vision). We choose the right tool for each project, not the trendy one.",
     "q6": "How do I get started with a website for my business?",
-    "a6": "The first step is a free 15-minute call with our team. We listen to your goals, current situation and budget — then we prepare a clear proposal within 48 hours. No commitment required at this stage. Simply use the contact form or email us at hello@qc-tech.co.uk.",
+    "a6": "The first step is to describe your project through the contact form: we reply within 48 hours with a clear proposal, with no obligation.",
     "q7": "I want to start a business — do I need a website from day one?",
     "a7": "Not necessarily, but having a professional digital presence from the start significantly increases credibility with potential clients, investors and partners. Even a well-built landing page with your offer, contact details and a clear call to action can generate enquiries immediately. We can have you online within 1–2 weeks.",
     "q8": "What is the difference between a website and a web application?",
@@ -787,7 +787,7 @@
   },
   "FinalCTA": {
     "headline": "Ready to turn your site into a client machine?",
-    "subheadline": "Book a free 15-minute audit call. We'll tell you exactly what's holding your site back — no commitment, no sales pitch.",
+    "subheadline": "Request a free website audit through the contact form. We'll tell you in writing, within 48 hours, what's holding your site back — no commitment.",
     "button": "Book your free audit →",
     "note": "We respond within 24 hours."
   },

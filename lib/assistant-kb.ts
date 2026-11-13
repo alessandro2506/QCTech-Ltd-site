@@ -150,7 +150,7 @@ const FAQ_KEYWORDS_IT: Record<
 > = {
   a1: ["costo", "prezzo", "quanto", "costa", "sito", "landing", "vetrina", "corporate", "euro"],
   a2: ["italiane", "italia", "uk", "inghilterra", "gdpr", "fatturazione", "lingue"],
-  a3: ["audit", "gratuito", "chiamata", "15", "conversioni"],
+  a3: ["audit", "gratuito", "modulo", "contatti", "conversioni"],
   a4: ["tempo", "tempi", "settimane", "mesi", "durata", "quanto tempo"],
   a5: ["tecnolog", "tecnologie", "stack", "next", "react", "typescript", "strumenti"],
   a6: ["iniziare", "come faccio", "primo passo", "preventivo", "contatto"],
@@ -168,7 +168,7 @@ const FAQ_KEYWORDS_IT: Record<
 const FAQ_KEYWORDS_EN: typeof FAQ_KEYWORDS_IT = {
   a1: ["cost", "price", "how much", "website", "landing", "brochure", "corporate"],
   a2: ["italian", "italy", "uk", "gdpr", "billing", "languages"],
-  a3: ["audit", "free", "call", "15", "conversions"],
+  a3: ["audit", "free", "form", "contact", "conversions"],
   a4: ["how long", "timeline", "weeks", "months", "duration"],
   a5: ["technolog", "technologies", "stack", "next", "react", "typescript", "tools"],
   a6: ["get started", "start", "first step", "quote", "contact"],
@@ -242,20 +242,6 @@ const EXTRA_EN: typeof EXTRA_IT = {
   },
 };
 
-const ASSISTANT_FAQ_ANSWER_OVERRIDES: Record<
-  "it" | "en",
-  Partial<Record<FaqId, string>>
-> = {
-  it: {
-    a3: "In 15 minuti analizziamo il tuo sito attuale e ti diciamo esattamente cosa impedisce le conversioni. Senza impegno. Prenota tramite il modulo contatti.",
-    a6: "Il primo passo è descriverci il progetto dal modulo contatti: rispondiamo entro 48 ore con una proposta chiara, senza impegno.",
-  },
-  en: {
-    a3: "In 15 minutes we review your current site and tell you exactly what is stopping conversions. No strings attached. Book via the contact form.",
-    a6: "The first step is to describe your project through the contact form: we reply within 48 hours with a clear proposal, with no obligation.",
-  },
-};
-
 function isFaqPageId(id: FaqId): boolean {
   return /^a\d+$/.test(id);
 }
@@ -276,9 +262,6 @@ export function getAssistantKb(locale: string): KbEntry[] {
   const prices = isIt ? PRICE_IT : PRICE_EN;
   const keywords = isIt ? FAQ_KEYWORDS_IT : FAQ_KEYWORDS_EN;
 
-  const overrides = isIt
-    ? ASSISTANT_FAQ_ANSWER_OVERRIDES.it
-    : ASSISTANT_FAQ_ANSWER_OVERRIDES.en;
   const pageFaqs: KbEntry[] = FAQ_IDS.filter(isFaqPageId).map((id) => {
     const n = id.slice(1);
     const questionKey = `q${n}` as keyof typeof faq;
@@ -286,7 +269,7 @@ export function getAssistantKb(locale: string): KbEntry[] {
     return {
       id,
       question: String(faq[questionKey]),
-      answer: overrides[id] ?? String(faq[answerKey]),
+      answer: String(faq[answerKey]),
       keywords: keywords[id as keyof typeof FAQ_KEYWORDS_IT],
     };
   });

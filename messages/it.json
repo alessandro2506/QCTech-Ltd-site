@@ -7,7 +7,7 @@
     "visionTitle": "Vision",
     "visionDescription": "Scalabilità tecnologica, architetture evolutive e roadmap prodotto per QC Tech.",
     "contactsTitle": "Contatti",
-    "contactsDescription": "Richiedi un preventivo o una call conoscitiva con Quantum Code Technologies Ltd."
+    "contactsDescription": "Richiedi un preventivo o un audit gratuito a Quantum Code Technologies Ltd."
   },
   "nav": {
     "home": "Home",
@@ -747,25 +747,25 @@
     "headline": "Non costruiamo siti. Costruiamo sistemi che portano clienti.",
     "body": "Quantum Code Technologies Ltd è uno studio web e app con sede legale a Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX. Il nostro team opera tra UK e Italia, costruendo prodotti digitali per aziende che vogliono crescere in entrambi i mercati.",
     "proof": "Il nostro portfolio include CivicAlert, una piattaforma AI civica distribuita presso enti locali del Regno Unito — la prova che costruiamo cose che scalano.",
-    "cta": "Prenota una chiamata gratuita di 15 minuti. Senza impegno."
+    "cta": "Richiedi un audit gratuito del sito dal modulo contatti. Senza impegno."
   },
   "FAQ": {
     "title": "Domande frequenti",
     "ctaTitle": "Pronto a iniziare? Richiedi un preventivo gratuito — risposta entro 24h.",
-    "ctaBody": "Una chiamata di 15 minuti in cui analizziamo il tuo sito attuale e ti diciamo esattamente cosa impedisce le conversioni. Senza impegno. Prenota tramite il modulo contatti.",
+    "ctaBody": "L'audit gratuito è un'analisi del tuo sito attuale, richiesta solo dal modulo contatti. Ti rispondiamo per iscritto entro 48 ore su cosa impedisce le conversioni, senza impegno.",
     "ctaButton": "Richiedi Preventivo",
     "q1": "Quanto costa un sito web?",
     "a1": "I nostri siti partono da 1.100 € per una landing page, da 1.700 € per un sito vetrina, da 9.500 € per un sito corporate. Ogni progetto riceve un preventivo personalizzato.",
     "q2": "Lavorate con aziende italiane?",
     "a2": "Sì. Operiamo sia in UK che in Italia. Gestiamo contenuti in IT e EN, conformità UK GDPR e GDPR UE, e fatturazione in GBP ed EUR.",
     "q3": "Cos'è l'audit gratuito del sito?",
-    "a3": "Una chiamata di 15 minuti in cui analizziamo il tuo sito attuale e ti diciamo esattamente cosa impedisce le conversioni. Senza impegno. Prenota tramite il modulo contatti.",
+    "a3": "L'audit gratuito è un'analisi del tuo sito attuale, richiesta solo dal modulo contatti. Ti rispondiamo per iscritto entro 48 ore su cosa impedisce le conversioni, senza impegno.",
     "q4": "Quanto tempo richiede un progetto web?",
     "a4": "Landing page: 1–2 settimane. Siti completi: 4–8 settimane. E-commerce: 6–12 settimane. App mobile: 3–6 mesi in base alla complessità.",
     "q5": "Quali tecnologie utilizzate?",
     "a5": "Next.js, React Native, Tailwind CSS, TypeScript, Supabase e integrazioni AI (OpenAI, Google Vision). Scegliamo lo strumento giusto per ogni progetto, non quello di tendenza.",
     "q6": "Come faccio a iniziare a sviluppare un sito web per la mia attività?",
-    "a6": "Il primo passo è una chiamata gratuita di 15 minuti con il nostro team. Ascoltiamo i tuoi obiettivi, la situazione attuale e il budget — poi prepariamo una proposta chiara entro 48 ore. Non è richiesto alcun impegno in questa fase. Usa il modulo di contatto o scrivici a hello@qc-tech.co.uk.",
+    "a6": "Il primo passo è descriverci il progetto dal modulo contatti: rispondiamo entro 48 ore con una proposta chiara, senza impegno.",
     "q7": "Voglio aprire un'azienda — ho bisogno di un sito web fin dal primo giorno?",
     "a7": "Non necessariamente, ma avere una presenza digitale professionale fin dall'inizio aumenta significativamente la credibilità con potenziali clienti, investitori e partner. Anche una landing page ben costruita con la tua offerta, i contatti e una chiara call to action può generare richieste immediatamente. Possiamo portarti online in 1–2 settimane.",
     "q8": "Qual è la differenza tra un sito web e un'applicazione web?",
@@ -787,7 +787,7 @@
   },
   "FinalCTA": {
     "headline": "Pronto a trasformare il tuo sito in un generatore di clienti?",
-    "subheadline": "Prenota un audit gratuito di 15 minuti. Ti diremo esattamente cosa blocca le conversioni del tuo sito — senza impegno, senza vendite aggressive.",
+    "subheadline": "Richiedi un audit gratuito dal modulo contatti. Ti diremo per iscritto, entro 48 ore, cosa blocca le conversioni del tuo sito — senza impegno.",
     "button": "Prenota il tuo audit gratuito →",
     "note": "Rispondiamo entro 24 ore."
   },

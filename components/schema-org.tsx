@@ -75,7 +75,7 @@ export function SchemaOrg({ locale }: { locale: string }) {
                   name: "Cos'è l'audit gratuito del sito?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "Una chiamata di 15 minuti in cui analizziamo il tuo sito attuale e ti diciamo esattamente cosa impedisce le conversioni, senza impegno.",
+                    text: "L'audit gratuito è un'analisi del tuo sito attuale, richiesta solo dal modulo contatti. Ti rispondiamo per iscritto entro 48 ore su cosa impedisce le conversioni, senza impegno.",
                   },
                 },
               ]
@@ -101,7 +101,7 @@ export function SchemaOrg({ locale }: { locale: string }) {
                   name: "What is a free site audit?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "A 15-minute call where we review your current site and tell you exactly what's stopping it from converting. No strings attached.",
+                    text: "The free website audit is a review of your current site, requested only through the contact form. We reply in writing within 48 hours on what is stopping conversions, with no obligation.",
                   },
                 },
               ],
