@@ -2,13 +2,18 @@ import { matchFaqByKeywords, type KbEntry } from "@/lib/assistant-kb";
 import {
   buildDraftSystemPrompt,
   buildFallbackDraft,
-  extractJsonObject,
-  parseDraftPayload,
+  draftFromModelOutput,
   type AssistantDraft,
 } from "@/lib/assistant-draft";
+import {
+  fallbackFromTriedStatus,
+  logAssistantCall,
+  type AssistantFallbackReason,
+} from "@/lib/assistant-log";
 import { stripCallSuggestions } from "@/lib/assistant-phone";
 import {
   ASSISTANT_LLM_BUDGET_MS,
+  ASSISTANT_LLM_DRAFT_MAX_TOKENS,
   ASSISTANT_LLM_MAX_TOKENS,
   ASSISTANT_LLM_REASONING_MAX_TOKENS,
   ASSISTANT_LLM_TEMPERATURE,
@@ -133,19 +138,6 @@ function keywordOrFallback(locale: string, message: string) {
   return { type: "fallback" as const, answer: "" };
 }
 
-function contentFromChoice(choice: {
-  message?: {
-    content?: string;
-    reasoning?: unknown;
-    reasoning_content?: unknown;
-  };
-}): string {
-  const raw = stripThinkBlocks(
-    typeof choice.message?.content === "string" ? choice.message.content : "",
-  );
-  return toPlainText(raw);
-}
-
 function isReasoningRequiredError(status: number, body: string): boolean {
   if (status !== 400) return false;
   return /reasoning/i.test(body);
@@ -160,6 +152,7 @@ async function callModel(input: {
   timeoutMs: number;
   reasoning: ReasoningSent;
   maxTokens: number;
+  format: "chat" | "draft";
 }): Promise<{
   tried: AssistantTried;
   text: string | null;
@@ -229,7 +222,17 @@ async function callModel(input: {
       data = {};
     }
     const choice = data.choices?.[0];
-    const text = choice ? contentFromChoice(choice) : "";
+    const rawText = choice
+      ? stripThinkBlocks(
+          typeof choice.message?.content === "string"
+            ? choice.message.content
+            : "",
+        )
+      : "";
+    const text =
+      input.format === "draft"
+        ? rawText.trim().slice(0, 8000)
+        : toPlainText(rawText);
     const usedModel = typeof data.model === "string" ? data.model : null;
     const finishReason = choice?.finish_reason ?? null;
     const reasoningTokens =
@@ -356,9 +359,11 @@ export async function runAssistant(
   const userChars = lastUserContent.length;
 
   if (canCallLlm && underDaily) {
+    const kbQuery = conversation.map((turn) => turn.content).join("\n");
     const system = buildAssistantSystemPrompt({
       pageLocale,
       userMessage: message,
+      kbQuery,
     });
     const budgetEnd = Date.now() + ASSISTANT_LLM_BUDGET_MS;
 
@@ -377,6 +382,7 @@ export async function runAssistant(
         timeoutMs: Math.min(ASSISTANT_LLM_TIMEOUT_MS, remaining),
         reasoning: { effort: "none" },
         maxTokens: ASSISTANT_LLM_MAX_TOKENS,
+        format: "chat",
       });
       tried.push(first.tried);
       usedModel = first.usedModel;
@@ -389,11 +395,19 @@ export async function runAssistant(
       if (first.text) {
         const cleaned = stripCallSuggestions(first.text);
         if (cleaned.length > 0) {
+          const latencyMs = Date.now() - started;
+          logAssistantCall({
+            endpoint: "/api/assistant",
+            model: usedModel ?? model,
+            status: first.tried.status,
+            latencyMs,
+            fallback: "none",
+          });
           return {
             type: "ai",
             answer: cleaned,
             tried,
-            latencyMs: Date.now() - started,
+            latencyMs,
             usedModel,
             finishReason,
             contentLength: cleaned.length,
@@ -425,6 +439,7 @@ export async function runAssistant(
             timeoutMs: Math.min(ASSISTANT_LLM_TIMEOUT_MS, left),
             reasoning: { effort: "low", exclude: true },
             maxTokens: ASSISTANT_LLM_REASONING_MAX_TOKENS,
+            format: "chat",
           });
           tried.push(second.tried);
           usedModel = second.usedModel;
@@ -437,11 +452,19 @@ export async function runAssistant(
           if (second.text) {
             const cleaned = stripCallSuggestions(second.text);
             if (cleaned.length > 0) {
+              const latencyMs = Date.now() - started;
+              logAssistantCall({
+                endpoint: "/api/assistant",
+                model: usedModel ?? model,
+                status: second.tried.status,
+                latencyMs,
+                fallback: "none",
+              });
               return {
                 type: "ai",
                 answer: cleaned,
                 tried,
-                latencyMs: Date.now() - started,
+                latencyMs,
                 usedModel,
                 finishReason,
                 contentLength: cleaned.length,
@@ -462,10 +485,19 @@ export async function runAssistant(
   }
 
   const fallback = keywordOrFallback(replyLocale, message);
+  const latencyMs = Date.now() - started;
+  const lastTried = tried[tried.length - 1];
+  logAssistantCall({
+    endpoint: "/api/assistant",
+    model: usedModel ?? lastTried?.model ?? null,
+    status: lastTried?.status ?? "empty",
+    latencyMs,
+    fallback: fallbackFromTriedStatus(lastTried?.status),
+  });
   return {
     ...fallback,
     tried,
-    latencyMs: Date.now() - started,
+    latencyMs,
     usedModel,
     finishReason,
     contentLength,
@@ -482,6 +514,7 @@ export async function runAssistant(
 export type AssistantDraftResult = AssistantDraft & {
   source: "ai" | "fallback";
   tried: AssistantTried[];
+  fallbackReason: AssistantFallbackReason;
 };
 
 export async function runAssistantDraft(input: {
@@ -491,6 +524,7 @@ export async function runAssistantDraft(input: {
   consumeDaily?: boolean;
   dailyMax?: number;
 }): Promise<AssistantDraftResult> {
+  const started = Date.now();
   const pageLocale = input.pageLocale;
   const history = conversationFromHistory(input.history);
   const fallback = buildFallbackDraft(pageLocale, history);
@@ -505,12 +539,31 @@ export async function runAssistantDraft(input: {
   const canCallLlm = Boolean(base && key && models.length > 0);
   const underDaily = !consume || dailyCount(ip) < dailyMax;
 
+  const finish = (
+    result: AssistantDraft,
+    source: "ai" | "fallback",
+    reason: AssistantFallbackReason,
+    model: string | null,
+    status: number | string,
+  ): AssistantDraftResult => {
+    const latencyMs = Date.now() - started;
+    logAssistantCall({
+      endpoint: "/api/assistant/draft",
+      model,
+      status,
+      latencyMs,
+      fallback: source === "ai" ? "none" : reason,
+    });
+    return { ...result, source, tried, fallbackReason: reason };
+  };
+
   if (!canCallLlm || !underDaily || history.length === 0) {
-    return { ...fallback, source: "fallback", tried };
+    return finish(fallback, "fallback", "empty", null, "empty");
   }
 
   const system = buildDraftSystemPrompt(pageLocale);
   const budgetEnd = Date.now() + ASSISTANT_LLM_BUDGET_MS;
+  let lastParse: "empty" | "parse" | "pii" | null = null;
   for (const model of models) {
     const remaining = budgetEnd - Date.now();
     if (remaining < 400) break;
@@ -524,15 +577,34 @@ export async function runAssistantDraft(input: {
       conversation: history,
       timeoutMs: Math.min(ASSISTANT_LLM_TIMEOUT_MS, remaining),
       reasoning: { effort: "none" },
-      maxTokens: ASSISTANT_LLM_MAX_TOKENS,
+      maxTokens: ASSISTANT_LLM_DRAFT_MAX_TOKENS,
+      format: "draft",
     });
     tried.push(first.tried);
     if (first.text) {
-      const parsed = parseDraftPayload(extractJsonObject(first.text));
-      if (parsed) return { ...parsed, source: "ai", tried };
+      const parsed = draftFromModelOutput(first.text, history);
+      if (parsed.draft) {
+        return finish(
+          parsed.draft,
+          "ai",
+          "none",
+          first.usedModel ?? model,
+          first.tried.status,
+        );
+      }
+      lastParse = parsed.reason === "ok" ? "parse" : parsed.reason;
     }
   }
-  return { ...fallback, source: "fallback", tried };
+  const lastTried = tried[tried.length - 1];
+  const reason: AssistantFallbackReason =
+    lastParse ?? fallbackFromTriedStatus(lastTried?.status);
+  return finish(
+    fallback,
+    "fallback",
+    reason === "none" ? "parse" : reason,
+    lastTried?.model ?? null,
+    lastTried?.status ?? "empty",
+  );
 }
 
 export function isPreviewEnv(): boolean {

@@ -1,12 +1,16 @@
 import { createServer, type IncomingMessage, type ServerResponse } from "node:http";
 import {
   buildFallbackDraft,
+  draftFromModelOutput,
   extractJsonObject,
   parseDraftPayload,
   stripPersonalData,
 } from "../lib/assistant-draft";
 import { POST as assistantPost } from "../app/api/assistant/route";
+import { POST as draftPost } from "../app/api/assistant/draft/route";
 import { runAssistantDraft } from "../lib/assistant-engine";
+import { selectRelevantKb } from "../lib/assistant-kb";
+import { ASSISTANT_LLM_BUDGET_MS, ASSISTANT_LLM_TIMEOUT_MS } from "../lib/assistant-prompt";
 
 function assert(condition: boolean, message: string): void {
   if (!condition) throw new Error(message);
@@ -79,6 +83,12 @@ async function main() {
   assert(parseDraftPayload({ topic: "spaceship", message: "Ciao" })?.topic === "other", "bad topic");
   assert(parseDraftPayload({ topic: "web", message: "" }) === null, "empty message");
   assert(extractJsonObject('note {"topic":"mobile","message":"ok"} extra') !== null, "extract json");
+  const fenced = extractJsonObject(
+    'Sure.\n```json\n{ "topic": "web", "message": "Vorrei un sito vetrina." }\n```\n',
+  ) as { topic?: string; message?: string } | null;
+  assert(fenced?.topic === "web", "fenced json topic");
+  assert(ASSISTANT_LLM_TIMEOUT_MS === 20_000, "call timeout 20s");
+  assert(ASSISTANT_LLM_BUDGET_MS === 25_000, "route budget 25s");
 
   const fallback = buildFallbackDraft("it", [
     { role: "user", content: "ho un ristorante a Palermo e vorrei prenotazioni" },
@@ -86,8 +96,38 @@ async function main() {
     { role: "user", content: "no, scrivetemi a x@y.com" },
   ]);
   assert(fallback.topic === "web", `fallback topic ${fallback.topic}`);
-  assert(fallback.message.includes("1.100"), "fallback missing IT price");
+  assert(!fallback.message.includes("e-commerce"), "fallback ecommerce");
+  assert(!fallback.message.includes("1.100"), "fallback invented price");
+  assert(!fallback.message.includes("?."), "fallback dirty punctuation");
   assert(!fallback.message.includes("@"), "fallback leaked email");
+
+  const pricedFallback = buildFallbackDraft("it", [
+    { role: "user", content: "Ho un ristorante a Palermo e vorrei un sito con prenotazioni" },
+    {
+      role: "assistant",
+      content: "Per un ristorante, un sito vetrina da 1.100 € è il punto di partenza.",
+    },
+  ]);
+  assert(pricedFallback.topic === "web", pricedFallback.topic);
+  assert(pricedFallback.message.includes("1.100"), "priced fallback missing 1.100");
+  assert(!pricedFallback.message.includes("e-commerce"), "priced fallback ecommerce");
+
+  const recovered = draftFromModelOutput(
+    "Gestisco un ristorante a Palermo e vorrei un sito vetrina per le prenotazioni.",
+    [{ role: "user", content: "Ho un ristorante a Palermo e vorrei un sito con prenotazioni" }],
+  );
+  assert(recovered.reason === "ok" && recovered.draft?.topic === "web", "prose recovery");
+
+  const kbHits = selectRelevantKb(
+    "it",
+    "Ho un ristorante a Palermo e vorrei un sito con prenotazioni",
+    6,
+  );
+  assert(kbHits.length <= 6, `kb size ${kbHits.length}`);
+  assert(
+    kbHits.some((entry) => entry.id === "a1" || /sito/i.test(entry.question + entry.answer)),
+    "kb missing website",
+  );
 
   const prev = {
     base: process.env.ASSISTANT_BASE_URL,
@@ -95,7 +135,7 @@ async function main() {
     model: process.env.ASSISTANT_MODEL,
   };
 
-  const bad = await startServer("this is not json at all");
+  const bad = await startServer("x");
   process.env.ASSISTANT_BASE_URL = bad.url;
   process.env.ASSISTANT_API_KEY = "test-key";
   process.env.ASSISTANT_MODEL = "mock-model";
@@ -110,7 +150,8 @@ async function main() {
   await bad.close();
   assert(fromBad.source === "fallback", `expected fallback, got ${fromBad.source}`);
   assert(fromBad.topic === "mobile", `expected mobile, got ${fromBad.topic}`);
-  assert(fromBad.message.includes("£6,500"), fromBad.message);
+  assert(fromBad.message.includes("mobile app"), fromBad.message);
+  assert(!fromBad.message.includes("£6,500"), "fallback invented app price");
 
   const good = await startServer(
     '{"topic":"ecommerce","message":"I run a shop and need an online store from the listed starting price."}',
@@ -144,6 +185,25 @@ async function main() {
   assert(offline.source === "fallback", "offline source");
   assert(offline.topic === "web", offline.topic);
 
+  const longMessage = `${"Vorrei un sito vetrina per il ristorante. ".repeat(40)}Grazie.`;
+  const longJson = JSON.stringify({ topic: "web", message: longMessage });
+  assert(longJson.length > 900, "long json fixture");
+  const longServer = await startServer(`\`\`\`json\n${longJson}\n\`\`\``);
+  process.env.ASSISTANT_BASE_URL = longServer.url;
+  process.env.ASSISTANT_API_KEY = "test-key";
+  process.env.ASSISTANT_MODEL = "mock-model";
+  const fromLong = await runAssistantDraft({
+    pageLocale: "it",
+    history: [
+      { role: "user", content: "Ho un ristorante a Palermo e vorrei un sito con prenotazioni" },
+    ],
+    consumeDaily: false,
+  });
+  await longServer.close();
+  assert(fromLong.source === "ai", `long json source ${fromLong.source}`);
+  assert(fromLong.topic === "web", fromLong.topic);
+  assert(fromLong.message.includes("sito vetrina"), fromLong.message);
+
   const post = await assistantPost(
     new Request("http://localhost/api/assistant", {
       method: "POST",
@@ -159,6 +219,22 @@ async function main() {
   assert(body.type === "draft", `route type ${body.type}`);
   assert(typeof body.message === "string" && String(body.message).length > 0, "route message");
   assert(!String(body.message).includes("?draft="), "draft leaked into message as query");
+
+  const draftRoute = await draftPost(
+    new Request("http://localhost/api/assistant/draft", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "x-forwarded-for": "203.0.113.41" },
+      body: JSON.stringify({
+        locale: "it",
+        history: [
+          { role: "user", content: "Ho un ristorante a Palermo e vorrei un sito con prenotazioni" },
+        ],
+      }),
+    }),
+  );
+  const draftBody = (await draftRoute.json()) as Record<string, unknown>;
+  assert(draftBody.type === "draft", `draft route type ${draftBody.type}`);
+  assert(!String(draftBody.message).includes("e-commerce"), "draft route ecommerce");
 
   if (prev.base) process.env.ASSISTANT_BASE_URL = prev.base;
   else delete process.env.ASSISTANT_BASE_URL;

@@ -256,6 +256,52 @@ export function formatAssistantKnowledgeBase(locale: string): string {
     .join("\n\n");
 }
 
+const DEFAULT_KB_IDS: FaqId[] = ["a1", "a4", "k-identity"];
+
+export function selectRelevantKb(
+  locale: string,
+  query: string,
+  limit = 6,
+): KbEntry[] {
+  const kb = getAssistantKb(locale);
+  const hay = normalize(query);
+  if (hay.length < 2) {
+    return kb.filter((entry) => DEFAULT_KB_IDS.includes(entry.id)).slice(0, limit);
+  }
+  const tokens = significantTokens(hay);
+  const costId = costObjectId(hay);
+  const durationIntent = hasDurationIntent(hay);
+  const scored = kb
+    .map((entry) => {
+      const corpus = faqCorpus(entry);
+      const exactQuestion = hay.includes(normalize(entry.question));
+      const strong = strongHits(hay, corpus);
+      const overlap = overlapCount(tokens, corpus);
+      const durationHit = durationIntent && entry.id === "a4";
+      const costHit = costId === entry.id;
+      let score = strong * 8 + overlap * 3;
+      if (exactQuestion) score += 20;
+      if (durationHit) score += 12;
+      if (costHit) score += 12;
+      return { entry, score };
+    })
+    .filter((item) => item.score > 0)
+    .sort((a, b) => b.score - a.score);
+
+  const picked: KbEntry[] = [];
+  const seen = new Set<FaqId>();
+  for (const item of scored) {
+    if (picked.length >= limit) break;
+    if (seen.has(item.entry.id)) continue;
+    seen.add(item.entry.id);
+    picked.push(item.entry);
+  }
+  if (picked.length === 0) {
+    return kb.filter((entry) => DEFAULT_KB_IDS.includes(entry.id)).slice(0, limit);
+  }
+  return picked;
+}
+
 export function getAssistantKb(locale: string): KbEntry[] {
   const isIt = locale !== "en";
   const faq = (isIt ? itMessages : enMessages).FAQ;

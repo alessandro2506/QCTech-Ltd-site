@@ -400,12 +400,11 @@ export function AssistantChat({ open, onClose }: Props) {
     setDraftBusy(true);
     setAiLive("thinking");
     try {
-      const response = await fetch("/api/assistant", {
+      const response = await fetch("/api/assistant/draft", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           locale,
-          mode: "draft",
           history: historyFromLines(linesRef.current),
         }),
       });
@@ -540,7 +539,7 @@ export function AssistantChat({ open, onClose }: Props) {
               onUpdate={() => void requestDraft(true)}
             />
           ))}
-          {busy ? (
+          {busy || draftBusy ? (
             <p className="assistant-bubble assistant-bubble-bot" aria-live="polite">
               {t("writing")}
             </p>

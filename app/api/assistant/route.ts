@@ -6,6 +6,7 @@ import {
   runAssistantDraft,
   withAssistantDebug,
 } from "@/lib/assistant-engine";
+import { logAssistantCall } from "@/lib/assistant-log";
 
 export const runtime = "nodejs";
 export const maxDuration = 30;
@@ -23,6 +24,13 @@ export async function POST(request: Request) {
   const ip = clientIp(request);
 
   if (!allowRate(ip)) {
+    logAssistantCall({
+      endpoint: "/api/assistant",
+      model: null,
+      status: 429,
+      latencyMs: 0,
+      fallback: "429",
+    });
     return NextResponse.json(
       withAssistantDebug({ type: "fallback", answer: "" }, []),
       { status: 429 },
