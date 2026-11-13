@@ -93,7 +93,7 @@ export function ProjectsGrid({
   const items = projects.filter((project) => !excludeIds.includes(project.id));
 
   return (
-    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+    <div className="section-stack grid grid-cols-1 sm:grid-cols-2">
       {items.map((project, index) => (
         <ProjectCard
           key={project.id}

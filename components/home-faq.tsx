@@ -11,7 +11,7 @@ export async function HomeFaq() {
   }));
 
   return (
-    <section className="bg-[var(--light-surface)] py-16 sm:py-20">
+    <section className="section-y bg-[var(--light-surface)]">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <h2 className="text-3xl font-bold tracking-tight text-[var(--light-emphasis)] sm:text-4xl">
           {tHome("title")}

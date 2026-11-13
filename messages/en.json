@@ -39,7 +39,8 @@
   "common": {
     "scrollToTop": "Back to top",
     "quantisOpen": "Open the AI assistant",
-    "quantisFaqLabel": "AI assistant"
+    "quantisFaqLabel": "AI assistant",
+    "quantisFloatBadge": "AI"
   },
   "assistant": {
     "title": "Q.U.A.N.T.I.S · AI assistant",
@@ -175,7 +176,8 @@
     },
     "projects": {
       "title": "Work",
-      "intro": "Sites we have built. Only QuiPalermo is ours.",
+      "intro": "Websites and apps built for our clients, plus QuiPalermo, the platform we developed and run ourselves.",
+      "ownProductBadge": "QC Tech product",
       "allLink": "All projects",
       "visitSite": "Visit the site",
       "tagsLabel": "Tags",

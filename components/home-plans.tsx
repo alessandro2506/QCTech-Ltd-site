@@ -29,7 +29,7 @@ export function HomePlans() {
   return (
     <section
       id="prezzi"
-      className="bg-[var(--light-bg)] py-16 sm:py-20"
+      className="section-y bg-[var(--light-bg)]"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="text-3xl font-bold tracking-tight text-[var(--light-emphasis)] sm:text-4xl">

@@ -261,7 +261,7 @@ export function QuantisFloat({
         <span className="quantis-float-label">{t("quantisFaqLabel")}</span>
       ) : null}
       {placement === "dock" ? (
-        <span className="quantis-float-badge">FAQ</span>
+        <span className="quantis-float-badge">{t("quantisFloatBadge")}</span>
       ) : null}
     </button>
   );

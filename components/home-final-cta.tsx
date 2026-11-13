@@ -9,7 +9,7 @@ export async function HomeFinalCta() {
   const whatsappHref = getWhatsAppHref(locale);
 
   return (
-    <section className="bg-[var(--light-cta-dark)] py-16 sm:py-20">
+    <section className="section-y bg-[var(--light-cta-dark)]">
       <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
         <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
           {t("title")}

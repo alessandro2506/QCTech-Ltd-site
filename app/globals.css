@@ -31,6 +31,49 @@ body {
   font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
 
+/* Vertical rhythm: tighter on mobile only; lg matches former sm:py-20 (80px). */
+.section-y {
+  padding-block: 2.5rem;
+  scroll-margin-top: 6rem;
+}
+
+.section-stack {
+  gap: 1.5rem;
+}
+
+@media (max-width: 639.98px) {
+  .section-stack,
+  .section-y .grid {
+    gap: 1rem;
+  }
+
+  .section-y :is(h1, h2) + :not(p),
+  main h1 + :not(p) {
+    margin-top: 1.5rem;
+  }
+
+  .section-y :is(h1, h2) + p + * {
+    margin-top: 1.5rem;
+  }
+
+  .section-y .svc-list {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .section-y {
+    padding-block: 4rem;
+    scroll-margin-top: 7rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-y {
+    padding-block: 5rem;
+  }
+}
+
 .theme-light :focus-visible {
   outline: 2px solid var(--light-primary);
   outline-offset: 3px;
@@ -196,7 +239,7 @@ body {
   position: relative;
   isolation: isolate;
   background: var(--light-bg);
-  padding: 2.5rem 1rem 4rem;
+  padding: 2.5rem 1rem 2rem;
 }
 
 .hero-aurora {
