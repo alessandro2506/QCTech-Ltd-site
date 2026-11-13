@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
@@ -13,6 +13,11 @@ import {
   formatPlanMessageBlock,
   type PlanForMessage,
 } from "@/lib/format-plan-message";
+import {
+  DRAFT_UPDATED_EVENT,
+  clearAssistantHandoff,
+  readAssistantDraft,
+} from "@/lib/assistant-storage";
 
 type Props = {
   defaultTopic?: string;
@@ -33,6 +38,7 @@ export function ContactForm({
   defaultSection = "",
 }: Props) {
   const t = useTranslations("contactForm");
+  const tAssistant = useTranslations("assistant");
   const tWeb = useTranslations("pricingWeb");
   const tMob = useTranslations("pricingMobile");
   const tEco = useTranslations("pricingEcommerce");
@@ -54,6 +60,31 @@ export function ContactForm({
     "idle",
   );
   const [errorMessage, setErrorMessage] = useState("");
+  const [draftNotice, setDraftNotice] = useState(false);
+
+  function applyStoredDraft() {
+    const stored = readAssistantDraft();
+    if (!stored) {
+      setDraftNotice(false);
+      return;
+    }
+    setTopic(stored.topic);
+    if (topicNeedsPlan(stored.topic)) {
+      setMessageExtra(stored.message);
+      setMessageOther("");
+    } else {
+      setMessageOther(stored.message);
+      setMessageExtra("");
+    }
+    setDraftNotice(true);
+  }
+
+  useEffect(() => {
+    applyStoredDraft();
+    const onUpdate = () => applyStoredDraft();
+    window.addEventListener(DRAFT_UPDATED_EVENT, onUpdate);
+    return () => window.removeEventListener(DRAFT_UPDATED_EVENT, onUpdate);
+  }, []);
 
   const pricingPlans = useMemo((): PlanForMessage[] => {
     if (topic === "web")
@@ -188,6 +219,8 @@ export function ContactForm({
           event_label: "form_contatti",
         });
       }
+      clearAssistantHandoff();
+      setDraftNotice(false);
       setName("");
       setEmail("");
       setMessageExtra("");
@@ -208,6 +241,24 @@ export function ContactForm({
       className="space-y-5"
       onSubmit={onSubmit}
     >
+      {draftNotice ? (
+        <div
+          className="rounded-xl border border-[var(--light-border)] bg-[var(--light-surface)] px-4 py-3 text-sm text-[var(--light-text)]"
+          role="status"
+        >
+          <p>{tAssistant("draftBanner")}</p>
+          <button
+            type="button"
+            className="mt-2 text-sm font-semibold text-[var(--light-primary)] underline"
+            onClick={() => {
+              clearAssistantHandoff();
+              setDraftNotice(false);
+            }}
+          >
+            {tAssistant("draftClear")}
+          </button>
+        </div>
+      ) : null}
       {hasSelectedTopic ? (
         <div
           className="rounded-xl border border-[var(--light-border)] bg-[var(--light-surface)] px-4 py-3 text-sm text-[var(--light-text)]"

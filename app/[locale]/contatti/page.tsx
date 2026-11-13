@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { getTranslations } from "next-intl/server";
 import { buildAlternates } from "@/lib/seo";
 import { Mail, MapPin } from "lucide-react";
@@ -162,12 +163,14 @@ export default async function ContattiPage({
             </a>
           </div>
           <div className="mt-6">
-            <ContactForm
-              defaultTopic={topic ?? ""}
-              defaultPlan={plan ?? ""}
-              initialPlanId={initialPlanId}
-              defaultSection={section ?? ""}
-            />
+            <Suspense fallback={null}>
+              <ContactForm
+                defaultTopic={topic ?? ""}
+                defaultPlan={plan ?? ""}
+                initialPlanId={initialPlanId}
+                defaultSection={section ?? ""}
+              />
+            </Suspense>
           </div>
         </div>
       </div>

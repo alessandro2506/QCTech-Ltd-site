@@ -9,7 +9,16 @@ import {
   emitQuantisAiState,
   type QuantisAiState,
 } from "@/components/quantis-float";
-import { Link } from "@/i18n/routing";
+import { Link, usePathname, useRouter } from "@/i18n/routing";
+import { isContactTopic, type ContactTopic } from "@/lib/contact";
+import {
+  emitDraftUpdated,
+  readAssistantDraft,
+  readAssistantHistory,
+  setAssistantKeepOpen,
+  writeAssistantDraft,
+  writeAssistantHistory,
+} from "@/lib/assistant-storage";
 
 type ChatLine =
   | { kind: "intro" }
@@ -76,6 +85,21 @@ type Props = {
 
 type Offset = { x: number; y: number };
 
+function linesFromHistory(
+  history: { role: "user" | "assistant"; content: string }[],
+): ChatLine[] {
+  const restored: ChatLine[] = [{ kind: "intro" }];
+  for (const turn of history) {
+    if (turn.role === "user") restored.push({ kind: "user", text: turn.content });
+    else restored.push({ kind: "ai", text: turn.content });
+  }
+  return restored;
+}
+
+function isContactsPath(pathname: string): boolean {
+  return pathname === "/contatti" || pathname.endsWith("/contatti") || pathname.includes("/contacts");
+}
+
 function desktopDragEnabled(): boolean {
   return window.matchMedia(
     "(min-width: 1024px) and (hover: hover) and (pointer: fine)",
@@ -107,6 +131,9 @@ function clampPanelOffset(
 export function AssistantChat({ open, onClose }: Props) {
   const locale = useLocale();
   const t = useTranslations("assistant");
+  const router = useRouter();
+  const pathname = usePathname();
+  const onContacts = isContactsPath(pathname);
   const titleId = useId();
   const noticeTitleId = useId();
   const inputRef = useRef<HTMLInputElement>(null);
@@ -132,7 +159,10 @@ export function AssistantChat({ open, onClose }: Props) {
   const [lines, setLines] = useState<ChatLine[]>([{ kind: "intro" }]);
   const [liveState, setLiveState] = useState<QuantisAiState>("idle");
   const [noticeOpen, setNoticeOpen] = useState(false);
+  const [draftBusy, setDraftBusy] = useState(false);
+  const [hasStoredDraft, setHasStoredDraft] = useState(false);
   const liveRef = useRef<QuantisAiState>("idle");
+  const linesRef = useRef<ChatLine[]>([{ kind: "intro" }]);
   const noticeOpenRef = useRef(false);
 
   function setAiLive(next: QuantisAiState) {
@@ -181,6 +211,24 @@ export function AssistantChat({ open, onClose }: Props) {
   useEffect(() => {
     listRef.current?.scrollTo({ top: listRef.current.scrollHeight });
   }, [lines, open]);
+
+  useEffect(() => {
+    const stored = readAssistantHistory();
+    if (stored.length === 0) return;
+    const restored = linesFromHistory(stored);
+    linesRef.current = restored;
+    setLines(restored);
+    setHasStoredDraft(Boolean(readAssistantDraft()));
+  }, []);
+
+  useEffect(() => {
+    linesRef.current = lines;
+    writeAssistantHistory(historyFromLines(lines));
+  }, [lines]);
+
+  useEffect(() => {
+    setHasStoredDraft(Boolean(readAssistantDraft()));
+  }, [open, onContacts]);
 
   useEffect(() => {
     if (!open) return;
@@ -336,10 +384,63 @@ export function AssistantChat({ open, onClose }: Props) {
     }
   }
 
+  async function requestDraft(replaceExisting: boolean) {
+    if (draftBusy) return;
+    if (replaceExisting && readAssistantDraft()) {
+      if (!window.confirm(t("draftReplaceConfirm"))) return;
+    }
+    setDraftBusy(true);
+    setAiLive("thinking");
+    try {
+      const response = await fetch("/api/assistant", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          locale,
+          mode: "draft",
+          history: historyFromLines(linesRef.current),
+        }),
+      });
+      const data: unknown = await response.json();
+      const topicRaw =
+        data && typeof data === "object" && "topic" in data
+          ? String((data as { topic: unknown }).topic)
+          : "other";
+      const message =
+        data && typeof data === "object" && "message" in data
+          ? String((data as { message: unknown }).message ?? "")
+          : "";
+      const topic: ContactTopic = isContactTopic(topicRaw) ? topicRaw : "other";
+      if (!message) {
+        setLines((prev) => [...prev, { kind: "fallback" }]);
+        setAiLive("error");
+        return;
+      }
+      writeAssistantDraft({ topic, message });
+      setHasStoredDraft(true);
+      emitDraftUpdated();
+      const desktop = window.matchMedia("(min-width: 1024px)").matches;
+      if (onContacts) {
+        setAiLive("answered");
+        return;
+      }
+      if (desktop) setAssistantKeepOpen(true);
+      else setAssistantKeepOpen(false);
+      setAiLive("answered");
+      router.push("/contatti");
+      if (!desktop) onClose();
+    } catch {
+      setLines((prev) => [...prev, { kind: "fallback" }]);
+      setAiLive("error");
+    } finally {
+      setDraftBusy(false);
+    }
+  }
+
   if (!open) return null;
 
   return (
-    <div className="assistant-layer">
+    <div className={`assistant-layer${onContacts ? " is-docked" : ""}`}>
       <button
         type="button"
         className="assistant-backdrop"
@@ -415,7 +516,20 @@ export function AssistantChat({ open, onClose }: Props) {
         </header>
         <div ref={listRef} className="assistant-panel-body">
           {lines.map((line, index) => (
-            <ChatBubble key={index} line={line} onClose={onClose} />
+            <ChatBubble
+              key={index}
+              line={line}
+              onClose={onClose}
+              showDraft={
+                !busy &&
+                !draftBusy &&
+                index === lines.length - 1 &&
+                (line.kind === "ai" || line.kind === "faq")
+              }
+              showUpdate={onContacts && hasStoredDraft && !busy && !draftBusy}
+              onDraft={() => void requestDraft(false)}
+              onUpdate={() => void requestDraft(true)}
+            />
           ))}
           {busy ? (
             <p className="assistant-bubble assistant-bubble-bot" aria-live="polite">
@@ -451,6 +565,18 @@ export function AssistantChat({ open, onClose }: Props) {
             {t("send")}
           </button>
         </form>
+        {onContacts && hasStoredDraft ? (
+          <div className="assistant-dock-actions">
+            <button
+              type="button"
+              className="assistant-fallback-btn"
+              onClick={() => void requestDraft(true)}
+              disabled={draftBusy || busy}
+            >
+              {t("draftUpdate")}
+            </button>
+          </div>
+        ) : null}
         <div className="assistant-chips" aria-label={t("chipsLabel")}>
           {chips.map((chip) => (
             <button
@@ -534,9 +660,17 @@ function QuoteCta({ onClose }: { onClose: () => void }) {
 function ChatBubble({
   line,
   onClose,
+  showDraft = false,
+  showUpdate = false,
+  onDraft,
+  onUpdate,
 }: {
   line: ChatLine;
   onClose: () => void;
+  showDraft?: boolean;
+  showUpdate?: boolean;
+  onDraft?: () => void;
+  onUpdate?: () => void;
 }) {
   const t = useTranslations("assistant");
   const locale = useLocale();
@@ -556,6 +690,16 @@ function ChatBubble({
           <p>{line.text}</p>
           <p className="assistant-source">{t("sourceAi")}</p>
           <div className="assistant-fallback-actions">
+            {showDraft ? (
+              <button type="button" className="assistant-draft-btn" onClick={onDraft}>
+                {t("draftCta")}
+              </button>
+            ) : null}
+            {showUpdate ? (
+              <button type="button" className="assistant-fallback-btn" onClick={onUpdate}>
+                {t("draftUpdate")}
+              </button>
+            ) : null}
             <QuoteCta onClose={onClose} />
           </div>
         </div>
@@ -567,6 +711,16 @@ function ChatBubble({
           <p>{line.entry.answer}</p>
           <p className="assistant-source">{t("sourceFaq")}</p>
           <div className="assistant-fallback-actions">
+            {showDraft ? (
+              <button type="button" className="assistant-draft-btn" onClick={onDraft}>
+                {t("draftCta")}
+              </button>
+            ) : null}
+            {showUpdate ? (
+              <button type="button" className="assistant-fallback-btn" onClick={onUpdate}>
+                {t("draftUpdate")}
+              </button>
+            ) : null}
             <QuoteCta onClose={onClose} />
           </div>
         </div>
