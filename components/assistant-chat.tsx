@@ -391,18 +391,6 @@ export function AssistantChat({ open, onClose }: Props) {
             </p>
           ) : null}
         </div>
-        <div className="assistant-chips" aria-label={t("chipsLabel")}>
-          {chips.map((chip) => (
-            <button
-              key={chip.id}
-              type="button"
-              className="assistant-chip"
-              onClick={() => void ask(chip.question)}
-            >
-              {chip.question}
-            </button>
-          ))}
-        </div>
         <form
           className="assistant-form"
           onSubmit={(event) => {
@@ -431,6 +419,18 @@ export function AssistantChat({ open, onClose }: Props) {
             {t("send")}
           </button>
         </form>
+        <div className="assistant-chips" aria-label={t("chipsLabel")}>
+          {chips.map((chip) => (
+            <button
+              key={chip.id}
+              type="button"
+              className="assistant-chip"
+              onClick={() => void ask(chip.question)}
+            >
+              {chip.question}
+            </button>
+          ))}
+        </div>
         <p className="assistant-panel-foot">
           {t("notice")}
         </p>

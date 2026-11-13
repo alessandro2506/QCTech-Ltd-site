@@ -1313,7 +1313,8 @@ body {
   display: flex;
   flex-direction: column;
   width: min(380px, calc(100vw - 32px));
-  max-height: min(520px, calc(100dvh - 120px));
+  height: min(520px, 75dvh);
+  max-height: 75dvh;
   right: 16px;
   bottom: calc(76px + env(safe-area-inset-bottom, 0px));
   overflow: visible;
@@ -1339,6 +1340,7 @@ body {
 
 .assistant-panel-head {
   display: flex;
+  flex: 0 0 auto;
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
@@ -1366,10 +1368,10 @@ body {
 
 .assistant-panel-body {
   display: flex;
-  flex: 1;
+  flex: 1 1 auto;
   flex-direction: column;
   gap: 0.65rem;
-  min-height: 160px;
+  min-height: 0;
   overflow: auto;
   padding: 12px 14px;
 }
@@ -1453,13 +1455,19 @@ body {
 
 .assistant-chips {
   display: flex;
-  flex-wrap: wrap;
+  flex: 0 0 auto;
+  flex-wrap: nowrap;
   gap: 0.4rem;
+  max-height: 44px;
+  overflow-x: auto;
+  overflow-y: hidden;
   padding: 0 14px 8px;
+  scrollbar-width: thin;
 }
 
 .assistant-chip {
-  max-width: 100%;
+  flex: 0 0 auto;
+  max-width: 16rem;
   padding: 0.3rem 0.65rem;
   overflow: hidden;
   border: 1px solid var(--light-border);
@@ -1476,8 +1484,9 @@ body {
 
 .assistant-form {
   display: flex;
+  flex: 0 0 auto;
   gap: 0.4rem;
-  padding: 0 14px 14px;
+  padding: 8px 14px 8px;
 }
 
 .assistant-form input {
@@ -1510,6 +1519,7 @@ body {
 }
 
 .assistant-panel-foot {
+  flex: 0 0 auto;
   margin: 0;
   padding: 0 14px 4px;
   color: var(--light-text-muted);
@@ -1545,6 +1555,7 @@ body {
     top: 92px;
     right: max(24px, calc(50vw - 700px + 24px));
     bottom: auto;
+    height: min(560px, calc(100dvh - 120px));
     max-height: min(560px, calc(100dvh - 120px));
   }
 
