@@ -698,7 +698,11 @@
     "title": "Digital Growth Blog",
     "subtitle": "Practical guides on web, apps, SEO and digital strategy for UK and international businesses.",
     "empty": "No articles yet — check back soon.",
-    "readMore": "Read article"
+    "readMore": "Read article",
+    "furtherReading": "Further reading",
+    "relatedPosts": "Related articles",
+    "relatedService": "See the related service",
+    "allArticles": "All articles"
   },
   "apiErrors": {
     "config": "Email not configured. Set SMTP_USER, SMTP_PASS, CONTACT_TO_EMAIL, SMTP_NOREPLY_USER and SMTP_NOREPLY_PASS.",

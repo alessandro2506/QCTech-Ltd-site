@@ -1,7 +1,10 @@
 import { getAllPosts, getBlogHreflang, getPostBySlug } from "@/lib/blog";
 import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import type { Metadata } from "next";
+import { RelatedReading } from "@/components/related-reading";
+import { relatedPostsForSlug, themeForSlug } from "@/lib/related-posts";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
@@ -48,6 +51,7 @@ export default async function BlogPostPage({ params }: Props) {
   const { locale, slug } = await params;
   const post = getPostBySlug(slug, locale);
   if (!post) notFound();
+  const tBlog = await getTranslations("blog");
 
   const paragraphs = post.content
     .split(/\n\n+/)
@@ -252,6 +256,14 @@ export default async function BlogPostPage({ params }: Props) {
           {locale === "it" ? "Richiedi un audit gratuito →" : "Get a free audit →"}
         </Link>
       </div>
+
+      <RelatedReading
+        title={tBlog("relatedPosts")}
+        posts={relatedPostsForSlug(locale, slug)}
+        locale={locale}
+        serviceLabel={tBlog("relatedService")}
+        serviceTheme={themeForSlug(slug)}
+      />
     </article>
   );
 }
