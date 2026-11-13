@@ -42,8 +42,8 @@
     "quantisFaqLabel": "FAQ assistant"
   },
   "assistant": {
-    "title": "Q.U.A.N.TI.S · FAQ assistant",
-    "intro": "Hi, I'm Q.U.A.N.TI.S, your AI assistant. Ask me about websites, apps, prices and timelines. Please don't enter personal data.",
+    "title": "Q.U.A.N.T.I.S · FAQ assistant",
+    "intro": "Hi, I'm Q.U.A.N.T.I.S, your AI assistant. Ask me about websites, apps, prices and timelines. Please don't enter personal data.",
     "privacy": "Privacy policy",
     "placeholder": "Type a question…",
     "send": "Send",

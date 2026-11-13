@@ -1,4 +1,5 @@
 import { matchFaqByKeywords, type KbEntry } from "@/lib/assistant-kb";
+import { stripCallSuggestions } from "@/lib/assistant-phone";
 import {
   ASSISTANT_LLM_BUDGET_MS,
   ASSISTANT_LLM_MAX_TOKENS,
@@ -378,22 +379,26 @@ export async function runAssistant(
       reasoningTokens = first.reasoningTokens;
       promptTokens = first.promptTokens;
       if (first.text) {
-        return {
-          type: "ai",
-          answer: first.text,
-          tried,
-          latencyMs: Date.now() - started,
-          usedModel,
-          finishReason,
-          contentLength,
-          error,
-          replyLocale,
-          reasoningSent,
-          reasoningTokens,
-          promptTokens,
-          userChars,
-          lastUserContent,
-        };
+        const cleaned = stripCallSuggestions(first.text);
+        if (cleaned.length > 0) {
+          return {
+            type: "ai",
+            answer: cleaned,
+            tried,
+            latencyMs: Date.now() - started,
+            usedModel,
+            finishReason,
+            contentLength: cleaned.length,
+            error,
+            replyLocale,
+            reasoningSent,
+            reasoningTokens,
+            promptTokens,
+            userChars,
+            lastUserContent,
+          };
+        }
+        break;
       }
 
       const reasoningRetry =
@@ -422,22 +427,26 @@ export async function runAssistant(
           reasoningTokens = second.reasoningTokens;
           promptTokens = second.promptTokens;
           if (second.text) {
-            return {
-              type: "ai",
-              answer: second.text,
-              tried,
-              latencyMs: Date.now() - started,
-              usedModel,
-              finishReason,
-              contentLength,
-              error,
-              replyLocale,
-              reasoningSent,
-              reasoningTokens,
-              promptTokens,
-              userChars,
-              lastUserContent,
-            };
+            const cleaned = stripCallSuggestions(second.text);
+            if (cleaned.length > 0) {
+              return {
+                type: "ai",
+                answer: cleaned,
+                tried,
+                latencyMs: Date.now() - started,
+                usedModel,
+                finishReason,
+                contentLength: cleaned.length,
+                error,
+                replyLocale,
+                reasoningSent,
+                reasoningTokens,
+                promptTokens,
+                userChars,
+                lastUserContent,
+              };
+            }
+            break;
           }
         }
       }

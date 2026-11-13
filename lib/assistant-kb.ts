@@ -209,7 +209,7 @@ const EXTRA_IT: Record<
   "k-identity": {
     question: "Come ti chiami?",
     answer:
-      "Sono Q.U.A.N.TI.S, l'assistente AI di Quantum Code Technologies Ltd (QC Tech).",
+      "Sono Q.U.A.N.T.I.S, l'assistente AI di Quantum Code Technologies Ltd (QC Tech).",
     keywords: ["come ti chiami", "chi sei", "tuo nome", "chi e quantis"],
   },
 };
@@ -237,8 +237,22 @@ const EXTRA_EN: typeof EXTRA_IT = {
   "k-identity": {
     question: "What's your name?",
     answer:
-      "I'm Q.U.A.N.TI.S, the AI assistant of Quantum Code Technologies Ltd (QC Tech).",
+      "I'm Q.U.A.N.T.I.S, the AI assistant of Quantum Code Technologies Ltd (QC Tech).",
     keywords: ["what's your name", "what is your name", "who are you", "your name"],
+  },
+};
+
+const ASSISTANT_FAQ_ANSWER_OVERRIDES: Record<
+  "it" | "en",
+  Partial<Record<FaqId, string>>
+> = {
+  it: {
+    a3: "In 15 minuti analizziamo il tuo sito attuale e ti diciamo esattamente cosa impedisce le conversioni. Senza impegno. Prenota tramite il modulo contatti.",
+    a6: "Il primo passo è descriverci il progetto dal modulo contatti: rispondiamo entro 48 ore con una proposta chiara, senza impegno.",
+  },
+  en: {
+    a3: "In 15 minutes we review your current site and tell you exactly what is stopping conversions. No strings attached. Book via the contact form.",
+    a6: "The first step is to describe your project through the contact form: we reply within 48 hours with a clear proposal, with no obligation.",
   },
 };
 
@@ -262,6 +276,9 @@ export function getAssistantKb(locale: string): KbEntry[] {
   const prices = isIt ? PRICE_IT : PRICE_EN;
   const keywords = isIt ? FAQ_KEYWORDS_IT : FAQ_KEYWORDS_EN;
 
+  const overrides = isIt
+    ? ASSISTANT_FAQ_ANSWER_OVERRIDES.it
+    : ASSISTANT_FAQ_ANSWER_OVERRIDES.en;
   const pageFaqs: KbEntry[] = FAQ_IDS.filter(isFaqPageId).map((id) => {
     const n = id.slice(1);
     const questionKey = `q${n}` as keyof typeof faq;
@@ -269,7 +286,7 @@ export function getAssistantKb(locale: string): KbEntry[] {
     return {
       id,
       question: String(faq[questionKey]),
-      answer: String(faq[answerKey]),
+      answer: overrides[id] ?? String(faq[answerKey]),
       keywords: keywords[id as keyof typeof FAQ_KEYWORDS_IT],
     };
   });
