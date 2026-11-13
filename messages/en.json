@@ -38,11 +38,11 @@
   },
   "common": {
     "scrollToTop": "Back to top",
-    "quantisOpen": "Open the FAQ assistant",
-    "quantisFaqLabel": "FAQ assistant"
+    "quantisOpen": "Open the AI assistant",
+    "quantisFaqLabel": "AI assistant"
   },
   "assistant": {
-    "title": "Q.U.A.N.T.I.S · FAQ assistant",
+    "title": "Q.U.A.N.T.I.S · AI assistant",
     "intro": "Hi, I'm Q.U.A.N.T.I.S, your AI assistant. Ask me about websites, apps, prices and timelines. Please don't enter personal data.",
     "privacy": "Privacy",
     "placeholder": "Type a question…",
@@ -791,7 +791,7 @@
   "FinalCTA": {
     "headline": "Ready to turn your site into a client machine?",
     "subheadline": "Request a free website audit through the contact form. We'll tell you in writing, within 48 hours, what's holding your site back — no commitment.",
-    "button": "Book your free audit →",
+    "button": "Request your free audit",
     "note": "We respond within 24 hours."
   },
   "Vision": {

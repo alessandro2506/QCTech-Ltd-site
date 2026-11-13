@@ -7,13 +7,18 @@ const PHONE_NUMBER =
 function splitSentences(text: string): string[] {
   const parts: string[] = [];
   let buffer = "";
-  for (const char of text) {
+  for (let i = 0; i < text.length; i += 1) {
+    const char = text[i];
     buffer += char;
-    if (char === "." || char === "!" || char === "?") {
-      const trimmed = buffer.trim();
-      if (trimmed) parts.push(trimmed);
-      buffer = "";
+    if (char !== "." && char !== "!" && char !== "?") continue;
+    if (char === ".") {
+      const prev = text[i - 1];
+      const next = text[i + 1];
+      if (prev && next && /\d/.test(prev) && /\d/.test(next)) continue;
     }
+    const trimmed = buffer.trim();
+    if (trimmed) parts.push(trimmed);
+    buffer = "";
   }
   const leftover = buffer.trim();
   if (leftover) parts.push(leftover);

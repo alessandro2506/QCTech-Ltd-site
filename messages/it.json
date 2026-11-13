@@ -38,11 +38,11 @@
   },
   "common": {
     "scrollToTop": "Torna in cima",
-    "quantisOpen": "Apri l'assistente FAQ",
-    "quantisFaqLabel": "Assistente FAQ"
+    "quantisOpen": "Apri l'assistente AI",
+    "quantisFaqLabel": "Assistente AI"
   },
   "assistant": {
-    "title": "Q.U.A.N.T.I.S · Assistente FAQ",
+    "title": "Q.U.A.N.T.I.S · Assistente AI",
     "intro": "Ciao, sono Q.U.A.N.T.I.S, il tuo assistente AI. Chiedimi di siti web, app, prezzi e tempi: rispondo io. Non inserire dati personali.",
     "privacy": "Privacy",
     "placeholder": "Scrivi una domanda…",
@@ -791,7 +791,7 @@
   "FinalCTA": {
     "headline": "Pronto a trasformare il tuo sito in un generatore di clienti?",
     "subheadline": "Richiedi un audit gratuito dal modulo contatti. Ti diremo per iscritto, entro 48 ore, cosa blocca le conversioni del tuo sito — senza impegno.",
-    "button": "Prenota il tuo audit gratuito →",
+    "button": "Richiedi il tuo audit gratuito",
     "note": "Rispondiamo entro 24 ore."
   },
   "Vision": {

@@ -72,6 +72,14 @@ async function main() {
       "The offering starts from £90 a month.",
     "offering must not match ring",
   );
+  assert(
+    stripCallSuggestions("da 1.100 € e 9.500 €") === "da 1.100 € e 9.500 €",
+    "thousand separators must stay intact",
+  );
+  assert(
+    stripCallSuggestions("Chiamaci al numero. Poi scrivici.") === "Poi scrivici.",
+    "call sentence must still be removed",
+  );
 
   const a6it = getAssistantKb("it").find((entry) => entry.id === "a6")?.answer ?? "";
   const a3it = getAssistantKb("it").find((entry) => entry.id === "a3")?.answer ?? "";

@@ -1542,7 +1542,11 @@ body {
   overflow-x: auto;
   overflow-y: hidden;
   padding: 0 14px 8px;
-  scrollbar-width: thin;
+  scrollbar-width: none;
+}
+
+.assistant-chips::-webkit-scrollbar {
+  display: none;
 }
 
 .assistant-chip {
