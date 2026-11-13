@@ -78,7 +78,7 @@ export default async function BlogPostPage({ params }: Props) {
       {/* Back */}
       <Link
         href="/blog"
-        className="mb-8 inline-flex items-center gap-1 text-sm font-medium text-slate-500 transition-colors hover:text-violet-400"
+        className="mb-8 inline-flex items-center gap-1 text-sm font-medium text-[var(--light-text-muted)] transition-colors hover:text-[var(--light-primary)]"
       >
         ← Blog
       </Link>
@@ -88,7 +88,7 @@ export default async function BlogPostPage({ params }: Props) {
         {post.tags.map((tag) => (
           <span
             key={tag}
-            className="rounded-full bg-violet-500/15 px-3 py-0.5 text-xs font-medium text-violet-300"
+            className="rounded-full bg-[var(--light-surface)] px-3 py-0.5 text-xs font-medium text-[var(--light-primary)]"
           >
             {tag}
           </span>
@@ -96,12 +96,12 @@ export default async function BlogPostPage({ params }: Props) {
       </div>
 
       {/* Title */}
-      <h1 className="mt-4 text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl">
+      <h1 className="mt-4 text-3xl font-bold leading-tight tracking-tight text-[var(--light-emphasis)] sm:text-4xl">
         {post.title}
       </h1>
 
       {/* Meta */}
-      <div className="mt-4 flex flex-wrap items-center gap-3 border-b border-violet-500/10 pb-6 text-sm text-slate-500">
+      <div className="mt-4 flex flex-wrap items-center gap-3 border-b border-[var(--light-border)] pb-6 text-sm text-[var(--light-text-muted)]">
         <span>{post.author || "QC Tech"}</span>
         {post.authorRole && (
           <>
@@ -116,35 +116,35 @@ export default async function BlogPostPage({ params }: Props) {
       </div>
 
       {/* Content */}
-      <div className="mt-8 space-y-5 leading-relaxed text-slate-300">
+      <div className="mt-8 space-y-5 leading-relaxed text-[var(--light-text)]">
         {paragraphs.map((block, i) => {
           if (block.startsWith("# ")) {
             return (
-              <h2 key={i} className="mt-10 mb-2 text-2xl font-bold text-white">
+              <h2 key={i} className="mt-10 mb-2 text-2xl font-bold text-[var(--light-emphasis)]">
                 {block.replace(/^# /, "")}
               </h2>
             );
           }
           if (block.startsWith("## ")) {
             return (
-              <h3 key={i} className="mt-8 mb-2 text-xl font-bold text-white">
+              <h3 key={i} className="mt-8 mb-2 text-xl font-bold text-[var(--light-emphasis)]">
                 {block.replace(/^## /, "")}
               </h3>
             );
           }
           if (block.startsWith("### ")) {
             return (
-              <h4 key={i} className="mt-6 mb-1 text-lg font-semibold text-slate-100">
+              <h4 key={i} className="mt-6 mb-1 text-lg font-semibold text-[var(--light-text)]">
                 {block.replace(/^### /, "")}
               </h4>
             );
           }
           if (block === "---") {
-            return <hr key={i} className="my-8 border-violet-500/15" />;
+            return <hr key={i} className="my-8 border-[var(--light-border)]" />;
           }
           if (block.split("\n").every((l) => l.startsWith("- "))) {
             return (
-              <ul key={i} className="list-inside list-disc space-y-1 text-slate-400">
+              <ul key={i} className="list-inside list-disc space-y-1 text-[var(--light-text-muted)]">
                 {block.split("\n").map((line, j) => (
                   <li key={j}>{line.replace(/^- /, "")}</li>
                 ))}
@@ -165,11 +165,11 @@ export default async function BlogPostPage({ params }: Props) {
               <div key={i} className="my-4 overflow-x-auto">
                 <table className="w-full border-collapse text-sm">
                   <thead>
-                    <tr className="bg-violet-500/10">
+                    <tr className="bg-[var(--light-surface)]">
                       {cells(head).map((c, j) => (
                         <th
                           key={j}
-                          className="border border-violet-500/15 px-4 py-2 text-left font-semibold text-slate-200"
+                          className="border border-[var(--light-border)] px-4 py-2 text-left font-semibold text-[var(--light-text)]"
                         >
                           {c}
                         </th>
@@ -178,11 +178,11 @@ export default async function BlogPostPage({ params }: Props) {
                   </thead>
                   <tbody>
                     {body.map((row, j) => (
-                      <tr key={j} className={j % 2 === 0 ? "bg-transparent" : "bg-white/3"}>
+                      <tr key={j} className={j % 2 === 0 ? "bg-transparent" : "bg-[var(--light-surface)]"}>
                         {cells(row).map((c, k) => (
                           <td
                             key={k}
-                            className="border border-violet-500/10 px-4 py-2 text-slate-400"
+                            className="border border-[var(--light-border)] px-4 py-2 text-[var(--light-text-muted)]"
                           >
                             {c}
                           </td>
@@ -198,7 +198,7 @@ export default async function BlogPostPage({ params }: Props) {
             return (
               <blockquote
                 key={i}
-                className="rounded-r-lg border-l-4 border-cyan-500/50 bg-cyan-500/8 px-4 py-3 italic text-slate-400"
+                className="rounded-r-lg border-l-4 border-[var(--light-primary)] bg-[var(--light-surface)] px-4 py-3 italic text-[var(--light-text-muted)]"
               >
                 {block.replace(/^> /gm, "")}
               </blockquote>
@@ -206,11 +206,11 @@ export default async function BlogPostPage({ params }: Props) {
           }
           const html = block
             .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-            .replace(/`(.+?)`/g, '<code class="bg-white/10 px-1 rounded text-sm text-cyan-300">$1</code>');
+            .replace(/`(.+?)`/g, '<code class="rounded bg-[var(--light-surface)] px-1 text-sm text-[var(--light-primary)]">$1</code>');
           return (
             <p
               key={i}
-              className="text-base text-slate-300"
+              className="text-base text-[var(--light-text)]"
               dangerouslySetInnerHTML={{ __html: html }}
             />
           );
@@ -218,16 +218,16 @@ export default async function BlogPostPage({ params }: Props) {
       </div>
 
       {/* CTA bottom */}
-      <div className="mt-16 rounded-2xl border border-violet-500/25 bg-gradient-to-br from-violet-600/10 via-transparent to-cyan-500/8 p-8 text-center">
-        <p className="text-lg font-semibold text-white">
+      <div className="mt-16 rounded-2xl border border-[var(--light-border)] bg-[var(--light-surface)] p-8 text-center">
+        <p className="text-lg font-semibold text-[var(--light-emphasis)]">
           {locale === "it" ? "Hai bisogno di supporto per la tua presenza digitale?" : "Need help with your digital presence?"}
         </p>
-        <p className="mt-2 text-slate-400">
+        <p className="mt-2 text-[var(--light-text-muted)]">
           {locale === "it" ? "Audit gratuito del sito — rispondiamo entro un giorno lavorativo." : "Free site audit — we reply within one business day."}
         </p>
         <Link
           href="/contatti"
-          className="mt-6 inline-flex rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-violet-500/25 transition hover:brightness-110"
+          className="mt-6 inline-flex rounded-full bg-[var(--light-primary)] px-8 py-3.5 text-sm font-semibold text-white transition hover:brightness-110"
         >
           {locale === "it" ? "Richiedi un audit gratuito →" : "Get a free audit →"}
         </Link>

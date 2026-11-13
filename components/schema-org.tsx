@@ -59,7 +59,7 @@ export function SchemaOrg({ locale }: { locale: string }) {
                   name: "Quanto costa un sito web?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "I nostri siti partono da £900 per una landing page fino a £25.000+ per una piattaforma corporate completa.",
+                    text: "I nostri siti partono da 1.100 € per una landing page, da 1.700 € per un sito vetrina, da 9.500 € per un sito corporate. Ogni progetto riceve un preventivo personalizzato.",
                   },
                 },
                 {
@@ -75,7 +75,7 @@ export function SchemaOrg({ locale }: { locale: string }) {
                   name: "Cos'è l'audit gratuito del sito?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "Una chiamata di 15 minuti in cui analizziamo il tuo sito attuale e ti diciamo esattamente cosa impedisce le conversioni, senza impegno.",
+                    text: "L'audit gratuito è un'analisi del tuo sito attuale, richiesta solo dal modulo contatti. Ti rispondiamo per iscritto entro 48 ore su cosa impedisce le conversioni, senza impegno.",
                   },
                 },
               ]
@@ -85,7 +85,7 @@ export function SchemaOrg({ locale }: { locale: string }) {
                   name: "How much does a website cost?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "Our websites start from £900 for a landing page up to £25,000+ for a full corporate platform. We also serve Italian clients with pricing in EUR.",
+                    text: "Our websites start from £900 for a landing page, from £1,400 for a business website, from £8,000 for a corporate platform. Every project gets a personalised quote.",
                   },
                 },
                 {
@@ -101,7 +101,7 @@ export function SchemaOrg({ locale }: { locale: string }) {
                   name: "What is a free site audit?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "A 15-minute call where we review your current site and tell you exactly what's stopping it from converting. No strings attached.",
+                    text: "The free website audit is a review of your current site, requested only through the contact form. We reply in writing within 48 hours on what is stopping conversions, with no obligation.",
                   },
                 },
               ],

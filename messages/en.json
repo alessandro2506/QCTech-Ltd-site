@@ -3,11 +3,11 @@
     "defaultTitle": "QC Tech — Web, E-commerce & Mobile",
     "defaultDescription": "The digital studio based in the UK, built to work globally.",
     "servicesTitle": "Services",
-    "servicesDescription": "Websites, mobile apps, cloud and SEO focused on ROI for UK and Italian clients.",
+    "servicesDescription": "Websites, mobile apps and SEO focused on ROI for UK and Italian clients.",
     "visionTitle": "Vision",
     "visionDescription": "Technical scalability, evolving architectures and product roadmap for QC Tech.",
     "contactsTitle": "Contact",
-    "contactsDescription": "Request a quote or an intro call with Quantum Code Technologies Ltd."
+    "contactsDescription": "Request a quote or a free website audit from Quantum Code Technologies Ltd."
   },
   "nav": {
     "home": "Home",
@@ -30,42 +30,256 @@
   },
   "footer": {
     "navLabel": "Footer",
-    "legal": "© 2026 Quantum Code Technologies Ltd."
+    "legal": "© 2026 Quantum Code Technologies Ltd.",
+    "companyNo": "Company No. 17317573",
+    "registered": "Registered in the United Kingdom",
+    "ico": "ICO registration ZC288640",
+    "terms": "Terms & Conditions"
   },
   "common": {
-    "scrollToTop": "Back to top"
+    "scrollToTop": "Back to top",
+    "quantisOpen": "Open the AI assistant",
+    "quantisFaqLabel": "AI assistant"
+  },
+  "assistant": {
+    "title": "Q.U.A.N.T.I.S · AI assistant",
+    "intro": "Hi, I'm Q.U.A.N.T.I.S, your AI assistant. Ask me about websites, apps, prices and timelines. Please don't enter personal data.",
+    "privacy": "Privacy",
+    "placeholder": "Type a question…",
+    "send": "Send",
+    "close": "Close assistant",
+    "fallback": "I don’t have a reliable answer",
+    "whatsapp": "Message us on WhatsApp",
+    "contacts": "Go to contact",
+    "quote": "Request a quote",
+    "tooLong": "Messages can be at most 300 characters.",
+    "chipsLabel": "Frequent questions",
+    "aiNoticeTitle": "AI and privacy",
+    "aiNoticeBody": "This chat is AI-powered for faster assistance. Please don't share personal data.",
+    "aiNoticeAck": "Got it",
+    "aiNoticeClose": "Close notice",
+    "aiNoticeLink": "AI notice",
+    "sourceAi": "AI-generated answer",
+    "sourceFaq": "From the FAQ",
+    "writing": "Writing…",
+    "statusListening": "Waiting",
+    "statusThinking": "Writing…",
+    "statusAnswered": "Answer ready",
+    "statusError": "No useful answer",
+    "statusClosed": "Chat closed"
   },
   "hero": {
-    "headlineBefore": "The UK–Italy Digital Studio",
-    "headlineAccent": "that turns visitors into clients",
-    "sub": "We build websites, e-commerce and mobile apps for businesses that want to grow — wherever they are.",
-    "legalLine": "Quantum Code Technologies Ltd — UK digital studio",
-    "ctaPrimary": "Get a free site audit",
-    "ctaSecondary": "See our services",
-    "ctaPlans": "View plans",
-    "trust": "SSL, SEO best practices and cloud-ready architectures."
+    "headline": "Websites and apps built to bring you customers",
+    "headlineLead": "Websites and apps",
+    "headlineEmphasis": "built to bring you customers",
+    "ctaPrimary": "Request a quote",
+    "ctaSecondary": "See our work",
+    "availability": "Taking on new projects · We reply within 48 hours",
+    "chipsLabel": "Use cases",
+    "chips": [
+      {
+        "id": "web",
+        "label": "Website",
+        "support": "Landing, brochure or corporate: a clear site that explains who you are and asks for the right action."
+      },
+      {
+        "id": "restyle",
+        "label": "Restyle",
+        "support": "We refresh the site you already have — structure, copy and look — without starting from scratch."
+      },
+      {
+        "id": "ecommerce",
+        "label": "E-commerce",
+        "support": "Catalogue, payments and checkout built to sell, not just to display products."
+      },
+      {
+        "id": "app",
+        "label": "Mobile app",
+        "support": "An iOS and Android app from MVP to a live product, with one team."
+      },
+      {
+        "id": "webapp",
+        "label": "Web app",
+        "support": "Portals and tools for your team or your customers, shaped around how you work."
+      },
+      {
+        "id": "seo",
+        "label": "Google and AI",
+        "support": "Base SEO, with AEO and GEO only as add-ons alongside it — no promise of appearing in AI answers."
+      }
+    ]
   },
   "home": {
-    "valueCards": [
-      {
-        "title": "High-converting web & landing pages",
-        "body": "Core Web Vitals, technical SEO and clear messaging for UK/IT markets."
-      },
-      {
-        "title": "Native-quality apps, one team",
-        "body": "React Native and Flutter with release pipelines and store readiness."
-      },
-      {
-        "title": "Data that guides spend",
-        "body": "Event tracking, funnels and readable reports for commercial decisions."
+    "services": {
+      "title": "Services",
+      "intro": "Seven lines of work, with starting prices. Every quote is tailored.",
+      "cursor": "Discover →",
+      "rows": [
+        {
+          "id": "web",
+          "title": "Websites",
+          "description": "Landing, brochure, brochure pro or corporate — from a first page to a full site.",
+          "fromPrice": "from £900",
+          "previewAlt": "Website example",
+          "tags": ["Landing", "Business site", "Corporate"]
+        },
+        {
+          "id": "restyle",
+          "title": "Website restyle",
+          "description": "A redesign of the site you already have: content, structure and look.",
+          "fromPrice": "from £1,400",
+          "previewAlt": "Before and after restyle example",
+          "tags": ["New design", "Reworked structure", "Updated content"]
+        },
+        {
+          "id": "ecommerce",
+          "title": "E-commerce",
+          "description": "Custom stores, catalogue and checkout. Base or Advanced depending on the catalogue.",
+          "fromPrice": "from £3,200",
+          "previewAlt": "Online store example",
+          "tags": ["Catalogue", "Checkout", "Base or Advanced"]
+        },
+        {
+          "id": "app",
+          "title": "Mobile apps",
+          "description": "MVP or standard apps for iOS and Android, delivered by one team.",
+          "fromPrice": "from £6,500",
+          "previewAlt": "App screens example",
+          "tags": ["iOS", "Android", "MVP or Standard"]
+        },
+        {
+          "id": "webapp",
+          "title": "Web apps and portals",
+          "description": "Bespoke tools and portals. Scope and price are set in the quote.",
+          "fromPrice": "from £8,000",
+          "previewAlt": "Dashboard example",
+          "tags": ["Portals", "Custom tools", "MVP"]
+        },
+        {
+          "id": "seo",
+          "title": "Visibility on Google and AI",
+          "description": "Monthly SEO Base. AEO and GEO only as add-ons alongside SEO, with no guarantee of appearing in AI answers.",
+          "fromPrice": "SEO Base from £500/month",
+          "previewAlt": "Search visibility example",
+          "tags": ["SEO Base", "AEO (add-on)", "GEO (add-on)"]
+        },
+        {
+          "id": "maintenance",
+          "title": "Website maintenance",
+          "description": "Monthly plan: security updates, monitoring, content changes and bug fixes.",
+          "fromPrice": "from £90/month",
+          "previewAlt": "Maintenance panel example",
+          "tags": ["Security updates", "Monitoring", "Bug fixes"]
+        }
+      ]
+    },
+    "projects": {
+      "title": "Work",
+      "intro": "Sites we have built. Only QuiPalermo is ours.",
+      "allLink": "All projects",
+      "visitSite": "Visit the site",
+      "tagsLabel": "Tags",
+      "productLabel": "Product type",
+      "clientLabel": "Client type",
+      "descriptionLabel": "Description",
+      "realizedTitle": "Sites we have built",
+      "labels": {
+        "quipalermo": "QuiPalermo",
+        "hotel-boutique": "Boutique hotel",
+        "noleggio-con-conducente": "Chauffeur and coach hire",
+        "bed-and-breakfast": "Bed & breakfast",
+        "manutenzione-uk": "Property maintenance (UK)",
+        "traslochi": "Removals",
+        "studio-legale-uk-demo": "Law firm",
+        "ecommerce-demo": "E-commerce",
+        "consulenza-tributaria": "Tax advisory",
+        "studio-fiscale-contabile": "Tax and accounting firm",
+        "educazione-cinofila": "Dog training",
+        "ambulatorio-veterinario": "Veterinary clinic",
+        "centro-cinofilo-demo": "Dog centre"
       }
-    ],
-    "pricingIntroEyebrow": "Clear investment",
-    "pricingIntroTitle": "Tailored solutions to grow your business.",
-    "pricingIntroBody": "From web development to mobile apps and e-commerce: explore our modular plans designed to maximise your results and scale your digital presence.",
-    "ctaBandTitle": "Need a tailored plan or a free audit?",
-    "ctaBandBody": "Tell us your goals and timeline — we reply within one business day.",
-    "ctaBandButton": "Talk to us"
+    },
+    "method": {
+      "title": "How we work",
+      "intro": "Four steps, from the first conversation to support after launch.",
+      "steps": [
+        {
+          "title": "Listen",
+          "body": "Understand goals, constraints and who will use the site or app."
+        },
+        {
+          "title": "Propose",
+          "body": "A clear proposal: scope, timeline and a starting price."
+        },
+        {
+          "title": "Build",
+          "body": "We build, show progress and adjust where it matters."
+        },
+        {
+          "title": "Launch and support",
+          "body": "Go-live, handover and support after launch."
+        }
+      ]
+    },
+    "plans": {
+      "title": "Plans",
+      "intro": "Starting prices. Every quote is tailored.",
+      "cta": "Request a quote",
+      "tabs": [
+        {
+          "id": "web",
+          "label": "Website",
+          "fromPrice": "from £900",
+          "note": "Landing, brochure, brochure pro or corporate.",
+          "items": [
+            { "name": "Landing", "price": "from £900" },
+            { "name": "Brochure", "price": "from £1,400" },
+            { "name": "Brochure Pro", "price": "from £2,800" },
+            { "name": "Corporate", "price": "from £8,000" }
+          ]
+        },
+        {
+          "id": "mobile",
+          "label": "Mobile app",
+          "fromPrice": "from £6,500",
+          "note": "MVP or standard apps for iOS and Android.",
+          "items": [
+            { "name": "MVP", "price": "from £6,500" },
+            { "name": "Standard", "price": "from £12,000" }
+          ]
+        },
+        {
+          "id": "ecommerce",
+          "label": "E-commerce",
+          "fromPrice": "from £3,200",
+          "note": "Base or Advanced depending on the catalogue.",
+          "items": [
+            { "name": "Base", "price": "from £3,200" },
+            { "name": "Advanced", "price": "from £6,500" }
+          ]
+        },
+        {
+          "id": "presence",
+          "label": "Digital presence",
+          "fromPrice": "from £75 / month",
+          "note": "Monthly packages, separate from website maintenance.",
+          "items": [
+            { "name": "Starter", "price": "£75 / month" },
+            { "name": "Digital Presence", "price": "£100 / month" }
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "allLink": "All FAQs"
+    },
+    "finalCta": {
+      "title": "Let’s talk about your project",
+      "body": "Request a quote or message us on WhatsApp.",
+      "quote": "Request a quote",
+      "whatsapp": "WhatsApp"
+    }
   },
   "pricingWeb": {
     "eyebrow": "Professional website",
@@ -76,7 +290,7 @@
       {
         "id": "web-landing",
         "name": "Landing Page",
-        "price": "From £900",
+        "price": "from £900",
         "subtitle": "1 page, hero + sections + contact form + CTA.",
         "highlight": false,
         "bullets": [
@@ -89,7 +303,7 @@
       {
         "id": "web-vetrina",
         "name": "Business Site",
-        "price": "From £1,400",
+        "price": "from £1,400",
         "subtitle": "3–5 pages, custom design, contact form, on-page SEO.",
         "highlight": true,
         "bullets": [
@@ -101,9 +315,22 @@
         ]
       },
       {
+        "id": "web-vetrina-pro",
+        "name": "Brochure Pro",
+        "price": "from £2,800",
+        "subtitle": "A larger brochure site, with more sections and integrations.",
+        "highlight": false,
+        "bullets": [
+          "More pages and sections than the brochure site",
+          "Custom design",
+          "On-page SEO",
+          "Baseline integrations"
+        ]
+      },
+      {
         "id": "web-corporate",
         "name": "Corporate Site",
-        "price": "From £8,000",
+        "price": "from £8,000",
         "subtitle": "10–20 pages, scalable architecture, premium UI/UX.",
         "highlight": false,
         "bullets": [
@@ -126,7 +353,7 @@
       {
         "id": "pres-starter",
         "name": "Starter",
-        "price": "£75 / mo",
+        "price": "£75 / month",
         "subtitle": "Google Business Profile + Search Console — save £10/mo vs. individual.",
         "highlight": false,
         "bullets": [
@@ -139,7 +366,7 @@
       {
         "id": "pres-digital",
         "name": "Digital Presence",
-        "price": "£100 / mo",
+        "price": "£100 / month",
         "subtitle": "Starter + Google Analytics 4. Best value — save £23/mo.",
         "highlight": true,
         "bullets": [
@@ -148,20 +375,6 @@
           "Google Analytics 4 monitoring & insights (£38/mo individually)",
           "Monthly performance report",
           "Setup cost charged with the first monthly fee, not requested separately."
-        ]
-      },
-      {
-        "id": "pres-full",
-        "name": "Full Suite",
-        "price": "Custom quote",
-        "subtitle": "All channels — Trustpilot, LinkedIn and more.",
-        "highlight": false,
-        "bullets": [
-          "Everything in Digital Presence",
-          "Trustpilot / Reviews management (£47/mo)",
-          "LinkedIn Business Page management (£55/mo)",
-          "Priority response and dedicated contact",
-          "Add-on available: corporate video production (£800–£3,000)"
         ]
       }
     ]
@@ -174,7 +387,7 @@
     "plans": [
       {
         "id": "mob-starter",
-        "name": "MVP App",
+        "name": "MVP",
         "price": "from £6,500",
         "subtitle": "React Native or Flutter — fast time-to-market.",
         "highlight": false,
@@ -185,28 +398,15 @@
         ]
       },
       {
-        "id": "mob-growth",
-        "name": "Cross-platform",
+        "id": "mob-standard",
+        "name": "Standard",
         "price": "from £12,000",
-        "subtitle": "Same codebase, maximum coverage.",
+        "subtitle": "iOS and Android from one team.",
         "highlight": true,
         "bullets": [
           "iOS + Android from a single codebase",
           "API / payments / deep link integrations",
-          "CI/CD and signed builds",
-          "3 months post-launch bugfixes"
-        ]
-      },
-      {
-        "id": "mob-scale",
-        "name": "Product & scale",
-        "price": "Custom quote",
-        "subtitle": "Native modules, offline-first, enterprise.",
-        "highlight": false,
-        "bullets": [
-          "Modular architectures and feature flags",
-          "Performance tuning and crash-free sessions",
-          "Quarterly roadmap with product KPIs"
+          "CI/CD and signed builds"
         ]
       }
     ]
@@ -218,8 +418,8 @@
     "cta": "Request a quote — E-commerce",
     "plans": [
       {
-        "id": "eco-starter",
-        "name": "Store Essentials",
+        "id": "eco-base",
+        "name": "Base",
         "price": "from £3,200",
         "subtitle": "Custom store + essential order management.",
         "highlight": false,
@@ -230,8 +430,8 @@
         ]
       },
       {
-        "id": "eco-inventory",
-        "name": "Inventory Pro",
+        "id": "eco-advanced",
+        "name": "Advanced",
         "price": "from £6,500",
         "subtitle": "Stock sync across multiple channels.",
         "highlight": true,
@@ -240,18 +440,6 @@
           "Near real-time stock synchronisation",
           "Alerts and replenishment automation",
           "Operations dashboard for your team"
-        ]
-      },
-      {
-        "id": "eco-enterprise",
-        "name": "Commerce Suite",
-        "price": "Custom quote",
-        "subtitle": "Complex, international e-commerce.",
-        "highlight": false,
-        "bullets": [
-          "Multi-store, multi-currency, B2B + B2C",
-          "Advanced logistics and commercial rules",
-          "Observability, catalogue A/B tests, dedicated SLA"
         ]
       }
     ]
@@ -437,7 +625,7 @@
     ],
     "quoteEyebrow": "Quote",
     "quoteTitle": "Request a proposal for our services",
-    "quoteBody": "Describe goals and context: whether you need web, app, cloud, SEO or a combined package. We’ll reply with a clear estimate.",
+    "quoteBody": "Describe goals and context: whether you need web, app, SEO or a combined package. We’ll reply with a clear estimate.",
     "defaultSectionLabel": "Services page",
     "items": [
       {
@@ -454,14 +642,6 @@
           "React Native and Flutter: one codebase, iOS and Android stores.",
           "Native UX, deep links, push and in-app monetisation.",
           "Release train and crash / ANR monitoring."
-        ]
-      },
-      {
-        "title": "Cloud solutions",
-        "points": [
-          "Infrastructure on AWS / GCP / Vercel with predictable costs.",
-          "CI/CD, staging environments, backup and disaster recovery.",
-          "Observability: logs, metrics, alerting."
         ]
       },
       {
@@ -570,25 +750,25 @@
     "headline": "We don't build sites. We build systems that bring you clients.",
     "body": "Quantum Code Technologies Ltd is a web and app studio with registered office at Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX. Our team operates across UK and Italy — building digital products for businesses that want to grow in both markets.",
     "proof": "Our track record includes CivicAlert, a civic AI reporting platform deployed across UK local authorities — proof that we build things that scale.",
-    "cta": "Book a free 15-minute call. No commitment."
+    "cta": "Request a free website audit via the contact form. No commitment."
   },
   "FAQ": {
     "title": "Frequently asked questions",
     "ctaTitle": "Ready to start? Request a free quote — we reply within 24h.",
-    "ctaBody": "A 15-minute call where we analyse your current site and tell you exactly what's blocking conversions. No commitment. Book via the contact form.",
+    "ctaBody": "The free website audit is a review of your current site, requested only through the contact form. We reply in writing within 48 hours on what is stopping conversions, with no obligation.",
     "ctaButton": "Get a Quote",
     "q1": "How much does a website cost?",
-    "a1": "Our websites start from £900 for a landing page up to £25,000+ for a full corporate platform. Every project gets a personalised quote. We also serve Italian clients with pricing in EUR.",
+    "a1": "Our websites start from £900 for a landing page, from £1,400 for a business website, from £8,000 for a corporate platform. Every project gets a personalised quote.",
     "q2": "Do you work with Italian companies?",
     "a2": "Yes. We operate across both UK and Italy. We handle IT and EN content, UK GDPR and EU GDPR compliance, and billing in both GBP and EUR.",
     "q3": "What is a free site audit?",
-    "a3": "A 15-minute call where we review your current site and tell you exactly what's stopping it from converting. No strings attached. Book via the contact form.",
+    "a3": "The free website audit is a review of your current site, requested only through the contact form. We reply in writing within 48 hours on what is stopping conversions, with no obligation.",
     "q4": "How long does a website project take?",
     "a4": "Landing pages: 1–2 weeks. Full websites: 4–8 weeks. E-commerce: 6–12 weeks. Mobile apps: 3–6 months depending on complexity.",
     "q5": "What technologies do you use?",
     "a5": "Next.js, React Native, Tailwind CSS, TypeScript, Supabase, and AI integrations (OpenAI, Google Vision). We choose the right tool for each project, not the trendy one.",
     "q6": "How do I get started with a website for my business?",
-    "a6": "The first step is a free 15-minute call with our team. We listen to your goals, current situation and budget — then we prepare a clear proposal within 48 hours. No commitment required at this stage. Simply use the contact form or email us at hello@qc-tech.co.uk.",
+    "a6": "The first step is to describe your project through the contact form: we reply within 48 hours with a clear proposal, with no obligation.",
     "q7": "I want to start a business — do I need a website from day one?",
     "a7": "Not necessarily, but having a professional digital presence from the start significantly increases credibility with potential clients, investors and partners. Even a well-built landing page with your offer, contact details and a clear call to action can generate enquiries immediately. We can have you online within 1–2 weeks.",
     "q8": "What is the difference between a website and a web application?",
@@ -598,7 +778,7 @@
     "q10": "Can you redesign my existing website without losing my Google ranking?",
     "a10": "Yes — and this is critical. A redesign done without SEO care can destroy years of ranking. We conduct a full SEO audit before any redesign, preserve all existing URLs or set up correct redirects, and transfer all structured data and metadata. Your Google visibility is protected throughout the process.",
     "q11": "Do you offer website maintenance after launch?",
-    "a11": "Yes. We offer monthly maintenance plans starting from £120/month covering security updates, performance monitoring, content changes, bug fixes and uptime checks. Long-term clients also get priority response times. A website without maintenance is a liability — we make sure yours stays fast, secure and up to date.",
+    "a11": "Yes. We offer monthly maintenance plans starting from £90/month covering security updates, performance monitoring, content changes, bug fixes and uptime checks. Long-term clients also get priority response times. A website without maintenance is a liability — we make sure yours stays fast, secure and up to date.",
     "q12": "Can you integrate AI into my website or app?",
     "a12": "Absolutely. AI integration is one of our core strengths. We implement AI for: intelligent chatbots and customer service automation, content analysis and moderation, personalisation engines, predictive search, image recognition, and automated reporting. We use OpenAI, Google AI, and custom models depending on the use case — always where it genuinely adds business value.",
     "q13": "What is an MVP and do I need one for my app idea?",
@@ -610,8 +790,8 @@
   },
   "FinalCTA": {
     "headline": "Ready to turn your site into a client machine?",
-    "subheadline": "Book a free 15-minute audit call. We'll tell you exactly what's holding your site back — no commitment, no sales pitch.",
-    "button": "Book your free audit →",
+    "subheadline": "Request a free website audit through the contact form. We'll tell you in writing, within 48 hours, what's holding your site back — no commitment.",
+    "button": "Request your free audit",
     "note": "We respond within 24 hours."
   },
   "Vision": {

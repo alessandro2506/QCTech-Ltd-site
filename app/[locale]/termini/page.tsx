@@ -31,8 +31,8 @@ function Section({
 }) {
   return (
     <section className="mt-8">
-      <h2 className="text-lg font-semibold text-slate-200">{title}</h2>
-      <div className="mt-3 text-sm leading-relaxed text-slate-400">{children}</div>
+      <h2 className="text-lg font-semibold text-[var(--light-text)]">{title}</h2>
+      <div className="mt-3 text-sm leading-relaxed text-[var(--light-text-muted)]">{children}</div>
     </section>
   );
 }
@@ -44,10 +44,10 @@ export default async function TerminiPage({ params }: PageProps) {
   return (
     <div className="pb-24 pt-28 sm:pt-32">
       <article className="mx-auto max-w-3xl px-4 sm:px-6">
-        <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        <h1 className="text-3xl font-bold tracking-tight text-[var(--light-emphasis)] sm:text-4xl">
           {isIt ? "Termini e Condizioni" : "Terms & Conditions"}
         </h1>
-        <p className="mt-3 text-sm text-slate-500">
+        <p className="mt-3 text-sm text-[var(--light-text-muted)]">
           {isIt ? "Ultimo aggiornamento: 8 luglio 2026" : "Last updated: 8 July 2026"}
         </p>
 
@@ -113,7 +113,7 @@ export default async function TerminiPage({ params }: PageProps) {
                 Quantum Code Technologies Ltd —{" "}
                 <a
                   href="mailto:hello@qc-tech.co.uk"
-                  className="text-violet-400 hover:text-violet-300"
+                  className="text-[var(--light-primary)] hover:underline"
                 >
                   hello@qc-tech.co.uk
                 </a>
@@ -179,7 +179,7 @@ export default async function TerminiPage({ params }: PageProps) {
                 Quantum Code Technologies Ltd —{" "}
                 <a
                   href="mailto:hello@qc-tech.co.uk"
-                  className="text-violet-400 hover:text-violet-300"
+                  className="text-[var(--light-primary)] hover:underline"
                 >
                   hello@qc-tech.co.uk
                 </a>
@@ -188,8 +188,8 @@ export default async function TerminiPage({ params }: PageProps) {
           </>
         )}
 
-        <p className="mt-10 text-sm text-slate-500">
-          <Link href="/privacy" className="text-violet-400 hover:text-violet-300">
+        <p className="mt-10 text-sm text-[var(--light-text-muted)]">
+          <Link href="/privacy" className="text-[var(--light-primary)] hover:underline">
             Privacy Policy
           </Link>
         </p>

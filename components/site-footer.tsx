@@ -11,24 +11,23 @@ export function SiteFooter() {
   const tm = useTranslations("meta");
 
   return (
-    <footer className="relative border-t border-violet-500/15 bg-[#06040e]">
-      {/* Top glow */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-violet-500/40 to-transparent" aria-hidden />
-
-      <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-14 sm:flex-row sm:items-start sm:justify-between sm:px-6">
+    <footer className="site-footer relative border-t border-[var(--light-border)] bg-[var(--light-surface)]">
+      <div className="site-footer-top">
         <div>
-          <p className="gradient-quantum text-lg font-bold">{siteConfig.shortName}</p>
-          <p className="mt-2 max-w-sm text-sm text-slate-500">
+          <p className="text-lg font-bold text-[var(--light-emphasis)]">
+            {siteConfig.shortName}
+          </p>
+          <p className="mt-2 max-w-sm text-sm text-[var(--light-text-muted)]">
             {tm("defaultDescription")}
           </p>
         </div>
-        <nav aria-label={tf("navLabel")}>
-          <ul className="flex flex-col gap-2 sm:items-end">
+        <nav className="site-footer-nav" aria-label={tf("navLabel")}>
+          <ul>
             {navRoutes.map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="text-sm font-medium text-slate-500 transition-colors hover:text-violet-400"
+                  className="text-sm font-medium text-[var(--light-text-muted)] transition-colors hover:text-[var(--light-primary)]"
                 >
                   {t(item.key)}
                 </Link>
@@ -37,27 +36,33 @@ export function SiteFooter() {
           </ul>
         </nav>
       </div>
-      <div className="border-t border-violet-500/10 px-4 py-6 text-center text-xs text-slate-600 sm:px-6">
-        <p>{tf("legal")}</p>
-        <p className="mt-1">{siteConfig.address.full}</p>
-        <p className="mt-1">Company Number 17317573</p>
-        <p className="mt-2">
-          <Link
-            href="/privacy"
-            locale={locale}
-            className="text-slate-600 transition-colors hover:text-violet-400"
-          >
-            {t("privacy")}
-          </Link>
-          <span className="mx-1.5 text-slate-700">·</span>
-          <Link
-            href="/termini"
-            locale={locale}
-            className="text-slate-600 transition-colors hover:text-violet-400"
-          >
-            {locale === "it" ? "Termini e Condizioni" : "Terms & Conditions"}
-          </Link>
-        </p>
+      <div className="site-footer-legal-bar text-[var(--light-text-muted)]">
+        <div className="site-footer-legal">
+          <p className="site-footer-facts">
+            <span>{tf("legal")}</span>
+            <span>{tf("companyNo")}</span>
+            <span>{tf("registered")}</span>
+            <span>{siteConfig.address.full}</span>
+            <span>{tf("ico")}</span>
+          </p>
+          <p className="site-footer-legal-links">
+            <Link
+              href="/privacy"
+              locale={locale}
+              className="text-[var(--light-text-muted)] transition-colors hover:text-[var(--light-primary)]"
+            >
+              {t("privacy")}
+            </Link>
+            <span className="text-[var(--light-border)]">·</span>
+            <Link
+              href="/termini"
+              locale={locale}
+              className="text-[var(--light-text-muted)] transition-colors hover:text-[var(--light-primary)]"
+            >
+              {tf("terms")}
+            </Link>
+          </p>
+        </div>
       </div>
     </footer>
   );

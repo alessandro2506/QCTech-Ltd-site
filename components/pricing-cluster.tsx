@@ -55,17 +55,17 @@ export function PricingCluster({
       initial={{ opacity: 0, y: 28 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      className="glass-card rounded-2xl p-6 sm:p-8"
+      className="rounded-2xl border border-[var(--light-border)] bg-white p-6 sm:p-8"
     >
       {eyebrow ? (
-        <p className="text-xs font-semibold uppercase tracking-widest text-cyan-400">
+        <p className="text-xs font-semibold uppercase tracking-widest text-[var(--light-primary)]">
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="mt-1 text-2xl font-bold tracking-tight text-white sm:text-3xl">
+      <h2 className="mt-1 text-2xl font-bold tracking-tight text-[var(--light-emphasis)] sm:text-3xl">
         {title}
       </h2>
-      <p className="mt-2 max-w-2xl text-slate-400">{description}</p>
+      <p className="mt-2 max-w-2xl text-[var(--light-text-muted)]">{description}</p>
 
       <div
         className="mt-6 flex flex-wrap gap-2"
@@ -79,10 +79,10 @@ export function PricingCluster({
             role="tab"
             aria-selected={active === i}
             onClick={() => setActive(i)}
-            className={`rounded-xl px-4 py-2.5 text-sm font-semibold transition ${
+            className={`rounded-full px-4 py-2.5 text-sm font-semibold transition ${
               active === i
-                ? "bg-gradient-to-r from-violet-600 to-cyan-500 text-white shadow-md shadow-violet-500/25"
-                : "bg-white/5 text-slate-400 hover:bg-white/10 hover:text-slate-200"
+                ? "bg-[var(--light-primary)] text-white"
+                : "bg-[var(--light-surface)] text-[var(--light-text-muted)] hover:text-[var(--light-text)]"
             }`}
           >
             {plan.name}
@@ -101,20 +101,20 @@ export function PricingCluster({
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             className={`rounded-xl border p-6 ${
               plans[active].highlight
-                ? "border-cyan-400/35 bg-gradient-to-br from-violet-600/10 to-cyan-500/5 shadow-lg shadow-cyan-500/10"
-                : "border-violet-500/15 bg-white/3"
+                ? "border-[var(--light-primary)]/35 bg-[var(--light-surface)]"
+                : "border-[var(--light-border)] bg-[var(--light-surface)]"
             }`}
           >
             <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-              <p className="text-lg font-bold text-slate-100">
+              <p className="text-lg font-bold text-[var(--light-text)]">
                 {plans[active].name}
               </p>
-              <p className="text-2xl font-bold tracking-tight text-cyan-400">
+              <p className="text-2xl font-bold tracking-tight text-[var(--light-primary)]">
                 {plans[active].price}
               </p>
             </div>
             {plans[active].subtitle ? (
-              <p className="mt-1 text-sm text-slate-400">
+              <p className="mt-1 text-sm text-[var(--light-text-muted)]">
                 {plans[active].subtitle}
               </p>
             ) : null}
@@ -122,10 +122,10 @@ export function PricingCluster({
               {plans[active].bullets.map((b) => (
                 <li
                   key={b}
-                  className="flex items-start gap-2 text-sm text-slate-300"
+                  className="flex items-start gap-2 text-sm text-[var(--light-text)]"
                 >
                   <Check
-                    className="mt-0.5 h-4 w-4 shrink-0 text-cyan-500"
+                    className="mt-0.5 h-4 w-4 shrink-0 text-[var(--light-primary)]"
                     aria-hidden
                   />
                   {b}
@@ -139,7 +139,7 @@ export function PricingCluster({
       <div className="mt-6">
         <Link
           href={contactHref}
-          className="inline-flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 px-5 py-3.5 text-center text-sm font-semibold text-white shadow-md shadow-violet-500/20 transition hover:brightness-110 sm:w-auto"
+          className="inline-flex w-full items-center justify-center rounded-full bg-[var(--light-primary)] px-5 py-3.5 text-center text-sm font-semibold text-white transition hover:brightness-110 sm:w-auto"
         >
           {ctaLabel}
         </Link>

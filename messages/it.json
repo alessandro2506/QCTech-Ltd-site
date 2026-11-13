@@ -3,11 +3,11 @@
     "defaultTitle": "QC Tech — Web, E-commerce & Mobile",
     "defaultDescription": "Lo studio digitale con sede in UK, costruito per lavorare con il mondo.",
     "servicesTitle": "Servizi",
-    "servicesDescription": "Siti web, app mobile, cloud e SEO orientati al ROI per clienti UK e Italia.",
+    "servicesDescription": "Siti web, app mobile e SEO orientati al ROI per clienti UK e Italia.",
     "visionTitle": "Vision",
     "visionDescription": "Scalabilità tecnologica, architetture evolutive e roadmap prodotto per QC Tech.",
     "contactsTitle": "Contatti",
-    "contactsDescription": "Richiedi un preventivo o una call conoscitiva con Quantum Code Technologies Ltd."
+    "contactsDescription": "Richiedi un preventivo o un audit gratuito a Quantum Code Technologies Ltd."
   },
   "nav": {
     "home": "Home",
@@ -30,42 +30,256 @@
   },
   "footer": {
     "navLabel": "Footer",
-    "legal": "© 2026 Quantum Code Technologies Ltd."
+    "legal": "© 2026 Quantum Code Technologies Ltd.",
+    "companyNo": "Company No. 17317573",
+    "registered": "Registrata nel Regno Unito",
+    "ico": "Registrazione ICO ZC288640",
+    "terms": "Termini e Condizioni"
   },
   "common": {
-    "scrollToTop": "Torna in cima"
+    "scrollToTop": "Torna in cima",
+    "quantisOpen": "Apri l'assistente AI",
+    "quantisFaqLabel": "Assistente AI"
+  },
+  "assistant": {
+    "title": "Q.U.A.N.T.I.S · Assistente AI",
+    "intro": "Ciao, sono Q.U.A.N.T.I.S, il tuo assistente AI. Chiedimi di siti web, app, prezzi e tempi: rispondo io. Non inserire dati personali.",
+    "privacy": "Privacy",
+    "placeholder": "Scrivi una domanda…",
+    "send": "Invia",
+    "close": "Chiudi assistente",
+    "fallback": "Non ho una risposta certa",
+    "whatsapp": "Scrivici su WhatsApp",
+    "contacts": "Vai ai contatti",
+    "quote": "Richiedi un preventivo",
+    "tooLong": "Il messaggio può avere al massimo 300 caratteri.",
+    "chipsLabel": "Domande frequenti",
+    "aiNoticeTitle": "AI e privacy",
+    "aiNoticeBody": "Questa chat usa l'intelligenza artificiale per risponderti più velocemente. Non inserire dati personali.",
+    "aiNoticeAck": "Ho capito",
+    "aiNoticeClose": "Chiudi avviso",
+    "aiNoticeLink": "Avviso AI",
+    "sourceAi": "Risposta generata da AI",
+    "sourceFaq": "Dalle FAQ",
+    "writing": "Sto scrivendo…",
+    "statusListening": "In attesa",
+    "statusThinking": "Sto scrivendo…",
+    "statusAnswered": "Risposta pronta",
+    "statusError": "Nessuna risposta",
+    "statusClosed": "Chat chiusa"
   },
   "hero": {
-    "headlineBefore": "Lo studio digitale tra UK e Italia",
-    "headlineAccent": "che trasforma visitatori in clienti",
-    "sub": "Realizziamo siti web, e-commerce e app mobile per aziende che vogliono crescere — ovunque si trovino.",
-    "legalLine": "Quantum Code Technologies Ltd — studio digitale UK",
-    "ctaPrimary": "Richiedi un audit gratuito",
-    "ctaSecondary": "Scopri i servizi",
-    "ctaPlans": "Vedi i piani",
-    "trust": "SSL, best practice SEO e architetture cloud-ready."
+    "headline": "Siti web e app su misura, pensati per portare clienti",
+    "headlineLead": "Siti web e app su misura,",
+    "headlineEmphasis": "pensati per portare clienti",
+    "ctaPrimary": "Richiedi un preventivo",
+    "ctaSecondary": "Vedi i progetti",
+    "availability": "Disponibili per nuovi progetti · Rispondiamo entro 48 ore",
+    "chipsLabel": "Casi d'uso",
+    "chips": [
+      {
+        "id": "web",
+        "label": "Sito web",
+        "support": "Landing, vetrina o corporate: un sito chiaro che spiega chi sei e chiede l'azione giusta."
+      },
+      {
+        "id": "restyle",
+        "label": "Restyle",
+        "support": "Aggiorniamo il sito che hai già: struttura, messaggi e aspetto, senza ripartire da zero."
+      },
+      {
+        "id": "ecommerce",
+        "label": "E-commerce",
+        "support": "Catalogo, pagamenti e checkout pensati per vendere, non solo per mostrare i prodotti."
+      },
+      {
+        "id": "app",
+        "label": "App mobile",
+        "support": "Un'app iOS e Android dal MVP al prodotto in uso, con un solo team."
+      },
+      {
+        "id": "webapp",
+        "label": "Web app",
+        "support": "Portali e strumenti interni o per i clienti, su misura per come lavorate."
+      },
+      {
+        "id": "seo",
+        "label": "Google e AI",
+        "support": "SEO di base, con AEO e GEO solo come add-on abbinati — senza promesse di comparsa nelle risposte AI."
+      }
+    ]
   },
   "home": {
-    "valueCards": [
-      {
-        "title": "Web & landing ad alta conversione",
-        "body": "Core Web Vitals, SEO tecnico e messaggi chiari per mercati UK/IT."
-      },
-      {
-        "title": "App native-quality, un solo team",
-        "body": "React Native e Flutter con release pipeline e store readiness."
-      },
-      {
-        "title": "Dati che guidano il budget",
-        "body": "Event tracking, funnel e report leggibili per decisioni commerciali."
+    "services": {
+      "title": "Servizi",
+      "intro": "Sette linee di lavoro, con prezzi di partenza. Il preventivo è sempre su misura.",
+      "cursor": "Scopri →",
+      "rows": [
+        {
+          "id": "web",
+          "title": "Siti web",
+          "description": "Landing, vetrina, vetrina pro o corporate — dal primo contatto al sito completo.",
+          "fromPrice": "da €1.100",
+          "previewAlt": "Esempio di sito web",
+          "tags": ["Landing", "Vetrina", "Corporate"]
+        },
+        {
+          "id": "restyle",
+          "title": "Restyle sito web",
+          "description": "Ridisegno del sito esistente: contenuti, struttura e aspetto aggiornati.",
+          "fromPrice": "da €1.700",
+          "previewAlt": "Esempio di restyle prima e dopo",
+          "tags": ["Nuovo design", "Struttura rivista", "Contenuti aggiornati"]
+        },
+        {
+          "id": "ecommerce",
+          "title": "E-commerce",
+          "description": "Negozi su misura, catalogo e checkout. Base o Advanced in base al catalogo.",
+          "fromPrice": "da €3.800",
+          "previewAlt": "Esempio di negozio online",
+          "tags": ["Catalogo", "Checkout", "Base o Advanced"]
+        },
+        {
+          "id": "app",
+          "title": "App mobile",
+          "description": "MVP o app standard per iOS e Android, con un solo team di sviluppo.",
+          "fromPrice": "da €7.700",
+          "previewAlt": "Esempio di schermate app",
+          "tags": ["iOS", "Android", "MVP o Standard"]
+        },
+        {
+          "id": "webapp",
+          "title": "Web app e portali",
+          "description": "Strumenti e portali su misura. Il valore in euro si definisce in preventivo.",
+          "fromPrice": "su preventivo",
+          "previewAlt": "Esempio di dashboard",
+          "tags": ["Portali", "Strumenti su misura", "MVP"]
+        },
+        {
+          "id": "seo",
+          "title": "Visibilità su Google e AI",
+          "description": "SEO Base mensile. AEO e GEO solo come add-on abbinati alla SEO, senza garanzia di comparsa nelle risposte AI.",
+          "fromPrice": "SEO Base da €600/mese",
+          "previewAlt": "Esempio di visibilità di ricerca",
+          "tags": ["SEO Base", "AEO (add-on)", "GEO (add-on)"]
+        },
+        {
+          "id": "maintenance",
+          "title": "Manutenzione sito web",
+          "description": "Piano mensile: aggiornamenti di sicurezza, monitoraggio, modifiche ai contenuti e correzione bug.",
+          "fromPrice": "da €110/mese",
+          "previewAlt": "Esempio di pannello di manutenzione",
+          "tags": ["Aggiornamenti di sicurezza", "Monitoraggio", "Correzione bug"]
+        }
+      ]
+    },
+    "projects": {
+      "title": "Progetti",
+      "intro": "Siti che abbiamo realizzato. Solo QuiPalermo è proprietà nostra.",
+      "allLink": "Tutti i progetti",
+      "visitSite": "Visita il sito",
+      "tagsLabel": "Tag",
+      "productLabel": "Tipologia di prodotto",
+      "clientLabel": "Tipologia di cliente",
+      "descriptionLabel": "Descrizione",
+      "realizedTitle": "Siti realizzati",
+      "labels": {
+        "quipalermo": "QuiPalermo",
+        "hotel-boutique": "Hotel boutique",
+        "noleggio-con-conducente": "Noleggio con conducente",
+        "bed-and-breakfast": "Bed & breakfast",
+        "manutenzione-uk": "Servizi di manutenzione (UK)",
+        "traslochi": "Traslochi",
+        "studio-legale-uk-demo": "Studio legale",
+        "ecommerce-demo": "E-commerce",
+        "consulenza-tributaria": "Consulenza tributaria",
+        "studio-fiscale-contabile": "Studio fiscale e contabile",
+        "educazione-cinofila": "Educazione cinofila",
+        "ambulatorio-veterinario": "Ambulatorio veterinario",
+        "centro-cinofilo-demo": "Centro cinofilo"
       }
-    ],
-    "pricingIntroEyebrow": "Investimento chiaro",
-    "pricingIntroTitle": "Soluzioni su misura per far crescere il tuo business.",
-    "pricingIntroBody": "Dallo sviluppo web alle applicazioni mobile, fino all'e-commerce: scopri i nostri piani modulari progettati per massimizzare i tuoi risultati e scalare la tua presenza digitale.",
-    "ctaBandTitle": "Vuoi un piano su misura o un audit gratuito?",
-    "ctaBandBody": "Raccontaci obiettivi e timeline: rispondiamo entro un giorno lavorativo.",
-    "ctaBandButton": "Parla con noi"
+    },
+    "method": {
+      "title": "Metodo",
+      "intro": "Quattro passi, dal primo ascolto al supporto dopo il lancio.",
+      "steps": [
+        {
+          "title": "Ascolto",
+          "body": "Capire obiettivi, vincoli e chi deve usare il sito o l'app."
+        },
+        {
+          "title": "Proposta",
+          "body": "Una proposta chiara: ambito, tempi e prezzo di partenza."
+        },
+        {
+          "title": "Sviluppo",
+          "body": "Costruiamo, mostriamo avanzamenti e adattiamo dove serve."
+        },
+        {
+          "title": "Lancio e supporto",
+          "body": "Pubblicazione, passaggio in carico e supporto dopo il go-live."
+        }
+      ]
+    },
+    "plans": {
+      "title": "Piani",
+      "intro": "Prezzi di partenza. Il preventivo è sempre su misura.",
+      "cta": "Richiedi un preventivo",
+      "tabs": [
+        {
+          "id": "web",
+          "label": "Sito web",
+          "fromPrice": "da €1.100",
+          "note": "Landing, vetrina, vetrina pro o corporate.",
+          "items": [
+            { "name": "Landing", "price": "da €1.100" },
+            { "name": "Vetrina", "price": "da €1.700" },
+            { "name": "Vetrina Pro", "price": "da €3.300" },
+            { "name": "Corporate", "price": "da €9.500" }
+          ]
+        },
+        {
+          "id": "mobile",
+          "label": "App mobile",
+          "fromPrice": "da €7.700",
+          "note": "MVP o app standard, iOS e Android.",
+          "items": [
+            { "name": "MVP", "price": "da €7.700" },
+            { "name": "Standard", "price": "da €14.000" }
+          ]
+        },
+        {
+          "id": "ecommerce",
+          "label": "E-commerce",
+          "fromPrice": "da €3.800",
+          "note": "Base o Advanced in base al catalogo.",
+          "items": [
+            { "name": "Base", "price": "da €3.800" },
+            { "name": "Advanced", "price": "da €7.700" }
+          ]
+        },
+        {
+          "id": "presence",
+          "label": "Presenza digitale",
+          "fromPrice": "da €90 / mese",
+          "note": "Pacchetti mensili, distinti dalla manutenzione siti.",
+          "items": [
+            { "name": "Starter", "price": "€90 / mese" },
+            { "name": "Digital Presence", "price": "€120 / mese" }
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "title": "Domande frequenti",
+      "allLink": "Tutte le FAQ"
+    },
+    "finalCta": {
+      "title": "Parliamo del tuo progetto",
+      "body": "Scrivici per un preventivo o aprici una chat su WhatsApp.",
+      "quote": "Richiedi un preventivo",
+      "whatsapp": "WhatsApp"
+    }
   },
   "pricingWeb": {
     "eyebrow": "Sito web professionale",
@@ -76,7 +290,7 @@
       {
         "id": "web-landing",
         "name": "Landing Page",
-        "price": "Da €1.100",
+        "price": "da €1.100",
         "subtitle": "1 pagina, sezione principale (hero) + sezioni + form contatti + call-to-action (CTA).",
         "highlight": false,
         "bullets": [
@@ -89,7 +303,7 @@
       {
         "id": "web-vetrina",
         "name": "Sito Vetrina",
-        "price": "Da €1.700",
+        "price": "da €1.700",
         "subtitle": "3–5 pagine, design custom, form contatti, SEO on-page.",
         "highlight": true,
         "bullets": [
@@ -101,9 +315,22 @@
         ]
       },
       {
+        "id": "web-vetrina-pro",
+        "name": "Sito Vetrina Pro",
+        "price": "da €3.300",
+        "subtitle": "Sito vetrina più ampio, con più sezioni e integrazioni.",
+        "highlight": false,
+        "bullets": [
+          "Pagine e sezioni estese rispetto alla vetrina",
+          "Design custom",
+          "SEO on-page",
+          "Integrazioni di base"
+        ]
+      },
+      {
         "id": "web-corporate",
         "name": "Sito Corporate",
-        "price": "Da €9.500",
+        "price": "da €9.500",
         "subtitle": "10–20 pagine, architettura scalabile, UI/UX premium.",
         "highlight": false,
         "bullets": [
@@ -149,20 +376,6 @@
           "Report mensile delle performance",
           "Costo di setup addebitato con il primo canone mensile, non richiesto separatamente."
         ]
-      },
-      {
-        "id": "pres-full",
-        "name": "Full Suite",
-        "price": "Su preventivo",
-        "subtitle": "Tutti i canali — Trustpilot, LinkedIn e altro.",
-        "highlight": false,
-        "bullets": [
-          "Tutto incluso nel Digital Presence",
-          "Gestione Trustpilot / Recensioni (€56/mese)",
-          "Gestione pagina LinkedIn Business (€65/mese)",
-          "Risposta prioritaria e contatto dedicato",
-          "Add-on disponibile: produzione video aziendale (€950–€3.600)"
-        ]
       }
     ]
   },
@@ -174,8 +387,8 @@
     "plans": [
       {
         "id": "mob-starter",
-        "name": "MVP App",
-        "price": "da €7.600",
+        "name": "MVP",
+        "price": "da €7.700",
         "subtitle": "React Native o Flutter — time-to-market rapido.",
         "highlight": false,
         "bullets": [
@@ -185,28 +398,15 @@
         ]
       },
       {
-        "id": "mob-growth",
-        "name": "Cross-Platform",
+        "id": "mob-standard",
+        "name": "Standard",
         "price": "da €14.000",
-        "subtitle": "Stesso codice, massima copertura.",
+        "subtitle": "iOS e Android da un solo team.",
         "highlight": true,
         "bullets": [
           "iOS + Android da codebase unica",
           "Integrazioni API / pagamenti / deep link",
-          "CI/CD e build firmate",
-          "3 mesi di bugfix post-launch"
-        ]
-      },
-      {
-        "id": "mob-scale",
-        "name": "Prodotto & Scale",
-        "price": "Su preventivo",
-        "subtitle": "Moduli nativi, offline-first, enterprise.",
-        "highlight": false,
-        "bullets": [
-          "Architetture modulari e feature flags",
-          "Ottimizzazione performance e crash-free sessions",
-          "Roadmap trimestrale con KPI prodotto"
+          "CI/CD e build firmate"
         ]
       }
     ]
@@ -218,10 +418,10 @@
     "cta": "Richiedi preventivo — E-commerce",
     "plans": [
       {
-        "id": "eco-starter",
-        "name": "Store Essentials",
-        "price": "da €3.700",
-        "subtitle": "Custom store + gestione ordini essenziale.",
+        "id": "eco-base",
+        "name": "Base",
+        "price": "da €3.800",
+        "subtitle": "Negozio su misura e gestione ordini essenziale.",
         "highlight": false,
         "bullets": [
           "Tema su misura o headless storefront (vetrina separata dal CMS)",
@@ -230,9 +430,9 @@
         ]
       },
       {
-        "id": "eco-inventory",
-        "name": "Inventory Pro",
-        "price": "da €7.600",
+        "id": "eco-advanced",
+        "name": "Advanced",
+        "price": "da €7.700",
         "subtitle": "Sync magazzino e canali multipli.",
         "highlight": true,
         "bullets": [
@@ -240,18 +440,6 @@
           "Sincronizzazione stock in near real-time",
           "Automazioni alert e rifornimento",
           "Dashboard operativa per il team"
-        ]
-      },
-      {
-        "id": "eco-enterprise",
-        "name": "Commerce Suite",
-        "price": "Su preventivo",
-        "subtitle": "E-commerce complesso e internazionale.",
-        "highlight": false,
-        "bullets": [
-          "Multi-store, multi-valuta, B2B + B2C",
-          "Logistica avanzata e regole commerciali",
-          "Osservabilità, A/B test catalogo, SLA dedicato"
         ]
       }
     ]
@@ -437,7 +625,7 @@
     ],
     "quoteEyebrow": "Preventivo",
     "quoteTitle": "Richiedi una proposta sui servizi",
-    "quoteBody": "Descrivi obiettivi e contesto: indica se ti interessa un ambito specifico (web, app, cloud, SEO) o un pacchetto combinato. Ti rispondiamo con una stima chiara.",
+    "quoteBody": "Descrivi obiettivi e contesto: indica se ti interessa un ambito specifico (web, app, SEO) o un pacchetto combinato. Ti rispondiamo con una stima chiara.",
     "defaultSectionLabel": "Pagina Servizi",
     "items": [
       {
@@ -454,14 +642,6 @@
           "React Native e Flutter: un codebase, store iOS e Android.",
           "UX nativa, deep link, push e monetizzazione in-app.",
           "Release train e monitoraggio crash / ANR."
-        ]
-      },
-      {
-        "title": "Soluzioni Cloud",
-        "points": [
-          "Infra su AWS / GCP / Vercel con costi prevedibili.",
-          "CI/CD, ambienti staging, backup e disaster recovery.",
-          "Osservabilità: log, metriche, alerting."
         ]
       },
       {
@@ -570,25 +750,25 @@
     "headline": "Non costruiamo siti. Costruiamo sistemi che portano clienti.",
     "body": "Quantum Code Technologies Ltd è uno studio web e app con sede legale a Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX. Il nostro team opera tra UK e Italia, costruendo prodotti digitali per aziende che vogliono crescere in entrambi i mercati.",
     "proof": "Il nostro portfolio include CivicAlert, una piattaforma AI civica distribuita presso enti locali del Regno Unito — la prova che costruiamo cose che scalano.",
-    "cta": "Prenota una chiamata gratuita di 15 minuti. Senza impegno."
+    "cta": "Richiedi un audit gratuito del sito dal modulo contatti. Senza impegno."
   },
   "FAQ": {
     "title": "Domande frequenti",
     "ctaTitle": "Pronto a iniziare? Richiedi un preventivo gratuito — risposta entro 24h.",
-    "ctaBody": "Una chiamata di 15 minuti in cui analizziamo il tuo sito attuale e ti diciamo esattamente cosa impedisce le conversioni. Senza impegno. Prenota tramite il modulo contatti.",
+    "ctaBody": "L'audit gratuito è un'analisi del tuo sito attuale, richiesta solo dal modulo contatti. Ti rispondiamo per iscritto entro 48 ore su cosa impedisce le conversioni, senza impegno.",
     "ctaButton": "Richiedi Preventivo",
     "q1": "Quanto costa un sito web?",
-    "a1": "I nostri siti partono da €1.100 per una landing page fino a €25.000+ per una piattaforma corporate completa. Ogni progetto riceve un preventivo personalizzato. Serviamo anche clienti italiani con prezzi in EUR.",
+    "a1": "I nostri siti partono da 1.100 € per una landing page, da 1.700 € per un sito vetrina, da 9.500 € per un sito corporate. Ogni progetto riceve un preventivo personalizzato.",
     "q2": "Lavorate con aziende italiane?",
     "a2": "Sì. Operiamo sia in UK che in Italia. Gestiamo contenuti in IT e EN, conformità UK GDPR e GDPR UE, e fatturazione in GBP ed EUR.",
     "q3": "Cos'è l'audit gratuito del sito?",
-    "a3": "Una chiamata di 15 minuti in cui analizziamo il tuo sito attuale e ti diciamo esattamente cosa impedisce le conversioni. Senza impegno. Prenota tramite il modulo contatti.",
+    "a3": "L'audit gratuito è un'analisi del tuo sito attuale, richiesta solo dal modulo contatti. Ti rispondiamo per iscritto entro 48 ore su cosa impedisce le conversioni, senza impegno.",
     "q4": "Quanto tempo richiede un progetto web?",
     "a4": "Landing page: 1–2 settimane. Siti completi: 4–8 settimane. E-commerce: 6–12 settimane. App mobile: 3–6 mesi in base alla complessità.",
     "q5": "Quali tecnologie utilizzate?",
     "a5": "Next.js, React Native, Tailwind CSS, TypeScript, Supabase e integrazioni AI (OpenAI, Google Vision). Scegliamo lo strumento giusto per ogni progetto, non quello di tendenza.",
     "q6": "Come faccio a iniziare a sviluppare un sito web per la mia attività?",
-    "a6": "Il primo passo è una chiamata gratuita di 15 minuti con il nostro team. Ascoltiamo i tuoi obiettivi, la situazione attuale e il budget — poi prepariamo una proposta chiara entro 48 ore. Non è richiesto alcun impegno in questa fase. Usa il modulo di contatto o scrivici a hello@qc-tech.co.uk.",
+    "a6": "Il primo passo è descriverci il progetto dal modulo contatti: rispondiamo entro 48 ore con una proposta chiara, senza impegno.",
     "q7": "Voglio aprire un'azienda — ho bisogno di un sito web fin dal primo giorno?",
     "a7": "Non necessariamente, ma avere una presenza digitale professionale fin dall'inizio aumenta significativamente la credibilità con potenziali clienti, investitori e partner. Anche una landing page ben costruita con la tua offerta, i contatti e una chiara call to action può generare richieste immediatamente. Possiamo portarti online in 1–2 settimane.",
     "q8": "Qual è la differenza tra un sito web e un'applicazione web?",
@@ -598,7 +778,7 @@
     "q10": "Potete ridisegnare il mio sito esistente senza perdere il posizionamento su Google?",
     "a10": "Sì — e questo è fondamentale. Un redesign fatto senza cura per la SEO può distruggere anni di posizionamento. Conduciamo un audit SEO completo prima di qualsiasi redesign, preserviamo tutti gli URL esistenti o impostiamo i redirect corretti, e trasferiamo tutti i dati strutturati e i metadati. La tua visibilità su Google è protetta durante l'intero processo.",
     "q11": "Offrite manutenzione del sito web dopo il lancio?",
-    "a11": "Sì. Offriamo piani di manutenzione mensile a partire da €145/mese che includono aggiornamenti di sicurezza, monitoraggio delle performance, modifiche ai contenuti, correzione di bug e controllo dell'uptime. I clienti a lungo termine hanno anche tempi di risposta prioritari. Un sito senza manutenzione è un rischio — ci assicuriamo che il tuo rimanga veloce, sicuro e aggiornato.",
+    "a11": "Sì. Offriamo piani di manutenzione mensile a partire da €110/mese che includono aggiornamenti di sicurezza, monitoraggio delle performance, modifiche ai contenuti, correzione di bug e controllo dell'uptime. I clienti a lungo termine hanno anche tempi di risposta prioritari. Un sito senza manutenzione è un rischio — ci assicuriamo che il tuo rimanga veloce, sicuro e aggiornato.",
     "q12": "Potete integrare l'AI nel mio sito o nella mia app?",
     "a12": "Assolutamente sì. L'integrazione AI è una delle nostre competenze principali. Implementiamo AI per: chatbot intelligenti e automazione del servizio clienti, analisi e moderazione dei contenuti, motori di personalizzazione, ricerca predittiva, riconoscimento delle immagini e reportistica automatizzata. Utilizziamo OpenAI, Google AI e modelli personalizzati in base al caso d'uso — sempre dove aggiunge valore reale al business.",
     "q13": "Cos'è un MVP e ne ho bisogno per la mia idea di app?",
@@ -610,8 +790,8 @@
   },
   "FinalCTA": {
     "headline": "Pronto a trasformare il tuo sito in un generatore di clienti?",
-    "subheadline": "Prenota un audit gratuito di 15 minuti. Ti diremo esattamente cosa blocca le conversioni del tuo sito — senza impegno, senza vendite aggressive.",
-    "button": "Prenota il tuo audit gratuito →",
+    "subheadline": "Richiedi un audit gratuito dal modulo contatti. Ti diremo per iscritto, entro 48 ore, cosa blocca le conversioni del tuo sito — senza impegno.",
+    "button": "Richiedi il tuo audit gratuito",
     "note": "Rispondiamo entro 24 ore."
   },
   "Vision": {

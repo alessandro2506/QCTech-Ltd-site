@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getPostBySlug, getPostSlugs } from "@/lib/blog";
+import { PORTFOLIO_IDS } from "@/lib/portfolio-sites";
 
 const baseUrl = "https://www.qc-tech.co.uk";
 
@@ -137,6 +138,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       });
     }
+  }
+
+  for (const slug of PORTFOLIO_IDS) {
+    entries.push({
+      url: `${baseUrl}/it/progetti/${slug}`,
+      lastModified: CORE_LASTMOD,
+      changeFrequency: "monthly",
+      priority: 0.6,
+      alternates: {
+        languages: {
+          it: `${baseUrl}/it/progetti/${slug}`,
+          en: `${baseUrl}/en/projects/${slug}`,
+          "x-default": `${baseUrl}/en/projects/${slug}`,
+        },
+      },
+    });
+    entries.push({
+      url: `${baseUrl}/en/projects/${slug}`,
+      lastModified: CORE_LASTMOD,
+      changeFrequency: "monthly",
+      priority: 0.6,
+      alternates: {
+        languages: {
+          it: `${baseUrl}/it/progetti/${slug}`,
+          en: `${baseUrl}/en/projects/${slug}`,
+          "x-default": `${baseUrl}/en/projects/${slug}`,
+        },
+      },
+    });
   }
 
   return entries;

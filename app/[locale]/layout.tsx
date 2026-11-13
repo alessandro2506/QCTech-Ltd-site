@@ -5,10 +5,13 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { QuantisFloat } from "@/components/quantis-float";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { SchemaOrg } from "@/components/schema-org";
 import { MainWrapper } from "@/components/main-wrapper";
+import { ThemeScope } from "@/components/theme-scope";
 import { CookieBanner } from "@/components/cookie-banner";
+import { AssistantHost } from "@/components/assistant-host";
 import { GoogleAnalytics } from "@/components/google-analytics";
 import { siteConfig } from "@/app.config";
 import { routing } from "@/i18n/routing";
@@ -109,15 +112,19 @@ export default async function LocaleLayout({ children, params }: Props) {
       lang={locale}
       className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-[#08050f] text-slate-100">
+      <body className="flex min-h-full flex-col bg-[var(--light-bg)] text-[var(--light-text)]">
         <NextIntlClientProvider messages={messages}>
           <SchemaOrg locale={locale} />
           <GoogleAnalytics />
-          <SiteHeader />
-          <MainWrapper>{children}</MainWrapper>
-          <SiteFooter />
-          <ScrollToTop />
-          <CookieBanner />
+          <ThemeScope>
+            <SiteHeader />
+            <MainWrapper>{children}</MainWrapper>
+            <SiteFooter />
+            <QuantisFloat placement="dock" />
+            <AssistantHost />
+            <ScrollToTop />
+            <CookieBanner />
+          </ThemeScope>
         </NextIntlClientProvider>
       </body>
     </html>

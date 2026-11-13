@@ -1,124 +1,171 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
-import { ArrowDown, ArrowRight, ShieldCheck } from "lucide-react";
-import { QCTechLogo } from "@/components/qctech-logo";
-import { MatrixRain } from "@/components/matrix-rain";
+import { ArrowRight } from "lucide-react";
+import { QuantisFloat } from "@/components/quantis-float";
 import { Link } from "@/i18n/routing";
+
+type HeroChip = {
+  id: string;
+  label: string;
+  support: string;
+};
 
 export function HeroHome() {
   const t = useTranslations("hero");
+  const chips = t.raw("chips") as HeroChip[];
+  const [activeId, setActiveId] = useState(chips[0]?.id ?? "");
+  const active = chips.find((chip) => chip.id === activeId) ?? chips[0];
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const hero = sectionRef.current;
+    if (!hero) return;
+
+    const fineQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let rafId = 0;
+    let mx = 0;
+    let my = 0;
+    let px = 0;
+    let py = 0;
+    let listening = false;
+    let nextEvent: PointerEvent | null = null;
+
+    const apply = () => {
+      rafId = 0;
+      const queued = nextEvent;
+      nextEvent = null;
+      if (queued) {
+        const rect = hero.getBoundingClientRect();
+        const width = rect.width || 1;
+        const height = rect.height || 1;
+        mx = ((queued.clientX - rect.left) / width) * 2 - 1;
+        my = ((queued.clientY - rect.top) / height) * 2 - 1;
+        mx = Math.max(-1, Math.min(1, mx));
+        my = Math.max(-1, Math.min(1, my));
+        px = queued.clientX - rect.left;
+        py = queued.clientY - rect.top;
+      }
+      hero.style.setProperty("--mx", String(mx));
+      hero.style.setProperty("--my", String(my));
+      hero.style.setProperty("--px", `${px}px`);
+      hero.style.setProperty("--py", `${py}px`);
+    };
+
+    const onMove = (event: PointerEvent) => {
+      nextEvent = event;
+      if (rafId !== 0) return;
+      rafId = window.requestAnimationFrame(apply);
+    };
+
+    const onEnter = () => hero.classList.add("is-pointer");
+    const onLeave = () => hero.classList.remove("is-pointer");
+
+    const attach = () => {
+      if (listening || !fineQuery.matches || motionQuery.matches) return;
+      hero.addEventListener("pointermove", onMove, { passive: true });
+      hero.addEventListener("pointerenter", onEnter);
+      hero.addEventListener("pointerleave", onLeave);
+      listening = true;
+    };
+
+    const detach = () => {
+      if (!listening) return;
+      hero.removeEventListener("pointermove", onMove);
+      hero.removeEventListener("pointerenter", onEnter);
+      hero.removeEventListener("pointerleave", onLeave);
+      hero.classList.remove("is-pointer");
+      listening = false;
+      if (rafId !== 0) {
+        window.cancelAnimationFrame(rafId);
+        rafId = 0;
+      }
+      nextEvent = null;
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) attach();
+      else detach();
+    });
+    observer.observe(hero);
+
+    const onChange = () => {
+      detach();
+      if (hero.getClientRects().length > 0) attach();
+    };
+    fineQuery.addEventListener("change", onChange);
+    motionQuery.addEventListener("change", onChange);
+
+    return () => {
+      observer.disconnect();
+      fineQuery.removeEventListener("change", onChange);
+      motionQuery.removeEventListener("change", onChange);
+      detach();
+    };
+  }, []);
 
   return (
-    <section className="relative overflow-hidden pb-20 pt-[4.5rem] sm:pb-28 sm:pt-[4.75rem]">
-      {/* Matrix rain full-hero background */}
-      <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden>
-        <MatrixRain className="absolute inset-0 opacity-[0.22]" />
+    <section ref={sectionRef} className="hero-home">
+      <div className="hero-aurora" aria-hidden>
+        <span className="hero-aurora-blob hero-aurora-blob-a" />
+        <span className="hero-aurora-blob hero-aurora-blob-b" />
+        <span className="hero-aurora-blob hero-aurora-blob-c" />
+        <span className="hero-aurora-spot" />
+        <span className="hero-aurora-dots" />
       </div>
+      <div className="hero-home-grid">
+        <div className="hero-home-copy">
+          <p className="hero-home-badge">
+            <span className="hero-home-badge-dot" aria-hidden />
+            {t("availability")}
+          </p>
 
-      {/* Quantum ambient glows */}
-      <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden>
-        <div className="absolute -left-40 top-10 h-96 w-96 rounded-full bg-violet-600/20 blur-[100px]" />
-        <div className="absolute -right-32 bottom-0 h-80 w-80 rounded-full bg-cyan-400/15 blur-[80px]" />
-        <div className="absolute left-1/2 top-1/3 h-64 w-64 -translate-x-1/2 rounded-full bg-violet-500/10 blur-[60px]" />
-      </div>
+          <h1 className="hero-home-title">
+            {t("headlineLead")}{" "}
+            <span className="hero-home-title-emphasis">{t("headlineEmphasis")}</span>
+          </h1>
 
-      {/* Quantum grid */}
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-quantum-grid opacity-60" aria-hidden />
+          {active ? <p className="hero-home-support">{active.support}</p> : null}
 
-      <div className="mx-auto flex max-w-6xl flex-col items-center px-4 text-center sm:px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-6 sm:mb-8"
-        >
-          <div className="flex justify-center">
-            <QCTechLogo variant="hero" />
+          <div
+            className="hero-home-chips"
+            role="group"
+            aria-label={t("chipsLabel")}
+          >
+            {chips.map((chip) => {
+              const selected = chip.id === active?.id;
+              return (
+                <button
+                  key={chip.id}
+                  type="button"
+                  aria-pressed={selected}
+                  onClick={() => setActiveId(chip.id)}
+                  className={`hero-home-chip${selected ? " is-active" : ""}`}
+                >
+                  {chip.label}
+                </button>
+              );
+            })}
           </div>
-        </motion.div>
 
-        {/* Quantum badge */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.4, delay: 0.05 }}
-          className="mb-5 inline-flex items-center gap-2 rounded-full border border-violet-500/30 bg-violet-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-violet-300"
-        >
-          <span className="quantum-pulse h-1.5 w-1.5 rounded-full bg-cyan-400 inline-block" />
-          Quantum Code Technologies
-        </motion.div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-3xl text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl"
-        >
-          {t("headlineBefore")}{" "}
-          <span className="gradient-quantum text-glow-violet">
-            {t("headlineAccent")}
-          </span>
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, delay: 0.12 }}
-          className="mt-4 text-sm text-slate-500"
-        >
-          {t("legalLine")}
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, delay: 0.16 }}
-          className="mt-5 max-w-2xl text-lg text-slate-400 sm:text-xl"
-        >
-          {t("sub")}
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.24 }}
-          className="mt-8 flex w-full max-w-md flex-col items-stretch gap-3 sm:max-w-none sm:items-center"
-        >
-          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-5">
-            <Link
-              href="/contatti"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-violet-600/30 transition hover:brightness-110 glow-violet"
-            >
+          <div className="hero-home-cta">
+            <Link href="/contatti" className="hero-home-cta-primary">
               {t("ctaPrimary")}
               <ArrowRight className="h-5 w-5" aria-hidden />
             </Link>
-            <Link
-              href="/servizi"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-violet-500/30 bg-white/5 px-7 py-3.5 text-base font-semibold text-slate-200 backdrop-blur-sm transition hover:border-violet-400/50 hover:bg-white/10"
-            >
+            <a href="#progetti" className="hero-home-cta-secondary">
               {t("ctaSecondary")}
-            </Link>
+            </a>
           </div>
-          <a
-            href="#prezzi"
-            className="inline-flex items-center justify-center gap-2 rounded-xl border border-cyan-500/25 bg-cyan-500/5 px-7 py-3 text-base font-semibold text-cyan-300 backdrop-blur-sm transition hover:border-cyan-400/40 hover:bg-cyan-500/10"
-          >
-            {t("ctaPlans")}
-            <ArrowDown className="h-4 w-4 text-cyan-400" aria-hidden />
-          </a>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.35, duration: 0.4 }}
-          className="mt-10 flex items-center gap-2 text-sm text-slate-500"
-        >
-          <ShieldCheck className="h-5 w-5 text-cyan-500" aria-hidden />
-          <span>{t("trust")}</span>
-        </motion.div>
+        <div className="hero-home-mark">
+          <div className="hero-quantis-halo">
+            <QuantisFloat placement="hero" />
+          </div>
+        </div>
       </div>
     </section>
   );

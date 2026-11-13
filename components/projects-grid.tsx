@@ -3,12 +3,17 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
-import { ExternalLink } from "lucide-react";
 import {
   projects,
-  statusBadgeClass,
   type ProjectItem,
+  type ProjectStatusType,
 } from "@/lib/projects-data";
+
+const lightBadgeClass: Record<ProjectStatusType, string> = {
+  live: "border-emerald-700/30 bg-emerald-50 text-emerald-800",
+  development: "border-amber-800/25 bg-amber-50 text-amber-900",
+  coming: "border-[var(--light-border)] bg-[var(--light-surface)] text-[var(--light-text-muted)]",
+};
 
 function ProjectCard({
   project,
@@ -36,7 +41,7 @@ function ProjectCard({
         delay: index * 0.08,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className="glass-card flex flex-col rounded-2xl border border-violet-500/15 p-6"
+      className="flex flex-col rounded-2xl border border-[var(--light-border)] bg-white p-6"
     >
       <div className="flex h-14 items-center">
         <Image
@@ -47,13 +52,15 @@ function ProjectCard({
           className="h-12 w-auto max-w-[180px] object-contain object-left"
         />
       </div>
-      <h2 className="mt-4 text-xl font-bold text-white">{project.name}</h2>
-      <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-400">
+      <h2 className="mt-4 text-xl font-bold text-[var(--light-text)]">
+        {project.name}
+      </h2>
+      <p className="mt-2 flex-1 text-sm leading-relaxed text-[var(--light-text-muted)]">
         {description}
       </p>
       <div className="mt-5 flex flex-wrap items-center gap-3">
         <span
-          className={`inline-flex rounded-full border px-3 py-1 text-xs font-semibold ${statusBadgeClass[project.statusType]}`}
+          className={`inline-flex rounded-full border px-3 py-1 text-xs font-semibold ${lightBadgeClass[project.statusType]}`}
         >
           {status}
         </span>
@@ -62,13 +69,12 @@ function ProjectCard({
             href={project.externalUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-violet-500/20 transition hover:brightness-110"
+            className="inline-flex items-center rounded-xl bg-[var(--light-primary)] px-4 py-2 text-sm font-semibold text-white transition hover:brightness-110"
           >
             {isIt ? "Visita il sito" : "Visit website"}
-            <ExternalLink className="h-3.5 w-3.5" aria-hidden />
           </a>
         ) : (
-          <span className="inline-flex rounded-full border border-slate-500/25 bg-slate-500/10 px-3 py-1 text-xs font-semibold text-slate-400">
+          <span className="inline-flex rounded-full border border-[var(--light-border)] bg-[var(--light-surface)] px-3 py-1 text-xs font-semibold text-[var(--light-text-muted)]">
             {comingSoonLabel}
           </span>
         )}
@@ -77,10 +83,18 @@ function ProjectCard({
   );
 }
 
-export function ProjectsGrid({ locale }: { locale: string }) {
+export function ProjectsGrid({
+  locale,
+  excludeIds = [],
+}: {
+  locale: string;
+  excludeIds?: string[];
+}) {
+  const items = projects.filter((project) => !excludeIds.includes(project.id));
+
   return (
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-      {projects.map((project, index) => (
+      {items.map((project, index) => (
         <ProjectCard
           key={project.id}
           project={project}

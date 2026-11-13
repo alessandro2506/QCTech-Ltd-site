@@ -109,18 +109,6 @@ export function CopilotLtdPage() {
 
   return (
     <div className="relative overflow-hidden pb-24">
-      <div
-        className="pointer-events-none absolute inset-0 -z-10 bg-[#0a0a0f]"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute -left-40 top-0 -z-10 h-96 w-96 rounded-full bg-violet-600/20 blur-[100px]"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute -right-32 top-1/3 -z-10 h-80 w-80 rounded-full bg-cyan-400/15 blur-[80px]"
-        aria-hidden
-      />
 
       {/* Hero */}
       <section className="relative px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32">
@@ -129,7 +117,7 @@ export function CopilotLtdPage() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45 }}
-            className="text-xs font-semibold uppercase tracking-widest text-cyan-400"
+            className="text-xs font-semibold uppercase tracking-widest text-[var(--light-primary)]"
           >
             {t("hero.eyebrow")}
           </motion.p>
@@ -137,7 +125,7 @@ export function CopilotLtdPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.08 }}
-            className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl"
+            className="mt-4 text-3xl font-bold tracking-tight text-[var(--light-emphasis)] sm:text-4xl md:text-5xl"
           >
             {t("hero.title")}
           </motion.h1>
@@ -145,7 +133,7 @@ export function CopilotLtdPage() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, delay: 0.16 }}
-            className="mt-5 text-lg text-slate-400 sm:text-xl"
+            className="mt-5 text-lg text-[var(--light-text-muted)] sm:text-xl"
           >
             {t("hero.subtitle")}
           </motion.p>
@@ -157,7 +145,7 @@ export function CopilotLtdPage() {
           >
             <a
               href="#copilot-form"
-              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-violet-500/25 transition hover:brightness-110"
+              className="inline-flex items-center gap-2 rounded-full bg-[var(--light-primary)] px-8 py-3.5 text-sm font-semibold text-white transition hover:brightness-110"
             >
               {t("hero.cta")}
               <ArrowDown className="h-4 w-4" aria-hidden />
@@ -172,14 +160,14 @@ export function CopilotLtdPage() {
           {problemCards.map((card, i) => {
             const Icon = PROBLEM_ICONS[i];
             return (
-              <div key={card.title} className="glass-card rounded-2xl p-6">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-violet-500/15 text-violet-400">
+              <div key={card.title} className="rounded-2xl border border-[var(--light-border)] bg-white p-6">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--light-surface)] text-[var(--light-primary)]">
                   <Icon className="h-5 w-5" aria-hidden />
                 </div>
-                <h2 className="mt-4 text-lg font-bold text-white">
+                <h2 className="mt-4 text-lg font-bold text-[var(--light-emphasis)]">
                   {card.title}
                 </h2>
-                <p className="mt-2 text-sm leading-relaxed text-slate-400">
+                <p className="mt-2 text-sm leading-relaxed text-[var(--light-text-muted)]">
                   {card.description}
                 </p>
               </div>
@@ -191,10 +179,10 @@ export function CopilotLtdPage() {
       {/* Solution */}
       <ScrollSection className="mx-auto mt-20 max-w-6xl px-4 sm:px-6">
         <div className="text-center">
-          <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-tight text-[var(--light-emphasis)] sm:text-3xl">
             {t("solution.title")}
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-slate-400">
+          <p className="mx-auto mt-3 max-w-2xl text-[var(--light-text-muted)]">
             {t("solution.intro")}
           </p>
         </div>
@@ -202,12 +190,12 @@ export function CopilotLtdPage() {
           {steps.map((step, i) => (
             <div
               key={step}
-              className="flex gap-4 rounded-xl border border-violet-500/15 bg-white/3 p-4"
+              className="flex gap-4 rounded-xl border border-[var(--light-border)] bg-white p-4"
             >
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-violet-600 to-cyan-500 text-sm font-bold text-white">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--light-primary)] text-sm font-bold text-white">
                 {i + 1}
               </span>
-              <p className="pt-0.5 text-sm leading-relaxed text-slate-300">
+              <p className="pt-0.5 text-sm leading-relaxed text-[var(--light-text)]">
                 {step}
               </p>
             </div>
@@ -217,12 +205,12 @@ export function CopilotLtdPage() {
 
       {/* Proof */}
       <ScrollSection className="mx-auto mt-20 max-w-3xl px-4 sm:px-6">
-        <div className="rounded-2xl border border-cyan-400/35 bg-gradient-to-br from-violet-600/10 to-cyan-500/5 p-8 shadow-lg shadow-cyan-500/10">
+        <div className="rounded-2xl border border-[var(--light-border)] bg-white p-8">
           <div className="flex items-center gap-2">
-            <Check className="h-5 w-5 text-cyan-400" aria-hidden />
-            <h2 className="text-xl font-bold text-white">{t("proof.title")}</h2>
+            <Check className="h-5 w-5 text-[var(--light-primary)]" aria-hidden />
+            <h2 className="text-xl font-bold text-[var(--light-emphasis)]">{t("proof.title")}</h2>
           </div>
-          <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">
+          <p className="mt-3 text-sm leading-relaxed text-[var(--light-text)] sm:text-base">
             {t("proof.body")}
           </p>
         </div>
@@ -230,14 +218,14 @@ export function CopilotLtdPage() {
 
       {/* Pricing */}
       <ScrollSection className="mx-auto mt-20 max-w-2xl px-4 sm:px-6">
-        <div className="glass-card rounded-2xl p-8 text-center">
-          <span className="inline-flex rounded-full border border-violet-500/30 bg-violet-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-violet-300">
+        <div className="rounded-2xl border border-[var(--light-border)] bg-white p-8 text-center">
+          <span className="inline-flex rounded-full border border-[var(--light-border)] bg-[var(--light-surface)] px-3 py-1 text-xs font-semibold uppercase tracking-widest text-[var(--light-primary)]">
             {t("pricing.badge")}
           </span>
-          <h2 className="mt-4 text-2xl font-bold text-white">
+          <h2 className="mt-4 text-2xl font-bold text-[var(--light-emphasis)]">
             {t("pricing.title")}
           </h2>
-          <p className="mt-3 text-slate-400">{t("pricing.body")}</p>
+          <p className="mt-3 text-[var(--light-text-muted)]">{t("pricing.body")}</p>
         </div>
       </ScrollSection>
 
@@ -246,13 +234,13 @@ export function CopilotLtdPage() {
         id="copilot-form"
         className="mx-auto mt-20 max-w-xl scroll-mt-28 px-4 sm:px-6 sm:scroll-mt-32"
       >
-        <div className="glass-card rounded-2xl p-6 sm:p-8">
-          <h2 className="text-xl font-bold text-white">{t("form.title")}</h2>
-          <p className="mt-2 text-sm text-slate-400">{t("form.subtitle")}</p>
+        <div className="rounded-2xl border border-[var(--light-border)] bg-white p-6 sm:p-8">
+          <h2 className="text-xl font-bold text-[var(--light-emphasis)]">{t("form.title")}</h2>
+          <p className="mt-2 text-sm text-[var(--light-text-muted)]">{t("form.subtitle")}</p>
 
           {formStatus === "success" ? (
             <p
-              className="mt-6 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-300"
+              className="mt-6 rounded-xl border border-emerald-700/20 bg-emerald-50 px-4 py-3 text-sm text-emerald-800"
               role="status"
             >
               {t("form.success")}
@@ -262,7 +250,7 @@ export function CopilotLtdPage() {
               <div>
                 <label
                   htmlFor="copilot-name"
-                  className="block text-sm font-medium text-slate-300"
+                  className="block text-sm font-medium text-[var(--light-text)]"
                 >
                   {t("form.name")}
                 </label>
@@ -275,13 +263,13 @@ export function CopilotLtdPage() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   disabled={formStatus === "loading"}
-                  className="mt-1.5 w-full rounded-xl border border-violet-500/20 bg-white/5 px-4 py-3 text-slate-100 outline-none ring-violet-500/40 transition placeholder:text-slate-600 focus:border-violet-400 focus:ring-2 disabled:opacity-60"
+                  className="mt-1.5 w-full rounded-xl border border-[var(--light-border)] bg-white px-4 py-3 text-[var(--light-text)] outline-none ring-[var(--light-primary)]/40 transition placeholder:text-[var(--light-text-muted)] focus:border-[var(--light-primary)] focus:ring-2 disabled:opacity-60"
                 />
               </div>
               <div>
                 <label
                   htmlFor="copilot-email"
-                  className="block text-sm font-medium text-slate-300"
+                  className="block text-sm font-medium text-[var(--light-text)]"
                 >
                   {t("form.email")}
                 </label>
@@ -294,13 +282,13 @@ export function CopilotLtdPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   disabled={formStatus === "loading"}
-                  className="mt-1.5 w-full rounded-xl border border-violet-500/20 bg-white/5 px-4 py-3 text-slate-100 outline-none ring-violet-500/40 transition placeholder:text-slate-600 focus:border-violet-400 focus:ring-2 disabled:opacity-60"
+                  className="mt-1.5 w-full rounded-xl border border-[var(--light-border)] bg-white px-4 py-3 text-[var(--light-text)] outline-none ring-[var(--light-primary)]/40 transition placeholder:text-[var(--light-text-muted)] focus:border-[var(--light-primary)] focus:ring-2 disabled:opacity-60"
                 />
               </div>
               <div>
                 <label
                   htmlFor="copilot-status"
-                  className="block text-sm font-medium text-slate-300"
+                  className="block text-sm font-medium text-[var(--light-text)]"
                 >
                   {t("form.statusLabel")}
                 </label>
@@ -311,7 +299,7 @@ export function CopilotLtdPage() {
                   value={status}
                   onChange={(e) => setStatus(e.target.value)}
                   disabled={formStatus === "loading"}
-                  className="mt-1.5 w-full rounded-xl border border-violet-500/20 bg-white/5 px-4 py-3 text-slate-100 outline-none ring-violet-500/40 transition focus:border-violet-400 focus:ring-2 disabled:opacity-60"
+                  className="mt-1.5 w-full rounded-xl border border-[var(--light-border)] bg-white px-4 py-3 text-[var(--light-text)] outline-none ring-[var(--light-primary)]/40 transition focus:border-[var(--light-primary)] focus:ring-2 disabled:opacity-60"
                 >
                   <option value="">{t("form.statusPlaceholder")}</option>
                   {statusOptions.map((opt) => (
@@ -331,7 +319,7 @@ export function CopilotLtdPage() {
               <button
                 type="submit"
                 disabled={formStatus === "loading"}
-                className="w-full rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 px-5 py-3.5 text-sm font-semibold text-white shadow-md shadow-violet-500/20 transition hover:brightness-110 disabled:opacity-60"
+                className="w-full rounded-full bg-[var(--light-primary)] px-5 py-3.5 text-sm font-semibold text-white transition hover:brightness-110 disabled:opacity-60"
               >
                 {formStatus === "loading"
                   ? t("form.submitting")
