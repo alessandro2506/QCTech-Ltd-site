@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "i18n:deepl": "node scripts/deepl-sync-en.mjs"
+    "i18n:deepl": "node scripts/deepl-sync-en.mjs",
+    "blog:generate": "node scripts/generate-blog-post.mjs",
+    "blog:dry-run": "node scripts/generate-blog-post.mjs --dry-run"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.92.0",
