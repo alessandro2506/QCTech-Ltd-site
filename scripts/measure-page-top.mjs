@@ -1,6 +1,7 @@
 import { chromium } from "playwright";
 
 const ORIGIN = process.env.MEASURE_ORIGIN ?? "https://www.qc-tech.co.uk";
+const BUST = process.env.MEASURE_BUST ? `?cb=${process.env.MEASURE_BUST}` : "";
 const WIDTHS = [390, 768, 1440];
 const HEIGHT = 900;
 
@@ -32,71 +33,52 @@ const ANCHORS = [
   { path: "/it/servizi", hash: "servizio-seo" },
 ];
 
-function stickyHeaderBottom() {
-  const pill = document.querySelector(".site-header-pill");
-  const mobile = document.querySelector(".site-header-mobile");
-  const vis = [pill, mobile].filter((el) => {
-    if (!el) return false;
-    const s = getComputedStyle(el);
-    return s.display !== "none" && s.visibility !== "hidden";
-  });
-  if (vis.length === 0) return 0;
-  return Math.max(...vis.map((el) => el.getBoundingClientRect().bottom));
-}
-
-function readFirstText() {
-  const headerBottom = stickyHeaderBottom();
-  const badge = document.querySelector(".hero-home-badge");
-  if (badge) {
-    const r = badge.getBoundingClientRect();
-    return {
-      kind: "badge",
-      top: Math.round(r.top * 10) / 10,
-      headerBottom: Math.round(headerBottom * 10) / 10,
-      underHeader: r.top + 0.5 < headerBottom,
-      text: (badge.textContent || "").trim().slice(0, 40),
-    };
-  }
-  const main = document.querySelector("main");
-  if (!main) return { kind: "none", top: null, headerBottom, underHeader: false, text: "" };
-  const nodes = [...main.querySelectorAll("h1, h2, p, a, li, span")];
-  for (const node of nodes) {
-    const style = getComputedStyle(node);
-    if (style.display === "none" || style.visibility === "hidden") continue;
-    const text = (node.textContent || "").replace(/\s+/g, " ").trim();
-    if (text.length < 2) continue;
-    const r = node.getBoundingClientRect();
-    if (r.height < 8 || r.width < 8) continue;
-    return {
-      kind: node.tagName.toLowerCase(),
-      top: Math.round(r.top * 10) / 10,
-      headerBottom: Math.round(headerBottom * 10) / 10,
-      underHeader: r.top + 0.5 < headerBottom,
-      text: text.slice(0, 40),
-    };
-  }
-  return { kind: "none", top: null, headerBottom, underHeader: false, text: "" };
-}
-
-function readAnchor(anchorId) {
-  const headerBottom = stickyHeaderBottom();
-  const el = document.getElementById(anchorId);
-  if (!el) return { found: false, id: anchorId };
-  const r = el.getBoundingClientRect();
-  return {
-    found: true,
-    id: anchorId,
-    top: Math.round(r.top * 10) / 10,
-    headerBottom: Math.round(headerBottom * 10) / 10,
-    underHeader: r.top + 0.5 < headerBottom,
-  };
-}
-
 async function measurePage(page, url) {
   await page.goto(url, { waitUntil: "domcontentloaded", timeout: 45000 });
   await page.waitForSelector("main", { timeout: 15000 });
   await page.waitForTimeout(300);
-  return page.evaluate(readFirstText);
+  return page.evaluate(() => {
+    const pill = document.querySelector(".site-header-pill");
+    const mobile = document.querySelector(".site-header-mobile");
+    const vis = [pill, mobile].filter((el) => {
+      if (!el) return false;
+      const s = getComputedStyle(el);
+      return s.display !== "none" && s.visibility !== "hidden";
+    });
+    const headerBottom = vis.length
+      ? Math.max(...vis.map((el) => el.getBoundingClientRect().bottom))
+      : 0;
+    const badge = document.querySelector(".hero-home-badge");
+    if (badge) {
+      const r = badge.getBoundingClientRect();
+      return {
+        kind: "badge",
+        top: Math.round(r.top * 10) / 10,
+        headerBottom: Math.round(headerBottom * 10) / 10,
+        underHeader: r.top + 0.5 < headerBottom,
+        text: (badge.textContent || "").trim().slice(0, 40),
+      };
+    }
+    const main = document.querySelector("main");
+    if (!main) return { kind: "none", top: null, headerBottom, underHeader: false, text: "" };
+    const nodes = [...main.querySelectorAll("h1, h2, p, a, li, span")];
+    for (const node of nodes) {
+      const style = getComputedStyle(node);
+      if (style.display === "none" || style.visibility === "hidden") continue;
+      const text = (node.textContent || "").replace(/\s+/g, " ").trim();
+      if (text.length < 2) continue;
+      const r = node.getBoundingClientRect();
+      if (r.height < 8 || r.width < 8) continue;
+      return {
+        kind: node.tagName.toLowerCase(),
+        top: Math.round(r.top * 10) / 10,
+        headerBottom: Math.round(headerBottom * 10) / 10,
+        underHeader: r.top + 0.5 < headerBottom,
+        text: text.slice(0, 40),
+      };
+    }
+    return { kind: "none", top: null, headerBottom, underHeader: false, text: "" };
+  });
 }
 
 async function main() {
@@ -114,7 +96,7 @@ async function main() {
     for (const locale of ["it", "en"]) {
       for (const spec of PAGES) {
         const path = spec[locale];
-        const url = `${ORIGIN}${path}`;
+        const url = `${ORIGIN}${path}${BUST}`;
         try {
           const result = await measurePage(page, url);
           rows.push({
@@ -140,13 +122,36 @@ async function main() {
   const page = await context.newPage();
   const anchors = [];
   for (const item of ANCHORS) {
-    await page.goto(`${ORIGIN}${item.path}#${item.hash}`, {
+    await page.goto(`${ORIGIN}${item.path}${BUST}#${item.hash}`, {
       waitUntil: "domcontentloaded",
       timeout: 45000,
     });
     await page.waitForSelector("main", { timeout: 15000 });
     await page.waitForTimeout(400);
-    anchors.push(await page.evaluate(readAnchor, item.hash));
+    anchors.push(
+      await page.evaluate((anchorId) => {
+        const pill = document.querySelector(".site-header-pill");
+        const mobile = document.querySelector(".site-header-mobile");
+        const vis = [pill, mobile].filter((el) => {
+          if (!el) return false;
+          const s = getComputedStyle(el);
+          return s.display !== "none" && s.visibility !== "hidden";
+        });
+        const headerBottom = vis.length
+          ? Math.max(...vis.map((el) => el.getBoundingClientRect().bottom))
+          : 0;
+        const el = document.getElementById(anchorId);
+        if (!el) return { found: false, id: anchorId };
+        const r = el.getBoundingClientRect();
+        return {
+          found: true,
+          id: anchorId,
+          top: Math.round(r.top * 10) / 10,
+          headerBottom: Math.round(headerBottom * 10) / 10,
+          underHeader: r.top + 0.5 < headerBottom,
+        };
+      }, item.hash),
+    );
   }
   await context.close();
   await browser.close();
