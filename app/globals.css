@@ -34,8 +34,8 @@ body {
 /* First-block offset on inner pages. Matches the home hero badge:
    <main> already has header padding (60px / 98px lg).
    <1024: same as .hero-home padding-top (2.5rem) → 100px from viewport.
-   ≥1024: home badge is vertically centred in the 620px hero grid (219px from viewport),
-   so 219px − 98px = 121px. Do not use on the home hero or on <main>. */
+   ≥1024: same as .hero-home padding-top (121px) → 219px from viewport.
+   Do not use on the home hero or on <main>. */
 .page-top {
   padding-top: 2.5rem;
 }
@@ -550,14 +550,14 @@ body {
 
 @media (min-width: 1024px) {
   .hero-home {
-    padding: 1.5rem 1.5rem 4.5rem;
+    padding: 121px 1.5rem 4.5rem;
   }
 
   .hero-home-grid {
     display: grid;
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
     gap: 48px;
-    align-items: center;
+    align-items: start;
     min-height: 620px;
     text-align: left;
   }
@@ -579,6 +579,7 @@ body {
   .hero-home-mark {
     display: flex;
     justify-content: center;
+    align-self: center;
   }
 
   .hero-quantis-halo {

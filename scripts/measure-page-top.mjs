@@ -153,6 +153,35 @@ async function main() {
       }, item.hash),
     );
   }
+  const heroFit = [];
+  for (const locale of ["it", "en"]) {
+    await page.setViewportSize({ width: 1440, height: HEIGHT });
+    await page.goto(`${ORIGIN}/${locale}${BUST}`, {
+      waitUntil: "domcontentloaded",
+      timeout: 45000,
+    });
+    await page.waitForSelector(".hero-home", { timeout: 15000 });
+    await page.waitForTimeout(300);
+    heroFit.push(
+      await page.evaluate(() => {
+        const vh = window.innerHeight;
+        const cta = document.querySelector(".hero-home-cta");
+        const mark = document.querySelector(".hero-quantis-halo");
+        const ctaBox = cta?.getBoundingClientRect();
+        const markBox = mark?.getBoundingClientRect();
+        return {
+          locale: document.documentElement.lang,
+          ctaInView: Boolean(
+            ctaBox && ctaBox.top >= 0 && ctaBox.bottom <= vh + 1,
+          ),
+          markInView: Boolean(
+            markBox && markBox.top >= 0 && markBox.bottom <= vh + 1 && markBox.width > 0,
+          ),
+          markCut: Boolean(markBox && (markBox.left < -1 || markBox.right > window.innerWidth + 1)),
+        };
+      }),
+    );
+  }
   await context.close();
   await browser.close();
 
@@ -197,6 +226,10 @@ async function main() {
   console.log("ANCHORS");
   for (const a of anchors) {
     console.log(JSON.stringify(a));
+  }
+  console.log("HERO_FIT_1440");
+  for (const row of heroFit) {
+    console.log(JSON.stringify(row));
   }
   if (failures.length) {
     console.error(failures.join("\n"));
