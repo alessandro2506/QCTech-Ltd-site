@@ -44,7 +44,7 @@ export default async function VisionPage() {
   ];
 
   return (
-    <div className="relative pb-24 pt-28 sm:pt-32">
+    <div className="page-top relative pb-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <p className="text-xs font-semibold uppercase tracking-widest text-[var(--light-primary)]">
           {t("hero.label")}

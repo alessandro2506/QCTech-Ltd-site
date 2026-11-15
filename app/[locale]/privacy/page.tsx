@@ -45,7 +45,7 @@ export default async function PrivacyPage({ params }: PageProps) {
   const isIt = locale === "it";
 
   return (
-    <div className="pb-24 pt-28 sm:pt-32">
+    <div className="page-top pb-24">
       <article className="mx-auto max-w-3xl px-4 sm:px-6">
         <h1 className="text-3xl font-bold tracking-tight text-[var(--light-emphasis)] sm:text-4xl">
           {isIt ? "Informativa sulla Privacy" : "Privacy Policy"}

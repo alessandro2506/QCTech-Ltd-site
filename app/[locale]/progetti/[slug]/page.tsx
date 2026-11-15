@@ -66,7 +66,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   const externalUrl = isOwnPortfolio(id) ? portfolioExternalUrl(id) : undefined;
 
   return (
-    <div className="bg-[var(--light-bg)] pb-24 pt-28 sm:pt-32">
+    <div className="page-top bg-[var(--light-bg)] pb-24">
       <article className="mx-auto max-w-3xl px-4 sm:px-6">
         <Image
           src={portfolioSrc(id)}

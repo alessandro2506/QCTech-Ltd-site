@@ -40,7 +40,7 @@ export default async function ContattiPage({
   const whatsappHref = getWhatsAppHref(locale);
 
   return (
-    <div className="pb-24 pt-28 sm:pt-32">
+    <div className="page-top pb-24">
       <div className="mx-auto grid max-w-6xl gap-12 px-4 lg:grid-cols-5 sm:px-6">
         <div className="lg:col-span-2">
           <p className="text-xs font-semibold uppercase tracking-widest text-[var(--light-primary)]">

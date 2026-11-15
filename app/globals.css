@@ -31,6 +31,21 @@ body {
   font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
 
+/* First-block offset on inner pages. Matches the home hero badge:
+   <main> already has header padding (60px / 98px lg).
+   <1024: same as .hero-home padding-top (2.5rem) → 100px from viewport.
+   ≥1024: home badge is vertically centred in the 620px hero grid (219px from viewport),
+   so 219px − 98px = 121px. Do not use on the home hero or on <main>. */
+.page-top {
+  padding-top: 2.5rem;
+}
+
+@media (min-width: 1024px) {
+  .page-top {
+    padding-top: 121px;
+  }
+}
+
 /* Vertical rhythm: tighter on mobile only; lg matches former sm:py-20 (80px). */
 .section-y {
   padding-block: 2.5rem;

@@ -58,7 +58,7 @@ export default async function ServiziPage({ params }: PageProps) {
   const pagePosts = postsForServicesPage(locale);
 
   return (
-    <div className="pb-20 pt-28 sm:pt-32">
+    <div className="page-top pb-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <p className="text-xs font-semibold uppercase tracking-widest text-[var(--light-primary)]">
           {t("eyebrow")}
