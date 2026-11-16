@@ -839,13 +839,13 @@
   "copilotLtd": {
     "meta": {
       "title": "Open a Company in England in Italian",
-      "description": "The AI service that guides Italian entrepreneurs through opening an English company — entirely in Italian, registration confirmed within 24 hours."
+      "description": "The AI service that guides Italian entrepreneurs through opening an English company — entirely in Italian, without mistakes."
     },
     "hero": {
       "eyebrow": "Built for Italian entrepreneurs",
-      "title": "Open a Company in England. Entirely in Italian, approved in 24 hours.",
-      "subtitle": "Opening a company in England sounds complex: English-only forms, bureaucratic steps, and costly mistakes if you get it wrong. Our AI assistant guides you through everything in Italian and confirms your registration within 24 hours.",
-      "cta": "Get started — it's free"
+      "title": "Open your company in England. Entirely in Italian, without mistakes.",
+      "subtitle": "Opening a company in England sounds complex: English-only forms, bureaucratic steps, and costly mistakes if you get it wrong. Our AI assistant guides you through everything in Italian. Companies House, the UK registrar of companies, usually responds within 24 hours of filing.",
+      "cta": "Join the waitlist"
     },
     "problem": {
       "cards": [
@@ -868,19 +868,28 @@
       "intro": "Four steps and your company is ready.",
       "steps": [
         "Answer simple questions in Italian — no English forms, no legal jargon",
-        "Our system checks every piece of information before submitting it to the authorities",
+        "Our system checks every piece of information before you submit it to the authorities.",
         "Receive your documents by email, ready to sign",
-        "Your company is registered. In most cases within 24 hours."
+        "Your company is registered. In most cases within 24 hours of filing."
       ]
     },
     "proof": {
       "title": "We tested it on ourselves first",
-      "body": "QC Tech is an officially registered English company, incorporated on 3 July 2026 (registration number 17317573). We used this exact process to open it — zero errors, approved in under 24 hours."
+      "body": "QC Tech is an officially registered English company, incorporated on 3 July 2026 (registration number 17317573). We used this exact process to open it — zero errors."
     },
     "pricing": {
       "title": "How much does it cost?",
-      "body": "We're finalising pricing. Current indication is £49–99 — one-off payment, no subscription. Register now and we'll guarantee you the lowest launch price.",
+      "body": "Launch price: £149 one-off. The Companies House fee (£100) is paid directly to the registrar. VAT according to country of residence, if due.",
       "badge": "Early Access — limited spots"
+    },
+    "knowBefore": {
+      "title": "What to know before you start",
+      "items": [
+        "You file the application yourself from your own account: we guide you and check the data, but we do not file on your behalf.",
+        "You need a UK registered office address with an authorised provider (not a PO Box). We do not provide one.",
+        "Some steps only you can complete: identity verification, signing, opening the bank account, and receiving codes by post.",
+        "If you manage the company from Italy, it may be treated as tax-resident in Italy. This service is not tax or legal advice: speak with an accountant before you incorporate."
+      ]
     },
     "form": {
       "title": "Want to open your company in England?",

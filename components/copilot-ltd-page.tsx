@@ -47,6 +47,7 @@ export function CopilotLtdPage() {
     description: string;
   }[];
   const steps = t.raw("solution.steps") as string[];
+  const knowBeforeItems = t.raw("knowBefore.items") as string[];
   const statusOptions = t.raw("form.statusOptions") as {
     value: string;
     label: string;
@@ -234,6 +235,16 @@ export function CopilotLtdPage() {
         id="copilot-form"
         className="mx-auto mt-20 max-w-xl scroll-mt-28 px-4 sm:px-6 sm:scroll-mt-32"
       >
+        <div className="mb-6 rounded-2xl border border-[var(--light-border)] bg-[var(--light-surface)] p-6 sm:p-8">
+          <h2 className="text-xl font-bold text-[var(--light-emphasis)]">
+            {t("knowBefore.title")}
+          </h2>
+          <ul className="mt-4 list-disc space-y-3 pl-5 text-sm leading-relaxed text-[var(--light-text)]">
+            {knowBeforeItems.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
         <div className="rounded-2xl border border-[var(--light-border)] bg-white p-6 sm:p-8">
           <h2 className="text-xl font-bold text-[var(--light-emphasis)]">{t("form.title")}</h2>
           <p className="mt-2 text-sm text-[var(--light-text-muted)]">{t("form.subtitle")}</p>

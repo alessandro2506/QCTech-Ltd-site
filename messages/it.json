@@ -839,13 +839,13 @@
   "copilotLtd": {
     "meta": {
       "title": "Apri la tua società in Inghilterra in italiano",
-      "description": "Il servizio AI che ti guida passo dopo passo nell'apertura di una società inglese — tutto in italiano, approvazione in 24 ore."
+      "description": "Il servizio AI che ti guida passo dopo passo nell'apertura di una società inglese — tutto in italiano, senza errori."
     },
     "hero": {
       "eyebrow": "Pensato per gli imprenditori italiani",
-      "title": "Apri la tua società in Inghilterra. Tutto in italiano, approvazione in 24 ore.",
-      "subtitle": "Aprire una società in Inghilterra sembra complicato: moduli in inglese, procedure burocratiche e il rischio di commettere errori costosi. Il nostro assistente AI ti guida passo dopo passo, in italiano, e ti conferma l'avvenuta registrazione entro 24 ore.",
-      "cta": "Inizia ora — è gratis"
+      "title": "Apri la tua società in Inghilterra. Tutto in italiano, senza errori.",
+      "subtitle": "Aprire una società in Inghilterra sembra complicato: moduli in inglese, procedure burocratiche e il rischio di commettere errori costosi. Il nostro assistente AI ti guida passo dopo passo, in italiano. Companies House, l'ente britannico che registra le società, di solito risponde entro 24 ore dal deposito.",
+      "cta": "Iscriviti alla lista d'attesa"
     },
     "problem": {
       "cards": [
@@ -868,19 +868,28 @@
       "intro": "Quattro passaggi e la tua società è pronta.",
       "steps": [
         "Rispondi a semplici domande in italiano — nessun modulo inglese, nessun termine legale",
-        "Il nostro sistema controlla ogni informazione prima di inviarla alle autorità competenti",
+        "Il nostro sistema controlla ogni informazione prima che tu la invii alle autorità.",
         "Ricevi i documenti via email, già pronti per la firma",
-        "La tua società è registrata. Nella maggior parte dei casi entro 24 ore."
+        "La tua società è registrata. Nella maggior parte dei casi entro 24 ore dal deposito."
       ]
     },
     "proof": {
       "title": "Testato prima su di noi",
-      "body": "QC Tech è una società inglese registrata ufficialmente il 3 luglio 2026 (numero di registrazione 17317573). Abbiamo usato questo stesso processo per aprirla — zero errori, approvazione in meno di 24 ore."
+      "body": "QC Tech è una società inglese registrata ufficialmente il 3 luglio 2026 (numero di registrazione 17317573). Abbiamo usato questo stesso processo per aprirla — zero errori."
     },
     "pricing": {
       "title": "Quanto costa?",
-      "body": "Stiamo definendo il prezzo finale. L'indicazione attuale è tra €60 e €120 — pagamento unico, nessun abbonamento. Chi si registra ora riceve il prezzo di lancio più basso, garantito.",
+      "body": "Prezzo di lancio: £149 una tantum. La tassa di Companies House (£100) si paga direttamente all'ente. IVA secondo il paese di residenza, se dovuta.",
       "badge": "Accesso anticipato — posti limitati"
+    },
+    "knowBefore": {
+      "title": "Da sapere prima di iniziare",
+      "items": [
+        "Il deposito della domanda lo fai tu, dal tuo account: noi ti guidiamo e controlliamo i dati, ma non depositiamo per tuo conto.",
+        "Ti serve un indirizzo di sede legale nel Regno Unito presso un fornitore autorizzato (non una casella postale). Noi non lo forniamo.",
+        "Alcuni passaggi li puoi fare solo tu: verifica d'identità, firma, apertura del conto, ricezione dei codici per posta.",
+        "Se gestisci la società dall'Italia, potrebbe essere considerata fiscalmente residente in Italia. Il servizio non è consulenza fiscale né legale: parlane con un commercialista prima di aprire."
+      ]
     },
     "form": {
       "title": "Vuoi aprire la tua società in Inghilterra?",
