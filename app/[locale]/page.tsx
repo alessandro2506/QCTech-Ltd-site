@@ -8,6 +8,7 @@ import { HomePlans } from "@/components/home-plans";
 import { HomeFaq } from "@/components/home-faq";
 import { HomeBlog } from "@/components/home-blog";
 import { HomeFinalCta } from "@/components/home-final-cta";
+import { CopilotLtdPromo } from "@/components/copilot-ltd-promo";
 import { buildAlternates } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -31,6 +32,9 @@ export default async function HomePage() {
     <>
       <HeroHome />
       <HomeServiceRows />
+      <div className="mx-auto max-w-6xl px-4 pb-16 sm:px-6">
+        <CopilotLtdPromo />
+      </div>
       <HomeProjects />
       <HomeMethod />
       <HomePlans />

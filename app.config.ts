@@ -31,5 +31,10 @@ export const navRoutes = [
   { href: "/faq" as const, key: "faq" as const },
   { href: "/blog" as const, key: "blog" as const },
   { href: "/progetti" as const, key: "projects" as const },
+  {
+    href: "/copilot-ltd" as const,
+    key: "copilot" as const,
+    badgeKey: "copilotBadge" as const,
+  },
   { href: "/contatti" as const, key: "contacts" as const },
 ];

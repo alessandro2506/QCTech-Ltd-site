@@ -10,6 +10,25 @@ import { QCTechLogo } from "@/components/qctech-logo";
 import { QuantisFloat } from "@/components/quantis-float";
 import { Link, usePathname } from "@/i18n/routing";
 
+function NavItemLabel({
+  item,
+  t,
+}: {
+  item: (typeof navRoutes)[number];
+  t: ReturnType<typeof useTranslations<"nav">>;
+}) {
+  return (
+    <span className="inline-flex items-center gap-1.5">
+      {t(item.key)}
+      {item.badgeKey ? (
+        <span className="rounded-full bg-[var(--light-primary)] px-1.5 py-0.5 text-[9px] font-bold normal-case tracking-wide text-white">
+          {t(item.badgeKey)}
+        </span>
+      ) : null}
+    </span>
+  );
+}
+
 function languageSwitchHref(
   pathname: ReturnType<typeof usePathname>,
   slug: string | string[] | undefined,
@@ -55,7 +74,7 @@ export function SiteHeader() {
                   aria-current={active ? "page" : undefined}
                   className="text-[var(--light-text)]"
                 >
-                  {t(item.key)}
+                  <NavItemLabel item={item} t={t} />
                 </Link>
               );
             })}
@@ -195,7 +214,7 @@ export function SiteHeader() {
                             : "text-[var(--light-text)] hover:bg-[var(--light-surface)]"
                         }`}
                       >
-                        {t(item.key)}
+                        <NavItemLabel item={item} t={t} />
                       </Link>
                     </li>
                   );

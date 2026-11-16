@@ -2,6 +2,7 @@
 
 import { useRef, useState, type ReactNode } from "react";
 import { useLocale, useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 import { motion, useInView } from "framer-motion";
 import {
   AlertTriangle,
@@ -59,6 +60,7 @@ export function CopilotLtdPage() {
   const [formStatus, setFormStatus] = useState<
     "idle" | "loading" | "success" | "error"
   >("idle");
+  const [privacyConsent, setPrivacyConsent] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
   async function handleSubmit(e: React.FormEvent) {
@@ -67,6 +69,12 @@ export function CopilotLtdPage() {
 
     if (!name.trim() || !email.trim() || !status) {
       setErrorMessage(t("form.errorRequired"));
+      setFormStatus("error");
+      return;
+    }
+
+    if (!privacyConsent) {
+      setErrorMessage(t("form.errorConsent"));
       setFormStatus("error");
       return;
     }
@@ -82,6 +90,7 @@ export function CopilotLtdPage() {
           email: email.trim(),
           status,
           locale,
+          consent: true,
         }),
       });
       const data = (await res.json().catch(() => ({}))) as { error?: string };
@@ -102,6 +111,7 @@ export function CopilotLtdPage() {
       setName("");
       setEmail("");
       setStatus("");
+      setPrivacyConsent(false);
     } catch {
       setErrorMessage(t("form.errorNetwork"));
       setFormStatus("error");
@@ -145,7 +155,7 @@ export function CopilotLtdPage() {
             className="mt-8"
           >
             <a
-              href="#copilot-form"
+              href="#lista"
               className="inline-flex items-center gap-2 rounded-full bg-[var(--light-primary)] px-8 py-3.5 text-sm font-semibold text-white transition hover:brightness-110"
             >
               {t("hero.cta")}
@@ -232,7 +242,7 @@ export function CopilotLtdPage() {
 
       {/* Form */}
       <ScrollSection
-        id="copilot-form"
+        id="lista"
         className="mx-auto mt-20 max-w-xl scroll-mt-28 px-4 sm:px-6 sm:scroll-mt-32"
       >
         <div className="mb-6 rounded-2xl border border-[var(--light-border)] bg-[var(--light-surface)] p-6 sm:p-8">
@@ -319,6 +329,34 @@ export function CopilotLtdPage() {
                     </option>
                   ))}
                 </select>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <input
+                  id="copilot-consent"
+                  name="consent"
+                  type="checkbox"
+                  required
+                  checked={privacyConsent}
+                  onChange={(e) => setPrivacyConsent(e.target.checked)}
+                  disabled={formStatus === "loading"}
+                  className="mt-1 h-4 w-4 shrink-0 rounded border-[var(--light-border)] text-[var(--light-primary)] accent-[var(--light-primary)]"
+                />
+                <label
+                  htmlFor="copilot-consent"
+                  className="text-sm leading-relaxed text-[var(--light-text)]"
+                >
+                  {t.rich("form.consent", {
+                    privacy: (chunks) => (
+                      <Link
+                        href="/privacy"
+                        className="font-medium text-[var(--light-primary)] underline underline-offset-2"
+                      >
+                        {chunks}
+                      </Link>
+                    ),
+                  })}
+                </label>
               </div>
 
               {formStatus === "error" && errorMessage ? (

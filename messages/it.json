@@ -16,6 +16,8 @@
     "faq": "FAQ",
     "blog": "Blog",
     "projects": "Progetti",
+    "copilot": "Copilot Ltd",
+    "copilotBadge": "Novità",
     "contacts": "Contatti",
     "privacy": "Privacy Policy",
     "terms": "Termini",
@@ -836,6 +838,11 @@
       "button": "Contattaci →"
     }
   },
+  "copilotPromo": {
+    "title": "Apri la tua società in Inghilterra con Copilot Ltd",
+    "body": "Ti guidiamo in italiano e controlliamo i dati; il deposito lo fai tu dal tuo account.",
+    "cta": "Iscriviti alla lista d'attesa"
+  },
   "copilotLtd": {
     "meta": {
       "title": "Apri la tua società in Inghilterra in italiano",
@@ -903,10 +910,12 @@
         { "value": "name_decided", "label": "Ho già scelto il nome" },
         { "value": "had_issues", "label": "Ho già provato ma ho avuto problemi" }
       ],
+      "consent": "Ho letto l'<privacy>informativa privacy</privacy> e acconsento a ricevere comunicazioni sul lancio di Copilot Ltd",
       "submit": "Voglio essere tra i primi",
       "submitting": "Invio in corso…",
       "success": "Perfetto, sei in lista. Ti contatteremo prima del lancio pubblico.",
       "errorRequired": "Compila tutti i campi per procedere.",
+      "errorConsent": "Per iscriverti devi accettare l'informativa privacy.",
       "errorNetwork": "Errore di connessione. Riprova tra qualche secondo.",
       "errorGeneric": "Invio non riuscito. Riprova o scrivici a hello@qc-tech.co.uk."
     }
@@ -917,6 +926,10 @@
     "emailName": "Nome",
     "emailEmail": "Email",
     "emailStatus": "Stato UK Ltd",
+    "emailWhen": "Data/ora",
+    "emailLocale": "Lingua",
+    "localeIt": "Italiano",
+    "localeEn": "Inglese",
     "autoReplySubject": "Sei in lista — QC Tech Copilot",
     "autoReplyBody": "Grazie {name}, sei in lista. Ti contatteremo non appena il Copilot sarà disponibile. — Il team QC Tech",
     "statusLabels": {

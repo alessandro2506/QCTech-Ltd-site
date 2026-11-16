@@ -90,17 +90,25 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: errors.fields }, { status: 400 });
   }
 
+  if (o.consent !== true) {
+    return NextResponse.json({ error: errors.fields }, { status: 400 });
+  }
+
   if (!EMAIL_RE.test(email)) {
     return NextResponse.json({ error: errors.emailInvalid }, { status: 400 });
   }
 
   const statusLabel = L.statusLabels[statusRaw];
+  const submittedAt = new Date().toISOString();
+  const localeLabel = uiLocale === "en" ? L.localeEn : L.localeIt;
 
   const internalHtml = `
     <h2>${escapeHtml(L.emailHeading)}</h2>
     <p><strong>${escapeHtml(L.emailName)}:</strong> ${escapeHtml(name)}</p>
     <p><strong>${escapeHtml(L.emailEmail)}:</strong> ${escapeHtml(email)}</p>
     <p><strong>${escapeHtml(L.emailStatus)}:</strong> ${escapeHtml(statusLabel)}</p>
+    <p><strong>${escapeHtml(L.emailWhen)}:</strong> ${escapeHtml(submittedAt)}</p>
+    <p><strong>${escapeHtml(L.emailLocale)}:</strong> ${escapeHtml(localeLabel)}</p>
   `;
 
   const autoReplyHtml =

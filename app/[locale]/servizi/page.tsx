@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import { buildAlternates } from "@/lib/seo";
 import { BedDouble, Building2, Code2, Search, ShoppingCart, Smartphone, Trophy, UtensilsCrossed, Wine } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
+import { CopilotLtdPromo } from "@/components/copilot-ltd-promo";
 import { RelatedReading } from "@/components/related-reading";
 import {
   SERVICE_CARD_THEMES,
@@ -149,6 +150,10 @@ export default async function ServiziPage({ params }: PageProps) {
               </article>
             );
           })}
+        </div>
+
+        <div className="mt-14">
+          <CopilotLtdPromo />
         </div>
 
         <section

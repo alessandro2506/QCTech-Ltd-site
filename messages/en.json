@@ -16,6 +16,8 @@
     "faq": "FAQ",
     "blog": "Blog",
     "projects": "Projects",
+    "copilot": "Copilot Ltd",
+    "copilotBadge": "New",
     "contacts": "Contact",
     "privacy": "Privacy Policy",
     "terms": "Terms",
@@ -836,6 +838,11 @@
       "button": "Get in touch →"
     }
   },
+  "copilotPromo": {
+    "title": "Open your UK company with Copilot Ltd",
+    "body": "We guide you in Italian and check the data; you file from your own account.",
+    "cta": "Join the waitlist"
+  },
   "copilotLtd": {
     "meta": {
       "title": "Open a Company in England in Italian",
@@ -903,10 +910,12 @@
         { "value": "name_decided", "label": "I've already chosen a name" },
         { "value": "had_issues", "label": "I've tried before but got stuck" }
       ],
+      "consent": "I have read the <privacy>privacy notice</privacy> and I consent to receive communications about the Copilot Ltd launch",
       "submit": "I want to be among the first",
       "submitting": "Sending…",
       "success": "You're on the list. We'll reach out before the public launch.",
       "errorRequired": "Please fill in all fields to continue.",
+      "errorConsent": "Please accept the privacy notice to join the waitlist.",
       "errorNetwork": "Connection error. Please try again in a moment.",
       "errorGeneric": "Submission failed. Try again or contact us at hello@qc-tech.co.uk."
     }
@@ -917,6 +926,10 @@
     "emailName": "Name",
     "emailEmail": "Email",
     "emailStatus": "UK Ltd status",
+    "emailWhen": "Date/time",
+    "emailLocale": "Language",
+    "localeIt": "Italian",
+    "localeEn": "English",
     "autoReplySubject": "You're on the list — QC Tech Copilot",
     "autoReplyBody": "Thank you {name}, you're on the list. We'll contact you as soon as the Copilot is available. — The QC Tech team",
     "statusLabels": {
