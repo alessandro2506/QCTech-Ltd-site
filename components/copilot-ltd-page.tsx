@@ -346,16 +346,14 @@ export function CopilotLtdPage() {
                   htmlFor="copilot-consent"
                   className="text-sm leading-relaxed text-[var(--light-text)]"
                 >
-                  {t.rich("form.consent", {
-                    privacy: (chunks) => (
-                      <Link
-                        href="/privacy"
-                        className="font-medium text-[var(--light-primary)] underline underline-offset-2"
-                      >
-                        {chunks}
-                      </Link>
-                    ),
-                  })}
+                  {t("form.consentBefore")}
+                  <Link
+                    href="/privacy"
+                    className="font-medium text-[var(--light-primary)] underline underline-offset-2"
+                  >
+                    {t("form.consentLink")}
+                  </Link>
+                  {t("form.consentAfter")}
                 </label>
               </div>
 

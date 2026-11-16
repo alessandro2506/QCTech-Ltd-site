@@ -910,7 +910,9 @@
         { "value": "name_decided", "label": "I've already chosen a name" },
         { "value": "had_issues", "label": "I've tried before but got stuck" }
       ],
-      "consent": "I have read the <privacy>privacy notice</privacy> and I consent to receive communications about the Copilot Ltd launch",
+      "consentBefore": "I have read the ",
+      "consentLink": "privacy notice",
+      "consentAfter": " and I consent to receive communications about the Copilot Ltd launch",
       "submit": "I want to be among the first",
       "submitting": "Sending…",
       "success": "You're on the list. We'll reach out before the public launch.",

@@ -910,7 +910,9 @@
         { "value": "name_decided", "label": "Ho già scelto il nome" },
         { "value": "had_issues", "label": "Ho già provato ma ho avuto problemi" }
       ],
-      "consent": "Ho letto l'<privacy>informativa privacy</privacy> e acconsento a ricevere comunicazioni sul lancio di Copilot Ltd",
+      "consentBefore": "Ho letto l'",
+      "consentLink": "informativa privacy",
+      "consentAfter": " e acconsento a ricevere comunicazioni sul lancio di Copilot Ltd",
       "submit": "Voglio essere tra i primi",
       "submitting": "Invio in corso…",
       "success": "Perfetto, sei in lista. Ti contatteremo prima del lancio pubblico.",
