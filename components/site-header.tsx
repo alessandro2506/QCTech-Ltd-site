@@ -39,7 +39,16 @@ function languageSwitchHref(
       params: { slug: typeof slug === "string" ? slug : "" },
     };
   }
-  return pathname as Exclude<typeof pathname, "/progetti/[slug]">;
+  if (pathname === "/careers/[slug]") {
+    return {
+      pathname: "/careers/[slug]" as const,
+      params: { slug: typeof slug === "string" ? slug : "" },
+    };
+  }
+  return pathname as Exclude<
+    typeof pathname,
+    "/progetti/[slug]" | "/careers/[slug]"
+  >;
 }
 
 export function SiteHeader() {

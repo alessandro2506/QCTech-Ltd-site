@@ -17,6 +17,8 @@ export const routing = defineRouting({
     "/copilot-ltd": "/copilot-ltd",
     "/privacy": "/privacy",
     "/termini": { it: "/termini", en: "/terms" },
+    "/careers": { it: "/lavora-con-noi", en: "/careers" },
+    "/careers/[slug]": { it: "/lavora-con-noi/[slug]", en: "/careers/[slug]" },
   },
 });
 

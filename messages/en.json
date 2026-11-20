@@ -31,6 +31,7 @@
     "langEn": "EN"
   },
   "footer": {
+    "careers": "Careers",
     "navLabel": "Footer",
     "legal": "© 2026 Quantum Code Technologies Ltd.",
     "companyNo": "Company No. 17317573",
@@ -938,6 +939,124 @@
       "evaluating": "I'm evaluating",
       "name_decided": "I already have a name in mind",
       "had_issues": "I've tried before but had issues"
+    }
+  },
+  "careers": {
+    "meta": {
+      "title": "Careers",
+      "description": "Open positions at QC Tech: remote opportunities for people living in Italy or the United Kingdom.",
+      "jobDescriptionSuffix": "Careers — QC Tech"
+    },
+    "list": {
+      "eyebrow": "Careers",
+      "title": "Open positions",
+      "intro": "Search the open positions and filter by area, type of engagement, work mode and country.",
+      "searchLabel": "Search",
+      "searchPlaceholder": "Search by role or keyword",
+      "filterArea": "Area",
+      "filterEngagement": "Type of engagement",
+      "filterMode": "Work mode",
+      "filterCountry": "Country",
+      "all": "All",
+      "results": "{count, plural, =0 {No positions} one {# position} other {# positions}}",
+      "emptyTitle": "No positions match your search",
+      "emptyBody": "Try removing some filters or changing your keywords.",
+      "reset": "Reset filters",
+      "viewJob": "View position"
+    },
+    "values": {
+      "area": {
+        "sales": "Sales"
+      },
+      "engagement": {
+        "selfEmployed": "Self-employed"
+      },
+      "pay": {
+        "commissionOnly": "Commission only"
+      },
+      "mode": {
+        "remote": "Fully remote"
+      },
+      "country": {
+        "IT": "Italy",
+        "GB": "United Kingdom"
+      },
+      "language": {
+        "it": "Italian",
+        "en": "English"
+      }
+    },
+    "job": {
+      "back": "All positions",
+      "details": "At a glance",
+      "detailArea": "Area",
+      "detailEngagement": "Type of engagement",
+      "detailPay": "Pay",
+      "detailMode": "Work mode",
+      "detailCountries": "Countries",
+      "detailLanguages": "Languages",
+      "applyCta": "Apply"
+    },
+    "form": {
+      "title": "Application",
+      "subtitle": "Fields marked * are required.",
+      "name": "Full name *",
+      "email": "Email *",
+      "phone": "Phone",
+      "country": "Country of residence *",
+      "countryPlaceholder": "Select",
+      "city": "City",
+      "languages": "Languages *",
+      "languagesPlaceholder": "Select",
+      "languagesOptions": {
+        "it": "Italian",
+        "en": "English",
+        "both": "Both"
+      },
+      "experience": "Sales experience *",
+      "experiencePlaceholder": "Select",
+      "experienceOptions": {
+        "none": "None",
+        "lt3": "Less than 3 years",
+        "gte3": "3 years or more"
+      },
+      "network": "Sectors you cover and the kind of clients you could introduce *",
+      "networkHint": "Up to 1,000 characters.",
+      "link": "LinkedIn or online CV link",
+      "linkHint": "Optional, must start with https://",
+      "consentBefore": "I have read the ",
+      "consentLink": "candidate privacy notice",
+      "consentAfter": " below and the Privacy Policy. *",
+      "submit": "Send application",
+      "submitting": "Sending…",
+      "success": "Application sent. We have emailed you a confirmation: if your profile is a good fit, we will contact you to arrange a conversation.",
+      "errorRequired": "Please fill in all required fields.",
+      "errorConsent": "Please confirm you have read the privacy notice.",
+      "errorLink": "The link must start with https://",
+      "errorGeneric": "Sending failed. Please try again later.",
+      "errorNetwork": "Network error. Please try again later.",
+      "privacyTitle": "Candidate privacy notice",
+      "privacyBody": "Controller: Quantum Code Technologies Ltd, Company No. 17317573, Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX, United Kingdom — hello@qc-tech.co.uk — ICO registration ZC288640. We use the data in this form only to assess your application and contact you (steps taken at your request before entering into a contract, art. 6(1)(b) UK GDPR / GDPR). We receive it by email and do not store it on the website. We keep it for 12 months from submission, then delete it; if we start working together, the terms of the agreement apply. You can ask for access, correction or deletion by writing to hello@qc-tech.co.uk and complain to the ICO (United Kingdom) or the Garante per la protezione dei dati personali (Italy). Details in the website Privacy Policy.",
+      "privacyPolicyLink": "Privacy Policy"
+    },
+    "api": {
+      "emailSubject": "Application — {job} — {name}",
+      "emailHeading": "New application",
+      "emailJob": "Position",
+      "emailName": "Name",
+      "emailEmail": "Email",
+      "emailPhone": "Phone",
+      "emailCountry": "Country of residence",
+      "emailCity": "City",
+      "emailLanguages": "Languages",
+      "emailExperience": "Sales experience",
+      "emailNetwork": "Sectors and clients",
+      "emailLink": "Link",
+      "emailWhen": "Sent on",
+      "emailLocale": "Site language",
+      "autoReplySubject": "We have received your application — QC Tech",
+      "autoReplyBody": "Dear {name}, thank you for applying for the {job} position. We will review your application and, if your profile is a good fit, we will contact you to arrange a conversation. Quantum Code Technologies Ltd",
+      "rateLimited": "Too many submissions in a short time. Please try again in a few minutes."
     }
   }
 }

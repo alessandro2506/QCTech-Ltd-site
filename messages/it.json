@@ -31,6 +31,7 @@
     "langEn": "EN"
   },
   "footer": {
+    "careers": "Lavora con noi",
     "navLabel": "Footer",
     "legal": "© 2026 Quantum Code Technologies Ltd.",
     "companyNo": "Company No. 17317573",
@@ -938,6 +939,124 @@
       "evaluating": "Sto valutando",
       "name_decided": "Ho già deciso il nome",
       "had_issues": "Ho già provato ma ho avuto problemi"
+    }
+  },
+  "careers": {
+    "meta": {
+      "title": "Lavora con noi",
+      "description": "Posizioni aperte in QC Tech: collaborazioni da remoto per chi risiede in Italia o nel Regno Unito.",
+      "jobDescriptionSuffix": "Lavora con noi — QC Tech"
+    },
+    "list": {
+      "eyebrow": "Lavora con noi",
+      "title": "Posizioni aperte",
+      "intro": "Cerca tra le posizioni aperte e filtra per area, tipo di rapporto, modalità di lavoro e paese.",
+      "searchLabel": "Cerca",
+      "searchPlaceholder": "Cerca per ruolo o parola chiave",
+      "filterArea": "Area",
+      "filterEngagement": "Tipo di rapporto",
+      "filterMode": "Modalità",
+      "filterCountry": "Paese",
+      "all": "Tutte",
+      "results": "{count, plural, =0 {Nessuna posizione} one {# posizione} other {# posizioni}}",
+      "emptyTitle": "Nessuna posizione corrisponde alla ricerca",
+      "emptyBody": "Prova a togliere qualche filtro o a cambiare parole.",
+      "reset": "Azzera filtri",
+      "viewJob": "Vedi la posizione"
+    },
+    "values": {
+      "area": {
+        "sales": "Commerciale"
+      },
+      "engagement": {
+        "selfEmployed": "Collaborazione autonoma"
+      },
+      "pay": {
+        "commissionOnly": "Solo provvigioni"
+      },
+      "mode": {
+        "remote": "Full remote"
+      },
+      "country": {
+        "IT": "Italia",
+        "GB": "Regno Unito"
+      },
+      "language": {
+        "it": "Italiano",
+        "en": "Inglese"
+      }
+    },
+    "job": {
+      "back": "Tutte le posizioni",
+      "details": "In breve",
+      "detailArea": "Area",
+      "detailEngagement": "Tipo di rapporto",
+      "detailPay": "Compenso",
+      "detailMode": "Modalità",
+      "detailCountries": "Paesi",
+      "detailLanguages": "Lingue",
+      "applyCta": "Candidati"
+    },
+    "form": {
+      "title": "Candidatura",
+      "subtitle": "I campi con * sono obbligatori.",
+      "name": "Nome e cognome *",
+      "email": "Email *",
+      "phone": "Telefono",
+      "country": "Paese di residenza *",
+      "countryPlaceholder": "Seleziona",
+      "city": "Città",
+      "languages": "Lingue *",
+      "languagesPlaceholder": "Seleziona",
+      "languagesOptions": {
+        "it": "Italiano",
+        "en": "Inglese",
+        "both": "Entrambe"
+      },
+      "experience": "Esperienza commerciale *",
+      "experiencePlaceholder": "Seleziona",
+      "experienceOptions": {
+        "none": "Nessuna",
+        "lt3": "Meno di 3 anni",
+        "gte3": "3 anni o più"
+      },
+      "network": "Settori in cui opera e tipo di clienti che può presentare *",
+      "networkHint": "Massimo 1.000 caratteri.",
+      "link": "Link LinkedIn o CV online",
+      "linkHint": "Facoltativo, deve iniziare con https://",
+      "consentBefore": "Ho letto l'",
+      "consentLink": "informativa per i candidati",
+      "consentAfter": " qui sotto e la Privacy Policy. *",
+      "submit": "Invia candidatura",
+      "submitting": "Invio in corso…",
+      "success": "Candidatura inviata. Le abbiamo mandato un'email di conferma: se il profilo è in linea, la contatteremo per un colloquio.",
+      "errorRequired": "Compili tutti i campi obbligatori.",
+      "errorConsent": "Per inviare la candidatura serve la presa visione dell'informativa.",
+      "errorLink": "Il link deve iniziare con https://",
+      "errorGeneric": "Invio non riuscito. Riprovi più tardi.",
+      "errorNetwork": "Errore di rete. Riprovi più tardi.",
+      "privacyTitle": "Informativa per i candidati",
+      "privacyBody": "Titolare: Quantum Code Technologies Ltd, Company No. 17317573, Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX, Regno Unito — hello@qc-tech.co.uk — registrazione ICO ZC288640. Usiamo i dati del modulo solo per valutare la candidatura e contattarla (misure precontrattuali richieste da lei, art. 6.1.b GDPR / UK GDPR). Li riceviamo per email e non li salviamo sul sito. Li conserviamo per 12 mesi dall'invio, poi li cancelliamo; se nasce una collaborazione, valgono i termini del contratto. Può chiedere accesso, rettifica o cancellazione scrivendo a hello@qc-tech.co.uk e presentare reclamo all'ICO (Regno Unito) o al Garante per la protezione dei dati personali (Italia). Dettagli nella Privacy Policy del sito.",
+      "privacyPolicyLink": "Privacy Policy"
+    },
+    "api": {
+      "emailSubject": "Candidatura — {job} — {name}",
+      "emailHeading": "Nuova candidatura",
+      "emailJob": "Posizione",
+      "emailName": "Nome",
+      "emailEmail": "Email",
+      "emailPhone": "Telefono",
+      "emailCountry": "Paese di residenza",
+      "emailCity": "Città",
+      "emailLanguages": "Lingue",
+      "emailExperience": "Esperienza commerciale",
+      "emailNetwork": "Settori e clienti",
+      "emailLink": "Link",
+      "emailWhen": "Inviata il",
+      "emailLocale": "Lingua del sito",
+      "autoReplySubject": "Abbiamo ricevuto la sua candidatura — QC Tech",
+      "autoReplyBody": "Gentile {name}, grazie per la candidatura alla posizione {job}. La valuteremo e, se il profilo è in linea, la contatteremo per un colloquio. Quantum Code Technologies Ltd",
+      "rateLimited": "Troppi invii in poco tempo. Riprovi tra qualche minuto."
     }
   }
 }

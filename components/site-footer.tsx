@@ -33,6 +33,14 @@ export function SiteFooter() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link
+                href="/careers"
+                className="text-sm font-medium text-[var(--light-text-muted)] transition-colors hover:text-[var(--light-primary)]"
+              >
+                {tf("careers")}
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>

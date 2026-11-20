@@ -1,11 +1,15 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { PORTFOLIO_IDS } from "@/lib/portfolio-sites";
+import { CAREER_JOBS } from "@/lib/careers-data";
 
 const baseUrl = "https://www.qc-tech.co.uk";
 
 /** Last real content update for core pages (not regenerated on every deploy). */
 const CORE_LASTMOD = new Date("2026-08-05T00:00:00.000Z");
+
+/** Ultimo aggiornamento della sezione Careers. */
+const CAREERS_LASTMOD = new Date("2026-11-20T00:00:00.000Z");
 
 function parsePostDate(date: string): Date {
   const parsed = new Date(`${date}T00:00:00.000Z`);
@@ -176,6 +180,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       },
     });
+  }
+
+  const careersLanguages = {
+    it: `${baseUrl}/it/lavora-con-noi`,
+    en: `${baseUrl}/en/careers`,
+    "x-default": `${baseUrl}/en/careers`,
+  };
+  for (const url of [careersLanguages.it, careersLanguages.en]) {
+    entries.push({
+      url,
+      lastModified: CAREERS_LASTMOD,
+      changeFrequency: "weekly",
+      priority: 0.6,
+      alternates: { languages: careersLanguages },
+    });
+  }
+
+  for (const job of CAREER_JOBS) {
+    const languages = {
+      it: `${baseUrl}/it/lavora-con-noi/${job.content.it.slug}`,
+      en: `${baseUrl}/en/careers/${job.content.en.slug}`,
+      "x-default": `${baseUrl}/en/careers/${job.content.en.slug}`,
+    };
+    for (const url of [languages.it, languages.en]) {
+      entries.push({
+        url,
+        lastModified: CAREERS_LASTMOD,
+        changeFrequency: "monthly",
+        priority: 0.5,
+        alternates: { languages },
+      });
+    }
   }
 
   return entries;
