@@ -30,7 +30,7 @@ function NavItemLabel({
       {head}
       <span className="relative inline-block">
         {tail}
-        <span className="pointer-events-none absolute bottom-full left-1/2 mb-px whitespace-nowrap rounded-full bg-[var(--light-primary)] px-1 py-px text-[7px] font-bold normal-case leading-none tracking-wide text-white">
+        <span className="pointer-events-none absolute bottom-full left-1/2 mb-px whitespace-nowrap rounded-full bg-[var(--light-primary)] px-1.5 py-0.5 text-[9px] font-bold normal-case leading-none tracking-wide text-white">
           {t(item.badgeKey)}
         </span>
       </span>
