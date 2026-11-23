@@ -17,14 +17,23 @@ function NavItemLabel({
   item: (typeof navRoutes)[number];
   t: ReturnType<typeof useTranslations<"nav">>;
 }) {
+  const label = t(item.key);
+  if (!item.badgeKey) return <>{label}</>;
+
+  // Badge sopra l'ultima parola (es. "Ltd"), leggermente spostato a destra.
+  const cut = label.lastIndexOf(" ");
+  const head = cut > 0 ? label.slice(0, cut + 1) : "";
+  const tail = cut > 0 ? label.slice(cut + 1) : label;
+
   return (
-    <span className="inline-flex items-center gap-1.5">
-      {t(item.key)}
-      {item.badgeKey ? (
-        <span className="rounded-full bg-[var(--light-primary)] px-1.5 py-0.5 text-[9px] font-bold normal-case tracking-wide text-white">
+    <span>
+      {head}
+      <span className="relative inline-block">
+        {tail}
+        <span className="pointer-events-none absolute bottom-full left-1/2 mb-px whitespace-nowrap rounded-full bg-[var(--light-primary)] px-1 py-px text-[7px] font-bold normal-case leading-none tracking-wide text-white">
           {t(item.badgeKey)}
         </span>
-      ) : null}
+      </span>
     </span>
   );
 }
