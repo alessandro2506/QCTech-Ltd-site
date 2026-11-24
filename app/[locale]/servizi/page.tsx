@@ -17,7 +17,7 @@ import {
   type SectorTab,
 } from "@/components/service-sectors-tabs";
 
-const icons = [Code2, Smartphone, Search] as const;
+const icons = [Code2, ShoppingCart, Smartphone, Search] as const;
 
 type PastSector = { id: string; label: string; description: string };
 
@@ -55,6 +55,14 @@ export default async function ServiziPage({ params }: PageProps) {
     points: string[];
   }[];
   const sectors = t.raw("sectors") as SectorTab[];
+  const welcome = t.raw("welcome") as {
+    eyebrow: string;
+    title: string;
+    body: string;
+    items: { label: string; price: string; note: string }[];
+    terms: string;
+    cta: string;
+  };
   const pastSectors = t.raw("pastSectors") as PastSector[];
   const pagePosts = postsForServicesPage(locale);
 
@@ -68,6 +76,38 @@ export default async function ServiziPage({ params }: PageProps) {
           {t("title")}
         </h1>
         <p className="mt-4 max-w-2xl text-lg text-[var(--light-text-muted)]">{t("intro")}</p>
+
+        {/* Promo Welcome: primi 50 clienti (contratto + manutenzione Basic) */}
+        <section
+          className="mt-10 overflow-hidden rounded-2xl bg-gradient-to-r from-[var(--light-primary)] to-[var(--light-emphasis)] p-6 text-white shadow-lg sm:p-8"
+          aria-labelledby="welcome-promo-heading"
+        >
+          <p className="inline-flex rounded-full bg-white/20 px-3 py-1 text-xs font-bold uppercase tracking-widest">
+            {welcome.eyebrow}
+          </p>
+          <h2 id="welcome-promo-heading" className="mt-4 text-2xl font-bold tracking-tight sm:text-3xl">
+            {welcome.title}
+          </h2>
+          <p className="mt-3 max-w-2xl text-white/90">{welcome.body}</p>
+          <ul className="mt-6 grid gap-3 sm:grid-cols-3">
+            {welcome.items.map((it) => (
+              <li key={it.label} className="rounded-xl bg-white/15 p-4 backdrop-blur-sm">
+                <p className="text-sm font-semibold text-white/85">{it.label}</p>
+                <p className="mt-1 text-2xl font-bold">{it.price}</p>
+                <p className="mt-1 text-sm text-white/80">{it.note}</p>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-xs text-white/80">{welcome.terms}</p>
+            <a
+              href="#richiedi-preventivo"
+              className="inline-flex h-11 shrink-0 items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-[var(--light-primary)] transition hover:bg-white/90"
+            >
+              {welcome.cta}
+            </a>
+          </div>
+        </section>
 
         <ServiceSectorsTabs
           eyebrow={t("sectorsEyebrow")}

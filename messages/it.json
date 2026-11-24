@@ -129,7 +129,7 @@
           "id": "web",
           "title": "Siti web",
           "description": "Landing, vetrina, vetrina pro o corporate — dal primo contatto al sito completo.",
-          "fromPrice": "da €1.100",
+          "fromPrice": "da €490",
           "previewAlt": "Esempio di sito web",
           "tags": ["Landing", "Vetrina", "Corporate"]
         },
@@ -137,7 +137,7 @@
           "id": "restyle",
           "title": "Restyle sito web",
           "description": "Ridisegno del sito esistente: contenuti, struttura e aspetto aggiornati.",
-          "fromPrice": "da €1.700",
+          "fromPrice": "da €390",
           "previewAlt": "Esempio di restyle prima e dopo",
           "tags": ["Nuovo design", "Struttura rivista", "Contenuti aggiornati"]
         },
@@ -244,7 +244,7 @@
           "note": "Landing, vetrina, vetrina pro o corporate.",
           "items": [
             { "name": "Landing", "price": "da €1.100" },
-            { "name": "Vetrina", "price": "da €1.700" },
+            { "name": "Vetrina", "price": "da €1.400" },
             { "name": "Vetrina Pro", "price": "da €3.300" },
             { "name": "Corporate", "price": "da €9.500" }
           ]
@@ -314,7 +314,7 @@
       {
         "id": "web-vetrina",
         "name": "Sito Vetrina",
-        "price": "da €1.700",
+        "price": "da €1.400",
         "subtitle": "3–5 pagine, design custom, form contatti, SEO on-page.",
         "highlight": true,
         "bullets": [
@@ -557,7 +557,7 @@
       },
       {
         "id": "traslochi",
-        "label": "Traslochi & Logistica",
+        "label": "Traslochi & Relocation",
         "title": "Traslochi, flotte e coordinamento operativo",
         "description": "Progetti per imprese di traslochi e relocation: preventivi online, gestione incarichi, tracking mezzi e comunicazione con clienti B2B e privati.",
         "bullets": [
@@ -638,6 +638,30 @@
     "quoteTitle": "Richiedi una proposta sui servizi",
     "quoteBody": "Descrivi obiettivi e contesto: indica se ti interessa un ambito specifico (web, app, SEO) o un pacchetto combinato. Ti rispondiamo con una stima chiara.",
     "defaultSectionLabel": "Pagina Servizi",
+    "welcome": {
+      "eyebrow": "Promo Welcome",
+      "title": "Siti web e restyle a prezzo di lancio per i primi 50 clienti",
+      "body": "Firma il contratto del progetto insieme al piano di manutenzione mensile Basic e ottieni:",
+      "items": [
+        {
+          "label": "Sito web",
+          "price": "da €490",
+          "note": "invece di €1.400"
+        },
+        {
+          "label": "Restyle sito web",
+          "price": "da €390",
+          "note": "invece di €1.400"
+        },
+        {
+          "label": "Piano di manutenzione Basic",
+          "price": "−50% per 6 mesi",
+          "note": "€55/mese invece di €110"
+        }
+      ],
+      "terms": "Riservata ai primi 50 clienti che firmano il contratto del progetto e il piano di manutenzione mensile Basic.",
+      "cta": "Richiedi un preventivo"
+    },
     "items": [
       {
         "title": "Siti web",
@@ -645,6 +669,14 @@
           "Landing e corporate site con performance e accessibilità.",
           "Stack moderno (Next.js, headless CMS) per velocità e SEO.",
           "Integrazione analytics, form e automazioni CRM."
+        ]
+      },
+      {
+        "title": "E-commerce",
+        "points": [
+          "Negozi su misura con focus su magazzino, integrazioni e conversione checkout.",
+          "Catalogo, varianti, tasse e spedizioni, con pagamenti PSD2-ready (Stripe / provider UE).",
+          "Integrazione ERP / WMS / marketplace e sincronizzazione stock tra canali."
         ]
       },
       {
@@ -773,7 +805,7 @@
     "ctaBody": "L'audit gratuito è un'analisi del tuo sito attuale, richiesta solo dal modulo contatti. Ti rispondiamo per iscritto entro 48 ore su cosa impedisce le conversioni, senza impegno.",
     "ctaButton": "Richiedi Preventivo",
     "q1": "Quanto costa un sito web?",
-    "a1": "I nostri siti partono da 1.100 € per una landing page, da 1.700 € per un sito vetrina, da 9.500 € per un sito corporate. Ogni progetto riceve un preventivo personalizzato.",
+    "a1": "I nostri siti partono da 1.100 € per una landing page, da 1.400 € per un sito vetrina, da 9.500 € per un sito corporate. Ogni progetto riceve un preventivo personalizzato.",
     "q2": "Lavorate con aziende italiane?",
     "a2": "Sì. Operiamo sia in UK che in Italia. Gestiamo contenuti in IT e EN, conformità UK GDPR e GDPR UE, e fatturazione in GBP ed EUR.",
     "q3": "Cos'è l'audit gratuito del sito?",

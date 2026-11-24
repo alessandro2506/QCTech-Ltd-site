@@ -129,7 +129,7 @@
           "id": "web",
           "title": "Websites",
           "description": "Landing, brochure, brochure pro or corporate — from a first page to a full site.",
-          "fromPrice": "from £900",
+          "fromPrice": "from £480",
           "previewAlt": "Website example",
           "tags": ["Landing", "Business site", "Corporate"]
         },
@@ -137,7 +137,7 @@
           "id": "restyle",
           "title": "Website restyle",
           "description": "A redesign of the site you already have: content, structure and look.",
-          "fromPrice": "from £1,400",
+          "fromPrice": "from £360",
           "previewAlt": "Before and after restyle example",
           "tags": ["New design", "Reworked structure", "Updated content"]
         },
@@ -244,7 +244,7 @@
           "note": "Landing, brochure, brochure pro or corporate.",
           "items": [
             { "name": "Landing", "price": "from £900" },
-            { "name": "Brochure", "price": "from £1,400" },
+            { "name": "Brochure", "price": "from £1,200" },
             { "name": "Brochure Pro", "price": "from £2,800" },
             { "name": "Corporate", "price": "from £8,000" }
           ]
@@ -314,7 +314,7 @@
       {
         "id": "web-vetrina",
         "name": "Business Site",
-        "price": "from £1,400",
+        "price": "from £1,200",
         "subtitle": "3–5 pages, custom design, contact form, on-page SEO.",
         "highlight": true,
         "bullets": [
@@ -557,7 +557,7 @@
       },
       {
         "id": "traslochi",
-        "label": "Removals & Logistics",
+        "label": "Removals & Relocation",
         "title": "Removals, fleets & operational coordination",
         "description": "Projects for removals and relocation companies: online quotes, job management, fleet tracking and communication with B2B and residential clients.",
         "bullets": [
@@ -638,6 +638,30 @@
     "quoteTitle": "Request a proposal for our services",
     "quoteBody": "Describe goals and context: whether you need web, app, SEO or a combined package. We’ll reply with a clear estimate.",
     "defaultSectionLabel": "Services page",
+    "welcome": {
+      "eyebrow": "Welcome offer",
+      "title": "Websites and restyles at a launch price for our first 50 clients",
+      "body": "Sign your project contract together with the monthly Basic maintenance plan and get:",
+      "items": [
+        {
+          "label": "Website",
+          "price": "from £480",
+          "note": "instead of £1,200 (−60%)"
+        },
+        {
+          "label": "Website restyle",
+          "price": "from £360",
+          "note": "instead of £1,200 (−70%)"
+        },
+        {
+          "label": "Basic maintenance plan",
+          "price": "−50% for 6 months",
+          "note": "£45/month instead of £90"
+        }
+      ],
+      "terms": "Limited to the first 50 clients who sign the project contract and the monthly Basic maintenance plan.",
+      "cta": "Request a quote"
+    },
     "items": [
       {
         "title": "Websites",
@@ -645,6 +669,14 @@
           "Landing and corporate sites with performance and accessibility.",
           "Modern stack (Next.js, headless CMS) for speed and SEO.",
           "Analytics, forms and CRM automation integrations."
+        ]
+      },
+      {
+        "title": "E-commerce",
+        "points": [
+          "Custom stores focused on stock, integrations and checkout conversion.",
+          "Catalogue, variants, tax and shipping, with PSD2-ready payments (Stripe / EU providers).",
+          "ERP / WMS / marketplace integration and stock synchronisation across channels."
         ]
       },
       {
@@ -773,7 +805,7 @@
     "ctaBody": "The free website audit is a review of your current site, requested only through the contact form. We reply in writing within 48 hours on what is stopping conversions, with no obligation.",
     "ctaButton": "Get a Quote",
     "q1": "How much does a website cost?",
-    "a1": "Our websites start from £900 for a landing page, from £1,400 for a business website, from £8,000 for a corporate platform. Every project gets a personalised quote.",
+    "a1": "Our websites start from £900 for a landing page, from £1,200 for a business website, from £8,000 for a corporate platform. Every project gets a personalised quote.",
     "q2": "Do you work with Italian companies?",
     "a2": "Yes. We operate across both UK and Italy. We handle IT and EN content, UK GDPR and EU GDPR compliance, and billing in both GBP and EUR.",
     "q3": "What is a free site audit?",

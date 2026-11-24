@@ -59,7 +59,7 @@ export function SchemaOrg({ locale }: { locale: string }) {
                   name: "Quanto costa un sito web?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "I nostri siti partono da 1.100 € per una landing page, da 1.700 € per un sito vetrina, da 9.500 € per un sito corporate. Ogni progetto riceve un preventivo personalizzato.",
+                    text: "I nostri siti partono da 1.100 € per una landing page, da 1.400 € per un sito vetrina, da 9.500 € per un sito corporate. Ogni progetto riceve un preventivo personalizzato.",
                   },
                 },
                 {
@@ -85,7 +85,7 @@ export function SchemaOrg({ locale }: { locale: string }) {
                   name: "How much does a website cost?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "Our websites start from £900 for a landing page, from £1,400 for a business website, from £8,000 for a corporate platform. Every project gets a personalised quote.",
+                    text: "Our websites start from £900 for a landing page, from £1,200 for a business website, from £8,000 for a corporate platform. Every project gets a personalised quote.",
                   },
                 },
                 {

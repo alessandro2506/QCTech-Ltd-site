@@ -65,12 +65,12 @@ export const SERVICES_PAGE_SLUGS = [
   "how-to-get-your-business-found-on-google-uk",
 ] as const;
 
-export const SERVICE_CARD_THEMES = ["web", "mobile", "seo"] as const;
+export const SERVICE_CARD_THEMES = ["web", "ecommerce", "mobile", "seo"] as const;
 
 export const SERVICE_HASH: Record<ServiceTheme, string> = {
   web: "servizio-web",
   mobile: "servizio-app",
-  ecommerce: "servizio-web",
+  ecommerce: "servizio-ecommerce",
   seo: "servizio-seo",
   hospitality: "servizio-web",
   logistics: "servizio-web",

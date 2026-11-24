@@ -44,7 +44,7 @@ const PRICE_IT: Record<
   "p-restyle": {
     question: "Quanto costa un restyle del sito?",
     answer:
-      "Il restyle di un sito web parte da 1.700 €. Ogni progetto riceve un preventivo personalizzato.",
+      "Il restyle di un sito web parte da 1.400 €. Ogni progetto riceve un preventivo personalizzato.",
     keywords: ["restyle", "ridisegno", "rifacimento", "redesign", "restyling"],
   },
   "p-ecommerce": {
@@ -89,7 +89,7 @@ const PRICE_EN: typeof PRICE_IT = {
   "p-restyle": {
     question: "How much does a website restyle cost?",
     answer:
-      "Website restyles start from £1,400. Every project gets a personalised quote.",
+      "Website restyles start from £1,200. Every project gets a personalised quote.",
     keywords: ["restyle", "redesign", "rebuild", "refresh"],
   },
   "p-ecommerce": {
