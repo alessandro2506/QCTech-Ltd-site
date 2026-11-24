@@ -236,17 +236,37 @@
       "title": "Plans",
       "intro": "Starting prices. Every quote is tailored.",
       "cta": "Request a quote",
+      "promoLabel": "Welcome offer",
       "tabs": [
         {
           "id": "web",
           "label": "Website",
-          "fromPrice": "from £900",
+          "fromPrice": "from £480",
           "note": "Landing, brochure, brochure pro or corporate.",
           "items": [
             { "name": "Landing", "price": "from £900" },
-            { "name": "Brochure", "price": "from £1,200" },
+            { "name": "Brochure", "oldPrice": "£1,200", "price": "from £480", "promo": true },
             { "name": "Brochure Pro", "price": "from £2,800" },
             { "name": "Corporate", "price": "from £8,000" }
+          ]
+        },
+        {
+          "id": "restyle",
+          "topic": "web",
+          "label": "Website restyle",
+          "fromPrice": "from £360",
+          "note": "Redesign of your existing website or e-commerce: content, structure and look.",
+          "items": [
+            {
+              "name": "Website restyle",
+              "oldPrice": "£1,200",
+              "price": "from £360",
+              "promo": true
+            },
+            {
+              "name": "E-commerce restyle",
+              "price": "quote on request"
+            }
           ]
         },
         {

@@ -236,17 +236,37 @@
       "title": "Piani",
       "intro": "Prezzi di partenza. Il preventivo è sempre su misura.",
       "cta": "Richiedi un preventivo",
+      "promoLabel": "Promo Welcome",
       "tabs": [
         {
           "id": "web",
           "label": "Sito web",
-          "fromPrice": "da €1.100",
+          "fromPrice": "da €490",
           "note": "Landing, vetrina, vetrina pro o corporate.",
           "items": [
             { "name": "Landing", "price": "da €1.100" },
-            { "name": "Vetrina", "price": "da €1.400" },
+            { "name": "Vetrina", "oldPrice": "€1.400", "price": "da €490", "promo": true },
             { "name": "Vetrina Pro", "price": "da €3.300" },
             { "name": "Corporate", "price": "da €9.500" }
+          ]
+        },
+        {
+          "id": "restyle",
+          "topic": "web",
+          "label": "Restyle sito web",
+          "fromPrice": "da €390",
+          "note": "Ridisegno del sito o dell'e-commerce esistente: contenuti, struttura e aspetto aggiornati.",
+          "items": [
+            {
+              "name": "Restyle sito web",
+              "oldPrice": "€1.400",
+              "price": "da €390",
+              "promo": true
+            },
+            {
+              "name": "Restyle e-commerce",
+              "price": "su preventivo"
+            }
           ]
         },
         {
