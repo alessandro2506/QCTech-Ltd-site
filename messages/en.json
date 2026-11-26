@@ -676,10 +676,10 @@
         {
           "label": "Basic maintenance plan",
           "price": "−50% for 6 months",
-          "note": "£45/month instead of £90"
+          "note": "£80/month instead of £160"
         }
       ],
-      "terms": "Limited to the first 50 clients who sign the project contract and the monthly Basic maintenance plan.",
+      "terms": "Limited to the first 50 clients who sign the project contract and the monthly Basic maintenance plan (minimum term 24 months).",
       "cta": "Request a quote"
     },
     "items": [
