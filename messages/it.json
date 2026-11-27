@@ -177,8 +177,11 @@
     },
     "projects": {
       "title": "Progetti",
-      "intro": "Siti e app realizzati per i nostri clienti, più QuiPalermo, la piattaforma che abbiamo sviluppato e gestiamo noi.",
+      "intro": "Siti e app realizzati per i nostri clienti, e i prodotti SaaS che sviluppiamo noi.",
       "ownProductBadge": "Prodotto QC Tech",
+      "productsTitle": "Prodotti QC Tech",
+      "productsIntro": "Piattaforme SaaS sviluppate da QC Tech.",
+      "productsLink": "Prodotti QC Tech",
       "allLink": "Tutti i progetti",
       "visitSite": "Visita il sito",
       "tagsLabel": "Tag",

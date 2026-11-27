@@ -52,9 +52,17 @@ export default async function ProgettiPage({ params }: PageProps) {
             <PortfolioGallery scope="all" labels={labels} />
           </div>
         </section>
-        <div className="mt-16">
-          <ProjectsGrid locale={locale} excludeIds={["quipalermo"]} />
-        </div>
+        <section id="prodotti" className="mt-16 scroll-mt-28">
+          <h2 className="text-2xl font-bold tracking-tight text-[var(--light-emphasis)]">
+            {t("productsTitle")}
+          </h2>
+          <p className="mt-3 max-w-2xl text-base text-[var(--light-text-muted)]">
+            {t("productsIntro")}
+          </p>
+          <div className="mt-6">
+            <ProjectsGrid locale={locale} />
+          </div>
+        </section>
       </div>
     </div>
   );

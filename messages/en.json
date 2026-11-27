@@ -177,8 +177,11 @@
     },
     "projects": {
       "title": "Work",
-      "intro": "Websites and apps built for our clients, plus QuiPalermo, the platform we developed and run ourselves.",
+      "intro": "Websites and apps built for our clients, and the SaaS products we develop ourselves.",
       "ownProductBadge": "QC Tech product",
+      "productsTitle": "QC Tech products",
+      "productsIntro": "SaaS platforms developed by QC Tech.",
+      "productsLink": "QC Tech products",
       "allLink": "All projects",
       "visitSite": "Visit the site",
       "tagsLabel": "Tags",

@@ -18,14 +18,13 @@ export const PORTFOLIO_IDS = [
 
 export type PortfolioId = (typeof PORTFOLIO_IDS)[number];
 
-/** Home: our property plus five sector samples. */
+/** Home: sector samples only (QC Tech products live in their own section). */
 export const HOME_PORTFOLIO_IDS: readonly PortfolioId[] = [
   "manutenzione-uk",
   "studio-legale-uk-demo",
   "ecommerce-demo",
   "traslochi",
   "hotel-boutique",
-  "quipalermo",
 ];
 
 const QUI_URL = projects.find((item) => item.id === "quipalermo")?.externalUrl;

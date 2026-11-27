@@ -25,12 +25,18 @@ export async function HomeProjects() {
         <div className="mt-10">
           <PortfolioGallery scope="home" labels={labels} />
         </div>
-        <p className="mt-8">
+        <p className="mt-8 flex flex-wrap gap-x-6 gap-y-2">
           <Link
             href="/progetti"
             className="font-semibold text-[var(--light-primary)] hover:underline"
           >
             {t("allLink")}
+          </Link>
+          <Link
+            href={{ pathname: "/progetti", hash: "prodotti" }}
+            className="font-semibold text-[var(--light-primary)] hover:underline"
+          >
+            {t("productsLink")}
           </Link>
         </p>
       </div>

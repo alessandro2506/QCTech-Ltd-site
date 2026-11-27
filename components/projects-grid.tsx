@@ -43,7 +43,7 @@ function ProjectCard({
       }}
       className="flex flex-col rounded-2xl border border-[var(--light-border)] bg-white p-6"
     >
-      <div className="flex h-14 items-center">
+      <div className="flex h-14 items-center justify-between gap-3">
         <Image
           src={project.logo}
           alt={project.name}
@@ -51,6 +51,9 @@ function ProjectCard({
           height={project.logoHeight ?? 48}
           className="h-12 w-auto max-w-[180px] object-contain object-left"
         />
+        <span className="inline-flex shrink-0 rounded-full border border-[var(--light-border)] bg-[var(--light-surface)] px-3 py-1 text-xs font-semibold uppercase tracking-widest text-[var(--light-primary)]">
+          {isIt ? "Prodotto QC Tech" : "QC Tech product"}
+        </span>
       </div>
       <h2 className="mt-4 text-xl font-bold text-[var(--light-text)]">
         {project.name}
