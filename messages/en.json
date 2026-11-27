@@ -798,7 +798,7 @@
     },
     "mobile": {
       "title": "Mobile apps with AI integration",
-      "description": "Native iOS & Android apps. We build what differentiates you, from MVP to full product. Our portfolio includes a civic AI platform used by UK local authorities."
+      "description": "Native iOS & Android apps. We build what differentiates you, from MVP to full product. Our own projects include CivicAlert, a civic AI platform in development that brings citizen reports into a single dashboard for residents and councils."
     },
     "expansion": {
       "title": "UK–Italy digital expansion",
@@ -808,7 +808,7 @@
   "About": {
     "headline": "We don't build sites. We build systems that bring you clients.",
     "body": "Quantum Code Technologies Ltd is a web and app studio with registered office at Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX. Our team operates across UK and Italy, building digital products for businesses that want to grow in both markets.",
-    "proof": "Our track record includes CivicAlert, a civic AI reporting platform deployed across UK local authorities, proof that we build things that scale.",
+    "proof": "We are building CivicAlert, a civic AI platform that collects citizen reports in a single dashboard to help both residents and councils.",
     "cta": "Request a free website audit via the contact form. No commitment."
   },
   "FAQ": {
