@@ -9,6 +9,8 @@ const baseUrl = "https://www.qc-tech.co.uk";
 const CORE_LASTMOD = new Date("2026-08-05T00:00:00.000Z");
 
 /** Ultimo aggiornamento della sezione Careers. */
+import { LANDING_PAGES } from "@/lib/landing-pages";
+const LANDING_LASTMOD = new Date("2026-11-27T00:00:00.000Z");
 const CAREERS_LASTMOD = new Date("2026-11-20T00:00:00.000Z");
 
 function parsePostDate(date: string): Date {
@@ -209,6 +211,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: CAREERS_LASTMOD,
         changeFrequency: "monthly",
         priority: 0.5,
+        alternates: { languages },
+      });
+    }
+  }
+
+  for (const p of LANDING_PAGES) {
+    const languages = {
+      it: `${baseUrl}/it/siti-web/${p.slug}`,
+      en: `${baseUrl}/en/web-design/${p.slug}`,
+      "x-default": `${baseUrl}/en/web-design/${p.slug}`,
+    };
+    for (const url of [languages.en, languages.it]) {
+      entries.push({
+        url,
+        lastModified: LANDING_LASTMOD,
+        changeFrequency: "monthly",
+        priority: 0.7,
         alternates: { languages },
       });
     }

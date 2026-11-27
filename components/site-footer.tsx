@@ -3,6 +3,7 @@
 import { useLocale, useTranslations } from "next-intl";
 import { siteConfig, navRoutes } from "@/app.config";
 import { Link } from "@/i18n/routing";
+import { LANDING_PAGES, type LandingLocale } from "@/lib/landing-pages";
 
 export function SiteFooter() {
   const locale = useLocale();
@@ -41,6 +42,18 @@ export function SiteFooter() {
                 {tf("careers")}
               </Link>
             </li>
+          </ul>
+          <ul className="mt-3">
+            {LANDING_PAGES.map((p) => (
+              <li key={p.slug}>
+                <Link
+                  href={{ pathname: "/web-design/[slug]", params: { slug: p.slug } }}
+                  className="text-sm font-medium text-[var(--light-text-muted)] transition-colors hover:text-[var(--light-primary)]"
+                >
+                  {p.content[locale as LandingLocale].linkLabel}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>

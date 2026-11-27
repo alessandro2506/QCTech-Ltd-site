@@ -54,9 +54,15 @@ function languageSwitchHref(
       params: { slug: typeof slug === "string" ? slug : "" },
     };
   }
+  if (pathname === "/web-design/[slug]") {
+    return {
+      pathname: "/web-design/[slug]" as const,
+      params: { slug: typeof slug === "string" ? slug : "" },
+    };
+  }
   return pathname as Exclude<
     typeof pathname,
-    "/progetti/[slug]" | "/careers/[slug]"
+    "/progetti/[slug]" | "/careers/[slug]" | "/web-design/[slug]"
   >;
 }
 

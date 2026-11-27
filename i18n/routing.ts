@@ -19,6 +19,7 @@ export const routing = defineRouting({
     "/termini": { it: "/termini", en: "/terms" },
     "/careers": { it: "/lavora-con-noi", en: "/careers" },
     "/careers/[slug]": { it: "/lavora-con-noi/[slug]", en: "/careers/[slug]" },
+    "/web-design/[slug]": { it: "/siti-web/[slug]", en: "/web-design/[slug]" },
   },
 });
 
