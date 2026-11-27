@@ -113,11 +113,11 @@ export default async function CareerJobPage({ params }: PageProps) {
           {t("job.applyCta")}
         </a>
 
-        <section className="mt-10 rounded-2xl border border-[var(--light-border)] bg-white p-5 sm:p-6">
-          <h2 className="text-sm font-semibold uppercase tracking-widest text-[var(--light-primary)]">
-            {t("job.details")}
-          </h2>
-          <dl className="mt-4 grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2">
+        <section
+          aria-label={t("job.details")}
+          className="mt-10 rounded-2xl border border-[var(--light-border)] bg-white p-5 sm:p-6"
+        >
+          <dl className="grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2">
             {details.map(([label, value]) => (
               <div key={label}>
                 <dt className="text-xs font-semibold uppercase tracking-wide text-[var(--light-text-muted)]">
