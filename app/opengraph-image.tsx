@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "QC Tech — The UK–Italy Digital Studio";
+export const alt = "QC Tech | Websites and redesigns for UK businesses";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

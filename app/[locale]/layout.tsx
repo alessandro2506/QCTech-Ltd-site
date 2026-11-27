@@ -81,7 +81,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           url: `${siteConfig.url}/logo-full.svg`,
           width: 1200,
           height: 630,
-          alt: "Quantum Code Technologies Ltd — QC Tech",
+          alt: "Quantum Code Technologies Ltd, QC Tech",
         },
       ],
     },

@@ -237,7 +237,7 @@ export function QuantisFloat({
       data-state={nearState}
       data-ai-state={aiState}
       aria-label={
-        status ? `${t("quantisOpen")} — ${tAi(status)}` : t("quantisOpen")
+        status ? `${t("quantisOpen")}: ${tAi(status)}` : t("quantisOpen")
       }
       aria-expanded={expanded}
       onClick={() => {

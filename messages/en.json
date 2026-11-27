@@ -1,6 +1,6 @@
 {
   "meta": {
-    "defaultTitle": "QC Tech — Web, E-commerce & Mobile",
+    "defaultTitle": "QC Tech | Web, E-commerce & Mobile",
     "defaultDescription": "The digital studio based in the UK, built to work globally.",
     "servicesTitle": "Services",
     "servicesDescription": "Websites, mobile apps and SEO focused on ROI for UK and Italian clients.",
@@ -85,7 +85,8 @@
     "ctaPrimary": "Request a quote",
     "ctaSecondary": "See our work",
     "availability": "Taking on new projects",
-    "intro": "Websites, web apps and e-commerce for studios, trades and restaurants. UK company registered in Bishop's Stortford, serving Hertfordshire, Cambridge and London. Reply within 48 hours.",
+    "intro": "Websites, web apps and e-commerce for studios, trades and restaurants.",
+    "trust": ["UK company registered in Bishop's Stortford", "Serving Hertfordshire, Cambridge and London", "Reply within 48 hours"],
     "chipsLabel": "Use cases",
     "chips": [
       {
@@ -96,7 +97,7 @@
       {
         "id": "restyle",
         "label": "Restyle",
-        "support": "We refresh the site you already have — structure, copy and look — without starting from scratch."
+        "support": "We refresh the site you already have: structure, copy and look, without starting from scratch."
       },
       {
         "id": "ecommerce",
@@ -119,7 +120,7 @@
         {
           "id": "web",
           "title": "Websites",
-          "description": "Landing, brochure, brochure pro or corporate — from a first page to a full site.",
+          "description": "Landing, brochure, brochure pro or corporate, from a first page to a full site.",
           "fromPrice": "from £480",
           "previewAlt": "Website example",
           "tags": ["Landing", "Business site", "Corporate"]
@@ -306,8 +307,8 @@
   "pricingWeb": {
     "eyebrow": "Professional website",
     "title": "The right site for every stage of growth.",
-    "description": "From a high-converting landing page to a full corporate site — fixed price, no surprises.",
-    "cta": "Request a quote — Website",
+    "description": "From a high-converting landing page to a full corporate site, fixed price, no surprises.",
+    "cta": "Request a quote: Website",
     "plans": [
       {
         "id": "web-landing",
@@ -330,7 +331,7 @@
         "highlight": true,
         "bullets": [
           "Up to 5 pages (Home, About, Services, Blog, Contact)",
-          "Custom design — no templates",
+          "Custom design: no templates",
           "On-page SEO and Core Web Vitals",
           "Mobile-first and SSL included",
           "CMS option available"
@@ -364,19 +365,19 @@
         ]
       }
     ],
-    "paymentNote": "Projects under £700 — 100% on signing. Above £700 — 40% on signing · 30% at mid-project/approval · 30% on delivery."
+    "paymentNote": "Projects under £700, 100% on signing. Above £700, 40% on signing · 30% at mid-project/approval · 30% on delivery."
   },
   "pricingPresence": {
     "eyebrow": "Digital Presence Management",
     "title": "Be found. Be trusted. Be consistent.",
     "description": "Monthly management of your business profiles on Google, social and review platforms. Minimum 3-month contract. Setup cost charged with the first monthly fee, not requested separately.",
-    "cta": "Get started — Digital Presence",
+    "cta": "Get started: Digital Presence",
     "plans": [
       {
         "id": "pres-starter",
         "name": "Starter",
         "price": "£75 / month",
-        "subtitle": "Google Business Profile + Search Console — save £10/mo vs. individual.",
+        "subtitle": "Google Business Profile + Search Console, save £10/mo vs. individual.",
         "highlight": false,
         "bullets": [
           "Google Business Profile management (£55/mo individually)",
@@ -389,7 +390,7 @@
         "id": "pres-digital",
         "name": "Digital Presence",
         "price": "£100 / month",
-        "subtitle": "Starter + Google Analytics 4. Best value — save £23/mo.",
+        "subtitle": "Starter + Google Analytics 4. Best value, save £23/mo.",
         "highlight": true,
         "bullets": [
           "Google Business Profile management",
@@ -405,13 +406,13 @@
     "eyebrow": "Mobile app",
     "title": "React Native & Flutter",
     "description": "From MVP to production: one iOS/Android codebase, integrations and adoption metrics.",
-    "cta": "Get started — Mobile app",
+    "cta": "Get started: Mobile app",
     "plans": [
       {
         "id": "mob-starter",
         "name": "MVP",
         "price": "from £6,500",
-        "subtitle": "React Native or Flutter — fast time-to-market.",
+        "subtitle": "React Native or Flutter, fast time-to-market.",
         "highlight": false,
         "bullets": [
           "One platform (iOS or Android) + design system",
@@ -437,7 +438,7 @@
     "eyebrow": "E-commerce",
     "title": "Custom store & inventory",
     "description": "Tailored stores focused on stock, integrations and checkout conversion.",
-    "cta": "Request a quote — E-commerce",
+    "cta": "Request a quote: E-commerce",
     "plans": [
       {
         "id": "eco-base",
@@ -490,7 +491,7 @@
     "errorNetwork": "Network error. Please try again.",
     "errorGeneric": "Could not send.",
     "selectPlan": "Choose your plan",
-    "selectPlanPlaceholder": "— Select —",
+    "selectPlanPlaceholder": "Select",
     "messageDetailsLabel": "Additional details (optional)",
     "messagePlanIncluded": "Plan summary (included in your message)",
     "topicWord": "topic"
@@ -498,7 +499,7 @@
   "contactsPage": {
     "eyebrow": "Contact",
     "title": "Let’s talk about your next release",
-    "intro": "We respond from the UK and Italy. Share your stack, target market and urgency — we’ll prepare a clear proposal.",
+    "intro": "We respond from the UK and Italy. Share your stack, target market and urgency, we’ll prepare a clear proposal.",
     "addressLabel": "Registered office",
     "formTitle": "Request form",
     "formHint": "Submissions are sent securely to our team by email.",
@@ -612,37 +613,37 @@
       }
     ],
     "pastSectorsTitle": "Industries we've worked in",
-    "pastSectorsIntro": "Projects shipped to production — proof that we deliver in these verticals, not just plan.",
+    "pastSectorsIntro": "Projects shipped to production, proof that we deliver in these verticals, not just plan.",
     "pastSectors": [
       {
         "id": "ristorazione",
         "label": "Food & Beverage",
-        "description": "Public multilingual website + admin dashboard with booking management, digital menus, gallery and scheduled closures — shipped to production."
+        "description": "Public multilingual website + admin dashboard with booking management, digital menus, gallery and scheduled closures, shipped to production."
       },
       {
         "id": "hotel",
         "label": "Hospitality",
-        "description": "Digital integration for a hospitality property: multilingual site, online booking flow and guest communications — shipped to production."
+        "description": "Digital integration for a hospitality property: multilingual site, online booking flow and guest communications, shipped to production."
       },
       {
         "id": "bb",
         "label": "B&B & Accommodation",
-        "description": "B&B & Accommodation — digital presence for a small hospitality property, delivered to production."
+        "description": "B&B & Accommodation, digital presence for a small hospitality property, delivered to production."
       },
       {
         "id": "sport",
         "label": "Sport & Football Academy",
-        "description": "Sport & Football Academy — multilingual website (IT/FR/EN) with international camp management, registrations and gallery, still live in production."
+        "description": "Sport & Football Academy, multilingual website (IT/FR/EN) with international camp management, registrations and gallery, still live in production."
       },
       {
         "id": "finedining",
         "label": "Fine Dining",
-        "description": "Fine Dining — website for an upscale Italo-Belgian restaurant, delivered to production."
+        "description": "Fine Dining, website for an upscale Italo-Belgian restaurant, delivered to production."
       },
       {
         "id": "fooddelivery",
         "label": "Food Delivery & Ordering",
-        "description": "Food Delivery — online ordering platform for a food delivery business, built before major aggregators became mainstream. Delivered to production."
+        "description": "Food Delivery, online ordering platform for a food delivery business, built before major aggregators became mainstream. Delivered to production."
       }
     ],
     "quoteEyebrow": "Quote",
@@ -711,7 +712,7 @@
   "visionPage": {
     "eyebrow": "Vision",
     "title": "We build products that withstand your market’s tomorrow",
-    "intro": "Our vision is simple: every line of code should support revenue growth, operational resilience and user trust — with a UK and Italy footprint and an international mindset.",
+    "intro": "Our vision is simple: every line of code should support revenue growth, operational resilience and user trust, with a UK and Italy footprint and an international mindset.",
     "pillars": [
       {
         "icon": "layers",
@@ -749,7 +750,7 @@
     "eyebrow": "Insights",
     "title": "Digital Growth Blog",
     "subtitle": "Practical guides on web, apps, SEO and digital strategy for UK and international businesses.",
-    "empty": "No articles yet — check back soon.",
+    "empty": "No articles yet, check back soon.",
     "readMore": "Read article",
     "furtherReading": "Further reading",
     "relatedPosts": "Related articles",
@@ -772,19 +773,19 @@
   "Hero": {
     "badge": "UK · Italy · Digital Studio",
     "title": "The UK–Italy Digital Studio",
-    "subtitle": "We build websites, e-commerce and mobile apps for businesses that want to grow — wherever they are.",
+    "subtitle": "We build websites, e-commerce and mobile apps for businesses that want to grow, wherever they are.",
     "cta_primary": "Get a free site audit",
     "cta_secondary": "See our services"
   },
   "Problem": {
     "headline": "Most sites attract visitors. Few convert them.",
-    "body": "If your site isn't bringing you qualified enquiries, the problem isn't traffic — it's strategy. We audit, redesign and rebuild digital presences that actually work.",
+    "body": "If your site isn't bringing you qualified enquiries, the problem isn't traffic, it's strategy. We audit, redesign and rebuild digital presences that actually work.",
     "stat1_value": "3–5%",
     "stat1_label": "Average conversion rate we target",
     "stat2_value": "48h",
     "stat2_label": "Time to receive your free audit",
     "stat3_value": "IT + UK",
-    "stat3_label": "The only markets we serve — and we know them both"
+    "stat3_label": "The only markets we serve, and we know them both"
   },
   "Services": {
     "web": {
@@ -797,7 +798,7 @@
     },
     "mobile": {
       "title": "Mobile apps with AI integration",
-      "description": "Native iOS & Android apps. We build what differentiates you — from MVP to full product. Our portfolio includes a civic AI platform used by UK local authorities."
+      "description": "Native iOS & Android apps. We build what differentiates you, from MVP to full product. Our portfolio includes a civic AI platform used by UK local authorities."
     },
     "expansion": {
       "title": "UK–Italy digital expansion",
@@ -806,8 +807,8 @@
   },
   "About": {
     "headline": "We don't build sites. We build systems that bring you clients.",
-    "body": "Quantum Code Technologies Ltd is a web and app studio with registered office at Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX. Our team operates across UK and Italy — building digital products for businesses that want to grow in both markets.",
-    "proof": "Our track record includes CivicAlert, a civic AI reporting platform deployed across UK local authorities — proof that we build things that scale.",
+    "body": "Quantum Code Technologies Ltd is a web and app studio with registered office at Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX. Our team operates across UK and Italy, building digital products for businesses that want to grow in both markets.",
+    "proof": "Our track record includes CivicAlert, a civic AI reporting platform deployed across UK local authorities, proof that we build things that scale.",
     "cta": "Request a free website audit via the contact form. No commitment."
   },
   "FAQ": {
@@ -827,24 +828,24 @@
     "a5": "Next.js, React Native, Tailwind CSS, TypeScript, Supabase, and AI integrations (OpenAI, Google Vision). We choose the right tool for each project, not the trendy one.",
     "q6": "How do I get started with a website for my business?",
     "a6": "The first step is to describe your project through the contact form: we reply within 48 hours with a clear proposal, with no obligation.",
-    "q7": "I want to start a business — do I need a website from day one?",
+    "q7": "I want to start a business, do I need a website from day one?",
     "a7": "Not necessarily, but having a professional digital presence from the start significantly increases credibility with potential clients, investors and partners. Even a well-built landing page with your offer, contact details and a clear call to action can generate enquiries immediately. We can have you online within 1–2 weeks.",
     "q8": "What is the difference between a website and a web application?",
-    "a8": "A website presents information — it's what users read and browse. A web application allows users to interact, log in, manage data, make purchases or perform actions. Most modern businesses need a hybrid: a site that looks great and also performs actions like booking, purchasing or account management. We build both.",
+    "a8": "A website presents information, it's what users read and browse. A web application allows users to interact, log in, manage data, make purchases or perform actions. Most modern businesses need a hybrid: a site that looks great and also performs actions like booking, purchasing or account management. We build both.",
     "q9": "How do I choose the right agency to build my website or app?",
     "a9": "Look for three things: a clear portfolio with real results, transparent pricing with no hidden costs, and a team that asks about your business goals before talking about technology. Be cautious of agencies that lead with tools and frameworks rather than outcomes. We always start from the business problem, not the tech stack.",
     "q10": "Can you redesign my existing website without losing my Google ranking?",
-    "a10": "Yes — and this is critical. A redesign done without SEO care can destroy years of ranking. We conduct a full SEO audit before any redesign, preserve all existing URLs or set up correct redirects, and transfer all structured data and metadata. Your Google visibility is protected throughout the process.",
+    "a10": "Yes, and this is critical. A redesign done without SEO care can destroy years of ranking. We conduct a full SEO audit before any redesign, preserve all existing URLs or set up correct redirects, and transfer all structured data and metadata. Your Google visibility is protected throughout the process.",
     "q11": "Do you offer website maintenance after launch?",
-    "a11": "Yes. We offer monthly maintenance plans starting from £90/month covering security updates, performance monitoring, content changes, bug fixes and uptime checks. Long-term clients also get priority response times. A website without maintenance is a liability — we make sure yours stays fast, secure and up to date.",
+    "a11": "Yes. We offer monthly maintenance plans starting from £90/month covering security updates, performance monitoring, content changes, bug fixes and uptime checks. Long-term clients also get priority response times. A website without maintenance is a liability, we make sure yours stays fast, secure and up to date.",
     "q12": "Can you integrate AI into my website or app?",
-    "a12": "Absolutely. AI integration is one of our core strengths. We implement AI for: intelligent chatbots and customer service automation, content analysis and moderation, personalisation engines, predictive search, image recognition, and automated reporting. We use OpenAI, Google AI, and custom models depending on the use case — always where it genuinely adds business value.",
+    "a12": "Absolutely. AI integration is one of our core strengths. We implement AI for: intelligent chatbots and customer service automation, content analysis and moderation, personalisation engines, predictive search, image recognition, and automated reporting. We use OpenAI, Google AI, and custom models depending on the use case, always where it genuinely adds business value.",
     "q13": "What is an MVP and do I need one for my app idea?",
-    "a13": "An MVP (Minimum Viable Product) is the smallest version of your app that delivers real value to users and allows you to test market demand before investing in the full product. For most new app ideas, starting with an MVP is the right approach — it reduces risk, speeds up time to market, and generates real user feedback. We specialise in building focused, well-engineered MVPs that are designed to scale.",
+    "a13": "An MVP (Minimum Viable Product) is the smallest version of your app that delivers real value to users and allows you to test market demand before investing in the full product. For most new app ideas, starting with an MVP is the right approach, it reduces risk, speeds up time to market, and generates real user feedback. We specialise in building focused, well-engineered MVPs that are designed to scale.",
     "q14": "How do you handle data privacy and GDPR compliance?",
     "a14": "All our projects are built with privacy by design. We implement cookie consent management, privacy policies, data minimisation principles, and secure data handling from day one. For UK clients we follow UK GDPR; for EU clients we follow EU GDPR; for global clients we apply the stricter of the two as a baseline. We also advise on which data processors and third-party services are compliant.",
     "q15": "What makes QC Tech different from other web agencies?",
-    "a15": "Three things: we operate across UK and Italy with a distributed senior team, which means no single point of failure and broad market knowledge. We build with modern, production-grade technology — not WordPress templates or drag-and-drop builders. And we measure success by business outcomes — leads generated, conversion rates, revenue — not just by delivering a file. We don't disappear after launch.",
+    "a15": "Three things: we operate across UK and Italy with a distributed senior team, which means no single point of failure and broad market knowledge. We build with modern, production-grade technology, not WordPress templates or drag-and-drop builders. And we measure success by business outcomes, leads generated, conversion rates, revenue, not just by delivering a file. We don't disappear after launch.",
     "q16": "Can the price change during the project?",
     "a16": "No. The quote we agree in writing is what you pay. If you ask for something outside it, we quote that separately and you decide before we start it.",
     "q17": "Where are you based? Can I visit your office?",
@@ -858,7 +859,7 @@
   },
   "FinalCTA": {
     "headline": "Ready to turn your site into a client machine?",
-    "subheadline": "Request a free website audit through the contact form. We'll tell you in writing, within 48 hours, what's holding your site back — no commitment.",
+    "subheadline": "Request a free website audit through the contact form. We'll tell you in writing, within 48 hours, what's holding your site back, no commitment.",
     "button": "Request your free audit",
     "note": "We respond within 48 hours."
   },
@@ -866,22 +867,22 @@
     "hero": {
       "label": "About us",
       "title": "A studio built between two countries, for the whole world",
-      "subtitle": "Quantum Code Technologies Ltd is registered in the UK and operates with a distributed team across England and Italy. We build digital products for businesses that want to grow — regardless of where they are."
+      "subtitle": "Quantum Code Technologies Ltd is registered in the UK and operates with a distributed team across England and Italy. We build digital products for businesses that want to grow, regardless of where they are."
     },
     "story": {
       "title": "Why QC Tech exists",
-      "body": "We started from a simple observation: too many businesses have a digital presence that doesn't work. Sites that don't rank, apps that don't convert, e-commerce that loses customers at checkout. QC Tech was born to fix this — with a pragmatic approach, clear pricing and measurable results."
+      "body": "We started from a simple observation: too many businesses have a digital presence that doesn't work. Sites that don't rank, apps that don't convert, e-commerce that loses customers at checkout. QC Tech was born to fix this, with a pragmatic approach, clear pricing and measurable results."
     },
     "team": {
       "title": "Who we are",
-      "body": "We are a senior team, distributed across England and Italy. Our commercial operations are based at Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX and are led by Vincenzo Sedita. We work remotely with clients across the UK, Europe and beyond — time zones are not a barrier."
+      "body": "We are a senior team, distributed across England and Italy. Our commercial operations are based at Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX and are led by Vincenzo Sedita. We work remotely with clients across the UK, Europe and beyond, time zones are not a barrier."
     },
     "values": {
       "title": "How we work",
       "v1_title": "No jargon",
       "v1_body": "We explain what we do in plain language. You always know what you're paying for and why.",
       "v2_title": "Results first",
-      "v2_body": "Every decision is justified by a business outcome — more leads, lower bounce rate, faster load time.",
+      "v2_body": "Every decision is justified by a business outcome, more leads, lower bounce rate, faster load time.",
       "v3_title": "Long-term thinking",
       "v3_body": "We build things that last. Clean code, documented systems, no vendor lock-in.",
       "v4_title": "Radical transparency",
@@ -900,7 +901,7 @@
   "copilotLtd": {
     "meta": {
       "title": "Open a Company in England in Italian",
-      "description": "The AI service that guides Italian entrepreneurs through opening an English company — entirely in Italian, without mistakes."
+      "description": "The AI service that guides Italian entrepreneurs through opening an English company, entirely in Italian, without mistakes."
     },
     "hero": {
       "eyebrow": "Built for Italian entrepreneurs",
@@ -928,7 +929,7 @@
       "title": "How it works",
       "intro": "Four steps and your company is ready.",
       "steps": [
-        "Answer simple questions in Italian — no English forms, no legal jargon",
+        "Answer simple questions in Italian, no English forms, no legal jargon",
         "Our system checks every piece of information before you submit it to the authorities.",
         "Receive your documents by email, ready to sign",
         "Your company is registered. In most cases within 24 hours of filing."
@@ -936,12 +937,12 @@
     },
     "proof": {
       "title": "We tested it on ourselves first",
-      "body": "QC Tech is an officially registered English company, incorporated on 3 July 2026 (registration number 17317573). We used this exact process to open it — zero errors."
+      "body": "QC Tech is an officially registered English company, incorporated on 3 July 2026 (registration number 17317573). We used this exact process to open it, zero errors."
     },
     "pricing": {
       "title": "How much does it cost?",
       "body": "Launch price: £149 one-off. The Companies House fee (£100) is paid directly to the registrar. VAT according to country of residence, if due.",
-      "badge": "Early Access — limited spots"
+      "badge": "Early Access: limited spots"
     },
     "knowBefore": {
       "title": "What to know before you start",
@@ -958,7 +959,7 @@
       "name": "Full name",
       "email": "Email",
       "statusLabel": "Where are you right now?",
-      "statusPlaceholder": "— Select —",
+      "statusPlaceholder": "Select",
       "statusOptions": [
         { "value": "evaluating", "label": "Still exploring my options" },
         { "value": "name_decided", "label": "I've already chosen a name" },
@@ -977,7 +978,7 @@
     }
   },
   "apiCopilot": {
-    "emailSubject": "New Copilot Ltd lead — {name}",
+    "emailSubject": "New Copilot Ltd lead: {name}",
     "emailHeading": "New Copilot Ltd lead",
     "emailName": "Name",
     "emailEmail": "Email",
@@ -986,8 +987,8 @@
     "emailLocale": "Language",
     "localeIt": "Italian",
     "localeEn": "English",
-    "autoReplySubject": "You're on the list — QC Tech Copilot",
-    "autoReplyBody": "Thank you {name}, you're on the list. We'll contact you as soon as the Copilot is available. — The QC Tech team",
+    "autoReplySubject": "You're on the list: QC Tech Copilot",
+    "autoReplyBody": "Thank you {name}, you're on the list. We'll contact you as soon as the Copilot is available.\n\nThe QC Tech team",
     "statusLabels": {
       "evaluating": "I'm evaluating",
       "name_decided": "I already have a name in mind",
@@ -998,7 +999,7 @@
     "meta": {
       "title": "Careers",
       "description": "Open positions at QC Tech: remote opportunities for people living in Italy or the United Kingdom.",
-      "jobDescriptionSuffix": "Careers — QC Tech"
+      "jobDescriptionSuffix": "Careers | QC Tech"
     },
     "list": {
       "eyebrow": "Careers",
@@ -1089,11 +1090,11 @@
       "errorGeneric": "Sending failed. Please try again later.",
       "errorNetwork": "Network error. Please try again later.",
       "privacyTitle": "Candidate privacy notice",
-      "privacyBody": "Controller: Quantum Code Technologies Ltd, Company No. 17317573, Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX, United Kingdom — hello@qc-tech.co.uk — ICO registration ZC288640. We use the data in this form only to assess your application and contact you (steps taken at your request before entering into a contract, art. 6(1)(b) UK GDPR / GDPR). We receive it by email and do not store it on the website. We keep it for 12 months from submission, then delete it; if we start working together, the terms of the agreement apply. You can ask for access, correction or deletion by writing to hello@qc-tech.co.uk and complain to the ICO (United Kingdom) or the Garante per la protezione dei dati personali (Italy). Details in the website Privacy Policy.",
+      "privacyBody": "Controller: Quantum Code Technologies Ltd, Company No. 17317573, Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX, United Kingdom, hello@qc-tech.co.uk, ICO registration ZC288640. We use the data in this form only to assess your application and contact you (steps taken at your request before entering into a contract, art. 6(1)(b) UK GDPR / GDPR). We receive it by email and do not store it on the website. We keep it for 12 months from submission, then delete it; if we start working together, the terms of the agreement apply. You can ask for access, correction or deletion by writing to hello@qc-tech.co.uk and complain to the ICO (United Kingdom) or the Garante per la protezione dei dati personali (Italy). Details in the website Privacy Policy.",
       "privacyPolicyLink": "Privacy Policy"
     },
     "api": {
-      "emailSubject": "Application — {job} — {name}",
+      "emailSubject": "Application: {job}, {name}",
       "emailHeading": "New application",
       "emailJob": "Position",
       "emailName": "Name",
@@ -1107,7 +1108,7 @@
       "emailLink": "Link",
       "emailWhen": "Sent on",
       "emailLocale": "Site language",
-      "autoReplySubject": "We have received your application — QC Tech",
+      "autoReplySubject": "We have received your application | QC Tech",
       "autoReplyBody": "Dear {name}, thank you for applying for the {job} position. We will review your application and, if your profile is a good fit, we will contact you to arrange a conversation. Quantum Code Technologies Ltd",
       "rateLimited": "Too many submissions in a short time. Please try again in a few minutes."
     }

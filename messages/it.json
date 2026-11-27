@@ -1,6 +1,6 @@
 {
   "meta": {
-    "defaultTitle": "QC Tech — Web, E-commerce & Mobile",
+    "defaultTitle": "QC Tech | Web, E-commerce & Mobile",
     "defaultDescription": "Lo studio digitale con sede in UK, costruito per lavorare con il mondo.",
     "servicesTitle": "Servizi",
     "servicesDescription": "Siti web, app mobile e SEO orientati al ROI per clienti UK e Italia.",
@@ -85,7 +85,8 @@
     "ctaPrimary": "Richiedi un preventivo",
     "ctaSecondary": "Vedi i progetti",
     "availability": "Disponibili per nuovi progetti",
-    "intro": "Siti web, web app ed e-commerce per studi, artigiani e ristoranti. Società britannica registrata a Bishop's Stortford, al servizio di Hertfordshire, Cambridge e Londra. Risposta entro 48 ore.",
+    "intro": "Siti web, web app ed e-commerce per studi, artigiani e ristoranti.",
+    "trust": ["Società britannica registrata a Bishop's Stortford", "Al servizio di Hertfordshire, Cambridge e Londra", "Risposta entro 48 ore"],
     "chipsLabel": "Casi d'uso",
     "chips": [
       {
@@ -119,7 +120,7 @@
         {
           "id": "web",
           "title": "Siti web",
-          "description": "Landing, vetrina, vetrina pro o corporate — dal primo contatto al sito completo.",
+          "description": "Landing, vetrina, vetrina pro o corporate, dal primo contatto al sito completo.",
           "fromPrice": "da €490",
           "previewAlt": "Esempio di sito web",
           "tags": ["Landing", "Vetrina", "Corporate"]
@@ -306,8 +307,8 @@
   "pricingWeb": {
     "eyebrow": "Sito web professionale",
     "title": "Il sito giusto per ogni fase di crescita.",
-    "description": "Dalla landing page ad alto impatto al sito corporate completo — prezzo fisso, zero sorprese.",
-    "cta": "Richiedi un preventivo — Sito web",
+    "description": "Dalla landing page ad alto impatto al sito corporate completo, prezzo fisso, zero sorprese.",
+    "cta": "Richiedi un preventivo: Sito web",
     "plans": [
       {
         "id": "web-landing",
@@ -330,7 +331,7 @@
         "highlight": true,
         "bullets": [
           "Fino a 5 pagine (Home, Chi siamo, Servizi, Blog, Contatti)",
-          "Design custom — nessun template",
+          "Design custom: nessun template",
           "SEO on-page e Core Web Vitals",
           "Mobile-first e SSL inclusi",
           "Opzione CMS disponibile"
@@ -364,19 +365,19 @@
         ]
       }
     ],
-    "paymentNote": "Progetti sotto €850 — 100% alla firma. Sopra €850 — 40% alla firma · 30% a metà progetto/approvazione · 30% alla consegna."
+    "paymentNote": "Progetti sotto €850, 100% alla firma. Sopra €850, 40% alla firma · 30% a metà progetto/approvazione · 30% alla consegna."
   },
   "pricingPresence": {
     "eyebrow": "Gestione Presenza Digitale",
     "title": "Trovato. Fidato. Coerente.",
     "description": "Gestione mensile dei profili aziendali su Google, social e piattaforme di recensione. Contratto minimo 3 mesi. Costo di setup addebitato con il primo canone mensile, non richiesto separatamente.",
-    "cta": "Inizia ora — Presenza Digitale",
+    "cta": "Inizia ora: Presenza Digitale",
     "plans": [
       {
         "id": "pres-starter",
         "name": "Starter",
         "price": "€90 / mese",
-        "subtitle": "Google Business Profile + Search Console — risparmio €12/mese rispetto ai singoli.",
+        "subtitle": "Google Business Profile + Search Console, risparmio €12/mese rispetto ai singoli.",
         "highlight": false,
         "bullets": [
           "Gestione Google Business Profile (€65/mese se acquistato singolarmente)",
@@ -389,7 +390,7 @@
         "id": "pres-digital",
         "name": "Digital Presence",
         "price": "€120 / mese",
-        "subtitle": "Starter + Google Analytics 4. Il più conveniente — risparmio €28/mese.",
+        "subtitle": "Starter + Google Analytics 4. Il più conveniente, risparmio €28/mese.",
         "highlight": true,
         "bullets": [
           "Gestione Google Business Profile",
@@ -405,13 +406,13 @@
     "eyebrow": "Mobile app",
     "title": "React Native & Flutter",
     "description": "Dal MVP al prodotto in produzione: unificazione iOS/Android, integrazioni e metriche di adozione.",
-    "cta": "Inizia ora — App mobile",
+    "cta": "Inizia ora: App mobile",
     "plans": [
       {
         "id": "mob-starter",
         "name": "MVP",
         "price": "da €7.700",
-        "subtitle": "React Native o Flutter — time-to-market rapido.",
+        "subtitle": "React Native o Flutter, time-to-market rapido.",
         "highlight": false,
         "bullets": [
           "1 piattaforma (iOS o Android) + design system",
@@ -437,7 +438,7 @@
     "eyebrow": "E-commerce",
     "title": "Negozio su misura e gestione magazzino",
     "description": "Negozi su misura con focus su magazzino, integrazioni e conversione checkout.",
-    "cta": "Richiedi preventivo — E-commerce",
+    "cta": "Richiedi preventivo: E-commerce",
     "plans": [
       {
         "id": "eco-base",
@@ -490,7 +491,7 @@
     "errorNetwork": "Errore di rete. Riprova.",
     "errorGeneric": "Invio non riuscito.",
     "selectPlan": "Scegli il piano",
-    "selectPlanPlaceholder": "— Seleziona —",
+    "selectPlanPlaceholder": "Seleziona",
     "messageDetailsLabel": "Dettagli aggiuntivi (opzionale)",
     "messagePlanIncluded": "Riepilogo piano (incluso nel messaggio)",
     "topicWord": "argomento"
@@ -612,37 +613,37 @@
       }
     ],
     "pastSectorsTitle": "Settori in cui abbiamo già operato",
-    "pastSectorsIntro": "Progetti portati in produzione — prova concreta della nostra capacità di consegnare in questi verticali, non solo pianificare.",
+    "pastSectorsIntro": "Progetti portati in produzione, prova concreta della nostra capacità di consegnare in questi verticali, non solo pianificare.",
     "pastSectors": [
       {
         "id": "ristorazione",
         "label": "Ristorazione & Food",
-        "description": "Sito pubblico multilingua + dashboard admin con gestione prenotazioni, menu digitali, galleria e chiusure programmate — portato in produzione."
+        "description": "Sito pubblico multilingua + dashboard admin con gestione prenotazioni, menu digitali, galleria e chiusure programmate, portato in produzione."
       },
       {
         "id": "hotel",
         "label": "Hospitality",
-        "description": "Integrazione digitale per struttura ricettiva: sito multilingua, flusso di prenotazione online e comunicazioni agli ospiti — portato in produzione."
+        "description": "Integrazione digitale per struttura ricettiva: sito multilingua, flusso di prenotazione online e comunicazioni agli ospiti, portato in produzione."
       },
       {
         "id": "bb",
         "label": "B&B & Accommodation",
-        "description": "B&B e strutture ricettive — presenza digitale per struttura ricettiva di piccole dimensioni, portato in produzione."
+        "description": "B&B e strutture ricettive, presenza digitale per struttura ricettiva di piccole dimensioni, portato in produzione."
       },
       {
         "id": "sport",
         "label": "Sport & Football Academy",
-        "description": "Sport & Football Academy — sito multilingua (IT/FR/EN) con gestione stage internazionali, iscrizioni e gallery, ancora attivo in produzione."
+        "description": "Sport & Football Academy, sito multilingua (IT/FR/EN) con gestione stage internazionali, iscrizioni e gallery, ancora attivo in produzione."
       },
       {
         "id": "finedining",
         "label": "Fine Dining",
-        "description": "Fine Dining — sito per ristorante Italo-Belga di alta classe, portato in produzione."
+        "description": "Fine Dining, sito per ristorante Italo-Belga di alta classe, portato in produzione."
       },
       {
         "id": "fooddelivery",
         "label": "Food Delivery & Ordering",
-        "description": "Food Delivery — piattaforma di ordinazione online per locale di ristorazione con consegna a domicilio, realizzata prima della diffusione dei grandi aggregatori. Portato in produzione."
+        "description": "Food Delivery, piattaforma di ordinazione online per locale di ristorazione con consegna a domicilio, realizzata prima della diffusione dei grandi aggregatori. Portato in produzione."
       }
     ],
     "quoteEyebrow": "Preventivo",
@@ -711,7 +712,7 @@
   "visionPage": {
     "eyebrow": "Vision",
     "title": "Costruiamo prodotti che reggono il domani del vostro mercato",
-    "intro": "La nostra visione è semplice: ogni riga di codice deve supportare la crescita del fatturato, la resilienza operativa e la fiducia degli utenti — con footprint UK e Italia e mindset internazionale.",
+    "intro": "La nostra visione è semplice: ogni riga di codice deve supportare la crescita del fatturato, la resilienza operativa e la fiducia degli utenti, con footprint UK e Italia e mindset internazionale.",
     "pillars": [
       {
         "icon": "layers",
@@ -747,9 +748,9 @@
   },
   "blog": {
     "eyebrow": "Insights",
-    "title": "Blog — Crescita Digitale",
+    "title": "Blog: crescita digitale",
     "subtitle": "Guide pratiche su web, app, SEO e strategia digitale per aziende italiane e internazionali.",
-    "empty": "Nessun articolo ancora — torna presto.",
+    "empty": "Nessun articolo ancora, torna presto.",
     "readMore": "Leggi l'articolo",
     "furtherReading": "Approfondimenti",
     "relatedPosts": "Articoli correlati",
@@ -772,19 +773,19 @@
   "Hero": {
     "badge": "UK · Italia · Studio Digitale",
     "title": "Lo studio digitale tra UK e Italia",
-    "subtitle": "Realizziamo siti web, e-commerce e app mobile per aziende che vogliono crescere — ovunque si trovino.",
+    "subtitle": "Realizziamo siti web, e-commerce e app mobile per aziende che vogliono crescere, ovunque si trovino.",
     "cta_primary": "Richiedi un audit gratuito",
     "cta_secondary": "Scopri i servizi"
   },
   "Problem": {
     "headline": "La maggior parte dei siti attira visite. Pochi le convertono.",
-    "body": "Se il tuo sito non ti porta richieste qualificate, il problema non è il traffico — è la strategia. Analizziamo, riprogettiamo e ricostruiamo presenze digitali che funzionano davvero.",
+    "body": "Se il tuo sito non ti porta richieste qualificate, il problema non è il traffico, è la strategia. Analizziamo, riprogettiamo e ricostruiamo presenze digitali che funzionano davvero.",
     "stat1_value": "3–5%",
     "stat1_label": "Tasso di conversione che puntiamo a raggiungere",
     "stat2_value": "48h",
     "stat2_label": "Tempo per ricevere il tuo audit gratuito",
     "stat3_value": "IT + UK",
-    "stat3_label": "Gli unici due mercati che serviamo — e che conosciamo in profondità"
+    "stat3_label": "Gli unici due mercati che serviamo, e che conosciamo in profondità"
   },
   "Services": {
     "web": {
@@ -807,7 +808,7 @@
   "About": {
     "headline": "Non costruiamo siti. Costruiamo sistemi che portano clienti.",
     "body": "Quantum Code Technologies Ltd è uno studio web e app con sede legale a Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX. Il nostro team opera tra UK e Italia, costruendo prodotti digitali per aziende che vogliono crescere in entrambi i mercati.",
-    "proof": "Il nostro portfolio include CivicAlert, una piattaforma AI civica distribuita presso enti locali del Regno Unito — la prova che costruiamo cose che scalano.",
+    "proof": "Il nostro portfolio include CivicAlert, una piattaforma AI civica distribuita presso enti locali del Regno Unito, la prova che costruiamo cose che scalano.",
     "cta": "Richiedi un audit gratuito del sito dal modulo contatti. Senza impegno."
   },
   "FAQ": {
@@ -827,24 +828,24 @@
     "a5": "Next.js, React Native, Tailwind CSS, TypeScript, Supabase e integrazioni AI (OpenAI, Google Vision). Scegliamo lo strumento giusto per ogni progetto, non quello di tendenza.",
     "q6": "Come faccio a iniziare a sviluppare un sito web per la mia attività?",
     "a6": "Il primo passo è descriverci il progetto dal modulo contatti: rispondiamo entro 48 ore con una proposta chiara, senza impegno.",
-    "q7": "Voglio aprire un'azienda — ho bisogno di un sito web fin dal primo giorno?",
+    "q7": "Voglio aprire un'azienda, ho bisogno di un sito web fin dal primo giorno?",
     "a7": "Non necessariamente, ma avere una presenza digitale professionale fin dall'inizio aumenta significativamente la credibilità con potenziali clienti, investitori e partner. Anche una landing page ben costruita con la tua offerta, i contatti e una chiara call to action può generare richieste immediatamente. Possiamo portarti online in 1–2 settimane.",
     "q8": "Qual è la differenza tra un sito web e un'applicazione web?",
-    "a8": "Un sito web presenta informazioni — è ciò che gli utenti leggono e navigano. Un'applicazione web permette agli utenti di interagire, accedere, gestire dati, effettuare acquisti o compiere azioni. La maggior parte delle aziende moderne ha bisogno di un ibrido: un sito che abbia un bell'aspetto e che esegua anche azioni come prenotazioni, acquisti o gestione degli account. Noi realizziamo entrambi.",
+    "a8": "Un sito web presenta informazioni, è ciò che gli utenti leggono e navigano. Un'applicazione web permette agli utenti di interagire, accedere, gestire dati, effettuare acquisti o compiere azioni. La maggior parte delle aziende moderne ha bisogno di un ibrido: un sito che abbia un bell'aspetto e che esegua anche azioni come prenotazioni, acquisti o gestione degli account. Noi realizziamo entrambi.",
     "q9": "Come scelgo l'agenzia giusta per sviluppare il mio sito o la mia app?",
     "a9": "Cerca tre cose: un portfolio chiaro con risultati reali, prezzi trasparenti senza costi nascosti, e un team che chiede dei tuoi obiettivi di business prima di parlare di tecnologia. Diffida delle agenzie che iniziano dagli strumenti e dai framework invece che dai risultati. Noi partiamo sempre dal problema di business, non dallo stack tecnologico.",
     "q10": "Potete ridisegnare il mio sito esistente senza perdere il posizionamento su Google?",
-    "a10": "Sì — e questo è fondamentale. Un redesign fatto senza cura per la SEO può distruggere anni di posizionamento. Conduciamo un audit SEO completo prima di qualsiasi redesign, preserviamo tutti gli URL esistenti o impostiamo i redirect corretti, e trasferiamo tutti i dati strutturati e i metadati. La tua visibilità su Google è protetta durante l'intero processo.",
+    "a10": "Sì, e questo è fondamentale. Un redesign fatto senza cura per la SEO può distruggere anni di posizionamento. Conduciamo un audit SEO completo prima di qualsiasi redesign, preserviamo tutti gli URL esistenti o impostiamo i redirect corretti, e trasferiamo tutti i dati strutturati e i metadati. La tua visibilità su Google è protetta durante l'intero processo.",
     "q11": "Offrite manutenzione del sito web dopo il lancio?",
-    "a11": "Sì. Offriamo piani di manutenzione mensile a partire da €110/mese che includono aggiornamenti di sicurezza, monitoraggio delle performance, modifiche ai contenuti, correzione di bug e controllo dell'uptime. I clienti a lungo termine hanno anche tempi di risposta prioritari. Un sito senza manutenzione è un rischio — ci assicuriamo che il tuo rimanga veloce, sicuro e aggiornato.",
+    "a11": "Sì. Offriamo piani di manutenzione mensile a partire da €110/mese che includono aggiornamenti di sicurezza, monitoraggio delle performance, modifiche ai contenuti, correzione di bug e controllo dell'uptime. I clienti a lungo termine hanno anche tempi di risposta prioritari. Un sito senza manutenzione è un rischio, ci assicuriamo che il tuo rimanga veloce, sicuro e aggiornato.",
     "q12": "Potete integrare l'AI nel mio sito o nella mia app?",
-    "a12": "Assolutamente sì. L'integrazione AI è una delle nostre competenze principali. Implementiamo AI per: chatbot intelligenti e automazione del servizio clienti, analisi e moderazione dei contenuti, motori di personalizzazione, ricerca predittiva, riconoscimento delle immagini e reportistica automatizzata. Utilizziamo OpenAI, Google AI e modelli personalizzati in base al caso d'uso — sempre dove aggiunge valore reale al business.",
+    "a12": "Assolutamente sì. L'integrazione AI è una delle nostre competenze principali. Implementiamo AI per: chatbot intelligenti e automazione del servizio clienti, analisi e moderazione dei contenuti, motori di personalizzazione, ricerca predittiva, riconoscimento delle immagini e reportistica automatizzata. Utilizziamo OpenAI, Google AI e modelli personalizzati in base al caso d'uso, sempre dove aggiunge valore reale al business.",
     "q13": "Cos'è un MVP e ne ho bisogno per la mia idea di app?",
-    "a13": "Un MVP (Minimum Viable Product) è la versione più piccola della tua app che offre valore reale agli utenti e ti permette di testare la domanda di mercato prima di investire nel prodotto completo. Per la maggior parte delle nuove idee di app, iniziare con un MVP è l'approccio giusto — riduce il rischio, accelera il time to market e genera feedback reali dagli utenti. Siamo specializzati nella realizzazione di MVP ben ingegnerizzati e progettati per scalare.",
+    "a13": "Un MVP (Minimum Viable Product) è la versione più piccola della tua app che offre valore reale agli utenti e ti permette di testare la domanda di mercato prima di investire nel prodotto completo. Per la maggior parte delle nuove idee di app, iniziare con un MVP è l'approccio giusto, riduce il rischio, accelera il time to market e genera feedback reali dagli utenti. Siamo specializzati nella realizzazione di MVP ben ingegnerizzati e progettati per scalare.",
     "q14": "Come gestite la privacy dei dati e la conformità GDPR?",
     "a14": "Tutti i nostri progetti sono costruiti con la privacy by design. Implementiamo la gestione del consenso ai cookie, le informative sulla privacy, i principi di minimizzazione dei dati e la gestione sicura dei dati fin dal primo giorno. Per i clienti UK seguiamo il UK GDPR; per i clienti UE seguiamo il GDPR europeo; per i clienti globali applichiamo il più restrittivo dei due come baseline. Forniamo anche consulenza su quali processori di dati e servizi di terze parti siano conformi.",
     "q15": "Cosa distingue QC Tech dalle altre agenzie web?",
-    "a15": "Tre cose: operiamo tra UK e Italia con un team senior distribuito, il che significa nessun singolo punto di fallimento e ampia conoscenza del mercato. Costruiamo con tecnologie moderne e orientate alla produzione — non template WordPress o costruttori drag-and-drop. E misuriamo il successo attraverso i risultati di business — lead generati, tassi di conversione, fatturato — non solo consegnando un file. Non sparaimo dopo il lancio.",
+    "a15": "Tre cose: operiamo tra UK e Italia con un team senior distribuito, il che significa nessun singolo punto di fallimento e ampia conoscenza del mercato. Costruiamo con tecnologie moderne e orientate alla produzione, non template WordPress o costruttori drag-and-drop. E misuriamo il successo attraverso i risultati di business, lead generati, tassi di conversione, fatturato, non solo consegnando un file. Non sparaimo dopo il lancio.",
     "q16": "Il prezzo può cambiare durante il lavoro?",
     "a16": "No. Il preventivo concordato per iscritto è quello che paghi. Se chiedi qualcosa in più, lo quotiamo a parte e decidi tu prima che iniziamo.",
     "q17": "Dove siete? Posso venire in ufficio?",
@@ -858,7 +859,7 @@
   },
   "FinalCTA": {
     "headline": "Pronto a trasformare il tuo sito in un generatore di clienti?",
-    "subheadline": "Richiedi un audit gratuito dal modulo contatti. Ti diremo per iscritto, entro 48 ore, cosa blocca le conversioni del tuo sito — senza impegno.",
+    "subheadline": "Richiedi un audit gratuito dal modulo contatti. Ti diremo per iscritto, entro 48 ore, cosa blocca le conversioni del tuo sito, senza impegno.",
     "button": "Richiedi il tuo audit gratuito",
     "note": "Rispondiamo entro 48 ore."
   },
@@ -866,22 +867,22 @@
     "hero": {
       "label": "Chi siamo",
       "title": "Uno studio costruito tra due paesi, per tutto il mondo",
-      "subtitle": "Quantum Code Technologies Ltd è registrata nel Regno Unito e opera con un team distribuito tra Inghilterra e Italia. Realizziamo prodotti digitali per aziende che vogliono crescere — indipendentemente da dove si trovano."
+      "subtitle": "Quantum Code Technologies Ltd è registrata nel Regno Unito e opera con un team distribuito tra Inghilterra e Italia. Realizziamo prodotti digitali per aziende che vogliono crescere, indipendentemente da dove si trovano."
     },
     "story": {
       "title": "Perché esiste QC Tech",
-      "body": "Siamo partiti da una semplice osservazione: troppe aziende hanno una presenza digitale che non funziona. Siti che non si posizionano, app che non convertono, e-commerce che perde clienti al checkout. QC Tech nasce per risolvere questo — con un approccio pragmatico, prezzi chiari e risultati misurabili."
+      "body": "Siamo partiti da una semplice osservazione: troppe aziende hanno una presenza digitale che non funziona. Siti che non si posizionano, app che non convertono, e-commerce che perde clienti al checkout. QC Tech nasce per risolvere questo, con un approccio pragmatico, prezzi chiari e risultati misurabili."
     },
     "team": {
       "title": "Chi siamo",
-      "body": "Siamo un team di soli senior, distribuito tra Inghilterra e Italia. Le operazioni commerciali hanno sede legale a Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX e sono seguite da Vincenzo Sedita. Lavoriamo da remoto con clienti in UK, Europa e oltre — i fusi orari non sono un ostacolo."
+      "body": "Siamo un team di soli senior, distribuito tra Inghilterra e Italia. Le operazioni commerciali hanno sede legale a Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX e sono seguite da Vincenzo Sedita. Lavoriamo da remoto con clienti in UK, Europa e oltre, i fusi orari non sono un ostacolo."
     },
     "values": {
       "title": "Come lavoriamo",
       "v1_title": "Niente gergo tecnico",
       "v1_body": "Spieghiamo quello che facciamo in modo chiaro. Sai sempre cosa stai pagando e perché.",
       "v2_title": "Risultati prima di tutto",
-      "v2_body": "Ogni decisione è giustificata da un risultato di business — più lead, bounce rate più basso, caricamento più veloce.",
+      "v2_body": "Ogni decisione è giustificata da un risultato di business, più lead, bounce rate più basso, caricamento più veloce.",
       "v3_title": "Visione a lungo termine",
       "v3_body": "Costruiamo progetti che durano. Codice pulito, sistemi documentati, nessun vendor lock-in.",
       "v4_title": "Trasparenza totale",
@@ -900,7 +901,7 @@
   "copilotLtd": {
     "meta": {
       "title": "Apri la tua società in Inghilterra in italiano",
-      "description": "Il servizio AI che ti guida passo dopo passo nell'apertura di una società inglese — tutto in italiano, senza errori."
+      "description": "Il servizio AI che ti guida passo dopo passo nell'apertura di una società inglese, tutto in italiano, senza errori."
     },
     "hero": {
       "eyebrow": "Pensato per gli imprenditori italiani",
@@ -928,7 +929,7 @@
       "title": "Come funziona",
       "intro": "Quattro passaggi e la tua società è pronta.",
       "steps": [
-        "Rispondi a semplici domande in italiano — nessun modulo inglese, nessun termine legale",
+        "Rispondi a semplici domande in italiano, nessun modulo inglese, nessun termine legale",
         "Il nostro sistema controlla ogni informazione prima che tu la invii alle autorità.",
         "Ricevi i documenti via email, già pronti per la firma",
         "La tua società è registrata. Nella maggior parte dei casi entro 24 ore dal deposito."
@@ -936,12 +937,12 @@
     },
     "proof": {
       "title": "Testato prima su di noi",
-      "body": "QC Tech è una società inglese registrata ufficialmente il 3 luglio 2026 (numero di registrazione 17317573). Abbiamo usato questo stesso processo per aprirla — zero errori."
+      "body": "QC Tech è una società inglese registrata ufficialmente il 3 luglio 2026 (numero di registrazione 17317573). Abbiamo usato questo stesso processo per aprirla, zero errori."
     },
     "pricing": {
       "title": "Quanto costa?",
       "body": "Prezzo di lancio: £149 una tantum. La tassa di Companies House (£100) si paga direttamente all'ente. IVA secondo il paese di residenza, se dovuta.",
-      "badge": "Accesso anticipato — posti limitati"
+      "badge": "Accesso anticipato: posti limitati"
     },
     "knowBefore": {
       "title": "Da sapere prima di iniziare",
@@ -958,7 +959,7 @@
       "name": "Nome e cognome",
       "email": "Email",
       "statusLabel": "A che punto sei?",
-      "statusPlaceholder": "— Seleziona —",
+      "statusPlaceholder": "Seleziona",
       "statusOptions": [
         { "value": "evaluating", "label": "Sto ancora valutando" },
         { "value": "name_decided", "label": "Ho già scelto il nome" },
@@ -977,7 +978,7 @@
     }
   },
   "apiCopilot": {
-    "emailSubject": "Nuovo lead Copilot Ltd — {name}",
+    "emailSubject": "Nuovo lead Copilot Ltd: {name}",
     "emailHeading": "Nuovo lead Copilot Ltd",
     "emailName": "Nome",
     "emailEmail": "Email",
@@ -986,8 +987,8 @@
     "emailLocale": "Lingua",
     "localeIt": "Italiano",
     "localeEn": "Inglese",
-    "autoReplySubject": "Sei in lista — QC Tech Copilot",
-    "autoReplyBody": "Grazie {name}, sei in lista. Ti contatteremo non appena il Copilot sarà disponibile. — Il team QC Tech",
+    "autoReplySubject": "Sei in lista: QC Tech Copilot",
+    "autoReplyBody": "Grazie {name}, sei in lista. Ti contatteremo non appena il Copilot sarà disponibile. Il team QC Tech",
     "statusLabels": {
       "evaluating": "Sto valutando",
       "name_decided": "Ho già deciso il nome",
@@ -998,7 +999,7 @@
     "meta": {
       "title": "Lavora con noi",
       "description": "Posizioni aperte in QC Tech: collaborazioni da remoto per chi risiede in Italia o nel Regno Unito.",
-      "jobDescriptionSuffix": "Lavora con noi — QC Tech"
+      "jobDescriptionSuffix": "Lavora con noi | QC Tech"
     },
     "list": {
       "eyebrow": "Lavora con noi",
@@ -1089,11 +1090,11 @@
       "errorGeneric": "Invio non riuscito. Riprovi più tardi.",
       "errorNetwork": "Errore di rete. Riprovi più tardi.",
       "privacyTitle": "Informativa per i candidati",
-      "privacyBody": "Titolare: Quantum Code Technologies Ltd, Company No. 17317573, Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX, Regno Unito — hello@qc-tech.co.uk — registrazione ICO ZC288640. Usiamo i dati del modulo solo per valutare la candidatura e contattarla (misure precontrattuali richieste da lei, art. 6.1.b GDPR / UK GDPR). Li riceviamo per email e non li salviamo sul sito. Li conserviamo per 12 mesi dall'invio, poi li cancelliamo; se nasce una collaborazione, valgono i termini del contratto. Può chiedere accesso, rettifica o cancellazione scrivendo a hello@qc-tech.co.uk e presentare reclamo all'ICO (Regno Unito) o al Garante per la protezione dei dati personali (Italia). Dettagli nella Privacy Policy del sito.",
+      "privacyBody": "Titolare: Quantum Code Technologies Ltd, Company No. 17317573, Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX, Regno Unito, hello@qc-tech.co.uk, registrazione ICO ZC288640. Usiamo i dati del modulo solo per valutare la candidatura e contattarla (misure precontrattuali richieste da lei, art. 6.1.b GDPR / UK GDPR). Li riceviamo per email e non li salviamo sul sito. Li conserviamo per 12 mesi dall'invio, poi li cancelliamo; se nasce una collaborazione, valgono i termini del contratto. Può chiedere accesso, rettifica o cancellazione scrivendo a hello@qc-tech.co.uk e presentare reclamo all'ICO (Regno Unito) o al Garante per la protezione dei dati personali (Italia). Dettagli nella Privacy Policy del sito.",
       "privacyPolicyLink": "Privacy Policy"
     },
     "api": {
-      "emailSubject": "Candidatura — {job} — {name}",
+      "emailSubject": "Candidatura: {job}, {name}",
       "emailHeading": "Nuova candidatura",
       "emailJob": "Posizione",
       "emailName": "Nome",
@@ -1107,7 +1108,7 @@
       "emailLink": "Link",
       "emailWhen": "Inviata il",
       "emailLocale": "Lingua del sito",
-      "autoReplySubject": "Abbiamo ricevuto la sua candidatura — QC Tech",
+      "autoReplySubject": "Abbiamo ricevuto la sua candidatura | QC Tech",
       "autoReplyBody": "Gentile {name}, grazie per la candidatura alla posizione {job}. La valuteremo e, se il profilo è in linea, la contatteremo per un colloquio. Quantum Code Technologies Ltd",
       "rateLimited": "Troppi invii in poco tempo. Riprovi tra qualche minuto."
     }

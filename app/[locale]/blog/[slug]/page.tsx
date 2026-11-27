@@ -247,7 +247,7 @@ export default async function BlogPostPage({ params }: Props) {
           {locale === "it" ? "Hai bisogno di supporto per la tua presenza digitale?" : "Need help with your digital presence?"}
         </p>
         <p className="mt-2 text-[var(--light-text-muted)]">
-          {locale === "it" ? "Audit gratuito del sito — rispondiamo entro un giorno lavorativo." : "Free site audit — we reply within one business day."}
+          {locale === "it" ? "Audit gratuito del sito: rispondiamo entro 48 ore." : "Free site audit: we reply within 48 hours."}
         </p>
         <Link
           href="/contatti"

@@ -131,7 +131,7 @@ export function CareersApplyForm({
   return (
     <div>
       <h2 className="text-xl font-bold text-[var(--light-emphasis)]">
-        {t("form.title")} — {jobTitle}
+        {t("form.title")}: {jobTitle}
       </h2>
       <p className="mt-2 text-sm text-[var(--light-text-muted)]">
         {t("form.subtitle")}

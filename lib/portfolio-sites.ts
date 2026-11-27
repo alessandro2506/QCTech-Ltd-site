@@ -1,13 +1,13 @@
 import { projects } from "@/lib/projects-data";
 
 export const PORTFOLIO_IDS = [
+  "manutenzione-uk",
+  "studio-legale-uk-demo",
   "quipalermo",
   "hotel-boutique",
   "noleggio-con-conducente",
   "bed-and-breakfast",
-  "manutenzione-uk",
   "traslochi",
-  "studio-legale-uk-demo",
   "ecommerce-demo",
   "consulenza-tributaria",
   "studio-fiscale-contabile",
@@ -20,12 +20,12 @@ export type PortfolioId = (typeof PORTFOLIO_IDS)[number];
 
 /** Home: our property plus five sector samples. */
 export const HOME_PORTFOLIO_IDS: readonly PortfolioId[] = [
-  "quipalermo",
+  "manutenzione-uk",
+  "studio-legale-uk-demo",
+  "ecommerce-demo",
   "traslochi",
   "hotel-boutique",
-  "bed-and-breakfast",
-  "ecommerce-demo",
-  "manutenzione-uk",
+  "quipalermo",
 ];
 
 const QUI_URL = projects.find((item) => item.id === "quipalermo")?.externalUrl;

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { QuantisFloat } from "@/components/quantis-float";
 import { Link } from "@/i18n/routing";
 
@@ -161,6 +161,15 @@ export function HeroHome() {
               {t("ctaSecondary")}
             </a>
           </div>
+
+          <ul className="hero-home-trust" aria-label="QC Tech">
+            {(t.raw("trust") as string[]).map((item) => (
+              <li key={item}>
+                <Check className="h-4 w-4 shrink-0" aria-hidden />
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="hero-home-mark">

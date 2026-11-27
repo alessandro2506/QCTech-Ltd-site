@@ -37,7 +37,7 @@ export async function generateMetadata({
   const enPath = jobPath("en", found.job.content.en.slug);
 
   return {
-    title: `${c.title} — ${t("jobDescriptionSuffix")}`,
+    title: `${c.title} | ${t("jobDescriptionSuffix")}`,
     description: c.subtitle,
     alternates: {
       canonical: `${siteConfig.url}${jobPath(loc, c.slug)}`,

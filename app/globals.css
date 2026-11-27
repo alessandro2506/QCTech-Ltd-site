@@ -475,6 +475,38 @@ body {
   color: var(--light-text-muted);
 }
 
+.hero-home-trust {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--light-text-muted);
+}
+
+.hero-home-trust li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.hero-home-trust svg {
+  color: #16a34a;
+}
+
+@media (min-width: 1024px) {
+  .hero-home-trust {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem 1.25rem;
+  }
+}
+
 .hero-home-chip-support {
   margin-top: 0.75rem;
   max-width: 36rem;

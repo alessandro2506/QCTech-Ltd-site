@@ -54,7 +54,7 @@ export function QCTechLogo({
 
   if (linkToHome) {
     return (
-      <Link href="/" className="inline-flex" aria-label="QC Tech — Home">
+      <Link href="/" className="inline-flex" aria-label="QC Tech, Home">
         {inner}
       </Link>
     );

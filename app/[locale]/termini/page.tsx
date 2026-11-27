@@ -15,8 +15,8 @@ export async function generateMetadata({
     title: isIt ? "Termini e Condizioni" : "Terms & Conditions",
     description:
       locale === "it"
-        ? "Termini e condizioni d'uso del sito qc-tech.co.uk — Quantum Code Technologies Ltd."
-        : "Terms and conditions for qc-tech.co.uk — Quantum Code Technologies Ltd.",
+        ? "Termini e condizioni d'uso del sito qc-tech.co.uk, Quantum Code Technologies Ltd."
+        : "Terms and conditions for qc-tech.co.uk, Quantum Code Technologies Ltd.",
     alternates: buildAlternates("/termini", loc),
     openGraph: { url: buildAlternates("/termini", loc).canonical as string },
   };
@@ -110,7 +110,7 @@ export default async function TerminiPage({ params }: PageProps) {
 
             <Section title="8. Contatti">
               <p>
-                Quantum Code Technologies Ltd —{" "}
+                Quantum Code Technologies Ltd,{" "}
                 <a
                   href="mailto:hello@qc-tech.co.uk"
                   className="text-[var(--light-primary)] hover:underline"
@@ -176,7 +176,7 @@ export default async function TerminiPage({ params }: PageProps) {
 
             <Section title="8. Contact">
               <p>
-                Quantum Code Technologies Ltd —{" "}
+                Quantum Code Technologies Ltd,{" "}
                 <a
                   href="mailto:hello@qc-tech.co.uk"
                   className="text-[var(--light-primary)] hover:underline"

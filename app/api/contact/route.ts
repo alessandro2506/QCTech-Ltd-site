@@ -96,7 +96,7 @@ export async function POST(request: Request) {
 
   const topicLabel = contactTopicLabel(uiLocale, topicRaw);
   const subjectParts = [L.emailSubjectPrefix, topicLabel];
-  if (plan) subjectParts.push(`— ${plan}`);
+  if (plan) subjectParts.push(`(${plan})`);
 
   const internalHtml = `
     <h2>${escapeHtml(L.emailHeading)}</h2>
@@ -117,12 +117,12 @@ export async function POST(request: Request) {
   <img src="https://www.qc-tech.co.uk/logo-full.svg" alt="QC Tech" style="height:48px;margin-bottom:24px" />
   <h2 style="color:#1A3A5C">Thank you, ${escapeHtml(name)}!</h2>
   <p>We have received your message and will get back to you within <strong>48 hours</strong>.</p>
-  <p><strong>Your enquiry:</strong> ${escapeHtml(topicLabel)}${plan ? ` — ${escapeHtml(plan)}` : ""}</p>
+  <p><strong>Your enquiry:</strong> ${escapeHtml(topicLabel)}${plan ? `, ${escapeHtml(plan)}` : ""}</p>
   <p><strong>Message:</strong></p>
   <p style="background:#f5f5f5;padding:12px;border-radius:6px;white-space:pre-wrap">${escapeHtml(message)}</p>
   <hr style="border:none;border-top:1px solid #eee;margin:24px 0" />
   <p style="color:#666;font-size:14px">For urgent questions contact us at <a href="mailto:hello@qc-tech.co.uk">hello@qc-tech.co.uk</a> or WhatsApp us at <a href="tel:+447754812247">+44 7754 812247</a>.</p>
-  <p style="color:#666;font-size:14px">— The QC Tech Team<br/>${siteConfig.address.full}, UK</p>
+  <p style="color:#666;font-size:14px">The QC Tech Team<br/>${siteConfig.address.full}, UK</p>
 </div>
 `
       : `
@@ -130,12 +130,12 @@ export async function POST(request: Request) {
   <img src="https://www.qc-tech.co.uk/logo-full.svg" alt="QC Tech" style="height:48px;margin-bottom:24px" />
   <h2 style="color:#1A3A5C">Grazie, ${escapeHtml(name)}!</h2>
   <p>Abbiamo ricevuto il tuo messaggio e ti risponderemo entro <strong>48 ore</strong>.</p>
-  <p><strong>La tua richiesta:</strong> ${escapeHtml(topicLabel)}${plan ? ` — ${escapeHtml(plan)}` : ""}</p>
+  <p><strong>La tua richiesta:</strong> ${escapeHtml(topicLabel)}${plan ? `, ${escapeHtml(plan)}` : ""}</p>
   <p><strong>Messaggio:</strong></p>
   <p style="background:#f5f5f5;padding:12px;border-radius:6px;white-space:pre-wrap">${escapeHtml(message)}</p>
   <hr style="border:none;border-top:1px solid #eee;margin:24px 0" />
   <p style="color:#666;font-size:14px">Per domande urgenti scrivici a <a href="mailto:hello@qc-tech.co.uk">hello@qc-tech.co.uk</a> o su WhatsApp al <a href="tel:+447754812247">+44 7754 812247</a>.</p>
-  <p style="color:#666;font-size:14px">— Il team QC Tech<br/>${siteConfig.address.full}, UK</p>
+  <p style="color:#666;font-size:14px">Il team QC Tech<br/>${siteConfig.address.full}, UK</p>
 </div>
 `;
 
@@ -159,8 +159,8 @@ export async function POST(request: Request) {
         to: email,
         subject:
           uiLocale === "en"
-            ? "We received your enquiry — QC Tech"
-            : "Abbiamo ricevuto la tua richiesta — QC Tech",
+            ? "We received your enquiry | QC Tech"
+            : "Abbiamo ricevuto la tua richiesta | QC Tech",
         html: autoReplyHtml,
       });
     } catch (err) {

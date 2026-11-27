@@ -14,8 +14,8 @@ export async function generateMetadata({
     title: locale === "it" ? "Informativa sulla Privacy" : "Privacy Policy",
     description:
       locale === "it"
-        ? "Informativa sulla privacy di QC Tech — Quantum Code Technologies Ltd."
-        : "QC Tech privacy policy — Quantum Code Technologies Ltd.",
+        ? "Informativa sulla privacy di QC Tech, Quantum Code Technologies Ltd."
+        : "QC Tech privacy policy, Quantum Code Technologies Ltd.",
     alternates: buildAlternates("/privacy", loc),
     openGraph: { url: buildAlternates("/privacy", loc).canonical as string },
   };
@@ -151,7 +151,7 @@ export default async function PrivacyPage({ params }: PageProps) {
             <Section title="8. Reclami">
               <p>
                 Diritto di presentare reclamo all&apos;Information
-                Commissioner&apos;s Office (ICO) —{" "}
+                Commissioner&apos;s Office (ICO):{" "}
                 <a
                   href="https://ico.org.uk"
                   target="_blank"
@@ -291,7 +291,7 @@ export default async function PrivacyPage({ params }: PageProps) {
             <Section title="8. Complaints">
               <p>
                 You have the right to lodge a complaint with the Information
-                Commissioner&apos;s Office (ICO) —{" "}
+                Commissioner&apos;s Office (ICO):{" "}
                 <a
                   href="https://ico.org.uk"
                   target="_blank"
