@@ -107,16 +107,6 @@
         "id": "app",
         "label": "App mobile",
         "support": "Un'app iOS e Android dal MVP al prodotto in uso, con un solo team."
-      },
-      {
-        "id": "webapp",
-        "label": "Web app",
-        "support": "Portali e strumenti interni o per i clienti, su misura per come lavorate."
-      },
-      {
-        "id": "seo",
-        "label": "Google e AI",
-        "support": "SEO di base, con AEO e GEO solo come add-on abbinati — senza promesse di comparsa nelle risposte AI."
       }
     ]
   },
@@ -775,8 +765,8 @@
     "sendFailed": "Invio non riuscito. Riprova più tardi."
   },
   "Metadata": {
-    "title": "Studio Web & App — Siti, E-commerce e App Mobile | QC Tech",
-    "description": "Quantum Code Technologies Ltd (QC Tech) — studio digitale con sede nel Regno Unito. Siti web, app mobile, e-commerce e integrazione AI per PMI italiane e britanniche.",
+    "title": "Siti web a Bishop's Stortford, Cambridge e Londra | QC Tech",
+    "description": "Siti nuovi e restyle per studi, artigiani e ristoranti a Bishop's Stortford, Cambridge e Londra, con un preventivo che non cambia a metà lavoro.",
     "keywords": "agenzia web UK, sviluppo web Hertfordshire, sviluppo app mobile UK, e-commerce UK Italia, agenzia web italiana UK, React Native UK, Next.js UK, agenzia digitale italiani in UK"
   },
   "Hero": {

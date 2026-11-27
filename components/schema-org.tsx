@@ -11,7 +11,7 @@ export function SchemaOrg({ locale }: { locale: string }) {
         legalName: "Quantum Code Technologies Ltd",
         alternateName: ["Quantum Code Technologies", "QC Tech Ltd"],
         description:
-          "Quantum Code Technologies Ltd (QC Tech) is a UK-registered digital studio offering web development, mobile apps, e-commerce and AI integration services to businesses in the UK and Italy.",
+          "Quantum Code Technologies Ltd (QC Tech) is a UK company registered in Bishop's Stortford. New websites, redesigns, web apps and e-commerce for studios, trades and restaurants in Hertfordshire, Cambridge and London.",
         url: "https://www.qc-tech.co.uk",
         logo: "https://www.qc-tech.co.uk/logo-full.svg",
         email: "hello@qc-tech.co.uk",
@@ -31,7 +31,13 @@ export function SchemaOrg({ locale }: { locale: string }) {
         sameAs: [
           "https://find-and-update.company-information.service.gov.uk/company/17317573",
         ],
-        areaServed: ["GB", "IT"],
+        areaServed: [
+          { "@type": "City", name: "Bishop's Stortford" },
+          { "@type": "City", name: "Cambridge" },
+          { "@type": "City", name: "London" },
+          { "@type": "AdministrativeArea", name: "Hertfordshire" },
+          { "@type": "Country", name: "United Kingdom" },
+        ],
         serviceType: [
           "Web Development",
           "Mobile App Development",

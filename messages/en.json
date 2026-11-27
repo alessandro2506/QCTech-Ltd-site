@@ -107,16 +107,6 @@
         "id": "app",
         "label": "Mobile app",
         "support": "An iOS and Android app from MVP to a live product, with one team."
-      },
-      {
-        "id": "webapp",
-        "label": "Web app",
-        "support": "Portals and tools for your team or your customers, shaped around how you work."
-      },
-      {
-        "id": "seo",
-        "label": "Google and AI",
-        "support": "Base SEO, with AEO and GEO only as add-ons alongside it — no promise of appearing in AI answers."
       }
     ]
   },
@@ -775,8 +765,8 @@
     "sendFailed": "Could not send. Please try again later."
   },
   "Metadata": {
-    "title": "Web & App Studio — Websites, E-commerce & Mobile Apps | QC Tech",
-    "description": "Quantum Code Technologies Ltd (QC Tech) — UK-based digital studio. Websites, mobile apps, e-commerce and AI integration for Italian and UK businesses.",
+    "title": "Web Design in Bishop's Stortford, Cambridge & London | QC Tech",
+    "description": "New websites and redesigns for studios, trades and restaurants in Bishop's Stortford, Cambridge and London — with a quote that doesn't change halfway through.",
     "keywords": "web agency UK, web development Hertfordshire, app development UK, e-commerce UK Italy, web agency Bishop's Stortford, React Native app UK, Next.js development UK, Italian web agency UK"
   },
   "Hero": {
