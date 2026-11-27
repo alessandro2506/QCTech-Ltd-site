@@ -128,7 +128,7 @@
           "id": "restyle",
           "title": "Restyle sito web",
           "description": "Ridisegno del sito esistente: contenuti, struttura e aspetto aggiornati.",
-          "fromPrice": "da €390",
+          "fromPrice": "da €420",
           "previewAlt": "Esempio di restyle prima e dopo",
           "tags": ["Nuovo design", "Struttura rivista", "Contenuti aggiornati"]
         },
@@ -245,13 +245,13 @@
           "id": "restyle",
           "topic": "web",
           "label": "Restyle sito web",
-          "fromPrice": "da €390",
+          "fromPrice": "da €420",
           "note": "Ridisegno del sito o dell'e-commerce esistente: contenuti, struttura e aspetto aggiornati.",
           "items": [
             {
               "name": "Restyle sito web",
               "oldPrice": "€840",
-              "price": "da €390",
+              "price": "da €420",
               "promo": true
             },
             {
@@ -661,8 +661,8 @@
         },
         {
           "label": "Restyle sito web",
-          "price": "da €390",
-          "note": "invece di €840"
+          "price": "da €420",
+          "note": "invece di €840 (−50%)"
         },
         {
           "label": "Piano di manutenzione Basic",

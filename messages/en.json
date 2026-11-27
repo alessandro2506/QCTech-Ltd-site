@@ -128,7 +128,7 @@
           "id": "restyle",
           "title": "Website restyle",
           "description": "A redesign of the site you already have: content, structure and look.",
-          "fromPrice": "from £360",
+          "fromPrice": "from £350",
           "previewAlt": "Before and after restyle example",
           "tags": ["New design", "Reworked structure", "Updated content"]
         },
@@ -245,13 +245,13 @@
           "id": "restyle",
           "topic": "web",
           "label": "Website restyle",
-          "fromPrice": "from £360",
+          "fromPrice": "from £350",
           "note": "Redesign of your existing website or e-commerce: content, structure and look.",
           "items": [
             {
               "name": "Website restyle",
               "oldPrice": "£700",
-              "price": "from £360",
+              "price": "from £350",
               "promo": true
             },
             {
@@ -661,8 +661,8 @@
         },
         {
           "label": "Website restyle",
-          "price": "from £360",
-          "note": "instead of £700"
+          "price": "from £350",
+          "note": "instead of £700 (−50%)"
         },
         {
           "label": "Basic maintenance plan",
