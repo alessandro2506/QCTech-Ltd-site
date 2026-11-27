@@ -1,6 +1,7 @@
 /**
  * Posizioni aperte della sezione Careers / Lavora con noi.
  * Testi approvati: ClaudesBrain/CAREERS_SITO.md (20/11/2026). Non riscrivere.
+ * Aggiornato il 27/11/2026: obiettivo di riferimento e premio annuale (art. 6A del contratto).
  * Una nuova posizione si aggiunge solo qui, senza toccare i componenti.
  */
 
@@ -83,7 +84,8 @@ export const CAREER_JOBS: CareerJob[] = [
               "Individuare potenziali clienti e registrarli presso QC Tech prima di presentarli: la registrazione viene confermata per iscritto entro 5 giorni lavorativi.",
               "Condurre il primo colloquio conoscitivo con il cliente (attività, obiettivi, tempi, budget, chi decide) e inviarci il riepilogo.",
               "Presentare al cliente il preventivo preparato da QC Tech e seguirlo fino alla firma.",
-              "Organizzare il proprio lavoro in autonomia: nessuna zona assegnata, nessun obiettivo minimo, nessun orario.",
+              "Organizzare il proprio lavoro in autonomia: nessuna zona assegnata, nessuna esclusiva, nessun obbligo di segnalazione, nessun orario.",
+              "Obiettivo di riferimento: £1.000 al mese di valore di sviluppo dei contratti firmati, come indicazione e non come obbligo.",
             ],
           },
           {
@@ -104,6 +106,7 @@ export const CAREER_JOBS: CareerJob[] = [
               "Provvigione dal 10% al 30% del valore di sviluppo di ogni contratto firmato, a scaglioni in base al valore del contratto.",
               "Pagamento entro 30 giorni dall'incasso del primo acconto del cliente: in euro per chi risiede in Italia, in sterline per chi risiede nel Regno Unito.",
               "Nessun tetto ai compensi.",
+              "Premio annuale del 5% sul valore di sviluppo dei contratti firmati, al collaboratore che ne ha chiusi di più nell'anno (ad esempio, £100.000 danno £5.000).",
               "Collaborazione non esclusiva, compatibile con altre attività.",
               "Formazione iniziale e materiali di supporto: corso, manuale e strumento di stima dei prezzi.",
               "Lavoro interamente da remoto.",
@@ -163,7 +166,8 @@ export const CAREER_JOBS: CareerJob[] = [
               "Identify potential clients and register them with QC Tech before introducing them: we confirm the registration in writing within 5 working days.",
               "Hold the first discovery conversation with the client (business, goals, timing, budget, who decides) and send us a summary.",
               "Present the quote prepared by QC Tech to the client and follow them through to signature.",
-              "Organise your own work: no assigned territory, no minimum targets, no set hours.",
+              "Organise your own work: no assigned territory, no exclusivity, no obligation to refer, no set hours.",
+              "Reference target: £1,000 a month in development value of signed contracts, as a guide rather than an obligation.",
             ],
           },
           {
@@ -184,6 +188,7 @@ export const CAREER_JOBS: CareerJob[] = [
               "Commission from 10% to 30% of the development value of each signed contract, tiered by contract value.",
               "Payment within 30 days of the client's first deposit: in pounds sterling if you live in the UK, in euros if you live in Italy.",
               "No cap on earnings.",
+              "Annual bonus of 5% of the development value of signed contracts for the introducer who closes the most in the year (for example, £100,000 gives a £5,000 bonus).",
               "A non-exclusive arrangement you can take on alongside your current work.",
               "Initial training and support materials: course, handbook and pricing estimate tool.",
               "Fully remote work.",
