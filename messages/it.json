@@ -79,12 +79,13 @@
     "statusClosed": "Chat chiusa"
   },
   "hero": {
-    "headline": "Siti web e app su misura, pensati per portare clienti",
-    "headlineLead": "Siti web e app su misura,",
-    "headlineEmphasis": "pensati per portare clienti",
+    "headline": "Siti nuovi e restyle per studi, artigiani e ristoranti nel Regno Unito — e un preventivo che non cambia a metà lavoro.",
+    "headlineLead": "Siti nuovi e restyle per studi, artigiani e ristoranti nel Regno Unito —",
+    "headlineEmphasis": "e un preventivo che non cambia a metà lavoro.",
     "ctaPrimary": "Richiedi un preventivo",
     "ctaSecondary": "Vedi i progetti",
-    "availability": "Disponibili per nuovi progetti · Rispondiamo entro 48 ore",
+    "availability": "Disponibili per nuovi progetti",
+    "intro": "Siti web, web app ed e-commerce. Società britannica registrata a Bishop's Stortford, al servizio di Hertfordshire, Cambridge e Londra. Risposta entro 48 ore.",
     "chipsLabel": "Casi d'uso",
     "chips": [
       {

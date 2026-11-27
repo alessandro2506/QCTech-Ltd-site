@@ -127,7 +127,7 @@ export function HeroHome() {
             <span className="hero-home-title-emphasis">{t("headlineEmphasis")}</span>
           </h1>
 
-          {active ? <p className="hero-home-support">{active.support}</p> : null}
+          <p className="hero-home-support">{t("intro")}</p>
 
           <div
             className="hero-home-chips"
@@ -149,6 +149,8 @@ export function HeroHome() {
               );
             })}
           </div>
+
+          {active ? <p className="hero-home-chip-support">{active.support}</p> : null}
 
           <div className="hero-home-cta">
             <Link href="/contatti" className="hero-home-cta-primary">
