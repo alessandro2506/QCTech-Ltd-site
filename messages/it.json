@@ -798,7 +798,7 @@
     },
     "mobile": {
       "title": "App mobile con integrazione AI",
-      "description": "App native iOS e Android. Dal MVP al prodotto completo. Tra i nostri progetti c'è CivicAlert, una piattaforma AI civica in sviluppo che raccoglie le segnalazioni dei cittadini in un'unica dashboard per residenti e council."
+      "description": "App native iOS e Android. Dal MVP al prodotto completo. Tra i nostri progetti c'è CivicAlert, una piattaforma AI civica in sviluppo: un'app con cui i cittadini inviano segnalazioni e un'unica dashboard con cui le autorità locali britanniche le gestiscono."
     },
     "expansion": {
       "title": "Espansione digitale UK–Italia",
@@ -808,7 +808,7 @@
   "About": {
     "headline": "Non costruiamo siti. Costruiamo sistemi che portano clienti.",
     "body": "Quantum Code Technologies Ltd è uno studio web e app con sede legale a Flat 3, Jackson Wharf, Adderley Road, Bishop's Stortford, CM23 3AX. Il nostro team opera tra UK e Italia, costruendo prodotti digitali per aziende che vogliono crescere in entrambi i mercati.",
-    "proof": "Stiamo sviluppando CivicAlert, una piattaforma AI civica che raccoglie le segnalazioni dei cittadini in un'unica dashboard, per aiutare sia i residenti sia i council.",
+    "proof": "Stiamo sviluppando CivicAlert, una piattaforma AI civica: i cittadini inviano segnalazioni da un'app e le autorità locali britanniche le gestiscono tutte da un'unica dashboard.",
     "cta": "Richiedi un audit gratuito del sito dal modulo contatti. Senza impegno."
   },
   "FAQ": {
