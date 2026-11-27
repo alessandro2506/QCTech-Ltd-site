@@ -64,9 +64,9 @@ export const projects: ProjectItem[] = [
       "Portale civico digitale per Bishop's Stortford — directory attività locali, mappa interattiva, eventi e news per la comunità. Primo progetto della serie Here[City] per il mercato britannico.",
     descriptionEn:
       "Digital civic portal for Bishop's Stortford — local business directory, interactive map, events and community news. First project in the Here[City] series for the British market.",
-    statusIt: "In arrivo",
-    statusEn: "Coming Soon",
-    statusType: "coming",
+    statusIt: "In sviluppo",
+    statusEn: "In development",
+    statusType: "development",
   },
 ];
 

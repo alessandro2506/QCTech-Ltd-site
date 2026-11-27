@@ -28,6 +28,14 @@ export async function PortfolioGallery({ scope, labels }: Props) {
               href={{ pathname: "/progetti/[slug]", params: { slug: id } }}
               className="group block h-full rounded-2xl border border-[var(--light-border)] bg-white p-3 shadow-sm transition hover:-translate-y-0.5 hover:border-[var(--light-primary)] hover:shadow-md"
             >
+              <p className="mb-3 flex flex-wrap items-center gap-2 rounded-lg border-l-4 border-[var(--light-primary)] bg-[color-mix(in_srgb,var(--light-primary)_8%,white)] px-3 py-2 text-[0.95rem] font-medium text-[var(--light-emphasis)]">
+                <span>{label}</span>
+                {id === "quipalermo" ? (
+                  <span className="inline-flex rounded-full border border-[var(--light-border)] bg-[var(--light-surface)] px-3 py-1 text-xs font-semibold uppercase tracking-widest text-[var(--light-primary)]">
+                    {t("ownProductBadge")}
+                  </span>
+                ) : null}
+              </p>
               <Image
                 src={portfolioSrc(id)}
                 alt={label}
@@ -36,14 +44,6 @@ export async function PortfolioGallery({ scope, labels }: Props) {
                 loading={index < 3 ? "eager" : "lazy"}
                 className="h-auto w-full rounded-lg object-cover"
               />
-              <p className="mt-3 flex flex-wrap items-center gap-2 rounded-lg border-l-4 border-[var(--light-primary)] bg-[color-mix(in_srgb,var(--light-primary)_8%,white)] px-3 py-2 text-[0.95rem] font-medium text-[var(--light-emphasis)]">
-                <span>{label}</span>
-                {id === "quipalermo" ? (
-                  <span className="inline-flex rounded-full border border-[var(--light-border)] bg-[var(--light-surface)] px-3 py-1 text-xs font-semibold uppercase tracking-widest text-[var(--light-primary)]">
-                    {t("ownProductBadge")}
-                  </span>
-                ) : null}
-              </p>
             </Link>
           </li>
         );
