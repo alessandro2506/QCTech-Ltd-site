@@ -21,7 +21,7 @@ export async function generateMetadata({
 export default async function FAQPage() {
   const t = await getTranslations("FAQ");
 
-  const items = Array.from({ length: 15 }, (_, idx) => idx + 1).map((i) => ({
+  const items = Array.from({ length: 20 }, (_, idx) => idx + 1).map((i) => ({
     question: t(`q${i}` as "q1"),
     answer: t(`a${i}` as "a1"),
   }));

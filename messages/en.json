@@ -250,7 +250,7 @@
           "items": [
             {
               "name": "Website restyle",
-              "oldPrice": "£1,200",
+              "oldPrice": "£700",
               "price": "from £360",
               "promo": true
             },
@@ -503,12 +503,12 @@
     "formTitle": "Request form",
     "formHint": "Submissions are sent securely to our team by email.",
     "socialProof": {
-      "guarantee": "Reply within 24h",
+      "guarantee": "Reply within 48 hours",
       "freeQuote": "Free quote, no commitment"
     }
   },
   "ctaBanner": {
-    "text": "Ready to start? Request a free quote — we reply within 24h.",
+    "text": "Ready to start? Request a free quote. We reply within 48 hours.",
     "cta": "Get a Quote"
   },
   "Contact": {
@@ -662,7 +662,7 @@
         {
           "label": "Website restyle",
           "price": "from £360",
-          "note": "instead of £1,200 (−70%)"
+          "note": "instead of £700"
         },
         {
           "label": "Basic maintenance plan",
@@ -812,7 +812,7 @@
   },
   "FAQ": {
     "title": "Frequently asked questions",
-    "ctaTitle": "Ready to start? Request a free quote — we reply within 24h.",
+    "ctaTitle": "Ready to start? Request a free quote. We reply within 48 hours.",
     "ctaBody": "The free website audit is a review of your current site, requested only through the contact form. We reply in writing within 48 hours on what is stopping conversions, with no obligation.",
     "ctaButton": "Get a Quote",
     "q1": "How much does a website cost?",
@@ -844,13 +844,23 @@
     "q14": "How do you handle data privacy and GDPR compliance?",
     "a14": "All our projects are built with privacy by design. We implement cookie consent management, privacy policies, data minimisation principles, and secure data handling from day one. For UK clients we follow UK GDPR; for EU clients we follow EU GDPR; for global clients we apply the stricter of the two as a baseline. We also advise on which data processors and third-party services are compliant.",
     "q15": "What makes QC Tech different from other web agencies?",
-    "a15": "Three things: we operate across UK and Italy with a distributed senior team, which means no single point of failure and broad market knowledge. We build with modern, production-grade technology — not WordPress templates or drag-and-drop builders. And we measure success by business outcomes — leads generated, conversion rates, revenue — not just by delivering a file. We don't disappear after launch."
+    "a15": "Three things: we operate across UK and Italy with a distributed senior team, which means no single point of failure and broad market knowledge. We build with modern, production-grade technology — not WordPress templates or drag-and-drop builders. And we measure success by business outcomes — leads generated, conversion rates, revenue — not just by delivering a file. We don't disappear after launch.",
+    "q16": "Can the price change during the project?",
+    "a16": "No. The quote we agree in writing is what you pay. If you ask for something outside it, we quote that separately and you decide before we start it.",
+    "q17": "Where are you based? Can I visit your office?",
+    "a17": "We are a UK company registered in Bishop's Stortford and we work with businesses in Hertfordshire, Cambridge and London. We don't have a walk-in studio: we work by video call, phone and email, and you follow every step on a preview link.",
+    "q18": "Will my website show up on Google in my area?",
+    "a18": "We write and build each page for the searches your customers make in your area, and set up Google Search Console and your Google Business Profile. Rankings also depend on reviews and on other sites mentioning you, which takes months, so we don't promise positions.",
+    "q19": "Do you make digital menus for restaurants?",
+    "a19": "Yes. A digital QR menu in your colours, in English and Italian if you need it, costs £29 a month with up to 2 updates a month and a minimum of 6 months. Set-up is £149, or £75 if we also build your website. You can have it even if you already have a website.",
+    "q20": "Can you add a client area, online booking or connect a shop to our stock?",
+    "a20": "Yes. Client portals, booking flows and integrations with stock, ERP or marketplaces are quoted after a call, because the price depends on what they need to do."
   },
   "FinalCTA": {
     "headline": "Ready to turn your site into a client machine?",
     "subheadline": "Request a free website audit through the contact form. We'll tell you in writing, within 48 hours, what's holding your site back — no commitment.",
     "button": "Request your free audit",
-    "note": "We respond within 24 hours."
+    "note": "We respond within 48 hours."
   },
   "Vision": {
     "hero": {

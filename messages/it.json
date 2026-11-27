@@ -250,7 +250,7 @@
           "items": [
             {
               "name": "Restyle sito web",
-              "oldPrice": "€1.400",
+              "oldPrice": "€840",
               "price": "da €390",
               "promo": true
             },
@@ -503,12 +503,12 @@
     "formTitle": "Modulo richiesta",
     "formHint": "Le richieste sono inviate in modo sicuro al nostro team via email.",
     "socialProof": {
-      "guarantee": "Risposta garantita entro 24h",
+      "guarantee": "Risposta entro 48 ore",
       "freeQuote": "Preventivo gratuito e senza impegno"
     }
   },
   "ctaBanner": {
-    "text": "Pronto a iniziare? Richiedi un preventivo gratuito — risposta entro 24h.",
+    "text": "Pronto a iniziare? Richiedi un preventivo gratuito. Risposta entro 48 ore.",
     "cta": "Richiedi Preventivo"
   },
   "Contact": {
@@ -662,7 +662,7 @@
         {
           "label": "Restyle sito web",
           "price": "da €390",
-          "note": "invece di €1.400"
+          "note": "invece di €840"
         },
         {
           "label": "Piano di manutenzione Basic",
@@ -812,7 +812,7 @@
   },
   "FAQ": {
     "title": "Domande frequenti",
-    "ctaTitle": "Pronto a iniziare? Richiedi un preventivo gratuito — risposta entro 24h.",
+    "ctaTitle": "Pronto a iniziare? Richiedi un preventivo gratuito. Risposta entro 48 ore.",
     "ctaBody": "L'audit gratuito è un'analisi del tuo sito attuale, richiesta solo dal modulo contatti. Ti rispondiamo per iscritto entro 48 ore su cosa impedisce le conversioni, senza impegno.",
     "ctaButton": "Richiedi Preventivo",
     "q1": "Quanto costa un sito web?",
@@ -844,13 +844,23 @@
     "q14": "Come gestite la privacy dei dati e la conformità GDPR?",
     "a14": "Tutti i nostri progetti sono costruiti con la privacy by design. Implementiamo la gestione del consenso ai cookie, le informative sulla privacy, i principi di minimizzazione dei dati e la gestione sicura dei dati fin dal primo giorno. Per i clienti UK seguiamo il UK GDPR; per i clienti UE seguiamo il GDPR europeo; per i clienti globali applichiamo il più restrittivo dei due come baseline. Forniamo anche consulenza su quali processori di dati e servizi di terze parti siano conformi.",
     "q15": "Cosa distingue QC Tech dalle altre agenzie web?",
-    "a15": "Tre cose: operiamo tra UK e Italia con un team senior distribuito, il che significa nessun singolo punto di fallimento e ampia conoscenza del mercato. Costruiamo con tecnologie moderne e orientate alla produzione — non template WordPress o costruttori drag-and-drop. E misuriamo il successo attraverso i risultati di business — lead generati, tassi di conversione, fatturato — non solo consegnando un file. Non sparaimo dopo il lancio."
+    "a15": "Tre cose: operiamo tra UK e Italia con un team senior distribuito, il che significa nessun singolo punto di fallimento e ampia conoscenza del mercato. Costruiamo con tecnologie moderne e orientate alla produzione — non template WordPress o costruttori drag-and-drop. E misuriamo il successo attraverso i risultati di business — lead generati, tassi di conversione, fatturato — non solo consegnando un file. Non sparaimo dopo il lancio.",
+    "q16": "Il prezzo può cambiare durante il lavoro?",
+    "a16": "No. Il preventivo concordato per iscritto è quello che paghi. Se chiedi qualcosa in più, lo quotiamo a parte e decidi tu prima che iniziamo.",
+    "q17": "Dove siete? Posso venire in ufficio?",
+    "a17": "Siamo una società britannica registrata a Bishop's Stortford e lavoriamo con attività di Hertfordshire, Cambridge e Londra. Non abbiamo uno studio aperto al pubblico: lavoriamo con videochiamate, telefono ed email, e segui ogni passaggio su un link di anteprima.",
+    "q18": "Il mio sito comparirà su Google nella mia zona?",
+    "a18": "Scriviamo e costruiamo ogni pagina per le ricerche che fanno i tuoi clienti nella tua zona, e configuriamo Google Search Console e il tuo Google Business Profile. Il posizionamento dipende anche dalle recensioni e da quanto altri siti ti citano, e richiede mesi: per questo non promettiamo posizioni.",
+    "q19": "Realizzate menù digitali per ristoranti?",
+    "a19": "Sì. Un menù digitale con QR nei tuoi colori, in inglese e in italiano se serve, costa €35 al mese con fino a 2 aggiornamenti al mese e una durata minima di 6 mesi. L'allestimento costa €180, oppure €90 se realizziamo anche il tuo sito. Puoi averlo anche se hai già un sito.",
+    "q20": "Potete aggiungere un'area clienti, le prenotazioni online o collegare il negozio al magazzino?",
+    "a20": "Sì. Portali clienti, prenotazioni e integrazioni con magazzino, ERP o marketplace si quotano dopo una call, perché il prezzo dipende da cosa devono fare."
   },
   "FinalCTA": {
     "headline": "Pronto a trasformare il tuo sito in un generatore di clienti?",
     "subheadline": "Richiedi un audit gratuito dal modulo contatti. Ti diremo per iscritto, entro 48 ore, cosa blocca le conversioni del tuo sito — senza impegno.",
     "button": "Richiedi il tuo audit gratuito",
-    "note": "Rispondiamo entro 24 ore."
+    "note": "Rispondiamo entro 48 ore."
   },
   "Vision": {
     "hero": {
