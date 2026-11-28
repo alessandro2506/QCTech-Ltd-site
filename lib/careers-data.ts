@@ -2,6 +2,7 @@
  * Posizioni aperte della sezione Careers / Lavora con noi.
  * Testi approvati: ClaudesBrain/CAREERS_SITO.md (20/11/2026). Non riscrivere.
  * Aggiornato il 27/11/2026: obiettivo di riferimento e premio annuale (art. 6A del contratto).
+ * Aggiornato il 28/11/2026: preferenza per figure con partita IVA / self-employed, apertura a figure senza.
  * Una nuova posizione si aggiunge solo qui, senza toccare i componenti.
  */
 
@@ -95,6 +96,7 @@ export const CAREER_JOBS: CareerJob[] = [
               "Una rete di contatti reale tra piccole e medie imprese o professionisti: è il requisito principale.",
               "Esperienza commerciale, preferibile ma non indispensabile.",
               "Capacità di lavorare in autonomia e di portare contatti qualificati, non semplici nominativi.",
+              "Partita IVA, o equivalente nel Regno Unito (registrazione come self-employed o società): titolo preferenziale, non indispensabile.",
               "Ottima conoscenza dell'italiano o dell'inglese.",
               "Residenza in Italia o nel Regno Unito.",
             ],
@@ -116,7 +118,7 @@ export const CAREER_JOBS: CareerJob[] = [
             kind: "text",
             title: "Inquadramento",
             body: [
-              "Si tratta di una collaborazione autonoma e occasionale, regolata da un contratto di procacciamento occasionale: non è un rapporto di lavoro dipendente. Il compenso è solo a provvigione e va dichiarato dal collaboratore secondo la propria posizione fiscale; la partita IVA non è richiesta per avviare la collaborazione. Per chi risiede nel Regno Unito il rapporto è da self-employed, con imposte e National Insurance a proprio carico.",
+              "Collaborazione autonoma a provvigione, regolata da un contratto di procacciamento d'affari: non è un rapporto di lavoro dipendente. Cerchiamo in via preferenziale professionisti con partita IVA. Valutiamo anche candidati senza partita IVA, con un contratto di collaborazione occasionale dedicato: se l'attività diventa continuativa, è necessario aprirla. Imposte e contributi sono a carico del collaboratore. Per chi risiede nel Regno Unito vale la posizione di self-employed.",
             ],
           },
           {
@@ -177,6 +179,7 @@ export const CAREER_JOBS: CareerJob[] = [
               "You have a genuine network of small and medium-sized businesses or professionals. This is the key requirement.",
               "A track record in sales is an advantage, but not essential.",
               "You work independently and bring qualified leads, not just names.",
+              "Already registered as self-employed or operating through a company: preferred, not essential.",
               "You are fluent in English or Italian.",
               "You live in the United Kingdom or Italy.",
             ],
@@ -198,7 +201,7 @@ export const CAREER_JOBS: CareerJob[] = [
             kind: "text",
             title: "Engagement",
             body: [
-              "This is a self-employed opportunity under an introducer agreement. It is not employment. Pay is commission only. If you live in the UK, you are responsible for your own tax and National Insurance and need to be registered with HMRC as self-employed. If you live in Italy, you declare the commission according to your own tax position; a VAT number is not required to start.",
+              "A self-employed, commission-only arrangement under an introducer agreement. It is not employment. We prefer professionals already registered as self-employed or working through a limited company. We also consider individuals who are not, under a dedicated occasional agreement: if the activity becomes regular, registration as self-employed is required. You are responsible for your own tax and National Insurance.",
             ],
           },
           {
